@@ -6,7 +6,6 @@
   "framework": null,
   "cleanUrls": true,
   "trailingSlash": false,
-  "_deploy_trigger": "force-rebuild-2026-06-12T17-59",
   "headers": [
     {
       "source": "/(.*)",
