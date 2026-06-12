@@ -7,9 +7,6 @@
   "framework": null,
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/亚太国际人民事业发展共同体官方网站初稿/$1" }
-  ],
   "headers": [
     {
       "source": "/(.*)",
