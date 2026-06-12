@@ -1,0 +1,20 @@
+{
+  "name": "enterprise-website",
+  "version": "1.0.0",
+  "description": "企业官网开发环境",
+  "scripts": {
+    "dev": "npx live-server --port=8080 --open=/index.html",
+    "build": "echo 'Build completed'",
+    "serve": "npx live-server --port=8080"
+  },
+  "keywords": [
+    "enterprise",
+    "website",
+    "bootstrap"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
