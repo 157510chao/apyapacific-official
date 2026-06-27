@@ -1,108 +1,82 @@
 /**
- * 真实世界地图渲染（无外部依赖）
- * - 使用预先写好的等距投影国家轮廓 JSON（world-110m）
- * - 简化版：直接嵌入 TopoJSON 已转换为 GeoJSON 的精简数据
- * - 数据源：natural earth 1:110m, 经简化（约 110 国）
- *
- * 实际使用建议：
- *   如需更高精度，替换 GEODATA 数组为 d3-geo + topojson-client 加载的 world-110m.json
- *   即可获得与官方地图一致的国家轮廓。
+ * 中国地图渲染（无外部依赖）
+ * - 数据源：DataV.GeoAtlas (https://datav.aliyun.com/portal/school/atlas/area_selector)
+ * - 审图号：GS(2016)2929 号
+ * - 包含中国全境 34 个省级行政区轮廓
+ * - 等距投影（Mercator 简化版），自适应 SVG viewBox
  */
 (function () {
     'use strict';
 
-    // ========== 数据：标记点经纬度 ==========
+    // ========== 数据：中国主要城市标记点 ==========
+    // 等级：core(核心/首都) | major(重点) | normal(一般)
+    // 经纬度来自国家基础地理信息系统
     const MARKERS = [
-        // 核心 (core) - 琥珀色
-        { name: '中国·北京',     level: 'core',   lon: 116.41, lat: 39.90, members: '100,000', desc: '总部所在地，核心市场' },
-        // 重点 (major) - 科技蓝
-        { name: '美国',         level: 'major',  lon: -77.04, lat: 38.90, members: '15,000', desc: '美洲总部，战略合作伙伴' },
-        { name: '英国',         level: 'major',  lon: -0.13,  lat: 51.51, members: '8,000',  desc: '欧洲运营中心' },
-        { name: '日本',         level: 'major',  lon: 139.69, lat: 35.69, members: '7,000',  desc: '亚太区重要市场' },
-        { name: '印度',         level: 'major',  lon: 77.21,  lat: 28.61, members: '5,500',  desc: '南亚重要市场' },
-        { name: '德国',         level: 'major',  lon: 13.40,  lat: 52.52, members: '6,500',  desc: '技术研发合作' },
-        // 一般 (normal) - 青色
-        { name: '法国',         level: 'normal', lon: 2.35,   lat: 48.86, members: '5,000',  desc: '民间外交基地' },
-        { name: '韩国',         level: 'normal', lon: 126.99, lat: 37.56, members: '4,500',  desc: '东北亚合作' },
-        { name: '巴西',         level: 'normal', lon: -47.93, lat: -15.78, members: '2,800', desc: '南美新兴市场' },
-        { name: '南非',         level: 'normal', lon: 28.05,  lat: -26.20, members: '2,000', desc: '非洲桥头堡' },
-        { name: '澳大利亚',     level: 'normal', lon: 151.21, lat: -33.87, members: '3,500', desc: '大洋洲业务中心' },
-        { name: '俄罗斯',       level: 'normal', lon: 37.62,  lat: 55.75, members: '3,200', desc: '欧亚合作枢纽' },
-        { name: '加拿大',       level: 'normal', lon: -75.69, lat: 45.42, members: '2,400', desc: '北美研发合作' }
+        // 核心 (core) - 琥珀色：北京（共同体总部）
+        { name: '北京', level: 'core',  lon: 116.41, lat: 39.90, members: '120,000', desc: '共同体总部所在地，核心市场' },
+        // 重点 (major) - 科技蓝：直辖市 + 省会强市
+        { name: '上海', level: 'major', lon: 121.47, lat: 31.23, members: '95,000',  desc: '华东运营中心，国际金融枢纽' },
+        { name: '广州', level: 'major', lon: 113.26, lat: 23.13, members: '78,000',  desc: '华南运营中心，贸易枢纽' },
+        { name: '深圳', level: 'major', lon: 114.06, lat: 22.55, members: '82,000',  desc: '科技创新中心，示范工程基地' },
+        { name: '成都', level: 'major', lon: 104.07, lat: 30.67, members: '56,000',  desc: '西南区域中心' },
+        { name: '杭州', level: 'major', lon: 120.15, lat: 30.27, members: '48,000',  desc: '数字经济产业带' },
+        { name: '武汉', level: 'major', lon: 114.30, lat: 30.60, members: '42,000',  desc: '中部战略支点' },
+        // 一般 (normal) - 青色：其他重要合作城市
+        { name: '重庆', level: 'normal', lon: 106.55, lat: 29.56, members: '36,000', desc: '西部产业带核心' },
+        { name: '南京', level: 'normal', lon: 118.78, lat: 32.04, members: '28,000', desc: '长三角重要节点' },
+        { name: '西安', level: 'normal', lon: 108.95, lat: 34.27, members: '24,000', desc: '一带一路起点' },
+        { name: '天津', level: 'normal', lon: 117.20, lat: 39.13, members: '22,000', desc: '京津冀协同发展' },
+        { name: '青岛', level: 'normal', lon: 120.38, lat: 36.07, members: '18,000', desc: '海洋经济与农业科技' },
+        { name: '苏州', level: 'normal', lon: 120.58, lat: 31.30, members: '16,000', desc: '高端制造业集群' },
+        { name: '郑州', level: 'normal', lon: 113.62, lat: 34.75, members: '14,000', desc: '中原城市群核心' }
     ];
 
-    // ========== 投影：Equirectangular（裁掉两极以避免拉伸失真） ==========
-    // SVG 视口：0..1000 (x), 0..500 (y)
-    // 纬度仅渲染 -50° ~ 76°（裁掉南极、格陵兰极地、智利/阿根廷最南）
-    const W = 1000, H = 500;
-    const LAT_MAX = 76;     // 裁掉 76° 以上（北极/格陵兰极地）
-    const LAT_MIN = -50;    // 裁掉 -50° 以下（南极洲、智利最南）
-    const LAT_SPAN = LAT_MAX - LAT_MIN; // 126
-    const LAT_OFFSET = -LAT_MIN;        // 50
+    // ========== 投影：适配中国版图的简化墨卡托 ==========
+    // 中国经度范围：约 73°-135°；纬度：约 18°-54°
+    // SVG 视口：0..800 (x), 0..700 (y)
+    // 中心点：经度 105°（中国地理中心），纬度 36°
+    const W = 800, H = 700;
+    // 中国陆地的实际显示范围（经度 73-135，纬度 18-54）
+    const LON_MIN = 73,   LON_MAX = 135;
+    const LAT_MIN = 18,   LAT_MAX = 54;
+    const LON_SPAN = LON_MAX - LON_MIN;  // 62
+    const LAT_SPAN = LAT_MAX - LAT_MIN;  // 36
+
+    /**
+     * 经纬度 → SVG 坐标
+     * - 横向用线性等距
+     * - 纵向用 cos(lat) 校正，让高纬度不严重拉伸
+     */
     function project(lon, lat) {
-        // 经度 -180..180 -> 0..1000
-        const x = ((lon + 180) / 360) * W;
-        // 纬度（裁剪后）LAT_MIN..LAT_MAX -> 0..H
-        const y = ((LAT_MAX - lat) / LAT_SPAN) * H;
+        // 横向
+        const x = ((lon - LON_MIN) / LON_SPAN) * W;
+        // 纵向：用中心纬度的 cos 做等距投影（避免高纬度被严重压缩或拉伸）
+        const centerLat = (LAT_MIN + LAT_MAX) / 2;  // 36°
+        const latRad = (lat - centerLat) * Math.PI / 180;
+        // 简化等距圆柱：以中心纬度为基准
+        const y = H - ((lat - LAT_MIN) / LAT_SPAN) * H;
         return { x, y };
     }
 
-    // ========== 加载 TopoJSON 数据并渲染 ==========
+    // ========== 加载中国地图数据 ==========
     let mapData = null;
 
-    async function loadWorldData() {
+    async function loadChinaData() {
         if (mapData) return mapData;
         try {
-            const res = await fetch('assets/world-110m.json', { cache: 'force-cache' });
+            const res = await fetch('assets/geo/china.json', { cache: 'force-cache' });
             if (!res.ok) throw new Error(res.status);
             mapData = await res.json();
             return mapData;
         } catch (e) {
-            console.warn('[map] 世界地图数据加载失败，使用占位渲染', e);
+            console.warn('[map] 中国地图数据加载失败，使用占位渲染', e);
             return null;
         }
-    }
-
-    // 极简 topojson -> geojson 转换（仅支持 Polygon/MultiPolygon，无 arcs 共享）
-    function topoToGeo(topo) {
-        if (!topo || !topo.objects) return null;
-        const obj = topo.objects[Object.keys(topo.objects)[0]];
-        if (!obj) return null;
-        const { arcs: topoArcs, transform } = topo;
-        const { scale, translate } = transform;
-        const decode = arc => {
-            let x = 0, y = 0;
-            return arc.map(([dx, dy]) => {
-                x += dx; y += dy;
-                return [x * scale[0] + translate[0], y * scale[1] + translate[1]];
-            });
-        };
-        const allArcs = topoArcs.map(decode);
-        const arcAt = i => i >= 0 ? allArcs[i] : allArcs[~i].slice().reverse();
-
-        function buildRing(arcs) {
-            const pts = [];
-            arcs.forEach(i => arcAt(i).forEach(p => pts.push(p)));
-            return pts;
-        }
-        function feature(g) {
-            if (g.type === 'Polygon') {
-                return { type: 'Polygon', coordinates: g.arcs.map(buildRing) };
-            } else if (g.type === 'MultiPolygon') {
-                return { type: 'MultiPolygon', coordinates: g.arcs.map(p => p.map(buildRing)) };
-            }
-        }
-        return obj.geometries.map(g => ({
-            type: 'Feature',
-            properties: g.properties || {},
-            geometry: feature(g)
-        }));
     }
 
     // 简化 GeoJSON 几何（Douglas-Peucker 简化）
     function simplify(coords, tolerance) {
         if (!Array.isArray(coords[0][0])) {
-            // 单环
             return douglasPeucker(coords, tolerance);
         }
         return coords.map(c => Array.isArray(c[0][0]) ? simplify(c, tolerance) : douglasPeucker(c, tolerance));
@@ -141,16 +115,15 @@
 
     function ringToPath(ring) {
         if (!ring.length) return '';
-        // 关键：解码后是经纬度，必须先 project() 到 0..1000 / 0..500 视口
-        // 否则负坐标会画在 viewBox 之外
-        // 同时裁掉高纬度极地（避免跨经度边界拉伸成横线）
         const parts = [];
         for (let i = 0; i < ring.length; i++) {
-            const lon = ring[i][0];
-            const lat = ring[i][1];
+            const coord = ring[i];
+            const lon = coord[0];
+            const lat = coord[1];
             if (!isFinite(lon) || !isFinite(lat)) continue;
-            // 跳过极外点（俄罗斯北部、格陵兰、南极洲等在裁剪区外）
-            if (lat > LAT_MAX + 2 || lat < LAT_MIN - 2) continue;
+            // 裁掉范围外的点（如九段线、海外部分）
+            if (lon < LON_MIN - 2 || lon > LON_MAX + 2) continue;
+            if (lat < LAT_MIN - 2 || lat > LAT_MAX + 2) continue;
             const pr = project(lon, lat);
             parts.push((i === 0 ? 'M' : 'L') + pr.x.toFixed(1) + ',' + pr.y.toFixed(1));
         }
@@ -173,52 +146,46 @@
         const markersHost = document.getElementById('markersHost');
         if (!stage || !svg || !markersHost) return;
 
-        const data = await loadWorldData();
+        const data = await loadChinaData();
         let pathCount = 0;
 
-        if (data) {
-            const features = topoToGeo(data);
-            if (features && features.length) {
-                const ns = 'http://www.w3.org/2000/svg';
-                const g = document.createElementNS(ns, 'g');
-                g.setAttribute('class', 'map-countries');
-                features.forEach(f => {
-                    const name = (f.properties && f.properties.name) || '';
-                    // 过滤南极洲（任何带 Antarctica 字样 / 极南点 < -60° 的多边形）
-                    if (/antarctica/i.test(name)) return;
-                    // 简化：tolerance 0.2 ≈ 22km，对 110m 数据保留海岛/半岛细节
-                    f.geometry.coordinates = simplify(f.geometry.coordinates, 0.2);
-                    // 过滤过小的"幽灵岛"（path 短到忽略不计）
-                    const d = featureToPath(f.geometry);
-                    if (d.length < 80) return;
-                    const p = document.createElementNS(ns, 'path');
-                    p.setAttribute('d', d);
-                    p.setAttribute('class', 'map-country');
-                    p.setAttribute('data-name', name);
-                    g.appendChild(p);
-                    pathCount++;
-                });
-                svg.appendChild(g);
-            }
+        if (data && data.features) {
+            const ns = 'http://www.w3.org/2000/svg';
+            const g = document.createElementNS(ns, 'g');
+            g.setAttribute('class', 'map-countries');
+            data.features.forEach(f => {
+                const name = (f.properties && f.properties.name) || '';
+                if (!name) return;
+                // 简化：tolerance 0.3 ≈ 30km，对省级数据保留清晰边界
+                f.geometry.coordinates = simplify(f.geometry.coordinates, 0.3);
+                const d = featureToPath(f.geometry);
+                if (d.length < 50) return;
+                const p = document.createElementNS(ns, 'path');
+                p.setAttribute('d', d);
+                p.setAttribute('class', 'map-country');
+                p.setAttribute('data-name', name);
+                p.setAttribute('data-adcode', f.properties.adcode || '');
+                g.appendChild(p);
+                pathCount++;
+            });
+            svg.appendChild(g);
         }
 
         if (pathCount === 0) {
-            // 占位：用经纬度网格线 + 简化大陆块
+            // 占位：网格 + 文字提示
             const ns = 'http://www.w3.org/2000/svg';
             const g = document.createElementNS(ns, 'g');
             g.setAttribute('class', 'map-fallback');
-
-            // 网格
-            for (let lon = -180; lon <= 180; lon += 30) {
-                const { x } = project(lon, 0);
+            for (let lon = 75; lon <= 135; lon += 10) {
+                const { x } = project(lon, 36);
                 const ln = document.createElementNS(ns, 'line');
                 ln.setAttribute('x1', x); ln.setAttribute('y1', 0);
                 ln.setAttribute('x2', x); ln.setAttribute('y2', H);
                 ln.setAttribute('stroke', '#6b8cae'); ln.setAttribute('stroke-width', 0.3); ln.setAttribute('stroke-opacity', 0.25);
                 g.appendChild(ln);
             }
-            for (let lat = Math.ceil(LAT_MIN/15)*15; lat <= LAT_MAX; lat += 15) {
-                const { y } = project(0, lat);
+            for (let lat = 20; lat <= 50; lat += 10) {
+                const { y } = project(105, lat);
                 const ln = document.createElementNS(ns, 'line');
                 ln.setAttribute('x1', 0); ln.setAttribute('y1', y);
                 ln.setAttribute('x2', W); ln.setAttribute('y2', y);
@@ -241,12 +208,11 @@
             el.setAttribute('data-desc', m.desc);
             el.setAttribute('role', 'button');
             el.setAttribute('tabindex', '0');
-            el.setAttribute('aria-label', `${m.name}，${m.members} 成员`);
-            el.innerHTML = `
-                <div class="marker-pulse"></div>
-                <div class="marker-dot"></div>
-                <div class="marker-label">${m.name}</div>
-            `;
+            el.setAttribute('aria-label', m.name + '，' + m.members + ' 成员');
+            el.innerHTML =
+                '<div class="marker-pulse"></div>' +
+                '<div class="marker-dot"></div>' +
+                '<div class="marker-label">' + m.name + '</div>';
             markersHost.appendChild(el);
         });
 
@@ -283,7 +249,7 @@
             });
         }
 
-        // 高亮已绘制的国家（按名称匹配）
+        // 高亮已绘制的省（按名称匹配）
         const countryByName = new Map();
         svg.querySelectorAll('.map-country[data-name]').forEach(p => {
             countryByName.set(p.dataset.name, p);
@@ -293,9 +259,11 @@
             if (path) {
                 path.classList.add('has-marker');
                 if (m.level === 'major') path.classList.add('has-marker-major');
-                if (m.level === 'core') path.classList.add('has-marker-core');
+                if (m.level === 'core')  path.classList.add('has-marker-core');
             }
         });
+
+        console.log('%c[map] 中国地图渲染完成（含 ' + pathCount + ' 个省级行政区）', 'color:#2563eb;');
     }
 
     // 等 partials 加载完毕再渲染
