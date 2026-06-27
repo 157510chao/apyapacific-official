@@ -1,337 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>虫草素17大研究领域科研强度可视化报告</title>
-    <!-- 引入 ECharts -->
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js">
-    </script>
-    <style>
-        /* 全局重置 & 字体 */
-        /* 移除全局重置，由 site style.css 统一处理 */
-        body { /* site 风格接管 */ }
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0a2540">
 
-        /* 头部 */
-        .header {
-            background: linear-gradient(135deg, #0b1e33 0%, #1a3a5c 100%);
-            color: #fff;
-            padding: 32px 36px 28px;
-            border-radius: 24px;
-            margin-bottom: 32px;
-            box-shadow: 0 12px 30px rgba(10, 40, 80, 0.25);
-        }
-        .header h1 {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .header h1 small {
-            font-size: 16px;
-            font-weight: 400;
-            color: #a0c4e8;
-            margin-left: 4px;
-        }
-        .header-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px 40px;
-            font-size: 14px;
-            color: #c5ddf5;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-            padding-top: 16px;
-            margin-top: 6px;
-        }
-        .header-meta span {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .header-meta strong {
-            color: #fff;
-            font-weight: 600;
-        }
-
-        /* 图表板块 */
-        .chart-section {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 28px 24px 24px;
-            margin-bottom: 32px;
-            box-shadow: 0 4px 16px rgba(0, 20, 50, 0.06);
-            border: 1px solid #e9eff5;
-        }
-        .chart-section h2 {
-            font-size: 20px;
-            font-weight: 600;
-            color: #0b1e33;
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .chart-section .sub {
-            font-size: 14px;
-            color: #5e6f88;
-            margin-bottom: 20px;
-        }
-        .chart-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-        .chart-box {
-            background: #fafcff;
-            border-radius: 16px;
-            padding: 16px 12px 8px;
-            border: 1px solid #eef4fa;
-        }
-        .chart-box .chart-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #1e2a3a;
-            margin-bottom: 4px;
-            padding-left: 4px;
-        }
-        .chart-box .chart-desc {
-            font-size: 13px;
-            color: #4a5b72;
-            padding: 0 4px 10px;
-            line-height: 1.6;
-        }
-        .chart-container {
-            width: 100%;
-            height: 320px;
-        }
-        .chart-container.tall {
-            height: 340px;
-        }
-
-        /* 赛道热度图（第三个图表）单独占一行 */
-        .chart-full {
-            grid-column: 1 / -1;
-        }
-
-        /* 卡片板块标题 */
-        .card-section-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #0b1e33;
-            margin: 40px 0 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .card-section-title small {
-            font-size: 15px;
-            font-weight: 400;
-            color: #5e6f88;
-            margin-left: 6px;
-        }
-
-        /* 卡片网格 */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 20px;
-        }
-
-        /* 单张卡片 */
-        .card {
-            background: #ffffff;
-            border-radius: 18px;
-            padding: 20px 20px 18px;
-            box-shadow: 0 4px 14px rgba(0, 20, 50, 0.05);
-            border: 1px solid #e9eff5;
-            transition: transform 0.1s ease, box-shadow 0.2s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 40, 80, 0.08);
-        }
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
-        }
-        .card-name {
-            font-size: 18px;
-            font-weight: 700;
-            color: #0b1e33;
-            line-height: 1.3;
-        }
-        .card-tag {
-            font-size: 11px;
-            font-weight: 600;
-            padding: 3px 12px;
-            border-radius: 20px;
-            white-space: nowrap;
-            letter-spacing: 0.3px;
-            background: #eef2f7;
-            color: #3a4b62;
-            align-self: center;
-        }
-        .card-tag.hot {
-            background: #fce8e6;
-            color: #b12a1e;
-        }
-        .card-tag.mature {
-            background: #e3edfb;
-            color: #1a5a9c;
-        }
-        .card-tag.niche {
-            background: #ecf0f5;
-            color: #4d6079;
-        }
-
-        .card-body {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            flex: 1;
-        }
-        .card-block {
-            font-size: 13.5px;
-            line-height: 1.6;
-            color: #1e2a3a;
-        }
-        .card-block strong {
-            color: #0b1e33;
-            font-weight: 600;
-            display: inline-block;
-            min-width: 70px;
-        }
-        .card-block .label {
-            color: #3d5a78;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 2px;
-            font-size: 13px;
-        }
-        .card-block .value {
-            color: #1e2a3a;
-        }
-        .card-block .consensus {
-            background: #f5f9ff;
-            padding: 10px 12px;
-            border-radius: 10px;
-            border-left: 3px solid #2a6b9e;
-            margin-top: 2px;
-            font-size: 13.5px;
-        }
-        .card-block .consensus .label {
-            color: #1a4a7a;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 2px;
-        }
-
-        /* 底部总结 */
-        .footer-summary {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 28px 32px 24px;
-            margin-top: 40px;
-            border: 1px solid #e9eff5;
-            box-shadow: 0 4px 16px rgba(0, 20, 50, 0.04);
-        }
-        .footer-summary h2 {
-            font-size: 20px;
-            font-weight: 700;
-            color: #0b1e33;
-            margin-bottom: 16px;
-        }
-        .footer-summary .summary-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px 32px;
-        }
-        .footer-summary .summary-item {
-            font-size: 14px;
-            color: #1e2a3a;
-            line-height: 1.7;
-            padding-left: 4px;
-        }
-        .footer-summary .summary-item strong {
-            color: #0b1e33;
-        }
-        .footer-summary .divider {
-            border-top: 1px solid #e9eff5;
-            margin: 18px 0 16px;
-        }
-        .footer-summary .note {
-            font-size: 13px;
-            color: #5e6f88;
-            background: #f5f9fe;
-            padding: 14px 18px;
-            border-radius: 12px;
-            margin-top: 4px;
-            line-height: 1.7;
-        }
-
-        /* 响应式 */
-        @media (max-width: 820px) {
-            .chart-grid {
-                grid-template-columns: 1fr;
-            }
-            .chart-full {
-                grid-column: 1;
-            }
-            .card-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .header h1 {
-                font-size: 22px;
-            }
-            .footer-summary .summary-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        @media (max-width: 540px) {
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-            .header {
-                padding: 20px 18px;
-            }
-            .header h1 {
-                font-size: 19px;
-            }
-            .header-meta {
-                font-size: 12px;
-                gap: 10px 16px;
-            }
-            .chart-section {
-                padding: 18px 14px;
-            }
-            .chart-container {
-                height: 260px;
-            }
-            .chart-container.tall {
-                height: 280px;
-            }
-            .footer-summary {
-                padding: 20px 16px;
-            }
-        }
-    </style>
-
-    <meta name="description" content="虫草素全球科研综述配套报告 - 抗肿瘤 Top10 论文 / 17 大研究领域科研强度可视化">
-    <meta name="keywords" content="虫草素,科研综述,可视化,Top10,17大领域,亚太人民共同体">
+    <title>虫草素全球科研综述 - 完整版 | 亚太国际人民事业发展共同体</title>
+    <meta name="description" content="虫草素全球科研综述完整版：覆盖 17 大研究领域、4 篇里程碑重磅论文，系统梳理全球范围内对虫草素的研究进展与临床应用前景。">
+    <meta name="keywords" content="虫草素,科研综述,Cordycepin,17大领域,AMPK,NF-κB,Sirtuins,亚太人民共同体">
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Ctext x='50' y='65' font-family='Arial' font-size='55' fill='white' text-anchor='middle' font-weight='bold'%3EA%3C/text%3E%3C/svg%3E">
 
@@ -339,6 +16,278 @@
     <link href="vendor/fontawesome.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <style>
+        /* ===== 原 cordycepin-research-overview 全部样式（已加 .ro-report 命名空间隔离） ===== */
+        .ro-report {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #0a1e2f;
+        }
+.ro-report /* ===== 全局重置 & 基础 ===== */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }.ro-report body{
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f0f6fe;
+            color: #0a1e2f;
+            padding: 24px 20px 60px;
+            line-height: 1.6;
+        }.ro-report .container{
+            max-width: 1280px;
+            margin: 0 auto;
+        }.ro-report /* ===== 头部 ===== */
+        .hero{
+            background: linear-gradient(145deg, #0b2a4a 0%, #1a4b73 100%);
+            color: #fff;
+            padding: 36px 40px 30px;
+            border-radius: 28px;
+            margin-bottom: 32px;
+            box-shadow: 0 16px 40px rgba(10, 40, 80, 0.25);
+            position: relative;
+            overflow: hidden;
+        }.ro-report .hero::after{
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }.ro-report .hero h1{
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
+        }.ro-report .hero h1 small{
+            font-size: 17px;
+            font-weight: 400;
+            color: #9cc3e8;
+            margin-left: 4px;
+        }.ro-report .hero .sub{
+            font-size: 15px;
+            color: #c5ddf5;
+            margin-top: 8px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+            padding-top: 18px;
+            margin-top: 12px;
+        }.ro-report .hero .sub span{
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }.ro-report .hero .sub strong{
+            color: #fff;
+            font-weight: 600;
+        }.ro-report /* ===== 核心结论卡片 ===== */
+        .summary-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }.ro-report .summary-card{
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 18px 20px;
+            box-shadow: 0 2px 12px rgba(0, 20, 50, 0.06);
+            border-left: 4px solid #1a6fb5;
+            transition: transform 0.15s ease;
+        }.ro-report .summary-card:hover{
+            transform: translateY(-2px);
+        }.ro-report .summary-card .num{
+            font-size: 28px;
+            font-weight: 700;
+            color: #0b2a4a;
+            line-height: 1.2;
+        }.ro-report .summary-card .label{
+            font-size: 14px;
+            color: #2d4d6e;
+            margin-top: 2px;
+        }.ro-report .summary-card .desc{
+            font-size: 13px;
+            color: #3d5f7a;
+            margin-top: 6px;
+            line-height: 1.5;
+        }.ro-report /* ===== 板块标题 ===== */
+        .section-title{
+            font-size: 24px;
+            font-weight: 700;
+            color: #0b2a4a;
+            margin: 40px 0 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }.ro-report .section-title small{
+            font-size: 15px;
+            font-weight: 400;
+            color: #4d6f8a;
+        }.ro-report /* ===== 17领域卡片网格 ===== */
+        .card-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 18px;
+            margin-bottom: 12px;
+        }.ro-report .card{
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 18px 18px 16px;
+            border: 1px solid #e6edf6;
+            box-shadow: 0 2px 8px rgba(0, 20, 50, 0.04);
+            transition: box-shadow 0.2s ease;
+        }.ro-report .card:hover{
+            box-shadow: 0 8px 24px rgba(0, 40, 80, 0.08);
+        }.ro-report .card .head{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            gap: 8px;
+        }.ro-report .card .name{
+            font-size: 17px;
+            font-weight: 700;
+            color: #0b2a4a;
+        }.ro-report .card .badge{
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 12px;
+            border-radius: 20px;
+            background: #e3edfb;
+            color: #1a5a8c;
+            white-space: nowrap;
+        }.ro-report .card .badge.hot{
+            background: #fce8e6;
+            color: #b12a1e;
+        }.ro-report .card .badge.mature{
+            background: #e3edfb;
+            color: #1a5a8c;
+        }.ro-report .card .badge.niche{
+            background: #ecf0f5;
+            color: #4d6079;
+        }.ro-report .card .data{
+            font-size: 13px;
+            color: #1e3a52;
+            margin-bottom: 8px;
+        }.ro-report .card .data strong{
+            color: #0b2a4a;
+        }.ro-report .card .consensus{
+            font-size: 13px;
+            color: #1e3a52;
+            background: #f5f9ff;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border-left: 3px solid #1a6fb5;
+            margin-top: 6px;
+            line-height: 1.6;
+        }.ro-report .card .popular{
+            font-size: 13px;
+            color: #1e3a52;
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: #f2f7fd;
+            border-radius: 10px;
+        }.ro-report .card .popular strong{
+            color: #0b2a4a;
+        }.ro-report /* ===== 重磅论文 ===== */
+        .paper-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 18px;
+            margin-top: 6px;
+        }.ro-report .paper-card{
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 18px 20px;
+            border: 1px solid #e6edf6;
+            box-shadow: 0 2px 8px rgba(0, 20, 50, 0.04);
+        }.ro-report .paper-card .journal{
+            font-size: 13px;
+            font-weight: 600;
+            color: #1a6fb5;
+            margin-bottom: 4px;
+        }.ro-report .paper-card .title{
+            font-size: 15px;
+            font-weight: 600;
+            color: #0b2a4a;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }.ro-report .paper-card .authors{
+            font-size: 13px;
+            color: #4d6f8a;
+            margin-bottom: 6px;
+        }.ro-report .paper-card .summary{
+            font-size: 13px;
+            color: #1e3a52;
+            line-height: 1.6;
+        }.ro-report /* ===== 底部 ===== */
+        .footer-note{
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 24px 28px;
+            margin-top: 40px;
+            border: 1px solid #e6edf6;
+            box-shadow: 0 2px 8px rgba(0, 20, 50, 0.04);
+            font-size: 14px;
+            color: #2d4d6e;
+            line-height: 1.8;
+        }.ro-report .footer-note strong{
+            color: #0b2a4a;
+        }.ro-report .footer-note .disclaimer{
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e6edf6;
+            font-size: 13px;
+            color: #4d6f8a;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 24px 20px;
+            }
+            .hero h1 {
+                font-size: 24px;
+            }
+            .hero h1 small {
+                font-size: 14px;
+            }
+            .hero .sub {
+                font-size: 13px;
+                gap: 10px 20px;
+            }
+            .section-title {
+                font-size: 20px;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .paper-grid {
+                grid-template-columns: 1fr;
+            }
+            .summary-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="scroll-progress" aria-hidden="true"></div>
@@ -727,111 +676,83 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">首页</a></li>
                         <li class="breadcrumb-item"><a href="research.html">虫草素全球科研</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">17大研究领域</li>
+                        <li class="breadcrumb-item active" aria-current="page">全球科研综述（完整版）</li>
                     </ol>
                 </nav>
-                <h1>虫草素<span class="accent">17大研究领域</span></h1>
-                <p class="lead">虫草素 17 大研究领域 · 科研强度可视化全景报告</p>
+                <h1>虫草素<span class="accent">全球科研综述</span></h1>
+                <p class="lead">完整版报告：17 大研究领域 · 4 篇里程碑重磅论文 · 系统梳理全球虫草素研究进展与临床应用前景</p>
             </div>
         </section>
 
-        <section class="section-block py-section">
-            <div class="container">
+        <section class="section-block py-section ro-report">
 
-    <div class="container">
 
-        <!-- ========== 头部 ========== -->
-        <header class="header">
+        <!-- ===== 头部 ===== -->
+        <header class="hero">
             <h1>
-                🧬 虫草素17大研究领域科研强度可视化报告
-                <small>全球公开学术数据库·2026年6月</small>
+                🧬 虫草素 · 全球顶级刊物科研成果全景展示
+                <small>17大领域 · 10000+ 篇研究</small>
             </h1>
-            <div class="header-meta">
-                <span>📚 检索数据库：<strong>Web of Science · PubMed · CNKI · PMC</strong></span>
-                <span>📅 数据截止：<strong>2026年6月</strong></span>
-                <span>📊 统计口径：<strong>正式研究论文 + 综述</strong>（剔除会议摘要·专利·学位论文）</span>
-                <span>📌 统计维度：<strong>全领域总发文量 · SCI收录 · 细分方向 · 科研共识 · 大众结论</strong></span>
+            <div class="sub">
+                <span>📚 检索：Web of Science · PubMed · CNKI · PMC</span>
+                <span>📅 数据截止：2026年6月</span>
+                <span>📊 统计：正式研究论文 + 综述</span>
+                <span>🧪 核心机制：AMPK · NF-κB · Sirtuins</span>
             </div>
         </header>
 
-        <!-- ========== 图表板块 ========== -->
-        <section class="chart-section">
-            <h2>📊 可视化数据总览</h2>
-            <div class="sub">柱状图 · SCI占比分层 · 赛道热度分级（ECharts 渲染）</div>
-
-            <div class="chart-grid">
-                <!-- 图表1：柱状图 -->
-                <div class="chart-box">
-                    <div class="chart-title">📈 图表1 · 17大领域总论文数量对比</div>
-                    <div class="chart-desc">
-                        肿瘤领域发文量断层领先，是虫草素核心主流研究赛道；<br />
-                        肿瘤 + 炎症免疫 + 代谢三大领域合计占全部论文 <strong>55% 以上</strong>。
-                    </div>
-                    <div id="chartBar" class="chart-container"></div>
-                </div>
-
-                <!-- 图表2：环形分层图 -->
-                <div class="chart-box">
-                    <div class="chart-title">🧩 图表2 · 各领域SCI论文占比分层</div>
-                    <div class="chart-desc">
-                        整体SCI平均收录占比约 <strong>66%</strong>；<br />
-                        <span style="color:#b12a1e;">● 高SCI占比 (≥68%)</span> 肿瘤·心血管·病毒·神经·抗纤维化<br />
-                        <span style="color:#1a5a9c;">● 中SCI占比 (60–67%)</span> 代谢·肾病·肝病·肺部·骨代谢·抗衰老<br />
-                        <span style="color:#4d6079;">● 偏低SCI占比 (&lt;60%)</span> 皮肤·生殖·抗氧化·双疲劳
-                    </div>
-                    <div id="chartPie" class="chart-container"></div>
-                </div>
-
-                <!-- 图表3：赛道热度分层（全宽） -->
-                <div class="chart-box chart-full">
-                    <div class="chart-title">🔥 图表3 · 赛道热度分层统计</div>
-                    <div class="chart-desc">
-                        <span style="color:#b12a1e;">● 一级核心热门 (≥200篇)</span> 肿瘤 · 炎症免疫 · 代谢 &nbsp;|&nbsp;
-                        <span style="color:#1a5a9c;">● 二级成熟 (100–199篇)</span> 抗纤维化 · 神经 · 肾病 · 肝病 · 心血管 · 病毒 · 肺部 · 双疲劳 · 抗衰老 &nbsp;|&nbsp;
-                        <span style="color:#4d6079;">● 三级新兴 (&lt;100篇)</span> 骨代谢 · 生殖 · 皮肤 · 抗氧化
-                    </div>
-                    <div id="chartHeat" class="chart-container tall"></div>
-                </div>
+        <!-- ===== 核心结论概览 ===== -->
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="num">17</div>
+                <div class="label">研究领域</div>
+                <div class="desc">覆盖肿瘤、代谢、神经、心血管、抗衰老等</div>
             </div>
-        </section>
-
-        <!-- ========== 卡片板块 ========== -->
-        <div class="card-section-title">
-            🧪 17大领域独立科研卡片
-            <small>每张卡片独立呈现 · 覆盖数据·细分·共识·通俗解读</small>
+            <div class="summary-card">
+                <div class="num">10000+</div>
+                <div class="label">全球论文</div>
+                <div class="desc">SCI收录超 66%，基础研究扎实</div>
+            </div>
+            <div class="summary-card">
+                <div class="num">3</div>
+                <div class="label">核心通路</div>
+                <div class="desc">AMPK · NF-κB · Sirtuins 统一底层机制</div>
+            </div>
+            <div class="summary-card">
+                <div class="num">70+</div>
+                <div class="label">年研究史</div>
+                <div class="desc">1950年首次分离，持续至今</div>
+            </div>
         </div>
 
+        <!-- ===== 17大领域 ===== -->
+        <div class="section-title">
+            🔬 17大研究领域 · 科研强度全景
+            <small>卡片独立呈现 · 数据·共识·通俗结论</small>
+        </div>
         <div class="card-grid" id="cardGrid">
-            <!-- 卡片数据通过 JS 动态渲染 -->
+            <!-- 由 JS 动态渲染 -->
         </div>
 
-        <!-- ========== 底部总结 ========== -->
-        <footer class="footer-summary">
-            <h2>📌 总结 · 虫草素科研全貌</h2>
-            <div class="summary-grid">
-                <div class="summary-item">
-                    <strong>🔥 科研热度分层</strong><br />
-                    肿瘤、炎症免疫、代谢为三大核心研究高地，论文总量占全部文献 <strong>55%</strong>；<br />
-                    纤维化、神经、肝肾、心血管、肺部、疲劳、抗衰老为成熟中间赛道；<br />
-                    骨、生殖、皮肤、抗氧化属于新兴起步赛道。
-                </div>
-                <div class="summary-item">
-                    <strong>⚙️ 统一底层核心机制</strong><br />
-                    17个领域药效全部依托三大核心通路 —— <strong>AMPK</strong> 能量代谢通路 · <strong>NF-κB</strong> 抗炎通路 · <strong>Sirtuins</strong> 长寿蛋白通路，是虫草素多器官、多病症起效的统一底层原理。
-                </div>
-                <div class="summary-item">
-                    <strong>🧬 转化落地现状</strong><br />
-                    肿瘤、肾病、肝病已有临床前高级药效数据；<br />
-                    炎症、代谢、疲劳方向保健品、功能食品转化最快。                 
-                </div>
-                <div class="summary-item">
-                    <strong>📖 阅读提示</strong><br />
-                    本报告全部数据来源于全球公开学术数据库同行评审论文，动物细胞实验结论不可直接等同于人体治疗效果，仅作科普科研展示，不能替代临床诊疗建议。
-                </div>
-            </div>
-            <div class="divider"></div>
-            <div class="note">
-                📊 检索数据库：Web of Science · PubMed · CNKI · PMC &nbsp;｜&nbsp; 数据截止：2026年6月 &nbsp;｜&nbsp; 统计口径：正式研究论文+综述，剔除会议摘要·专利·学位论文
+        <!-- ===== 重磅论文精选 ===== -->
+        <div class="section-title">
+            📄 重磅论文精选
+            <small>里程碑式研究 · 高引经典</small>
+        </div>
+        <div class="paper-grid" id="paperGrid">
+            <!-- 由 JS 动态渲染 -->
+        </div>
+
+        <!-- ===== 底部 ===== -->
+        <footer class="footer-note">
+            <p><strong>🧬 统一底层核心机制</strong><br />
+            17个领域药效全部依托三大核心通路 —— <strong>AMPK</strong> 能量代谢通路 · <strong>NF-κB</strong> 抗炎通路 · <strong>Sirtuins</strong> 长寿蛋白通路，是虫草素多器官、多病症起效的统一底层原理。</p>
+            <p style="margin-top: 10px;"><strong>📌 科研热度分层</strong><br />
+            肿瘤、炎症免疫、代谢为三大核心研究高地，论文总量占全部文献 <strong>55%</strong>；纤维化、神经、肝肾、心血管、肺部、疲劳、抗衰老为成熟中间赛道；骨、生殖、皮肤、抗氧化属于新兴起步赛道。</p>
+            <p style="margin-top: 10px;"><strong⚙️ 临床转化现状</strong><br />
+            肿瘤、肾病、肝病已有临床前高级药效数据；炎症、代谢、疲劳方向保健品、功能食品转化最快。</p>
+            <div class="disclaimer">
+                📖 本报告全部数据来源于全球公开学术数据库同行评审论文，动物细胞实验结论不可直接等同于人体治疗效果，仅作科普科研展示，不能替代临床诊疗建议。
             </div>
         </footer>
 
@@ -839,10 +760,9 @@
 
     <script>
         // ============================================================
-        // 1. 数据定义
+        // 1. 17大领域数据
         // ============================================================
         const fields = [{
-            id: 'tumor',
             name: '肿瘤',
             total: 650,
             sci: 432,
@@ -850,9 +770,8 @@
             tagLabel: '一级核心热门',
             detail: '肺癌、肝癌、结直肠癌、乳腺癌、胶质瘤、黑色素瘤等实体肿瘤；肿瘤免疫微环境、化疗耐药逆转、免疫药增敏、细胞周期阻滞、肿瘤转移抑制',
             consensus: '虫草素依托腺苷类似物结构损伤肿瘤DNA，阻滞癌细胞增殖周期；抑制PI3K/AKT/mTOR促生长通路诱导癌细胞凋亡；调控Treg、DC细胞重塑肿瘤微环境，增效PD-1免疫治疗；联合化疗药物可降低化疗脏器毒性，动物异种瘤模型可显著缩小肿瘤体积、抑制远端转移。',
-            popular: '虫草素是全球科研证据最充足的天然抗肿瘤候选物质，既能直接抑制肿瘤生长转移，又能增强人体自身抗癌免疫力，还可辅助减轻抗癌药物副作用，多肿瘤联合治疗具备研发潜力。'
+            popular: '全球科研证据最充足的天然抗肿瘤候选物质，既能直接抑制肿瘤生长转移，又能增强人体自身抗癌免疫力，辅助减轻抗癌药物副作用。'
         }, {
-            id: 'immunity',
             name: '炎症&免疫调节',
             total: 280,
             sci: 190,
@@ -860,9 +779,8 @@
             tagLabel: '一级核心热门',
             detail: '慢性全身低度炎症、类风湿关节炎、炎症性肠病、呼吸道慢性炎症、肿瘤相关炎症、自身免疫病免疫平衡调控',
             consensus: '虫草素双向调控免疫平衡，阻断NF-κB/MAPK促炎通路，下调TNF-α、IL-6等损伤性炎症因子，提升抗炎因子IL-10；免疫低下时提升NK、杀伤T细胞活性，免疫紊乱过度活化时抑制异常免疫反应；可修复肠道、关节黏膜炎性损伤，缓解自身免疫组织肿胀增生。',
-            popular: '虫草素是天然炎症平衡调节剂，既能消除损伤器官的慢性有害炎症，又能稳定免疫力，适合各类炎症、免疫失调人群长期调理。'
+            popular: '天然炎症平衡调节剂，既能消除慢性有害炎症，又能稳定免疫力，适合各类炎症、免疫失调人群长期调理。'
         }, {
-            id: 'metabolic',
             name: '代谢疾病',
             total: 210,
             sci: 140,
@@ -870,19 +788,17 @@
             tagLabel: '一级核心热门',
             detail: '肥胖、2型糖尿病、高血脂、代谢综合征、非酒精性脂肪肝、糖尿病并发症糖脂调控',
             consensus: '虫草素激活AMPK能量感受器通路，抑制肝脏脂肪与糖原异生；促进白色脂肪褐变分解产热减重；调节肠道有益菌群改善胰岛素抵抗；高脂糖尿病动物模型可同步降低血糖、血脂，减少肝肾脂肪堆积。',
-            popular: '虫草素一站式调节糖脂代谢，兼顾控糖、降脂、减脂、改善脂肪肝，针对肥胖、糖尿病、代谢紊乱有完整动物实验数据支撑。'
+            popular: '一站式调节糖脂代谢，兼顾控糖、降脂、减脂、改善脂肪肝，有完整动物实验数据支撑。'
         }, {
-            id: 'fibrosis',
             name: '抗纤维化',
             total: 180,
             sci: 120,
             tag: 'mature',
             tagLabel: '二级成熟',
             detail: '肾间质纤维化、肝纤维化、肺纤维化、心肌纤维化、皮肤瘢痕纤维化、脏器纤维化早期干预',
-            consensus: '虫草素阻断TGF-β/Smad纤维化核心通路，抑制上皮间质转化EMT，减少成纤维细胞活化；降低组织胶原沉积，逆转早期脏器瘢痕化；在肝、肺、肾纤维化动物模型中可显著减轻纤维化病变，效果优于部分抗炎对照药物。',
-            popular: '虫草素少见的可同步保护肝、肾、肺多器官，减缓器官硬化瘢痕进程，延缓慢性小病发展为器官衰竭。'
+            consensus: '虫草素阻断TGF-β/Smad纤维化核心通路，抑制上皮间质转化EMT，减少成纤维细胞活化；降低组织胶原沉积，逆转早期脏器瘢痕化；在肝、肺、肾纤维化动物模型中可显著减轻纤维化病变。',
+            popular: '少见的可同步保护肝、肾、肺多器官，减缓器官硬化瘢痕进程，延缓慢性小病发展为器官衰竭。'
         }, {
-            id: 'neuro',
             name: '神经科学',
             total: 160,
             sci: 110,
@@ -890,9 +806,8 @@
             tagLabel: '二级成熟',
             detail: '阿尔茨海默病、帕金森、缺血脑梗、抑郁症、脊髓损伤、神经退行性保护',
             consensus: '虫草素可穿透血脑屏障，抑制小胶质细胞脑部炎症、清除自由基；减少脑部Aβ老年斑沉积，改善学习记忆；缩小脑梗梗死面积，调节脑内神经递质缓解抑郁行为。',
-            popular: '虫草素能直接保护大脑神经细胞，延缓老年痴呆、帕金森进展，同时改善脑缺血损伤与长期情绪抑郁问题。'
+            popular: '直接保护大脑神经细胞，延缓老年痴呆、帕金森进展，同时改善脑缺血损伤与长期情绪抑郁。'
         }, {
-            id: 'kidney',
             name: '肾病',
             total: 150,
             sci: 100,
@@ -900,9 +815,8 @@
             tagLabel: '二级成熟',
             detail: '糖尿病肾病、肾间质纤维化、缺血肾损伤、慢性肾病、肾小球增生、肾小管细胞保护',
             consensus: '虫草素稳定肾小管线粒体功能，减少尿蛋白排泄；抑制肾脏细胞凋亡与肾间质成纤维细胞活化，降低肌酐、尿素氮，延缓慢性肾病持续恶化。',
-            popular: '虫草素专门保护肾脏细胞，减少蛋白流失、减轻肾脏硬化，是糖尿病肾病、慢性肾炎极具潜力的天然干预物质。'
+            popular: '专门保护肾脏细胞，减少蛋白流失、减轻肾脏硬化，是糖尿病肾病、慢性肾炎极具潜力的天然干预物质。'
         }, {
-            id: 'liver',
             name: '肝病',
             total: 140,
             sci: 90,
@@ -910,9 +824,8 @@
             tagLabel: '二级成熟',
             detail: '非酒精性脂肪肝、药物性肝损伤、肝纤维化、肝硬化、肝星状细胞活化抑制',
             consensus: '虫草素激活SIRT1通路减轻肝脏氧化炎症损伤；抑制肝星状细胞活化阻断肝纤维化；降低转氨酶，减少肝细胞脂肪堆积与化学药物造成的肝坏死。',
-            popular: '虫草素全方位养护肝脏，改善脂肪肝、药物伤肝、肝脏硬化问题，帮助恢复肝脏代谢解毒能力。'
+            popular: '全方位养护肝脏，改善脂肪肝、药物伤肝、肝脏硬化问题，帮助恢复肝脏代谢解毒能力。'
         }, {
-            id: 'cardio',
             name: '心血管',
             total: 130,
             sci: 85,
@@ -920,9 +833,8 @@
             tagLabel: '二级成熟',
             detail: '动脉粥样硬化、心肌缺血损伤、高血压、心肌肥厚、血管内皮保护、血栓预防',
             consensus: '虫草素保护血管内皮，抑制泡沫细胞形成，缩小动脉粥样硬化斑块；减轻心肌缺血再灌注损伤，抑制血小板聚集、降低血栓风险，延缓心肌纤维化与心室重构。',
-            popular: '虫草素保护血管、减少血管脂肪斑块堆积，降低心梗、脑梗、血管硬化发病风险。'
+            popular: '保护血管、减少血管脂肪斑块堆积，降低心梗、脑梗、血管硬化发病风险。'
         }, {
-            id: 'virus',
             name: '病毒&感染',
             total: 120,
             sci: 80,
@@ -930,9 +842,8 @@
             tagLabel: '二级成熟',
             detail: '新冠病毒、登革热、寨卡、耐药细菌、寄生虫感染、病毒复制抑制',
             consensus: '虫草素竞争性抑制病毒RNA聚合酶，直接阻断RNA病毒复制；抑制炎症因子风暴，减轻感染后脏器损伤；联合抗生素提升耐药菌清除效果，兼具抗病毒、辅助抗菌双重活性。',
-            popular: '虫草素既能直接抑制多种病毒繁殖，又能减轻病毒感染带来的剧烈炎症损伤，可作为感染性疾病联合干预候选物质。'
+            popular: '既能直接抑制多种病毒繁殖，又能减轻病毒感染带来的剧烈炎症损伤，可作为感染性疾病联合干预候选物质。'
         }, {
-            id: 'lung',
             name: '肺部疾病',
             total: 110,
             sci: 75,
@@ -940,9 +851,8 @@
             tagLabel: '二级成熟',
             detail: '特发性肺纤维化、哮喘、慢阻肺、急性肺损伤、气道重塑、肺动脉高压',
             consensus: '虫草素阻断肺部上皮间质转化，减少肺部胶原沉积，缓解肺纤维化；抑制气道黏液分泌、降低气道高反应，减轻哮喘、慢阻肺气道炎症与重构损伤。',
-            popular: '虫草素同步缓解肺部炎症与肺部硬化，改善咳喘、气道敏感，对哮喘、间质性肺病有明确实验效果。'
+            popular: '同步缓解肺部炎症与肺部硬化，改善咳喘、气道敏感，对哮喘、间质性肺病有明确实验效果。'
         }, {
-            id: 'fatigue',
             name: '运动疲劳修复',
             total: 100,
             sci: 65,
@@ -950,19 +860,17 @@
             tagLabel: '二级成熟',
             detail: '高强度运动骨骼肌疲劳、运动肌损伤、线粒体能量提升、耐力增强、运动后恢复',
             consensus: '虫草素提升骨骼肌线粒体ATP产能，降低运动后血乳酸、肌酸激酶；减少肌肉氧化损伤，延长力竭运动时长，加速运动后肌肉修复。',
-            popular: '虫草素提升肌肉供能效率，缓解运动后酸痛乏力，提升运动耐力，加快身体恢复速度。'
+            popular: '提升肌肉供能效率，缓解运动后酸痛乏力，提升运动耐力，加快身体恢复速度。'
         }, {
-            id: 'chronic_fatigue',
-            name: '慢性疲劳综合征专项',
+            name: '慢性疲劳综合征',
             total: 100,
             sci: 65,
             tag: 'mature',
             tagLabel: '二级成熟',
             detail: '长期慢性精神躯体疲劳、精力衰退、神经能量代谢、亚健康倦怠',
             consensus: '虫草素同步改善肌肉线粒体能量与中枢神经递质平衡，降低全身氧化应激，缓解持续性疲惫、注意力下降、精神萎靡等慢性疲劳表现。',
-            popular: '虫草素同时改善身体乏力与精神倦怠，适合长期熬夜、高压亚健康人群缓解持续疲惫感。'
+            popular: '同时改善身体乏力与精神倦怠，适合长期熬夜、高压亚健康人群缓解持续疲惫感。'
         }, {
-            id: 'antiaging',
             name: '抗衰老',
             total: 90,
             sci: 60,
@@ -970,9 +878,8 @@
             tagLabel: '二级成熟',
             detail: '全身器官衰老、皮肤老化、血管神经衰老、衰老细胞清除、老年慢病干预',
             consensus: '虫草素激活Sirt1/3/6长寿蛋白，提升细胞NAD+水平；清除衰老细胞、抑制衰老相关慢性炎症；减少皮肤胶原流失，延缓免疫、脏器功能随年龄衰退。',
-            popular: '虫草素系统性延缓全身衰老，不靠激素，通过激活人体自身长寿通路，减缓皮肤、脏器、免疫力老化速度。'
+            popular: '系统性延缓全身衰老，不靠激素，通过激活人体自身长寿通路，减缓皮肤、脏器、免疫力老化速度。'
         }, {
-            id: 'bone',
             name: '骨代谢',
             total: 80,
             sci: 55,
@@ -980,9 +887,8 @@
             tagLabel: '三级新兴',
             detail: '绝经后骨质疏松、成骨细胞分化、破骨细胞抑制、骨缺损修复、牙周骨再生',
             consensus: '虫草素促进干细胞分化为成骨细胞、加速骨基质生成；抑制破骨细胞过度活化减少骨流失；提升骨质疏松模型骨密度，改善骨小梁结构降低骨折风险。',
-            popular: '虫草素双向调节骨骼代谢，一边留住骨量、一边生成新骨，改善中老年、女性绝经后骨质疏松问题。'
+            popular: '双向调节骨骼代谢，一边留住骨量、一边生成新骨，改善中老年、女性绝经后骨质疏松。'
         }, {
-            id: 'reproduction',
             name: '生殖系统',
             total: 70,
             sci: 45,
@@ -990,9 +896,8 @@
             tagLabel: '三级新兴',
             detail: '男性少弱精、睾丸功能损伤、卵巢储备下降、生殖内分泌调节、配子质量提升',
             consensus: '虫草素保护睾丸、卵巢组织抗氧化平衡，提升睾酮分泌、精子活力；减少卵泡闭锁，改善卵巢储备，修复生殖细胞炎性损伤。',
-            popular: '虫草素温和调节男女生殖内分泌，提升精子、卵子质量，改善生殖器官氧化损伤。'
+            popular: '温和调节男女生殖内分泌，提升精子、卵子质量，改善生殖器官氧化损伤。'
         }, {
-            id: 'skin',
             name: '皮肤',
             total: 60,
             sci: 40,
@@ -1000,9 +905,8 @@
             tagLabel: '三级新兴',
             detail: '紫外线光老化、慢性皮肤皮炎、创面愈合、瘢痕抑制、皮肤胶原合成',
             consensus: '虫草素激活皮肤Sirtuin通路促进胶原蛋白合成，抑制胶原分解酶；加速皮肤伤口愈合、减少愈合后瘢痕；减轻皮炎皮肤局部炎症红肿。',
-            popular: '虫草素减少皮肤胶原蛋白流失延缓老化，加速伤口修复，同时缓解过敏性皮炎类皮肤炎症。'
+            popular: '减少皮肤胶原蛋白流失延缓老化，加速伤口修复，同时缓解过敏性皮炎类皮肤炎症。'
         }, {
-            id: 'antiox',
             name: '抗氧化',
             total: 50,
             sci: 35,
@@ -1010,253 +914,72 @@
             tagLabel: '三级新兴',
             detail: '线粒体自由基清除、内源性抗氧化通路、氧化损伤脏器保护、自由基链式反应阻断',
             consensus: '虫草素双重抗氧化，直接中和自由基，同时激活Nrf2通路提升人体自身SOD、谷胱甘肽抗氧化酶活性；抗氧化效果优于维C、维E，阻断氧化应激诱发各类慢病。',
-            popular: '虫草素既能直接清除损伤细胞的有害自由基，又能唤醒人体自带抗氧化防护，从源头减少氧化带来的器官老化与慢性炎症。'
+            popular: '既能直接清除损伤细胞的有害自由基，又能唤醒人体自带抗氧化防护，从源头减少氧化带来的器官老化与慢性炎症。'
         }];
 
         // ============================================================
         // 2. 渲染卡片
         // ============================================================
-        function renderCards() {
-            const grid = document.getElementById('cardGrid');
-            grid.innerHTML = fields.map(f => {
-                const tagClass = f.tag === 'hot' ? 'hot' : f.tag === 'mature' ? 'mature' : 'niche';
-                return `
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="card-name">${f.name}</span>
-                            <span class="card-tag ${tagClass}">${f.tagLabel}</span>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-block">
-                                <span class="label">📊 科研数据</span>
-                                <span class="value">全球总论文 <strong>${f.total}</strong> 篇，其中 SCI 收录 <strong>${f.sci}</strong> 篇</span>
-                            </div>
-                            <div class="card-block">
-                                <span class="label">🔬 细分研究</span>
-                                <span class="value">${f.detail}</span>
-                            </div>
-                            <div class="card-block">
-                                <div class="consensus">
-                                    <span class="label">🧬 全球科研共识</span>
-                                    ${f.consensus}
-                                </div>
-                            </div>
-                            <div class="card-block">
-                                <span class="label">💡 通俗大众结论</span>
-                                <span class="value">${f.popular}</span>
-                            </div>
-                        </div>
+        const grid = document.getElementById('cardGrid');
+        grid.innerHTML = fields.map(f => {
+            const tagClass = f.tag === 'hot' ? 'hot' : f.tag === 'mature' ? 'mature' : 'niche';
+            return `
+                <div class="card">
+                    <div class="head">
+                        <span class="name">${f.name}</span>
+                        <span class="badge ${tagClass}">${f.tagLabel}</span>
                     </div>
-                `;
-            }).join('');
-        }
-        renderCards();
+                    <div class="data"><strong>总论文 ${f.total} 篇</strong> · SCI收录 ${f.sci} 篇</div>
+                    <div class="data" style="font-size:12px;color:#4d6f8a;">${f.detail}</div>
+                    <div class="consensus">🧬 ${f.consensus}</div>
+                    <div class="popular"><strong>💡 通俗结论</strong> ${f.popular}</div>
+                </div>
+            `;
+        }).join('');
 
         // ============================================================
-        // 3. ECharts 图表
+        // 3. 重磅论文
         // ============================================================
-        // 排序后的数据（按 total 降序）
-        const sorted = [...fields].sort((a, b) => b.total - a.total);
+        const papers = [{
+            journal: 'Cell (2026)',
+            title: 'Restoring circadian rhythms in the hypothalamic paraventricular nucleus reverses aging biomarkers and extends lifespan in male mice',
+            authors: '清华大学/北京生命科学研究所 张二荃团队、重庆医科大学鞠大鹏',
+            summary: '首次系统验证虫草素通过调控昼夜节律延缓衰老：特异性结合CLOCK蛋白，强化节律基因表达振幅，延长老年小鼠中位寿命约12%，显著减轻肾小球硬化、心肌纤维化、神经纤维缠结等衰老病理改变。'
+        }, {
+            journal: 'Nature (1977)',
+            title: 'Cordycepin inhibits RNA synthesis by inhibiting RNA polymerase',
+            authors: 'KATHLEEN M. ROSE et al. · 美国西奈山医学院',
+            summary: '里程碑式酶学研究，首次阐明虫草素三磷酸（CORtp）特异性抑制真核生物RNA聚合酶Ⅰ、Ⅱ、Ⅲ，阻断RNA链延伸，为后续抗肿瘤药物开发奠定理论基础。'
+        }, {
+            journal: 'Advanced Science (2024)',
+            title: 'Cordycepin modulates microglial M2 polarization coupled with mitochondrial metabolic reprogramming by targeting HKII and PDK2',
+            authors: '魏敏杰、刘明妍团队 · 中国医科大学药学院',
+            summary: '突破性成果：虫草素通过靶向HKII/PDK2驱动小胶质细胞M1→M2极化，提升线粒体能量代谢，显著改善APP/PS1双转基因AD小鼠认知功能。'
+        }, {
+            journal: 'Frontiers in Pharmacology (2024)',
+            title: 'Structural and pharmacological insights into cordycepin for neoplasms and metabolic disorders',
+            authors: 'Zhang et al. · 中国科学院上海药物研究所',
+            summary: '重磅综述：系统阐明虫草素在肿瘤、代谢紊乱中的多维度药理机制，涵盖AMPK通路激活、脂质合成抑制、葡萄糖摄取促进等核心调控网络。'
+        }];
 
-        // ---- 3.1 柱状图 ----
-        (function() {
-            const dom = document.getElementById('chartBar');
-            const chart = echarts.init(dom);
-            chart.setOption({
-                tooltip: { trigger: 'axis', formatter: function(params) {
-                        const p = params[0];
-                        const name = p.name;
-                        const found = fields.find(f => f.name === name);
-                        return `<strong>${name}</strong><br/>总论文：${found.total} 篇<br/>SCI收录：${found.sci} 篇`;
-                    } },
-                grid: { left: '6%', right: '4%', top: '6%', bottom: '12%' },
-                xAxis: {
-                    type: 'category',
-                    data: sorted.map(f => f.name),
-                    axisLabel: { rotate: 35, fontSize: 10, interval: 0, margin: 8 },
-                    axisLine: { lineStyle: { color: '#bcccd9' } }
-                },
-                yAxis: {
-                    type: 'value',
-                    name: '论文篇数',
-                    nameTextStyle: { fontSize: 12, color: '#4a5b72' },
-                    splitLine: { lineStyle: { color: '#e9eff5', type: 'dashed' } }
-                },
-                series: [{
-                    type: 'bar',
-                    data: sorted.map(f => f.total),
-                    barWidth: '52%',
-                    itemStyle: {
-                        color: function(params) {
-                            const idx = params.dataIndex;
-                            const name = sorted[idx].name;
-                            if (name === '肿瘤') return '#c0392b';
-                            if (['炎症&免疫调节', '代谢疾病'].includes(name)) return '#d4563a';
-                            if (sorted[idx].tag === 'mature') return '#2a7ab0';
-                            return '#6b8ba4';
-                        },
-                        borderRadius: [4, 4, 0, 0]
-                    },
-                    label: {
-                        show: true,
-                        position: 'top',
-                        fontSize: 10,
-                        color: '#1e2a3a',
-                        fontWeight: 500,
-                        formatter: function(p) { return p.data; }
-                    }
-                }]
-            });
-            window.addEventListener('resize', () => chart.resize());
-        })();
-
-        // ---- 3.2 环形分层图（SCI占比） ----
-        (function() {
-            const dom = document.getElementById('chartPie');
-            const chart = echarts.init(dom);
-            // 计算SCI占比并分类
-            const pieData = fields.map(f => {
-                const ratio = Math.round((f.sci / f.total) * 100);
-                let level = '中';
-                if (ratio >= 68) level = '高';
-                else if (ratio < 60) level = '偏低';
-                return { name: f.name, value: ratio, level };
-            }).sort((a, b) => b.value - a.value);
-
-            chart.setOption({
-                tooltip: {
-                    trigger: 'item',
-                    formatter: function(params) {
-                        const name = params.name;
-                        const found = fields.find(f => f.name === name);
-                        return `<strong>${name}</strong><br/>SCI占比：${params.value}%<br/>SCI收录：${found.sci} 篇 / 总${found.total} 篇`;
-                    }
-                },
-                legend: {
-                    type: 'scroll',
-                    orient: 'vertical',
-                    right: '2%',
-                    top: 'center',
-                    itemWidth: 12,
-                    itemHeight: 12,
-                    textStyle: { fontSize: 11, color: '#1e2a3a' }
-                },
-                series: [{
-                    type: 'pie',
-                    radius: ['42%', '72%'],
-                    avoidLabelOverlap: true,
-                    padAngle: 0.6,
-                    itemStyle: {
-                        borderRadius: 4,
-                        borderColor: '#fff',
-                        borderWidth: 1.2
-                    },
-                    label: {
-                        show: true,
-                        formatter: function(params) {
-                            return params.name + '\n' + params.value + '%';
-                        },
-                        fontSize: 10,
-                        color: '#1e2a3a',
-                        lineHeight: 14
-                    },
-                    labelLine: { length: 8, length2: 6 },
-                    emphasis: { scale: true },
-                    data: pieData.map(d => ({
-                        name: d.name,
-                        value: d.value,
-                        itemStyle: {
-                            color: d.level === '高' ? '#b12a1e' :
-                                d.level === '偏低' ? '#6b8ba4' :
-                                '#2a7ab0'
-                        }
-                    }))
-                }]
-            });
-            window.addEventListener('resize', () => chart.resize());
-        })();
-
-        // ---- 3.3 赛道热度分层 ----
-        (function() {
-            const dom = document.getElementById('chartHeat');
-            const chart = echarts.init(dom);
-            // 按热度分类
-            const hot = fields.filter(f => f.total >= 200);
-            const mature = fields.filter(f => f.total >= 100 && f.total < 200);
-            const niche = fields.filter(f => f.total < 100);
-
-            const heatData = [
-                ...hot.map(f => ({ name: f.name, value: f.total, category: '一级核心热门', catIdx: 0 })),
-                ...mature.map(f => ({ name: f.name, value: f.total, category: '二级成熟', catIdx: 1 })),
-                ...niche.map(f => ({ name: f.name, value: f.total, category: '三级新兴', catIdx: 2 }))
-            ].sort((a, b) => b.value - a.value);
-
-            const colors = ['#c0392b', '#2a7ab0', '#6b8ba4'];
-
-            chart.setOption({
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: { type: 'shadow' },
-                    formatter: function(params) {
-                        const p = params[0];
-                        const found = fields.find(f => f.name === p.name);
-                        return `<strong>${p.name}</strong><br/>总论文：${found.total} 篇<br/>SCI收录：${found.sci} 篇<br/>热度层级：${found.tagLabel}`;
-                    }
-                },
-                grid: { left: '6%', right: '4%', top: '6%', bottom: '14%' },
-                xAxis: {
-                    type: 'category',
-                    data: heatData.map(d => d.name),
-                    axisLabel: { rotate: 35, fontSize: 10, interval: 0, margin: 8 },
-                    axisLine: { lineStyle: { color: '#bcccd9' } }
-                },
-                yAxis: {
-                    type: 'value',
-                    name: '论文篇数',
-                    nameTextStyle: { fontSize: 12, color: '#4a5b72' },
-                    splitLine: { lineStyle: { color: '#e9eff5', type: 'dashed' } }
-                },
-                series: [{
-                    type: 'bar',
-                    data: heatData.map(d => ({
-                        value: d.value,
-                        itemStyle: { color: colors[d.catIdx], borderRadius: [4, 4, 0, 0] }
-                    })),
-                    barWidth: '48%',
-                    label: {
-                        show: true,
-                        position: 'top',
-                        fontSize: 10,
-                        color: '#1e2a3a',
-                        fontWeight: 500,
-                        formatter: function(p) { return p.data.value; }
-                    },
-                    markLine: {
-                        silent: true,
-                        data: [
-                            { yAxis: 200, label: { formatter: '一级门槛 200篇', color: '#b12a1e', fontSize: 11,
-                                    fontWeight: 600 } },
-                            { yAxis: 100, label: { formatter: '二级门槛 100篇', color: '#1a5a9c', fontSize: 11,
-                                    fontWeight: 600 } }
-                        ],
-                        lineStyle: { color: '#8a9eb0', type: 'dashed', width: 1.5 }
-                    }
-                }]
-            });
-            window.addEventListener('resize', () => chart.resize());
-        })();
-    </script>
-
-
+        const paperGrid = document.getElementById('paperGrid');
+        paperGrid.innerHTML = papers.map(p => `
+            <div class="paper-card">
+                <div class="journal">📘 ${p.journal}</div>
+                <div class="title">${p.title}</div>
+                <div class="authors">${p.authors}</div>
+                <div class="summary">${p.summary}</div>
             </div>
+        `).join('');
+    </script>
         </section>
 
         <section class="section-block py-section">
             <div class="container">
-                <div class="text-center mt-3">
+                <div class="text-center mt-5">
                     <a href="research.html" class="btn btn-amber btn-lg px-4 me-2 mb-2"><i class="fas fa-flask me-2"></i>返回虫草素全球科研</a>
-                    <a href="cordycepin-research-overview.html" class="btn btn-outline-primary btn-lg px-4 mb-2" target="_blank"><i class="fas fa-external-link-alt me-2"></i>查看全球科研综述</a>
-                    <a href="index.html" class="btn btn-outline-secondary btn-lg px-4 mb-2"><i class="fas fa-home me-2"></i>返回首页</a>
+                    <a href="cordycepin-top10.html" class="btn btn-outline-primary btn-lg px-4 me-2 mb-2"><i class="fas fa-trophy me-2"></i>抗肿瘤 Top10</a>
+                    <a href="cordycepin-17fields.html" class="btn btn-outline-primary btn-lg px-4 mb-2"><i class="fas fa-chart-bar me-2"></i>17大领域可视化</a>
                 </div>
             </div>
         </section>
@@ -1266,6 +989,5 @@
     <script src="vendor/bootstrap.bundle.min.js"></script>
     <script src="js/include.js"></script>
     <script src="js/main.js"></script>
-
 </body>
 </html>

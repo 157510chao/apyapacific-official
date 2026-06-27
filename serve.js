@@ -9,7 +9,9 @@ const mime = { html:'text/html;charset=utf-8', css:'text/css', js:'application/j
 http.createServer((req, res) => {
     let url = req.url.split('?')[0];
     if (url === '/') url = '/index.html';
-    const file = path.join(root, url);
+    let decoded;
+    try { decoded = decodeURIComponent(url); } catch (e) { decoded = url; }
+    const file = path.join(root, decoded);
     try {
         const data = fs.readFileSync(file);
         const ext  = path.extname(file).slice(1);

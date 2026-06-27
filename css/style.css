@@ -217,7 +217,8 @@ a:hover { color: var(--clr-tech-dark); }
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
     color: var(--clr-tech) !important;
-    background: rgba(37,99,235,.08);
+    background: #eff4ff !important;
+    background-color: #eff4ff !important;
 }
 .navbar-nav .nav-link i { font-size: 0.8rem; margin-right: 0.35rem; color: var(--clr-text-soft); transition: color var(--tr-fast); }
 .navbar-nav .nav-link:hover i,
@@ -225,6 +226,8 @@ a:hover { color: var(--clr-tech-dark); }
 
 /* 下拉菜单 */
 .dropdown-menu {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
     border: 1px solid var(--clr-border);
     box-shadow: var(--shadow-lg);
     border-radius: var(--radius-md);
@@ -232,6 +235,7 @@ a:hover { color: var(--clr-tech-dark); }
     min-width: 220px;
     animation: dropIn 0.2s ease;
     border-top: 3px solid var(--clr-tech);
+    opacity: 1 !important;
 }
 
 @keyframes dropIn {
@@ -242,6 +246,8 @@ a:hover { color: var(--clr-tech-dark); }
 .dropdown-item {
     font-size: 0.875rem;
     color: var(--clr-text);
+    background: #ffffff !important;
+    background-color: #ffffff !important;
     padding: 0.5rem 0.75rem;
     border-radius: var(--radius-sm);
     transition: background var(--tr-fast), color var(--tr-fast), padding-left var(--tr-fast);
@@ -250,16 +256,18 @@ a:hover { color: var(--clr-tech-dark); }
 }
 .dropdown-item i { color: var(--clr-text-soft); transition: color var(--tr-fast); }
 .dropdown-item:hover {
-    background: rgba(37,99,235,.08);
+    background: #eff4ff !important;
+    background-color: #eff4ff !important;
     color: var(--clr-tech);
     padding-left: 1rem;
 }
 .dropdown-item:hover i { color: var(--clr-tech); }
-.dropdown-item.active, .dropdown-item:active {
-    background: var(--clr-tech);
-    color: #fff;
+.dropdown-item:active {
+    background: #e3edfb !important;
+    background-color: #e3edfb !important;
+    color: var(--clr-tech) !important;
 }
-.dropdown-item.active i, .dropdown-item:active i { color: #fff; }
+.dropdown-item:active i { color: var(--clr-tech) !important; }
 .dropdown-divider { border-color: var(--clr-border-soft); margin: 0.35rem 0; }
 
 /* 加入我们按钮 - 琥珀高亮 */
@@ -2094,8 +2102,8 @@ a:hover { color: var(--clr-tech-dark); }
    设计：父项右侧带 > 箭头，悬停弹出右侧子菜单
 ---------------------------------------------------------------- */
 
-/* 让子菜单定位能正确计算 */
-.dropdown-mega { position: static; }  /* 父 li 静态定位 */
+/* 让子菜单的绝对定位以父 li 为参考（修复：之前用 position:static 会导致菜单跑到视口左侧） */
+.dropdown-mega { position: relative; }
 
 .dropdown-menu-research {
     min-width: 280px;

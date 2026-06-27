@@ -45,16 +45,12 @@
             }
         });
 
-        // 下拉菜单项
-        document.querySelectorAll('#site-header .dropdown-item, #site-header .mobile-sub-link').forEach(a => {
-            const href = (a.getAttribute('href') || '').toLowerCase();
-            if (href.startsWith(page + '#')) {
-                a.classList.add('active');
-                const parentDropdown = a.closest('.dropdown');
-                if (parentDropdown) {
-                    const toggle = parentDropdown.querySelector('.dropdown-toggle');
-                    if (toggle) toggle.classList.add('active');
-                }
+        // 下拉菜单项 - 不再自动高亮当前页（避免下拉里所有相关项都染色）
+        // 只高亮对应的一级菜单 toggle
+        document.querySelectorAll('#site-header .dropdown-toggle').forEach(toggle => {
+            const href = (toggle.getAttribute('href') || '').toLowerCase();
+            if (href === page || href.split('#')[0] === page) {
+                toggle.classList.add('active');
             }
         });
     }
