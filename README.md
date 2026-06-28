@@ -548,6 +548,50 @@ Closes #123
 
 ---
 
+---
+
+## 🔄 缓存版本号更新机制
+
+### 问题背景
+
+`_headers` 文件配置了 CSS/JS 文件的强缓存策略（`max-age=31536000, immutable`），Cloudflare 会缓存静态资源长达一年。每次修改样式或脚本后，用户浏览器不会自动获取最新版本。
+
+### 解决方案
+
+所有 HTML 文件中的 CSS 和 JS 引用均使用 `?v=YYYYMMDD` 版本号查询参数：
+
+```html
+<link href="css/style.css?v=20260628" rel="stylesheet">
+<script src="js/main.js?v=20260628"></script>
+```
+
+浏览器将 `?v=新日期` 视为全新 URL，自动绕过缓存获取最新文件。
+
+### 当前版本
+
+**20260628** (2026-06-28)
+
+### 更新流程
+
+每次修改 CSS/JS 后，执行以下步骤：
+
+1. 确定新版本号（建议使用当天日期，格式 `YYYYMMDD`）
+2. 全局替换所有 HTML 文件中的旧版本号
+
+**PowerShell 一键更新命令**：
+
+```powershell
+$old="20260628"
+$new=(Get-Date -Format "yyyyMMdd")
+Get-ChildItem -Recurse -Filter *.html | ForEach-Object {
+  (Get-Content $_.FullName -Raw) -replace "\?v=$old", "?v=$new" |
+  Set-Content $_.FullName -NoNewline
+}
+# 更新 _headers 中的版本号注释
+(Get-Content "_headers" -Raw) -replace "当前版本: $old", "当前版本: $new" |
+  Set-Content "_headers" -NoNewline
+```
+
 <div align="center">
 
 **🌍 构建人类命运共同体的产业实践平台**
