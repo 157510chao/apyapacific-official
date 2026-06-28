@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -10,43 +10,43 @@
     <meta name="description" content="虫草素全球科研综述完整版：覆盖 17 大研究领域、4 篇里程碑重磅论文，系统梳理全球范围内对虫草素的研究进展与临床应用前景。">
     <meta name="keywords" content="虫草素,科研综述,Cordycepin,17大领域,AMPK,NF-κB,Sirtuins,亚太人民共同体">
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Ctext x='50' y='65' font-family='Arial' font-size='55' fill='white' text-anchor='middle' font-weight='bold'%3EA%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <link href="vendor/bootstrap.min.css" rel="stylesheet">
     <link href="vendor/fontawesome.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-        /* ===== 原 cordycepin-research-overview 全部样式（已加 .ro-report 命名空间隔离） ===== */
-        .ro-report {
+        /* ===== 原 cordycepin-research-overview 全部样式（已加 .cordycepin-report 命名空间隔离） ===== */
+        .cordycepin-report {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             color: #0a1e2f;
         }
-.ro-report /* ===== 全局重置 & 基础 ===== */
+.cordycepin-report /* ===== 全局重置 & 基础 ===== */
         *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }.ro-report body{
+        }.cordycepin-report body{
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background: #f0f6fe;
             color: #0a1e2f;
             padding: 24px 20px 60px;
             line-height: 1.6;
-        }.ro-report .container{
+        }.cordycepin-report .container{
             max-width: 1280px;
             margin: 0 auto;
-        }.ro-report /* ===== 头部 ===== */
-        .hero{
+        }.cordycepin-report /* ===== 头部 ===== */
+        .cp-header{
             background: linear-gradient(145deg, #0b2a4a 0%, #1a4b73 100%);
             color: #fff;
-            padding: 36px 40px 30px;
+            padding: 36px 40px 28px;
             border-radius: 28px;
-            margin-bottom: 32px;
+            margin-bottom: 36px;
             box-shadow: 0 16px 40px rgba(10, 40, 80, 0.25);
             position: relative;
             overflow: hidden;
-        }.ro-report .hero::after{
+        }.cordycepin-report .cp-header::after{
             content: '';
             position: absolute;
             top: -60%;
@@ -56,8 +56,8 @@
             background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
-        }.ro-report .hero h1{
-            font-size: 32px;
+        }.cordycepin-report .cp-header h1{
+            font-size: 30px;
             font-weight: 700;
             letter-spacing: -0.5px;
             margin-bottom: 8px;
@@ -67,12 +67,12 @@
             gap: 10px;
             position: relative;
             z-index: 1;
-        }.ro-report .hero h1 small{
-            font-size: 17px;
+        }.cordycepin-report .cp-header h1 small{
+            font-size: 18px;
             font-weight: 400;
-            color: #9cc3e8;
+            color: #aac9f0;
             margin-left: 4px;
-        }.ro-report .hero .sub{
+        }.cordycepin-report .cp-header .cp-meta{
             font-size: 15px;
             color: #c5ddf5;
             margin-top: 8px;
@@ -84,43 +84,43 @@
             border-top: 1px solid rgba(255, 255, 255, 0.10);
             padding-top: 18px;
             margin-top: 12px;
-        }.ro-report .hero .sub span{
+        }.cordycepin-report .cp-header .cp-meta span{
             display: inline-flex;
             align-items: center;
             gap: 6px;
-        }.ro-report .hero .sub strong{
+        }.cordycepin-report .cp-header .cp-meta strong{
             color: #fff;
             font-weight: 600;
-        }.ro-report /* ===== 核心结论卡片 ===== */
+        }.cordycepin-report /* ===== 核心结论卡片 ===== */
         .summary-grid{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 16px;
             margin-bottom: 32px;
-        }.ro-report .summary-card{
+        }.cordycepin-report .summary-card{
             background: #ffffff;
             border-radius: 16px;
             padding: 18px 20px;
             box-shadow: 0 2px 12px rgba(0, 20, 50, 0.06);
             border-left: 4px solid #1a6fb5;
             transition: transform 0.15s ease;
-        }.ro-report .summary-card:hover{
+        }.cordycepin-report .summary-card:hover{
             transform: translateY(-2px);
-        }.ro-report .summary-card .num{
+        }.cordycepin-report .summary-card .num{
             font-size: 28px;
             font-weight: 700;
             color: #0b2a4a;
             line-height: 1.2;
-        }.ro-report .summary-card .label{
+        }.cordycepin-report .summary-card .label{
             font-size: 14px;
             color: #2d4d6e;
             margin-top: 2px;
-        }.ro-report .summary-card .desc{
+        }.cordycepin-report .summary-card .desc{
             font-size: 13px;
             color: #3d5f7a;
             margin-top: 6px;
             line-height: 1.5;
-        }.ro-report /* ===== 板块标题 ===== */
+        }.cordycepin-report /* ===== 板块标题 ===== */
         .section-title{
             font-size: 24px;
             font-weight: 700;
@@ -129,36 +129,36 @@
             display: flex;
             align-items: center;
             gap: 10px;
-        }.ro-report .section-title small{
+        }.cordycepin-report .section-title small{
             font-size: 15px;
             font-weight: 400;
             color: #4d6f8a;
-        }.ro-report /* ===== 17领域卡片网格 ===== */
+        }.cordycepin-report /* ===== 17领域卡片网格 ===== */
         .card-grid{
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 18px;
             margin-bottom: 12px;
-        }.ro-report .card{
+        }.cordycepin-report .card{
             background: #ffffff;
             border-radius: 18px;
             padding: 18px 18px 16px;
             border: 1px solid #e6edf6;
             box-shadow: 0 2px 8px rgba(0, 20, 50, 0.04);
             transition: box-shadow 0.2s ease;
-        }.ro-report .card:hover{
+        }.cordycepin-report .card:hover{
             box-shadow: 0 8px 24px rgba(0, 40, 80, 0.08);
-        }.ro-report .card .head{
+        }.cordycepin-report .card .head{
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 10px;
             gap: 8px;
-        }.ro-report .card .name{
+        }.cordycepin-report .card .name{
             font-size: 17px;
             font-weight: 700;
             color: #0b2a4a;
-        }.ro-report .card .badge{
+        }.cordycepin-report .card .badge{
             font-size: 11px;
             font-weight: 600;
             padding: 2px 12px;
@@ -166,22 +166,22 @@
             background: #e3edfb;
             color: #1a5a8c;
             white-space: nowrap;
-        }.ro-report .card .badge.hot{
+        }.cordycepin-report .card .badge.hot{
             background: #fce8e6;
             color: #b12a1e;
-        }.ro-report .card .badge.mature{
+        }.cordycepin-report .card .badge.mature{
             background: #e3edfb;
             color: #1a5a8c;
-        }.ro-report .card .badge.niche{
+        }.cordycepin-report .card .badge.niche{
             background: #ecf0f5;
             color: #4d6079;
-        }.ro-report .card .data{
+        }.cordycepin-report .card .data{
             font-size: 13px;
             color: #1e3a52;
             margin-bottom: 8px;
-        }.ro-report .card .data strong{
+        }.cordycepin-report .card .data strong{
             color: #0b2a4a;
-        }.ro-report .card .consensus{
+        }.cordycepin-report .card .consensus{
             font-size: 13px;
             color: #1e3a52;
             background: #f5f9ff;
@@ -190,47 +190,47 @@
             border-left: 3px solid #1a6fb5;
             margin-top: 6px;
             line-height: 1.6;
-        }.ro-report .card .popular{
+        }.cordycepin-report .card .popular{
             font-size: 13px;
             color: #1e3a52;
             margin-top: 8px;
             padding: 8px 12px;
             background: #f2f7fd;
             border-radius: 10px;
-        }.ro-report .card .popular strong{
+        }.cordycepin-report .card .popular strong{
             color: #0b2a4a;
-        }.ro-report /* ===== 重磅论文 ===== */
+        }.cordycepin-report /* ===== 重磅论文 ===== */
         .paper-grid{
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 18px;
             margin-top: 6px;
-        }.ro-report .paper-card{
+        }.cordycepin-report .paper-card{
             background: #ffffff;
             border-radius: 16px;
             padding: 18px 20px;
             border: 1px solid #e6edf6;
             box-shadow: 0 2px 8px rgba(0, 20, 50, 0.04);
-        }.ro-report .paper-card .journal{
+        }.cordycepin-report .paper-card .journal{
             font-size: 13px;
             font-weight: 600;
             color: #1a6fb5;
             margin-bottom: 4px;
-        }.ro-report .paper-card .title{
+        }.cordycepin-report .paper-card .title{
             font-size: 15px;
             font-weight: 600;
             color: #0b2a4a;
             line-height: 1.4;
             margin-bottom: 4px;
-        }.ro-report .paper-card .authors{
+        }.cordycepin-report .paper-card .authors{
             font-size: 13px;
             color: #4d6f8a;
             margin-bottom: 6px;
-        }.ro-report .paper-card .summary{
+        }.cordycepin-report .paper-card .summary{
             font-size: 13px;
             color: #1e3a52;
             line-height: 1.6;
-        }.ro-report /* ===== 底部 ===== */
+        }.cordycepin-report /* ===== 底部 ===== */
         .footer-note{
             background: #ffffff;
             border-radius: 20px;
@@ -241,9 +241,9 @@
             font-size: 14px;
             color: #2d4d6e;
             line-height: 1.8;
-        }.ro-report .footer-note strong{
+        }.cordycepin-report .footer-note strong{
             color: #0b2a4a;
-        }.ro-report .footer-note .disclaimer{
+        }.cordycepin-report .footer-note .disclaimer{
             margin-top: 12px;
             padding-top: 12px;
             border-top: 1px solid #e6edf6;
@@ -253,16 +253,16 @@
 
         /* ===== 响应式 ===== */
         @media (max-width: 768px) {
-            .hero {
+            .cp-header {
                 padding: 24px 20px;
             }
-            .hero h1 {
+            .cp-header h1 {
                 font-size: 24px;
             }
-            .hero h1 small {
+            .cp-header h1 small {
                 font-size: 14px;
             }
-            .hero .sub {
+            .cp-header .cp-meta {
                 font-size: 13px;
                 gap: 10px 20px;
             }
@@ -283,10 +283,15 @@
             .summary-grid {
                 grid-template-columns: 1fr;
             }
-            .hero h1 {
+            .cp-header h1 {
                 font-size: 20px;
             }
+        }        @media (max-width: 420px) {
+            .cordycepin-report .cp-stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+            .cordycepin-report .cp-stat-card { padding: 14px 10px; }
+            .cordycepin-report .cp-stat-number { font-size: 22px; }
         }
+
     </style>
 </head>
 <body>
@@ -380,7 +385,7 @@
                         <li class="dropdown-submenu dropend">
                             <a class="dropdown-item dropdown-toggle-sub" href="抗肿瘤与肿瘤微环境.html" data-todo="1">
                                 <i class="fas fa-dna fa-xs me-2"></i>抗肿瘤与肿瘤微环境
-                                <i class="fas fa-chevron-right sub-arrow"></i>
+                                
                             </a>
                             <ul class="dropdown-menu dropdown-sub">
                                 <li><a class="dropdown-item" href="research.html#oncology-tumor" data-todo="1">肿瘤生长抑制</a></li>
@@ -388,23 +393,24 @@
                                 <li><a class="dropdown-item" href="research.html#oncology-metastasis" data-todo="1">抗转移与耐药</a></li>
                             </ul>
                         </li>
-                        <li><a class="dropdown-item" href="research.html#metabolic" data-todo="1"><i class="fas fa-droplet fa-xs me-2"></i>代谢紊乱领域</a></li>
-                        <li><a class="dropdown-item" href="research.html#inflammation" data-todo="1"><i class="fas fa-fire fa-xs me-2"></i>炎症与自身免疫疾病</a></li>
-                        <li><a class="dropdown-item" href="research.html#immunity" data-todo="1"><i class="fas fa-shield-virus fa-xs me-2"></i>免疫增强提升领域</a></li>
+                        <li><a class="dropdown-item" href="代谢紊乱领域.html" data-todo="1"><i class="fas fa-droplet fa-xs me-2"></i>代谢紊乱领域</a></li>
+                        <li><a class="dropdown-item" href="炎症与自身免疫疾病领域.html" data-todo="1"><i class="fas fa-fire fa-xs me-2"></i>炎症与自身免疫疾病</a></li>
+                        <li><a class="dropdown-item" href="免疫增强与提升.html" data-todo="1"><i class="fas fa-shield-virus fa-xs me-2"></i>免疫增强提升领域</a></li>
                         <li class="dropdown-submenu dropend">
-                            <a class="dropdown-item dropdown-toggle-sub" href="research.html#neuro" data-todo="1">
+                            <a class="dropdown-item dropdown-toggle-sub" href="神经保护与精神疾病.html" data-todo="1">
                                 <i class="fas fa-brain fa-xs me-2"></i>神经保护与精神疾病
-                                <i class="fas fa-chevron-right sub-arrow"></i>
+                                
                             </a>
                             <ul class="dropdown-menu dropdown-sub">
-                                <li><a class="dropdown-item" href="research.html#neuro-degeneration" data-todo="1">神经退行性疾病</a></li>
-                                <li><a class="dropdown-item" href="research.html#neuro-psychiatric" data-todo="1">精神疾病</a></li>
+                                <li><a class="dropdown-item" href="神经保护与精神疾病.html#degeneration" data-todo="1">神经退行性疾病</a></li>
+                                <li><a class="dropdown-item" href="神经保护与精神疾病.html#psychiatric" data-todo="1">精神疾病</a></li>
                             </ul>
                         </li>
                         <li><a class="dropdown-item" href="research.html#cardio" data-todo="1"><i class="fas fa-heart fa-xs me-2"></i>心血管疾病领域</a></li>
                         <li><a class="dropdown-item" href="research.html#kidney" data-todo="1"><i class="fas fa-filter fa-xs me-2"></i>肾脏疾病领域</a></li>
                         <li><a class="dropdown-item" href="research.html#liver" data-todo="1"><i class="fas fa-circle-half-stroke fa-xs me-2"></i>肝脏疾病领域</a></li>
-                        <li><a class="dropdown-item" href="research.html#lung" data-todo="1"><i class="fas fa-lungs fa-xs me-2"></i>肺部疾病领域</a></li>
+                        <li><a class="dropdown-item" href="肺部健康领域.html" data-todo="1"><i class="fas fa-lungs fa-xs me-2"></i>肺部健康领域</a></li>
+                        <li><a class="dropdown-item" href="糖尿病领域.html" data-todo="1"><i class="fas fa-tint fa-xs me-2"></i>糖尿病领域</a></li>
                         <li><a class="dropdown-item" href="research.html#viral" data-todo="1"><i class="fas fa-virus fa-xs me-2"></i>病毒感染性疾病</a></li>
                         <li><a class="dropdown-item" href="research.html#bone" data-todo="1"><i class="fas fa-bone fa-xs me-2"></i>骨代谢疾病领域</a></li>
                         <li><a class="dropdown-item" href="research.html#skin" data-todo="1"><i class="fas fa-hand-sparkles fa-xs me-2"></i>皮肤健康领域</a></li>
@@ -560,14 +566,15 @@
                         <a class="mobile-sub-link" href="research.html#overview" data-todo="1">虫草素全球科研综述</a>
                         <a class="mobile-sub-link" href="清华大学基础研究.html" data-todo="1">清华大学基础研究</a>
                         <a class="mobile-sub-link" href="research.html#oncology" data-todo="1">抗肿瘤与肿瘤微环境</a>
-                        <a class="mobile-sub-link" href="research.html#metabolic" data-todo="1">代谢紊乱领域</a>
-                        <a class="mobile-sub-link" href="research.html#inflammation" data-todo="1">炎症与自身免疫疾病</a>
-                        <a class="mobile-sub-link" href="research.html#immunity" data-todo="1">免疫增强提升领域</a>
-                        <a class="mobile-sub-link" href="research.html#neuro" data-todo="1">神经保护与精神疾病</a>
+                        <a class="mobile-sub-link" href="代谢紊乱领域.html" data-todo="1">代谢紊乱领域</a>
+                        <a class="mobile-sub-link" href="炎症与自身免疫疾病领域.html" data-todo="1">炎症与自身免疫疾病</a>
+                        <a class="mobile-sub-link" href="免疫增强与提升.html" data-todo="1">免疫增强提升领域</a>
+                        <a class="mobile-sub-link" href="神经保护与精神疾病.html" data-todo="1">神经保护与精神疾病</a>
                         <a class="mobile-sub-link" href="research.html#cardio" data-todo="1">心血管疾病领域</a>
                         <a class="mobile-sub-link" href="research.html#kidney" data-todo="1">肾脏疾病领域</a>
                         <a class="mobile-sub-link" href="research.html#liver" data-todo="1">肝脏疾病领域</a>
-                        <a class="mobile-sub-link" href="research.html#lung" data-todo="1">肺部疾病领域</a>
+                        <a class="mobile-sub-link" href="肺部健康领域.html" data-todo="1">肺部健康领域</a>
+                        <a class="mobile-sub-link" href="糖尿病领域.html" data-todo="1">糖尿病领域</a>
                         <a class="mobile-sub-link" href="research.html#viral" data-todo="1">病毒感染性疾病</a>
                         <a class="mobile-sub-link" href="research.html#bone" data-todo="1">骨代谢疾病领域</a>
                         <a class="mobile-sub-link" href="research.html#skin" data-todo="1">皮肤健康领域</a>
@@ -688,12 +695,12 @@
 
 
         <!-- ===== 头部 ===== -->
-        <header class="hero">
+        <header class="cp-header">
             <h1>
                 🧬 虫草素 · 全球顶级刊物科研成果全景展示
                 <small>17大领域 · 10000+ 篇研究</small>
             </h1>
-            <div class="sub">
+            <div class="cp-meta">
                 <span>📚 检索：Web of Science · PubMed · CNKI · PMC</span>
                 <span>📅 数据截止：2026年6月</span>
                 <span>📊 统计：正式研究论文 + 综述</span>

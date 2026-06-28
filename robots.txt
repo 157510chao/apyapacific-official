@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /vendor/
+Disallow: /partials/
+Disallow: /assets/geo/
+
+Sitemap: https://www.apcc.org/sitemap.xml

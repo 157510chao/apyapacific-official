@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>网站验证工具 - 亚太国际人民事业发展共同体</title>
     <style>
@@ -185,7 +186,8 @@
                 }
 
                 // 测试 4: Meta 标签
-                if (html.includes('<meta charset="UTF-8">')) {
+                if (html.includes('<meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">')) {
                     result.checks.push({ item: '字符集声明', status: 'pass', message: '✅ UTF-8' });
                 } else {
                     result.checks.push({ item: '字符集声明', status: 'fail', message: '❌ 缺失' });

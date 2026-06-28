@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a2540">
+    <title>404 - 页面未找到 - 亚太国际人民事业发展共同体</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/fontawesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .error-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--clr-primary-dark); color: #fff; text-align: center; }
+        .error-code { font-size: 8rem; font-weight: 900; line-height: 1; background: var(--grad-tech); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .error-actions { margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="container">
+            <div class="error-code">404</div>
+            <h1 class="mt-3 mb-3">页面未找到</h1>
+            <p class="lead mb-4">您访问的页面不存在或已被移除。</p>
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-hero-primary"><i class="fas fa-home me-2"></i>返回首页</a>
+                <a href="javascript:history.back()" class="btn btn-hero-outline"><i class="fas fa-arrow-left me-2"></i>返回上页</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

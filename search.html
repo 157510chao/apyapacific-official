@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a2540">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <title>站内搜索 — 亚太国际人民事业发展共同体</title>
+    <meta name="description" content="搜索亚太国际人民事业发展共同体官方网站的所有页面和内容">
+    <meta name="keywords" content="搜索,查找,亚太共同体,站内搜索">
+    <meta name="robots" content="noindex, follow">
+
+    <link href="vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/fontawesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/search-index.js"></script>
+    <script src="js/search.js"></script>
+
+    <style>
+        .search-page {
+            padding-top: calc(var(--navbar-h) + 2rem);
+            padding-bottom: 4rem;
+            min-height: 70vh;
+        }
+        .search-hero {
+            text-align: center;
+            padding: 3rem 1rem 2rem;
+        }
+        .search-hero h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--clr-heading);
+            margin-bottom: 0.5rem;
+        }
+        .search-hero .sub {
+            color: var(--clr-text-soft);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .search-box {
+            max-width: 640px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+            box-shadow: 0 4px 20px rgba(10, 40, 80, 0.12);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+        }
+        .search-box input {
+            flex: 1;
+            border: 2px solid var(--clr-border);
+            border-right: none;
+            padding: 0.85rem 1.5rem;
+            font-size: 1rem;
+            border-radius: var(--radius-full) 0 0 var(--radius-full);
+            outline: none;
+            transition: border-color var(--tr-fast);
+        }
+        .search-box input:focus {
+            border-color: var(--clr-tech);
+        }
+        .search-box button {
+            background: var(--grad-tech);
+            color: #fff;
+            border: none;
+            padding: 0.85rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 0 var(--radius-full) var(--radius-full) 0;
+            cursor: pointer;
+            transition: opacity var(--tr-fast);
+            white-space: nowrap;
+        }
+        .search-box button:hover {
+            opacity: 0.9;
+        }
+        .search-results-wrap {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            padding: 0 1rem;
+        }
+        .search-count {
+            color: var(--clr-text-soft);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .search-result-list {
+            list-style: none;
+            padding: 0;
+        }
+        .search-result-item {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--clr-border-soft);
+        }
+        .search-result-link {
+            text-decoration: none;
+            color: var(--clr-tech);
+            display: inline-block;
+            margin-bottom: 0.35rem;
+        }
+        .search-result-link h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+            transition: color var(--tr-fast);
+        }
+        .search-result-link:hover h3 {
+            color: var(--clr-primary);
+        }
+        .search-result-desc {
+            font-size: 0.9rem;
+            color: var(--clr-text-soft);
+            margin: 0;
+            line-height: 1.6;
+        }
+        .search-result-list mark {
+            background: #ffe9a0;
+            color: #1a1a1a;
+            padding: 0.1em 0.2em;
+            border-radius: 3px;
+        }
+        .search-empty {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--clr-text-soft);
+        }
+        .search-empty i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+            display: block;
+        }
+        .search-empty p {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+        .search-empty-hint {
+            font-size: 0.85rem !important;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div id="site-header"></div>
+
+    <main class="search-page">
+        <div class="container">
+            <div class="search-hero">
+                <h1>站内搜索</h1>
+                <p class="sub">搜索亚太国际人民事业发展共同体官方网站的全部内容</p>
+                <form class="search-box" id="search-form" role="search">
+                    <input type="search" id="search-input" name="q" placeholder="搜索页面、主题、关键词..." aria-label="搜索关键词" autocomplete="off" autofocus>
+                    <button type="submit"><i class="fas fa-search"></i> 搜索</button>
+                </form>
+            </div>
+
+            <div class="search-results-wrap" id="search-results"></div>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
