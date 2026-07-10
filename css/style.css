@@ -285,6 +285,26 @@ a:hover { color: var(--clr-tech-dark); }
     color: #fff;
 }
 
+/* ========== 隐藏"加入亚太"模块 ========== */
+/* 桌面端导航按钮 */
+#mainNavbar .btn-join {
+    display: none !important;
+}
+/* 移动端抽屉菜单底部CTA */
+#mobileMenu .offcanvas-body > :last-child {
+    display: none !important;
+}
+
+/* ========== 隐藏"清华大学基础研究"菜单项 ========== */
+/* 桌面端下拉菜单 */
+.dropdown-menu a[href="/清华大学基础研究.html"] {
+    display: none !important;
+}
+/* 移动端抽屉菜单 */
+#mobileNavAccordion a[href="/清华大学基础研究.html"] {
+    display: none !important;
+}
+
 /* 搜索图标 */
 #mainNavbar .nav-search-icon {
     font-size: 1.05rem;
