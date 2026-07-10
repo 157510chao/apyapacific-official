@@ -1,37 +1,12 @@
 /**
- * 公共组件动态注入器
- * - 将 partials/header.html 注入到 <div id="site-header"></div>
- * - 页脚（footer）已在各页面 HTML 内联，不再通过 JS 注入，
- *   以免 IDE 预览 / 浏览器对 fetch 的旧 partial 缓存导致页脚不更新。
- * - 注入完成后触发 'partials:loaded' 事件，供 main.js 监听并启用交互
- * - 高亮当前页面对应的导航项
+ * 公共组件事件派发器
+ * - 页头（导航栏）已内联进各页面 HTML，无需再 fetch 注入，
+ *   这样直接以 file:// 方式打开本地文件时导航栏也能正常显示。
+ * - DOM 就绪后高亮当前页面对应的导航项，并派发 'partials:loaded'
+ *   事件，供 main.js 监听并启用交互（下拉菜单等）。
  */
 (function () {
     'use strict';
-
-    // 版本号：更新 partials/header.html 后自增，用于绕过缓存。
-    const PARTIALS_VERSION = '2';
-    const HEADER_URL = '/partials/header.html?v=' + PARTIALS_VERSION;
-
-    /**
-     * fetch HTML 片段并注入到指定选择器
-     * @param {string} url
-     * @param {string} targetSelector
-     * @returns {Promise<void>}
-     */
-    async function inject(url, targetSelector) {
-        const target = document.querySelector(targetSelector);
-        if (!target) return;
-        try {
-            const res = await fetch(url, { cache: 'no-cache' });
-            if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
-            const html = await res.text();
-            target.innerHTML = html;
-        } catch (e) {
-            console.error('[include] 注入失败：' + url, e);
-            target.innerHTML = '<div class="alert alert-warning m-3" role="alert">导航组件加载失败，请刷新或检查网络。</div>';
-        }
-    }
 
     /**
      * 高亮当前页面对应的导航项
@@ -65,10 +40,8 @@
         highlightCurrent();
     }
 
-    // DOM 就绪即可开始注入（无需等资源加载完）
+    // DOM 就绪即可开始（无需等待资源加载）
     document.addEventListener('DOMContentLoaded', function () {
-        Promise.all([
-            inject(HEADER_URL, '#site-header')
-        ]).then(fireReady);
+        fireReady();
     });
 })();

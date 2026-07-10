@@ -3,7 +3,10 @@
  * - 统一在 partials 加载完成后（partials:loaded）才初始化交互
  * - 增加 prefers-reduced-motion 兼容
  */
-document.addEventListener('partials:loaded', function () {
+let __navInited = false;
+function initInteractions() {
+    if (__navInited) return;
+    __navInited = true;
 
     /* ============================================================
        1. 导航栏：滚动变色 + 桌面端悬停展开下拉
@@ -177,7 +180,11 @@ document.addEventListener('partials:loaded', function () {
     }
 
     console.log('%c✅ APCC 官网 v3.0 加载完成 ', 'background:#2563eb;color:#fff;padding:2px 8px;border-radius:3px;font-weight:bold;');
-});
+}
+
+// 导航已静态内联，DOM 就绪即可初始化；同时兼容 include.js 派发的 partials:loaded 事件（双保险，避免缓存/时序问题）
+document.addEventListener('DOMContentLoaded', initInteractions);
+document.addEventListener('partials:loaded', initInteractions);
 
 /**
  * 兜底：万一 partials 没注入成功，仍尝试绑定基础交互
