@@ -123,23 +123,29 @@ dir
 **期望看到的内容**：
 
 ```
-about.html
-business.html
-community.html
-education.html
 index.html
+projects.html
+health.html
+industry.html
+research.html
+science.html
+talent.html
+welfare.html
 join.html
 news.html
-projects.html
-resources.html
-system.html
 validate.html
+nation.html
 README.md
-package.json
 css/         (目录)
 js/          (目录)
 assets/      (目录)
 partials/    (目录)
+关于亚太/        (目录)
+人民事业共同体/    (目录)
+人民产业与科研/    (目录)
+人民组织与制度/    (目录)
+人民荣誉/        (目录)
+人民福利/        (目录)
 vendor/      (目录)
 ```
 
@@ -472,16 +478,21 @@ https://apyapacific-official.pages.dev
 
 ```
 ✅ https://apyapacific-official.pages.dev/
-✅ https://apyapacific-official.pages.dev/about.html
-✅ https://apyapacific-official.pages.dev/business.html
-✅ https://apyapacific-official.pages.dev/community.html
-✅ https://apyapacific-official.pages.dev/education.html
+✅ https://apyapacific-official.pages.dev/projects.html
+✅ https://apyapacific-official.pages.dev/health.html
+✅ https://apyapacific-official.pages.dev/industry.html
+✅ https://apyapacific-official.pages.dev/research.html
+✅ https://apyapacific-official.pages.dev/science.html
+✅ https://apyapacific-official.pages.dev/talent.html
+✅ https://apyapacific-official.pages.dev/welfare.html
 ✅ https://apyapacific-official.pages.dev/join.html
 ✅ https://apyapacific-official.pages.dev/news.html
-✅ https://apyapacific-official.pages.dev/projects.html
-✅ https://apyapacific-official.pages.dev/resources.html
-✅ https://apyapacific-official.pages.dev/system.html
 ✅ https://apyapacific-official.pages.dev/validate.html
+✅ https://apyapacific-official.pages.dev/关于亚太/总体介绍.html
+✅ https://apyapacific-official.pages.dev/人民事业共同体/国家宣言.html
+✅ https://apyapacific-official.pages.dev/人民产业与科研/未来产业规划/生物科技微谷.html
+✅ https://apyapacific-official.pages.dev/人民组织与制度/人力资源基本法.html
+✅ https://apyapacific-official.pages.dev/人民福利/人民教育.html
 ```
 
 **验证清单**：

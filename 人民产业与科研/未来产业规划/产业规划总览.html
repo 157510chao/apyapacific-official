@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>未来产业总览 · 亚太国际人民事业共同体</title>
+    <link href="/vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/fontawesome.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/subnav.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ---------- reset & base ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Serif SC', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f0f6fe;
+            color: #1a2b3f;
+            line-height: 1.8;
+            padding: 2.5rem 1.5rem 4rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: radial-gradient(ellipse at 20% 20%, rgba(26, 75, 130, 0.03) 0%, transparent 60%),
+                    radial-gradient(ellipse at 80% 80%, rgba(0, 112, 192, 0.04) 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        /* ---------- container ---------- */
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(4px);
+            border-radius: 2.5rem;
+            padding: 3rem 3.5rem;
+            box-shadow: 0 20px 60px rgba(10, 30, 60, 0.08), 0 8px 24px rgba(10, 30, 60, 0.04);
+            border: 1px solid rgba(46, 86, 140, 0.06);
+            transition: all 0.2s;
+        }
+
+        /* ---------- header ---------- */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2.8rem 2rem 2.6rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.6rem;
+            background: linear-gradient(135deg, #0f3a66 0%, #1f5990 100%);
+            box-shadow: 0 16px 40px rgba(31,89,144,0.28);
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -12%;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.16) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .header h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 4px;
+            margin-bottom: 0.3rem;
+            position: relative;
+        }
+
+        .header .version {
+            font-size: 0.85rem;
+            color: #ffffff;
+            background: rgba(255,255,255,0.15);
+            display: inline-block;
+            padding: 0.2rem 1.6rem;
+            border-radius: 40px;
+            border: 1px solid rgba(255,255,255,0.3);
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .header .sub {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.78);
+            letter-spacing: 1px;
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* ---------- lead ---------- */
+        .lead {
+            font-size: 1.05rem;
+            color: #1a3a5a;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2.8rem;
+            padding: 0 0.5rem;
+            line-height: 1.9;
+        }
+
+        .lead strong {
+            color: #0a2a5c;
+            font-weight: 600;
+        }
+
+        /* ---------- section ---------- */
+        .section {
+            margin-bottom: 2.8rem;
+            padding: 1.8rem 2rem 2.2rem;
+            border-radius: 1.8rem;
+            background: #ffffff;
+            border: 1px solid #eaf0f8;
+            transition: box-shadow 0.25s ease;
+            position: relative;
+        }
+
+        .section:hover {
+            box-shadow: 0 4px 24px rgba(10, 30, 60, 0.04);
+        }
+
+        .section .section-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: #1f5990;
+            border-radius: 40px;
+            padding: 0 14px;
+            line-height: 1.7rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.6rem;
+        }
+
+        .section h2 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .section h2 .icon-deco {
+            font-size: 1.6rem;
+            color: #1f5990;
+        }
+
+        .section .section-desc {
+            font-size: 1rem;
+            color: #1f344b;
+            margin-bottom: 1.2rem;
+            text-align: justify;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid #f0f4fb;
+        }
+
+        /* ---------- card grid ---------- */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 0.4rem 0 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            margin: 0.4rem 0 0;
+        }
+
+        .grid-2 .card,
+        .grid-3 .card {
+            background: #f8fbff;
+            border-radius: 1.4rem;
+            padding: 1.2rem 1.4rem 1.3rem;
+            border: 1px solid #e6eef8;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .grid-2 .card:hover,
+        .grid-3 .card:hover {
+            border-color: #b8cee4;
+            box-shadow: 0 2px 12px rgba(26, 75, 130, 0.04);
+        }
+
+        .grid-2 .card h4,
+        .grid-3 .card h4 {
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.2px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .grid-2 .card h4 .emoji,
+        .grid-3 .card h4 .emoji {
+            font-size: 1.2rem;
+            color: #1f5990;
+        }
+
+        .grid-2 .card p,
+        .grid-3 .card p {
+            font-size: 0.92rem;
+            color: #1f3a55;
+            margin: 0;
+            line-height: 1.65;
+            text-align: justify;
+        }
+
+        /* ---------- 总结 ---------- */
+        .summary-block {
+            background: linear-gradient(135deg, #f4f9ff 0%, #eaf2fc 100%);
+            border-radius: 1.8rem;
+            padding: 2rem 2.2rem;
+            margin-top: 0.5rem;
+            border: 1px solid #dce6f2;
+            text-align: center;
+        }
+
+        .summary-block p {
+            font-size: 1.05rem;
+            color: #0a2a5c;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* ---------- footer ---------- */
+        .global-footer {
+            margin-top: 2.8rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #7a95b0;
+            border-top: 1px solid #e7edf6;
+            padding-top: 1.8rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* ---------- responsive ---------- */
+        @media (max-width: 900px) {
+            .container {
+                padding: 2rem 1.8rem;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .grid-3 {
+                grid-template-columns: 1fr 1fr;
+            }
+            .section {
+                padding: 1.4rem 1.2rem 1.6rem;
+            }
+            .section h2 {
+                font-size: 1.4rem;
+            }
+            .section .section-desc {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 560px) {
+            body {
+                padding: 1.2rem 0.8rem 2.5rem;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+                border-radius: 1.8rem;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+            }
+            .header .sub {
+                font-size: 0.85rem;
+            }
+            .lead {
+                font-size: 0.95rem;
+                margin-bottom: 2rem;
+            }
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .section {
+                padding: 1rem 0.8rem 1.2rem;
+                border-radius: 1.4rem;
+            }
+            .section h2 {
+                font-size: 1.2rem;
+            }
+            .grid-2 .card,
+            .grid-3 .card {
+                padding: 0.8rem 1rem 1rem;
+                border-radius: 1.2rem;
+            }
+            .summary-block {
+                padding: 1.2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+<div class="container">
+
+    <!-- ========== HEADER ========== -->
+    <div class="header">
+        <div class="version">1.0 规划版</div>
+        <h1>未来产业总览</h1>
+        <div class="sub">亚太国际 · 人民事业共同体</div>
+    </div>
+
+    <!-- ========== LEAD ========== -->
+    <div class="lead">
+        <strong>亚太国际人民事业共同体</strong>，将构建覆盖全人类、全产业链的超级生态系统。以下产业板块作为初步规划，不是割裂的商业项目，而是统一于<strong>“人民集体所有制”</strong>与<strong>“PVC价值体系”</strong>之下的人民大系统工程。每一块都是人民共有的产业，每一块都在为<strong>“人民有健康、人民有收入、人民有产业、人民有资本、人民有未来”</strong>的终极目标添砖加瓦。
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- 一、空间与载体                                                     -->
+    <!-- ================================================================ -->
+    <div class="section">
+        <div class="section-badge">一</div>
+        <h2><span class="icon-deco">🏛️</span> 空间与载体</h2>
+        <div class="section-desc">人民的家园与枢纽——让共同体的温度在物理空间中可触可感。</div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h4><span class="emoji">🌆</span> 亚太国际未来城</h4>
+                <p>未来城是人民事业共同体的空间家园样板。它不是传统的地产开发，而是一个集产城融合、生态科技、文化教育、智能生活于一体的新型城市形态。这里将汇聚科研机构、产业园区、社区服务与公共空间，成为“集体主义社区”的先行试验田，让人民在物理空间中真切感受到共同体的温度。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">📡</span> 城市赋能中心</h4>
+                <p>遍布全国乃至全球的城市赋能中心，是共同体连接总部与各地成员的关键节点。它们承担产业服务、资源对接、人才孵化、文化传播等功能。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🏨</span> 亚太国际酒店</h4>
+                <p>作为共同体的全球服务网络，每一家亚太国际酒店不仅是共同体成员的旅居和会客场所，更是共同体文化、产品与服务的展示窗口，是人民事业的流动名片。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🍵</span> 亚太餐茶+</h4>
+                <p>服务民生需求，“亚太餐茶+”是健康、超市、社交、就业的复合终端。它将形成覆盖数十万社区节点的服务网络，为各地人民家庭提供安全餐食，同时成为线下服务的重要场景。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- 二、生命健康                                                       -->
+    <!-- ================================================================ -->
+    <div class="section">
+        <div class="section-badge">二</div>
+        <h2><span class="icon-deco">❤️</span> 生命健康</h2>
+        <div class="section-desc">从源头到终端的全周期守护——让“吃出健康”从愿景变为现实。</div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h4><span class="emoji">🐔</span> 鸡类全产业链</h4>
+                <p>以世界级安全标准（三无残留）为基石，构建从育种、养殖、加工到生物精炼的完整鸡产业链。它不仅提供安全鸡肉与鸡蛋，更通过提取胶原蛋白肽、鹅去氧胆酸等高附加值生物制品，成为人民分红的利润源。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🌿</span> 生物板块</h4>
+                <p>传承药食同源智慧，结合现代微生物组学与合成生物学。专注中华草本现代化，专注功能食品与精准营养。二者共同构成人民健康产业的科技引擎，让“吃出健康”从愿景变为现实。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🔧</span> 食品产业操作系统</h4>
+                <p>人民所有制下的食品产业，实现从原料、生产到流通的全链条数字化管控。以安全、营养、可追溯为原则，消除无序竞争与浪费，真正按需配置生产，让每一份食物都服务于人民健康，用最好的产品服务人民。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🥛</span> 乳业新生态</h4>
+                <p>以最高标准建设人民乳业，从牧场到奶瓶的全程智能化，保障国民蛋白质供应。这是继鸡产业之后，又一个将基础农产品升级为人民产业的重点领域。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🍷</span> 酒业</h4>
+                <p>联合茅台、五粮液等优质技术方，传统酿造工艺与现代生物发酵技术融合，打造属于人民的高品质酒品。酒业利润进入共同分配池，让消费者从一杯酒中也能分享产业增值。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">💧</span> 水工程</h4>
+                <p>水是生命之源，也是健康之本。本工程致力于全民高标准安全饮水保障体系的建设，从水源保护到智能净化，让每一滴水都达到国际最高标准。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">📊</span> 主动健康生态系统</h4>
+                <p>以预防为主，结合可穿戴设备、健康大数据与个性化干预，构建覆盖全民的主动健康管理体系。让人民不再被动等病就医，而是主动管理自身健康。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">👴</span> 尊严养老生态系统</h4>
+                <p>老有所养、老有所尊。结合社区养老、智慧照护与PVC积分兑换，让每一位长者都能在共同体中获得体面、温暖的晚年生活。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- 三、物质文明                                                       -->
+    <!-- ================================================================ -->
+    <div class="section">
+        <div class="section-badge">三</div>
+        <h2><span class="icon-deco">✨</span> 物质文明</h2>
+        <div class="section-desc">先进制造与绿色生活——让人民享有高品质的物质成果。</div>
+
+        <div class="grid-3">
+            <div class="card">
+                <h4><span class="emoji">👗</span> 服装产业</h4>
+                <p>人民所有制服装产业，从面料研发、设计制造到终端零售，全链条属于人民。时尚与功能并重，环保与品质共存，让每一个人都能以合理价格享受优质衣着。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🚗</span> 新能源汽车</h4>
+                <p>以自主研发为核心，联合顶级伙伴，打造人民共享的新能源汽车产业。绿色出行不仅是生活方式，更是人民产业的重要组成部分。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">✈️</span> 航空事业</h4>
+                <p>亚太人民航空，连接全球。从物流货运到客运服务，逐步构建人民自己的航空网络，让世界更近，让事业更大。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">📱</span> 手机</h4>
+                <p>联合华为，打造亚太成员定制手机，这是共同体的数字身体与价值器官。手机不仅是通讯工具，更是PVC流通、数据主权、智能服务的核心入口，是人民在数字世界的身份标识。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">☀️</span> 可持续能源公社</h4>
+                <p>零碳韧性基座。整合光伏、风能、储能等绿色能源，为共同体产业和人民提供清洁、稳定、低成本的自有能源保障，持续在全球范围内汇聚、研发最新能源技术，实现自有能源体系的永续。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🧠</span> 数字有机体</h4>
+                <p>智能基座。依托AI、区块链、物联网，构建支撑共同体运营的数字神经系统。从智能养殖到智慧食堂，从PVC计量到全球协同，让科技真正服务于人。</p>
+            </div>
+            <div class="card" style="grid-column: span 1;">
+                <h4><span class="emoji">🧬</span> 下一代蛋白质文明</h4>
+                <p>从合成生物蛋白到新型食品原料，探索更可持续、更营养的蛋白质来源。这是人类食物体系的革命，也是人民产业的前沿高地。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- 四、农业与乡村振兴                                                 -->
+    <!-- ================================================================ -->
+    <div class="section">
+        <div class="section-badge">四</div>
+        <h2><span class="icon-deco">🌾</span> 农业与乡村振兴</h2>
+        <div class="section-desc">大地上的事业——让乡村成为人民事业的新热土。</div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h4><span class="emoji">🏗️</span> 城市农业综合体</h4>
+                <p>以“工业鬼城”改造为切入点，将闲置工业用地转换为现代化城市农业基地。集立体种植、洁净养殖、食品加工于一体，既是菜篮子保障工程，也是盘活不良资产、创造百万就业的发动机。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🏡</span> 乡村振兴</h4>
+                <p>共同体深入乡村，通过产业导入、人才培训与基础设施升级，让乡村成为人民事业的新热土。城乡融合、共同富裕，在这里找到具体答案。</p>
+            </div>
+            <div class="card" style="grid-column: span 2;">
+                <h4><span class="emoji">🐟</span> 蔚蓝牧场</h4>
+                <p>可持续蓝色粮仓。在海洋大面积核污染情况下，发展淡水养殖，智能养殖与水产品生物加工，在保护生态的前提下，为人民提供优质水产品，拓展产业边界。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- 五、支撑体系                                                       -->
+    <!-- ================================================================ -->
+    <div class="section">
+        <div class="section-badge">五</div>
+        <h2><span class="icon-deco">🔗</span> 支撑体系</h2>
+        <div class="section-desc">让一切有序运转——坚实底座托起人民事业的宏伟大厦。</div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h4><span class="emoji">💰</span> 金融体系</h4>
+                <p>包括内部交易市场、PVC流动性机制、金融制度与操作手册。为产业循环提供血液，让价值在共同体内部高效流转，构建抗风险、自循环的人民金融内生态。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🏅</span> 亚太标准</h4>
+                <p>制定国际最高的产品标准、流程标准与管理标准，超越现行的欧美日各类标准。让所有人有标准的消费，亚太标准体系将确保人民产业始终处于价值链顶端。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">📚</span> 教育体系与中央教育学院</h4>
+                <p>从技能培训到思想武装，从干部培养到全民素养，教育体系为共同体持续输出人才。中央教育学院负责顶层教育设计，联合全球资源，打造学习型组织。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🔬</span> 中央科学研究院</h4>
+                <p>汇聚全球顶尖科学家，开展从基础研究到应用转化的全链条创新。是共同体技术护城河的源泉，也是引领产业升级的智慧大脑。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🚩</span> 政委体系</h4>
+                <p>思想建设与组织保障的根本制度。通过政委体系确保共同体的文化基因纯正、组织纪律严明、方向始终不偏，是人民事业的“定海神针”。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🤝</span> 战略合作</h4>
+                <p>例如引入华为在管理、研发与智能制造上的先进经验，携手中国电信等运营商建设数字基础设施。让各类顶级企业成为共同体生态的重要伙伴，共同赋能人民产业。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- 总结                                                               -->
+    <!-- ================================================================ -->
+    <div class="summary-block">
+        <p><strong>总结：</strong>以上产业版图，不是堆砌的概念，而是一个层层递进、相互赋能的有机系统。从基础生存到健康长寿，从物质丰富到精神满足，从区域扎根到全球布局——人民事业共同体正在将这一个个蓝图，变成人民手中实实在在的产业与分红。<strong>未来已来，我们正在路上。</strong></p>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <div class="global-footer">
+        亚太国际 · 人民事业共同体 &nbsp;|&nbsp; 全心全意为人民服务 &nbsp;|&nbsp; 人民至上 · 生命至上 · 国家利益至上
+    </div>
+
+</div>
+    <div id="site-footer"></div>
+    <script src="/vendor/bootstrap.bundle.min.js"></script>
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

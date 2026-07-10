@@ -8,8 +8,8 @@
 (function () {
     'use strict';
 
-    const HEADER_URL = 'partials/header.html';
-    const FOOTER_URL = 'partials/footer.html';
+    const HEADER_URL = '/partials/header.html';
+    const FOOTER_URL = '/partials/footer.html';
 
     /**
      * fetch HTML 片段并注入到指定选择器

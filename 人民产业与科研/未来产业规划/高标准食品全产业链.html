@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高标准食品全产业链 · 亚太国际</title>
+    <link href="/vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/fontawesome.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/subnav.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Serif SC', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f4f9ff;
+            color: #1a2b3f;
+            line-height: 1.8;
+            padding: 2.5rem 1.5rem 4rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: radial-gradient(ellipse at 25% 20%, rgba(180, 40, 40, 0.03) 0%, transparent 60%),
+                              radial-gradient(ellipse at 75% 80%, rgba(10, 42, 92, 0.04) 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(4px);
+            border-radius: 3rem;
+            padding: 3rem 3.2rem;
+            box-shadow: 0 24px 60px rgba(10, 30, 60, 0.08), 0 8px 24px rgba(10, 30, 60, 0.04);
+            border: 1px solid rgba(46, 86, 140, 0.08);
+        }
+
+        /* ===== 头部区域 ===== */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2.8rem 2rem 2.6rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.6rem;
+            background: linear-gradient(135deg, #0f3a66 0%, #1f5990 100%);
+            box-shadow: 0 16px 40px rgba(31,89,144,0.28);
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -12%;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.16) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .header .gold-line {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4a843, #e8c760);
+            width: 60px;
+            height: 4px;
+            border-radius: 4px;
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .header h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 6px;
+            margin-bottom: 0.3rem;
+            position: relative;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.92);
+            font-weight: 500;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .header .tagline {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #ffffff;
+            background: rgba(255,255,255,0.15);
+            display: inline-block;
+            padding: 0.3rem 2.2rem;
+            border-radius: 40px;
+            border: 1px solid rgba(255,255,255,0.3);
+            font-weight: 500;
+            position: relative;
+        }
+
+        /* ===== 通用部分 ===== */
+        .section {
+            margin-bottom: 2.8rem;
+            padding: 1.8rem 2rem 2.2rem;
+            border-radius: 2rem;
+            background: #ffffff;
+            border: 1px solid #eaf0f8;
+            transition: box-shadow 0.25s ease, border-color 0.25s;
+        }
+
+        .section:hover {
+            box-shadow: 0 4px 28px rgba(10, 30, 60, 0.04);
+            border-color: #d0def0;
+        }
+
+        .section .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1f5990, #2a6ea8);
+            border-radius: 40px;
+            padding: 0.1rem 14px 0.1rem 12px;
+            line-height: 1.6rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+        }
+
+        .section .section-badge .badge-icon { font-size: 0.9rem; }
+
+        .section h2 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .section h2 .deco-icon {
+            font-size: 1.5rem;
+            color: #d4a843;
+        }
+
+        .section h3 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section h3 .h3-icon { font-size: 1.2rem; }
+
+        .section p {
+            font-size: 1rem;
+            color: #1a344b;
+            margin-bottom: 0.6rem;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .section p:last-child { margin-bottom: 0; }
+
+        .section .highlight-blue { color: #1f5990; font-weight: 600; }
+        .section .highlight-gold { color: #d4a843; font-weight: 600; }
+        .section .highlight-red { color: #c0392b; font-weight: 600; }
+
+        .section .sub-block {
+            background: #f5faff;
+            border-radius: 1.4rem;
+            padding: 0.8rem 1.2rem;
+            margin: 0.4rem 0 0.8rem;
+            border-left: 3px solid #1f5990;
+        }
+
+        .section .sub-block.gold-border {
+            border-left-color: #d4a843;
+        }
+
+        /* ===== 网格布局 ===== */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 0.6rem 0 0.4rem; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 0.6rem 0 0.4rem; }
+        .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 18px; margin: 0.6rem 0 0.4rem; }
+        .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin: 0.6rem 0 0.4rem; }
+
+        .card {
+            background: #f8fbff;
+            border-radius: 1.5rem;
+            padding: 1.2rem 1.2rem 1.3rem;
+            border: 1px solid #e6eef8;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+
+        .card:hover {
+            border-color: #b8cee4;
+            box-shadow: 0 4px 16px rgba(26, 75, 130, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card h4 .emoji { font-size: 1.1rem; }
+
+        .card p {
+            font-size: 0.92rem;
+            color: #1f3a55;
+            margin: 0;
+            line-height: 1.65;
+            text-align: justify;
+        }
+
+        .card .card-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #1f5990;
+            margin-top: 0.4rem;
+            margin-bottom: 0.1rem;
+        }
+
+        /* ===== 特色卡片 ===== */
+        .feature-card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 1.4rem 1.4rem 1.5rem;
+            border: 1px solid #e6eef8;
+            border-left: 5px solid #1f5990;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: #b8cee4;
+            box-shadow: 0 4px 16px rgba(26, 75, 130, 0.04);
+            border-left-color: #d4a843;
+        }
+
+        .feature-card .feature-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-card .feature-header .feat-icon { font-size: 1.6rem; }
+        .feature-card .feature-header h3 { margin-bottom: 0; }
+
+        .feature-card .feat-detail p { margin-bottom: 0.2rem; font-size: 0.92rem; }
+        .feature-card .feat-detail strong { color: #1f5990; font-weight: 600; }
+
+        /* ===== 引用/重点框 ===== */
+        .emphasis-box {
+            background: linear-gradient(135deg, #f4f9ff, #eaf2fc);
+            border-radius: 1.8rem;
+            padding: 1.2rem 2rem;
+            margin: 0.8rem 0 0.2rem;
+            border: 1px solid #dce6f2;
+            text-align: center;
+        }
+
+        .emphasis-box p {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #0a2a5c;
+            margin-bottom: 0.2rem;
+            text-align: center;
+        }
+
+        .emphasis-box .big-number {
+            font-family: 'Inter', 'Noto Serif SC', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #c0392b;
+            line-height: 1.2;
+        }
+
+        /* ===== 全品类网格 ===== */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 0.6rem 0 0.2rem;
+        }
+
+        .category-card {
+            background: #f8fbff;
+            border-radius: 1.2rem;
+            padding: 1rem 0.8rem;
+            text-align: center;
+            border: 1px solid #e6eef8;
+            transition: border-color 0.2s;
+        }
+
+        .category-card:hover {
+            border-color: #b8cee4;
+        }
+
+        .category-card .cat-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .category-card h5 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.1rem;
+        }
+
+        .category-card p {
+            font-size: 0.8rem;
+            color: #2a4a6a;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* ===== 列表 ===== */
+        .styled-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.4rem 0 0.2rem;
+        }
+
+        .styled-list li {
+            font-size: 0.92rem;
+            color: #1a344b;
+            padding-left: 1.4rem;
+            position: relative;
+            line-height: 1.6;
+            margin-bottom: 0.2rem;
+        }
+
+        .styled-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #d4a843;
+            font-weight: 700;
+        }
+
+        /* ===== 社会价值网格 ===== */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin: 0.6rem 0 0;
+        }
+
+        .value-card {
+            background: #ffffff;
+            border-radius: 1.4rem;
+            padding: 1.2rem 0.8rem;
+            text-align: center;
+            border: 1px solid #e6eef8;
+            border-top: 4px solid #1f5990;
+            transition: border-color 0.2s;
+        }
+
+        .value-card:hover {
+            border-color: #b8cee4;
+        }
+
+        .value-card .v-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .value-card h5 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.1rem;
+        }
+
+        .value-card p {
+            font-size: 0.82rem;
+            color: #1f3a55;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ===== 结语 ===== */
+        .finale-section {
+            background: linear-gradient(135deg, #f4f9ff 0%, #eaf2fc 100%);
+            border: 1px solid #dce6f2;
+            text-align: center;
+        }
+
+        .finale-section .finale-text {
+            font-size: 1.05rem;
+            color: #0a2a5c;
+            max-width: 800px;
+            margin: 0 auto 0.4rem;
+        }
+
+        .finale-section .finale-strong {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #c0392b;
+            margin-top: 0.4rem;
+        }
+
+        .finale-section .finale-cta {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-top: 0.3rem;
+        }
+
+        /* ===== 页脚 ===== */
+        .global-footer {
+            margin-top: 2.8rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7a95b0;
+            border-top: 1px solid #e7edf6;
+            padding-top: 1.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        .global-footer .footer-slogan {
+            color: #0a2a5c;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 1024px) {
+            .grid-4, .grid-5, .category-grid, .value-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 960px) {
+            .container { padding: 2rem 1.8rem; }
+            .header h1 { font-size: 2rem; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr 1fr; }
+            .grid-5 { grid-template-columns: 1fr 1fr 1fr; }
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 1.2rem 0.8rem 2.5rem; }
+            .container { padding: 1.5rem 1rem; border-radius: 2rem; }
+            .header h1 { font-size: 1.6rem; letter-spacing: 3px; }
+            .header .subtitle { font-size: 0.9rem; }
+            .section { padding: 1.2rem 0.8rem 1.6rem; border-radius: 1.4rem; }
+            .section h2 { font-size: 1.25rem; }
+            .grid-2, .grid-3, .grid-4, .grid-5, .category-grid, .value-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .feature-card { padding: 1rem; }
+            .card { padding: 1rem; }
+            .emphasis-box { padding: 1rem; }
+            .emphasis-box .big-number { font-size: 1.6rem; }
+        }
+
+        @media (max-width: 440px) {
+            .grid-5 { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+<div class="container">
+
+    <!-- ========== 头部 ========== -->
+    <div class="header">
+        <div class="gold-line"></div>
+        <h1>高标准食品全产业链</h1>
+        <div class="subtitle">—— 人民产业体系</div>
+        <div class="tagline">以鸡为起点 · 以全品类为目标 · 以全链条为保障 · 以人民共富为归宿</div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 引言横幅                                                    -->
+    <!-- ============================================================ -->
+    <div class="emphasis-box" style="margin-bottom:2.2rem;">
+        <p style="font-size:1.15rem;">构建人民共富新基石 · 打造高标准食品全产业链的<span class="highlight-red">“中国方案”</span></p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 一、时代课题                                                -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 一</div>
+        <h2><span class="deco-icon">📜</span> 时代课题</h2>
+        <div class="sub-block">
+            <p style="font-size:0.95rem; margin-bottom:0;"><em>《中共中央国务院关于深化改革加强食品安全工作的意见》指出：食品安全关系人民群众身体健康和生命安全，关系中华民族未来。</em></p>
+        </div>
+        <p>当前，食品安全面临着严峻挑战：一个生产火腿肠的企业，不养猪，就控制不了猪肉的品质；一个做面包的企业，不种小麦，就管不了面粉的安全。产业链条碎片化，导致每一个环节都存在着不可控的风险——上游的农药残留、中游的非法添加、下游的以次充好，任何一个断点都可能让“安全”二字形势严峻。</p>
+        <p style="font-weight:600; color:#0a2a5c;">我们的回答是：</p>
+        <p>要保障食品的绝对安全，就必须掌控<strong class="highlight-red">全产业链、全环节、全品类</strong>。</p>
+        <p>这不是某一个企业的单点突破，而是人民的大系统工程——从育种、种植、养殖，到饲料、加工、物流，再到餐饮、销售、溯源，每一个环节都由人民自己的产业体系把控。只有这样，才能从根本上杜绝食品安全隐患。</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 二、全品类 · 全链条 · 全环节                                -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 二</div>
+        <h2><span class="deco-icon">🌐</span> 全品类 · 全链条 · 全环节</h2>
+
+        <p style="font-weight:600; color:#0a2a5c;">全品类覆盖：</p>
+        <p>从鸡类产业起步——鸡肉、鸡蛋是我们要打造的世界级安全标准的首个样板。未来，这一模式将逐步扩展至所有食品品类：</p>
+        <div class="category-grid">
+            <div class="category-card">
+                <span class="cat-icon">🐄</span>
+                <h5>畜禽类</h5>
+                <p>猪、牛、羊、鸭、鹅等</p>
+            </div>
+            <div class="category-card">
+                <span class="cat-icon">🐟</span>
+                <h5>水产类</h5>
+                <p>鱼、虾、蟹、贝等</p>
+            </div>
+            <div class="category-card">
+                <span class="cat-icon">🌾</span>
+                <h5>种植类</h5>
+                <p>粮食、蔬菜、水果、油料等</p>
+            </div>
+            <div class="category-card">
+                <span class="cat-icon">🧀</span>
+                <h5>加工食品类</h5>
+                <p>肉制品、乳制品、调味品、面点、饮料等</p>
+            </div>
+        </div>
+        <p style="font-size:0.92rem; color:#2a4a6a; margin-top:0.2rem;">每一个品类，都将以鸡类产业为模板，建立从源头到餐桌的完整链条。</p>
+
+        <p style="font-weight:600; color:#0a2a5c; margin-top:0.6rem;">全链条掌控：</p>
+        <p>一个品类就是一条完整的产业链，从上游到下游，每一个环节都必须可控、可追溯、可保障：</p>
+        <div class="grid-3">
+            <div class="card"><h4><span class="emoji">🧬</span> 育种环节</h4><p>掌握核心种源，培育安全、优质、高产的专用品种。</p></div>
+            <div class="card"><h4><span class="emoji">🌱</span> 种植/养殖环节</h4><p>建立标准化示范基地，实现无药残、无抗生素、无重金属残留。</p></div>
+            <div class="card"><h4><span class="emoji">🧪</span> 饲料/投入品环节</h4><p>自产或严控功能性饲料、生物肥料、生物农药，确保源头安全。</p></div>
+            <div class="card"><h4><span class="emoji">🏭</span> 加工环节</h4><p>建设智能化工厂，实现标准化、数字化生产。</p></div>
+            <div class="card"><h4><span class="emoji">🚛</span> 物流环节</h4><p>建立冷链体系，保障产品从工厂到餐桌的新鲜与安全。</p></div>
+            <div class="card"><h4><span class="emoji">🏪</span> 终端环节</h4><p>通过“亚太餐茶+”连锁门店、自有销售渠道直达消费者。</p></div>
+        </div>
+
+        <p style="font-weight:600; color:#0a2a5c; margin-top:0.6rem;">全环节控制：</p>
+        <p>每一个环节，都不是“外包”给别人做，而是人民自己的产业在做。这就意味着：</p>
+        <div class="grid-2">
+            <div class="card"><h4><span class="emoji">🥩</span> 火腿肠企业</h4><p>亚太国际自己养猪、自己屠宰、自己加工——品质全程可控。</p></div>
+            <div class="card"><h4><span class="emoji">🍞</span> 面包企业</h4><p>亚太国际自己种小麦、自己磨面粉、自己烘焙——安全全程可溯。</p></div>
+            <div class="card" style="grid-column:1/-1;"><h4><span class="emoji">🥛</span> 牛奶企业</h4><p>亚太国际自己养牛、自己加工、自己配送——源头全程可信。</p></div>
+        </div>
+
+        <div class="emphasis-box" style="margin-top:0.6rem;">
+            <p style="font-size:1.1rem;"><strong class="highlight-red">结论：</strong> 未来，只有成为亚太国际的成员，才能吃到绝对安全的食品。</p>
+            <p style="font-size:0.92rem; font-weight:400; color:#1a344b;">因为其他地方的企业，只能控制某一个环节——他做火腿肠，不养猪，就无法保证猪肉从哪里来、用什么饲料、有没有药残。而亚太国际做的是人民的大系统工程，食品的每一个环节都是人民自己的产业在运转。</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 三、产业体系架构：一核两翼三驱动                            -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 三</div>
+        <h2><span class="deco-icon">🏗️</span> 产业体系架构：一核两翼三驱动</h2>
+
+        <div class="grid-3">
+            <div class="card" style="background: linear-gradient(135deg, #f4f9ff, #fff); border: 2px solid #d4a843; text-align:center;">
+                <span style="font-size:2.5rem; display:block; margin-bottom:0.2rem;">🎯</span>
+                <h4 style="justify-content:center; color:#c0392b;">一核</h4>
+                <p style="text-align:center; font-weight:700; color:#0a2a5c;">人民价值最大化</p>
+                <p style="text-align:center; font-size:0.85rem;">一切产业建设的出发点和归宿，是让人民群众吃上安全、健康、平价的食品。</p>
+            </div>
+            <div class="card" style="grid-column: span 1;">
+                <h4><span class="emoji">🪽</span> 两翼</h4>
+                <p><strong class="highlight-blue">产业侧：</strong> 聚焦全品类食品产业链的深耕，从鸡类起步，逐步复制到所有食品品类，打造世界级安全标准。</p>
+                <p style="margin-top:0.2rem;"><strong class="highlight-blue">社区侧：</strong> 聚焦“亚太餐茶+”终端网络建设，让人民产业开到家门口，让每一位成员都能便捷地享用到安全食品。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🚀</span> 三驱动</h4>
+                <p><strong class="highlight-gold">市场驱动：</strong> 以百万、千万级会员的消费需求为确定性动力，拉动产业链建设。</p>
+                <p><strong class="highlight-gold">科技驱动：</strong> 以华为级智能化、行业顶尖生物技术赋能全产业链，实现降本增效。</p>
+                <p><strong class="highlight-gold">政策驱动：</strong> 以解决国家食品安全痛点为目标，对接各部委示范工程，撬动政策与资源支持。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 四、品类扩展路径：从鸡到全品类                              -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 四</div>
+        <h2><span class="deco-icon">📈</span> 品类扩展路径：从鸡到全品类</h2>
+
+        <div class="grid-3">
+            <div class="feature-card" style="border-left-color:#c0392b;">
+                <div class="feature-header">
+                    <span class="feat-icon">🐔</span>
+                    <h3>第一步：鸡类产业链</h3>
+                </div>
+                <div class="feat-detail">
+                    <p>涵盖育种、养殖、屠宰、加工、餐饮、销售全环节，产品实现无药残、无抗生素、无重金属残留，经多省份试点检测，指标远超国标及欧盟标准。</p>
+                </div>
+            </div>
+            <div class="feature-card" style="border-left-color:#d4a843;">
+                <div class="feature-header">
+                    <span class="feat-icon">🔄</span>
+                    <h3>第二步：复制拓展</h3>
+                </div>
+                <div class="feat-detail">
+                    <p>以鸡类产业为模板，逐品类复制：猪牛羊、水产、工厂化种植、加工类。</p>
+                </div>
+            </div>
+            <div class="feature-card" style="border-left-color:#1f5990;">
+                <div class="feature-header">
+                    <span class="feat-icon">🌍</span>
+                    <h3>第三步：全品类覆盖</h3>
+                </div>
+                <div class="feat-detail">
+                    <p>人民食品产业体系覆盖所有主要食品品类，形成全球最大的高标准安全食品产业集群，成为国家菜篮子供给保障体系的核心支撑。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 五、特色优势                                                -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 五</div>
+        <h2><span class="deco-icon">💎</span> 特色优势</h2>
+        <div class="grid-2">
+            <div class="card"><h4><span class="emoji">🛡️</span> 绝对安全</h4><p>全产业链控制，每一环节都可追溯、可验证，产品全部实现无药残、无抗生素、无重金属残留。</p></div>
+            <div class="card"><h4><span class="emoji">🔗</span> 体系化保障</h4><p>非单点突破，而是系统重构。从种源到餐桌，全链条统一标准、统一管控。</p></div>
+            <div class="card"><h4><span class="emoji">⚡</span> 科技驱动</h4><p>深度融合华为智能化、生物技术、新材料技术，打造世界级安全与效率。</p></div>
+            <div class="card"><h4><span class="emoji">🤝</span> 人民共有</h4><p>产业归全体贡献者所有，利润按贡献分配，消费者即产业主人。</p></div>
+            <div class="card" style="grid-column:1/-1;"><h4><span class="emoji">💰</span> 平价惠民</h4><p>砍掉中间环节，以规模效应降低成本，让高品质安全食品人人可及。</p></div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 六、社会价值与示范意义                                      -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 六</div>
+        <h2><span class="deco-icon">🌟</span> 社会价值与示范意义</h2>
+        <div class="value-grid">
+            <div class="value-card" style="border-top-color:#c0392b;">
+                <span class="v-icon">🥦</span>
+                <h5>食品安全</h5>
+                <p>树立全球最高标准的安全食品标杆，引领行业变革。</p>
+            </div>
+            <div class="value-card" style="border-top-color:#1f5990;">
+                <span class="v-icon">♻️</span>
+                <h5>循环经济</h5>
+                <p>推动种养结合、废弃物资源化利用，实现绿色可持续发展。</p>
+            </div>
+            <div class="value-card" style="border-top-color:#d4a843;">
+                <span class="v-icon">🌾</span>
+                <h5>乡村振兴</h5>
+                <p>带动农村产业发展，创造大量本地就业岗位。</p>
+            </div>
+            <div class="value-card" style="border-top-color:#c0392b;">
+                <span class="v-icon">🤲</span>
+                <h5>共同富裕</h5>
+                <p>通过人民集体所有制和动态分配机制，让每一位参与者共享产业红利。</p>
+            </div>
+        </div>
+        <div class="sub-block gold-border" style="margin-top:0.6rem;">
+            <p><strong class="highlight-gold">对接15大国家级示范工程</strong>，让人民食品产业体系成为国家战略的优质承载者。</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 七、愿景承诺                                                -->
+    <!-- ============================================================ -->
+    <div class="section finale-section">
+        <div class="section-badge" style="background:linear-gradient(135deg, #d4a843, #e8c760); color:#0a2a5c;"><span class="badge-icon">🔥</span> 七</div>
+        <h2 style="justify-content:center;"><span class="deco-icon">🌍</span> 愿景承诺</h2>
+
+        <p class="finale-text">亚太国际致力于构建一个<strong class="highlight-gold">高标准、全品类、全链条、全覆盖</strong>的人民食品产业体系。</p>
+        <p class="finale-text">从一只鸡开始，我们正在做的是：<strong class="highlight-red">重建信任、重塑分配、重构产业</strong>。</p>
+        <p class="finale-text">未来，我们将形成全球最高安全标准——<strong class="highlight-blue">亚太标准</strong>，每一项技术都致力于为世界人民创造更美好的生活。</p>
+
+        <p class="finale-strong">共同抵达一个属于人民的新时代。</p>
+    </div>
+
+    <!-- ========== 页脚 ========== -->
+    <div class="global-footer">
+        <span class="footer-slogan">国家富强 · 民族复兴 · 人民幸福</span>
+        <br>
+        亚太国际 · 人民事业共同体 &nbsp;|&nbsp; 全心全意为人民服务
+    </div>
+
+</div>
+    <div id="site-footer"></div>
+    <script src="/vendor/bootstrap.bundle.min.js"></script>
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

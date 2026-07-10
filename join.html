@@ -192,6 +192,7 @@
                     <span class="section-label">REGISTER</span>
                     <h2 class="section-title">线上注册入口</h2>
                     <p class="section-sub">立即开始你的共同体之旅</p>
+                <p class="text-muted small mb-3"><i class="fas fa-info-circle me-1"></i>演示模式：提交不会真实发送数据，仅供体验，正式注册通道上线前不作为真实注册。</p>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
@@ -232,7 +233,7 @@
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="join-agree" required>
                                                 <label class="form-check-label" for="join-agree">
-                                                    我已阅读并同意 <a href="#">《用户协议》</a> 和 <a href="#">《隐私政策》</a>
+                                                    我已阅读并同意 <a href="/coming-soon.html">《用户协议》</a> 和 <a href="/coming-soon.html">《隐私政策》</a>
                                                 </label>
                                             </div>
                                         </div>
@@ -324,7 +325,7 @@
                 btn.disabled = true;
                 btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>注册中…';
                 setTimeout(() => {
-                    btn.innerHTML = '<i class="fas fa-circle-check me-2"></i>注册成功！';
+                    btn.innerHTML = '<i class="fas fa-circle-check me-2"></i>注册成功（演示）';
                     btn.classList.remove('btn-amber');
                     btn.classList.add('btn-success');
                     joinForm.reset();

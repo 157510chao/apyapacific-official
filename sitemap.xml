@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url><loc>https://www.apcc.org/index.html</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-    <url><loc>https://www.apcc.org/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.apcc.org/community.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.apcc.org/health.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.apcc.org/research.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.apcc.org/industry.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.apcc.org/science.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.apcc.org/welfare.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.apcc.org/talent.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.apcc.org/system.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.apcc.org/education.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-    <url><loc>https://www.apcc.org/projects.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-    <url><loc>https://www.apcc.org/business.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-    <url><loc>https://www.apcc.org/resources.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-    <url><loc>https://www.apcc.org/join.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.apcc.org/news.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
-    <url><loc>https://www.apcc.org/national-declaration.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://www.apcc.org/people-declaration.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://www.apcc.org/cordycepin-research-overview.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
     <url><loc>https://www.apcc.org/cordycepin-17fields.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
     <url><loc>https://www.apcc.org/validate.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>

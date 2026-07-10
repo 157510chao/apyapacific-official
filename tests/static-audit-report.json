@@ -1,0 +1,95 @@
+{
+  "counts": {
+    "PASS": 8,
+    "WARN": 6,
+    "FAIL": 2
+  },
+  "results": {
+    "pass": [
+      {
+        "cat": "链接有效性",
+        "msg": "共校验 677 个站内链接，0 个失效（外链 46 个未校验）",
+        "detail": ""
+      },
+      {
+        "cat": "静态资源",
+        "msg": "校验 11 个 css/js/svg/json 等资源引用，全部存在",
+        "detail": ""
+      },
+      {
+        "cat": "搜索索引",
+        "msg": "search-index.js 共 20 条，全部指向有效页面",
+        "detail": ""
+      },
+      {
+        "cat": "sitemap",
+        "msg": "sitemap.xml 共 6 个 <loc>，全部有效",
+        "detail": ""
+      },
+      {
+        "cat": "JS语法",
+        "msg": "全部 11 个 JS 文件通过 node --check",
+        "detail": ""
+      },
+      {
+        "cat": "表单校验",
+        "msg": "页面 index.html 表单#1: required字段=3, 正则校验=0, 提交按钮=true, 死锚点(href=\"#\")=\"0\"",
+        "detail": ""
+      },
+      {
+        "cat": "表单校验",
+        "msg": "页面 join.html 表单#1: required字段=4, 正则校验=1, 提交按钮=true, 死锚点(href=\"#\")=\"0\"",
+        "detail": ""
+      },
+      {
+        "cat": "表单校验",
+        "msg": "页面 search.html 表单#1: required字段=0, 正则校验=0, 提交按钮=true, 死锚点(href=\"#\")=\"0\"",
+        "detail": ""
+      }
+    ],
+    "warn": [
+      {
+        "cat": "多余/孤儿页面",
+        "msg": "nation.html 无法从首页或共享导航经内部链接到达",
+        "detail": "可能为冗余或需补充入口"
+      },
+      {
+        "cat": "多余/孤儿页面",
+        "msg": "table.html 无法从首页或共享导航经内部链接到达",
+        "detail": "可能为冗余或需补充入口"
+      },
+      {
+        "cat": "多余/孤儿页面",
+        "msg": "validate.html 无法从首页或共享导航经内部链接到达",
+        "detail": "可能为冗余或需补充入口"
+      },
+      {
+        "cat": "表单逻辑",
+        "msg": "join.html 注册表单为纯前端模拟（preventDefault + setTimeout 伪成功），无真实 API 提交",
+        "detail": "建议：接入后端或明确标注“演示”以免用户误以为已注册"
+      },
+      {
+        "cat": "响应式",
+        "msg": "nation.html 缺少 viewport meta，移动端无法正确缩放",
+        "detail": ""
+      },
+      {
+        "cat": "跨浏览器",
+        "msg": "js/main.js 使用可选链(?.)×2 / 空值合并(??)×0",
+        "detail": "现代 Chrome/Firefox/Edge/Safari(≥14) 均支持；若需兼容老旧 Safari(<14) 需转译"
+      }
+    ],
+    "fail": [
+      {
+        "cat": "结构一致性",
+        "msg": "nation.html 缺少共享导航挂载点/注入脚本",
+        "detail": "site-header:false site-footer:false include.js:false"
+      },
+      {
+        "cat": "结构一致性",
+        "msg": "validate.html 缺少共享导航挂载点/注入脚本",
+        "detail": "site-header:false site-footer:false include.js:false"
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 ﻿<!-- ================================================================
      公共导航栏 - 通过 js/include.js 注入到 #site-header 占位
-     与所有页面的 <a class="nav-link"> 链接均使用相对路径
-     目录 0616 重构版：10 个一级 + 折叠子菜单
+     与所有页面的 <a class="nav-link"> 链接均使用相对站点根目录的路径（以 / 开头）
+     目录 0709 重构版：6 个一级 + 折叠子菜单（按"网站导航栏最新菜单配置.docx"）
 ================================================================ -->
 
 <!-- ========== 导航栏 ========== -->
@@ -9,7 +9,7 @@
     <div class="container-fluid px-4 px-xl-5">
 
         <!-- 品牌 Logo -->
-        <a class="navbar-brand" href="index.html" aria-label="亚太国际人民事业发展共同体">
+        <a class="navbar-brand" href="/index.html" aria-label="亚太国际人民事业发展共同体">
             <span class="brand-icon" aria-hidden="true"><i class="fas fa-globe-asia"></i></span>
             <span class="brand-full d-none d-xl-inline">亚太国际人民事业发展共同体</span>
             <span class="brand-short d-none d-md-inline d-xl-none">亚太人民共同体</span>
@@ -27,170 +27,119 @@
             <ul class="navbar-nav align-items-center gap-1">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html" data-nav="index.html">
+                    <a class="nav-link" href="/index.html" data-nav="index.html">
                         <i class="fas fa-home"></i> 首页
                     </a>
                 </li>
 
-                <!-- 关于亚太国际 -->
+                <!-- 关于亚太 -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="about.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-info-circle"></i> 关于亚太国际
+                    <a class="nav-link dropdown-toggle" href="/关于亚太/总体介绍.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-info-circle"></i> 关于亚太
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="about.html#overview" data-todo="1"><i class="fas fa-circle-info fa-xs me-2"></i>总体介绍</a></li>
-                        <li><a class="dropdown-item" href="about.html#organization" data-todo="1"><i class="fas fa-sitemap fa-xs me-2"></i>组织架构</a></li>
-                        <li><a class="dropdown-item" href="about.html#core-idea" data-todo="1"><i class="fas fa-lightbulb fa-xs me-2"></i>核心理念</a></li>
-                        <li><a class="dropdown-item" href="about.html#business-model" data-todo="1"><i class="fas fa-chart-line fa-xs me-2"></i>商业模式</a></li>
+                        <li><a class="dropdown-item" href="/关于亚太/总体介绍.html"><i class="fas fa-circle-info fa-xs me-2"></i>总体介绍</a></li>
+                        <li><a class="dropdown-item" href="/关于亚太/组织架构.html"><i class="fas fa-sitemap fa-xs me-2"></i>组织架构</a></li>
+                        <li><a class="dropdown-item" href="/关于亚太/核心理念.html"><i class="fas fa-lightbulb fa-xs me-2"></i>核心理念</a></li>
+                        <li><a class="dropdown-item" href="/关于亚太/发展方略.html"><i class="fas fa-route fa-xs me-2"></i>发展方略</a></li>
                     </ul>
                 </li>
 
                 <!-- 人民事业共同体 -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="community.html" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="/人民事业共同体/人民集体所有制.html" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-handshake"></i> 人民事业共同体
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="community.html#collective-ownership" data-todo="1"><i class="fas fa-people-group fa-xs me-2"></i>人民集体所有制</a></li>
-                        <li><a class="dropdown-item" href="community.html#pvc" data-todo="1"><i class="fas fa-coins fa-xs me-2"></i>人民价值贡献值体系（PVC）</a></li>
-                        <li><a class="dropdown-item" href="community.html#idea-collection" data-todo="1"><i class="fas fa-book fa-xs me-2"></i>理念阐释集合</a></li>
+                        <li><a class="dropdown-item" href="/人民事业共同体/人民集体所有制.html"><i class="fas fa-people-group fa-xs me-2"></i>人民集体所有制</a></li>
+                        <li><a class="dropdown-item" href="/人民事业共同体/共同体基本法.html"><i class="fas fa-book-open fa-xs me-2"></i>共同体基本法</a></li>
+                        <li><a class="dropdown-item" href="/人民事业共同体/人民价值贡献值.html"><i class="fas fa-coins fa-xs me-2"></i>人民价值贡献值体系（PVC）</a></li>
+                        <li><a class="dropdown-item" href="/人民事业共同体/国家宣言.html"><i class="fas fa-flag fa-xs me-2"></i>国家宣言</a></li>
+                        <li><a class="dropdown-item" href="/人民事业共同体/人民宣言.html"><i class="fas fa-scroll fa-xs me-2"></i>人民宣言</a></li>
+                        <li><a class="dropdown-item" href="/coming-soon.html"><i class="fas fa-book fa-xs me-2"></i>理念文集</a></li>
                     </ul>
                 </li>
 
-                <!-- 健康中国·人民健康 -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="health.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-heart-pulse"></i> 健康中国·人民健康
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="health.html#healthy-china" data-todo="1"><i class="fas fa-flag fa-xs me-2"></i>健康中国·人民健康</a></li>
-                        <li><a class="dropdown-item" href="health.html#yatai-no1" data-todo="1"><i class="fas fa-pills fa-xs me-2"></i>亚太1号-虫草素</a></li>
-                        <li><a class="dropdown-item" href="health.html#cordycep-intro" data-todo="1"><i class="fas fa-microscope fa-xs me-2"></i>虫草素简介</a></li>
-                    </ul>
-                </li>
-
-                <!-- 虫草素全球科研：折叠子菜单 -->
+                <!-- 人民产业与科研：折叠子菜单 -->
                 <li class="nav-item dropdown dropdown-mega">
-                    <a class="nav-link dropdown-toggle" href="research.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-flask"></i> 虫草素全球科研
+                    <a class="nav-link dropdown-toggle" href="/人民产业与科研/健康中国人民健康/健康中国人民健康.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-industry"></i> 人民产业与科研
                         <i class="fas fa-chevron-right ms-1 mega-arrow"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-research">
-                        <li>
-                            <a class="dropdown-item" href="research.html#overview" data-todo="1"><i class="fas fa-globe fa-xs me-2"></i>虫草素全球科研综述</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="清华大学基础研究.html" data-todo="1"><i class="fas fa-university fa-xs me-2"></i>清华大学基础研究</a>
-                        </li>
-                        <li class="dropdown-submenu dropend">
-                            <a class="dropdown-item dropdown-toggle-sub" href="抗肿瘤与肿瘤微环境.html" data-todo="1">
-                                <i class="fas fa-dna fa-xs me-2"></i>抗肿瘤与肿瘤微环境
-                            </a>
-                            <ul class="dropdown-menu dropdown-sub">
-                                <li><a class="dropdown-item" href="research.html#oncology-tumor" data-todo="1">肿瘤生长抑制</a></li>
-                                <li><a class="dropdown-item" href="research.html#oncology-microenv" data-todo="1">肿瘤微环境调控</a></li>
-                                <li><a class="dropdown-item" href="research.html#oncology-metastasis" data-todo="1">抗转移与耐药</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="dropdown-item" href="代谢紊乱领域.html" data-todo="1"><i class="fas fa-droplet fa-xs me-2"></i>代谢紊乱领域</a></li>
-                        <li><a class="dropdown-item" href="炎症与自身免疫疾病领域.html" data-todo="1"><i class="fas fa-fire fa-xs me-2"></i>炎症与自身免疫疾病</a></li>
-                        <li><a class="dropdown-item" href="免疫增强与提升.html" data-todo="1"><i class="fas fa-shield-virus fa-xs me-2"></i>免疫增强提升领域</a></li>
-                        <li class="dropdown-submenu dropend">
-                            <a class="dropdown-item dropdown-toggle-sub" href="神经保护与精神疾病.html" data-todo="1">
-                                <i class="fas fa-brain fa-xs me-2"></i>神经保护与精神疾病
-                            </a>
-                            <ul class="dropdown-menu dropdown-sub">
-                                <li><a class="dropdown-item" href="神经保护与精神疾病.html#degeneration" data-todo="1">神经退行性疾病</a></li>
-                                <li><a class="dropdown-item" href="神经保护与精神疾病.html#psychiatric" data-todo="1">精神疾病</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="dropdown-item" href="research.html#cardio" data-todo="1"><i class="fas fa-heart fa-xs me-2"></i>心血管疾病领域</a></li>
-                        <li><a class="dropdown-item" href="research.html#kidney" data-todo="1"><i class="fas fa-filter fa-xs me-2"></i>肾脏疾病领域</a></li>
-                        <li><a class="dropdown-item" href="research.html#liver" data-todo="1"><i class="fas fa-circle-half-stroke fa-xs me-2"></i>肝脏疾病领域</a></li>
-                        <li><a class="dropdown-item" href="肺部健康领域.html" data-todo="1"><i class="fas fa-lungs fa-xs me-2"></i>肺部健康领域</a></li>
-                        <li><a class="dropdown-item" href="糖尿病领域.html" data-todo="1"><i class="fas fa-tint fa-xs me-2"></i>糖尿病领域</a></li>
-                        <li><a class="dropdown-item" href="research.html#viral" data-todo="1"><i class="fas fa-virus fa-xs me-2"></i>病毒感染性疾病</a></li>
-                        <li><a class="dropdown-item" href="research.html#bone" data-todo="1"><i class="fas fa-bone fa-xs me-2"></i>骨代谢疾病领域</a></li>
-                        <li><a class="dropdown-item" href="research.html#skin" data-todo="1"><i class="fas fa-hand-sparkles fa-xs me-2"></i>皮肤健康领域</a></li>
-                        <li><a class="dropdown-item" href="research.html#aging" data-todo="1"><i class="fas fa-hourglass-half fa-xs me-2"></i>衰老与生物钟领域</a></li>
-                        <li><a class="dropdown-item" href="research.html#others" data-todo="1"><i class="fas fa-ellipsis fa-xs me-2"></i>其他潜在应用领域</a></li>
+                        <li><a class="dropdown-item" href="/industry.html"><i class="fas fa-industry fa-xs me-2"></i>人民产业体系</a></li>
+                        <li><span class="dropdown-header">健康中国·人民健康</span></li>
+                        <li><a class="dropdown-item" href="/人民产业与科研/健康中国人民健康/健康中国人民健康.html"><i class="fas fa-heart-pulse fa-xs me-2"></i>健康中国·人民健康</a></li>
+                        <li><a class="dropdown-item" href="/人民产业与科研/健康中国人民健康/亚太1号·虫草素.html"><i class="fas fa-pills fa-xs me-2"></i>亚太1号·虫草素</a></li>
+                        <li><a class="dropdown-item" href="/人民产业与科研/健康中国人民健康/虫草素全球科研/首页.html"><i class="fas fa-flask fa-xs me-2"></i>虫草素全球科研集合</a></li>
+                        <li><a class="dropdown-item" href="/清华大学基础研究.html"><i class="fas fa-university fa-xs me-2"></i>清华大学基础研究</a></li>
+                        <li><span class="dropdown-header">未来产业规划</span></li>
+                        <li><a class="dropdown-item" href="/人民产业与科研/未来产业规划/产业规划总览.html"><i class="fas fa-chart-line fa-xs me-2"></i>产业规划总览</a></li>
+                        <li><a class="dropdown-item" href="/人民产业与科研/未来产业规划/高标准鸡类产业链.html"><i class="fas fa-egg fa-xs me-2"></i>高标准鸡类产业链</a></li>
+                        <li><a class="dropdown-item" href="/人民产业与科研/未来产业规划/高标准食品全产业链.html"><i class="fas fa-utensils fa-xs me-2"></i>高标准食品全产业链</a></li>
+                        <li><a class="dropdown-item" href="/人民产业与科研/未来产业规划/生物科技微谷.html"><i class="fas fa-microscope fa-xs me-2"></i>生物科技微谷</a></li>
+                        <li><a class="dropdown-item" href="/人民产业与科研/未来产业规划/亚太国际未来城.html"><i class="fas fa-city fa-xs me-2"></i>亚太国际未来城</a></li>
+                        <li><span class="dropdown-header">人民科研</span></li>
+                        <li><a class="dropdown-item" href="/人民产业与科研/人民科研/亚太人民科学院.html"><i class="fas fa-graduation-cap fa-xs me-2"></i>亚太人民科学院</a></li>
                     </ul>
                 </li>
 
-                <!-- 人民产业体系 -->
+                <!-- 人民组织与制度 -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="industry.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-industry"></i> 人民产业体系
+                    <a class="nav-link dropdown-toggle" href="/人民组织与制度/亚太联盟企业.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-sitemap"></i> 人民组织与制度
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="industry.html#chicken" data-todo="1"><i class="fas fa-egg fa-xs me-2"></i>高标准鸡类产业链</a></li>
-                        <li><a class="dropdown-item" href="industry.html#food" data-todo="1"><i class="fas fa-utensils fa-xs me-2"></i>食品全产业链</a></li>
-                        <li><a class="dropdown-item" href="industry.html#catering" data-todo="1"><i class="fas fa-kitchen-set fa-xs me-2"></i>未来餐饮</a></li>
-                        <li><a class="dropdown-item" href="industry.html#biotech" data-todo="1"><i class="fas fa-microscope fa-xs me-2"></i>生物科技微谷</a></li>
-                        <li><a class="dropdown-item" href="industry.html#materials" data-todo="1"><i class="fas fa-cubes fa-xs me-2"></i>新材料</a></li>
-                        <li><a class="dropdown-item" href="industry.html#future-city" data-todo="1"><i class="fas fa-city fa-xs me-2"></i>亚太国际未来城</a></li>
+                        <li><a class="dropdown-item" href="/人民组织与制度/亚太联盟企业.html"><i class="fas fa-building fa-xs me-2"></i>亚太联盟企业</a></li>
+                        <li><a class="dropdown-item" href="/人民组织与制度/人力资源基本法.html"><i class="fas fa-users fa-xs me-2"></i>人力资源基本法</a></li>
+                        <li><a class="dropdown-item" href="/人民组织与制度/人才培养体系.html"><i class="fas fa-user-graduate fa-xs me-2"></i>人才培养体系</a></li>
+                        <li><a class="dropdown-item" href="/人民组织与制度/人民政委体系.html"><i class="fas fa-user-shield fa-xs me-2"></i>人民政委体系</a></li>
+                        <li><a class="dropdown-item" href="/人民组织与制度/行为规范与纪律条例.html"><i class="fas fa-gavel fa-xs me-2"></i>行为规范与纪律条例</a></li>
+                        <li><a class="dropdown-item" href="/人民组织与制度/干部管理制度.html"><i class="fas fa-id-card fa-xs me-2"></i>干部管理制度</a></li>
+                        <li><a class="dropdown-item" href="/人民组织与制度/干部作风八条.html"><i class="fas fa-clipboard-list fa-xs me-2"></i>干部作风八条</a></li>
                     </ul>
                 </li>
 
-                <!-- 人民科研 -->
+                <!-- 人民荣誉 -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="science.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-atom"></i> 人民科研
+                    <a class="nav-link dropdown-toggle" href="/人民荣誉/亚太人民勋章.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-medal"></i> 人民荣誉
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="science.html#apcc-academy" data-todo="1"><i class="fas fa-graduation-cap fa-xs me-2"></i>亚太人民科学院</a></li>
-                        <li><a class="dropdown-item" href="science.html#key-lab" data-todo="1"><i class="fas fa-flask fa-xs me-2"></i>国家生化重点实验室</a></li>
-                        <li><a class="dropdown-item" href="science.html#enzyme" data-todo="1"><i class="fas fa-dna fa-xs me-2"></i>中华酶工程</a></li>
-                        <li><a class="dropdown-item" href="science.html#material-sci" data-todo="1"><i class="fas fa-cubes fa-xs me-2"></i>材料科学</a></li>
+                        <li><a class="dropdown-item" href="/人民荣誉/亚太人民勋章.html"><i class="fas fa-medal fa-xs me-2"></i>亚太人民勋章</a></li>
+                        <li><a class="dropdown-item" href="/人民荣誉/亚太人民奖.html"><i class="fas fa-award fa-xs me-2"></i>亚太人民奖</a></li>
+                        <li><a class="dropdown-item" href="/人民荣誉/亚太人民劳动奖章.html"><i class="fas fa-medal fa-xs me-2"></i>亚太人民劳动奖章</a></li>
+                        <li><a class="dropdown-item" href="/coming-soon.html"><i class="fas fa-award fa-xs me-2"></i>亚太人民贡献奖</a></li>
+                        <li><a class="dropdown-item" href="/coming-soon.html"><i class="fas fa-graduation-cap fa-xs me-2"></i>亚太人民教育家</a></li>
+                        <li><a class="dropdown-item" href="/coming-soon.html"><i class="fas fa-medal fa-xs me-2"></i>亚太人民友谊勋章</a></li>
+                        <li><a class="dropdown-item" href="/coming-soon.html"><i class="fas fa-child fa-xs me-2"></i>亚太人民杰出少年奖</a></li>
                     </ul>
                 </li>
 
                 <!-- 人民福利 -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="welfare.html" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="/人民福利/人民教育.html" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-shield-heart"></i> 人民福利
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="welfare.html#edu" data-todo="1"><i class="fas fa-school fa-xs me-2"></i>人民教育</a></li>
-                        <li><a class="dropdown-item" href="welfare.html#medical" data-todo="1"><i class="fas fa-briefcase-medical fa-xs me-2"></i>人民医疗</a></li>
-                        <li><a class="dropdown-item" href="welfare.html#housing" data-todo="1"><i class="fas fa-house-chimney fa-xs me-2"></i>人民住房</a></li>
-                        <li><a class="dropdown-item" href="welfare.html#elderly" data-todo="1"><i class="fas fa-hand-holding-heart fa-xs me-2"></i>人民养老</a></li>
-                    </ul>
-                </li>
-
-                <!-- 人才培养 -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="talent.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user-graduate"></i> 人才培养
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="talent.html#apcc-college" data-todo="1"><i class="fas fa-school fa-xs me-2"></i>亚太人民教育学院</a></li>
-                    </ul>
-                </li>
-
-                <!-- 制度体系 -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="system.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-scale-balanced"></i> 制度体系
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="system.html#basic-law" data-todo="1"><i class="fas fa-book-open fa-xs me-2"></i>共同体基本法</a></li>
-                        <li><a class="dropdown-item" href="system.html#org-hr" data-todo="1"><i class="fas fa-users-gear fa-xs me-2"></i>组织与人力制度</a></li>
-                        <li><a class="dropdown-item" href="system.html#code-of-conduct" data-todo="1"><i class="fas fa-handshake fa-xs me-2"></i>成员行为准则</a></li>
-                        <li><a class="dropdown-item" href="system.html#discipline" data-todo="1"><i class="fas fa-gavel fa-xs me-2"></i>纪律制度</a></li>
+                        <li><a class="dropdown-item" href="/welfare.html"><i class="fas fa-hands-holding-circle fa-xs me-2"></i>福利总览</a></li>
+                        <li><a class="dropdown-item" href="/人民福利/人民教育.html"><i class="fas fa-school fa-xs me-2"></i>人民教育</a></li>
+                        <li><a class="dropdown-item" href="/coming-soon.html"><i class="fas fa-briefcase-medical fa-xs me-2"></i>人民医疗</a></li>
+                        <li><a class="dropdown-item" href="/coming-soon.html"><i class="fas fa-house-chimney fa-xs me-2"></i>人民住房</a></li>
+                        <li><a class="dropdown-item" href="/人民福利/人民养老.html"><i class="fas fa-hand-holding-heart fa-xs me-2"></i>人民养老</a></li>
                     </ul>
                 </li>
 
                 <!-- 搜索 -->
                 <li class="nav-item ms-2">
-                    <a class="nav-link nav-search-icon" href="search.html" title="站内搜索" aria-label="站内搜索" data-nav="search.html">
+                    <a class="nav-link nav-search-icon" href="/search.html" title="站内搜索" aria-label="站内搜索" data-nav="search.html">
                         <i class="fas fa-search"></i>
                     </a>
                 </li>
 
                 <!-- 加入亚太 - 高亮CTA -->
                 <li class="nav-item ms-2">
-                    <a class="btn btn-join" href="join.html" data-nav="join.html">
+                    <a class="btn btn-join" href="/join.html" data-nav="join.html">
                         <i class="fas fa-door-open me-1"></i> 加入亚太
                     </a>
                 </li>
@@ -211,21 +160,21 @@
         <div class="accordion accordion-flush mobile-nav-accordion" id="mobileNavAccordion">
 
             <div class="accordion-item border-0">
-                <a class="accordion-nav-link fw-semibold" href="index.html" data-nav="index.html"><i class="fas fa-home me-2 text-primary"></i>首页</a>
+                <a class="accordion-nav-link fw-semibold" href="/index.html" data-nav="index.html"><i class="fas fa-home me-2 text-primary"></i>首页</a>
             </div>
 
             <div class="accordion-item border-0">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob1">
-                        <i class="fas fa-info-circle me-2 text-primary"></i>关于亚太国际
+                        <i class="fas fa-info-circle me-2 text-primary"></i>关于亚太
                     </button>
                 </h2>
                 <div id="mob1" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
                     <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="about.html#overview" data-todo="1">总体介绍</a>
-                        <a class="mobile-sub-link" href="about.html#organization" data-todo="1">组织架构</a>
-                        <a class="mobile-sub-link" href="about.html#core-idea" data-todo="1">核心理念</a>
-                        <a class="mobile-sub-link" href="about.html#business-model" data-todo="1">商业模式</a>
+                        <a class="mobile-sub-link" href="/关于亚太/总体介绍.html">总体介绍</a>
+                        <a class="mobile-sub-link" href="/关于亚太/组织架构.html">组织架构</a>
+                        <a class="mobile-sub-link" href="/关于亚太/核心理念.html">核心理念</a>
+                        <a class="mobile-sub-link" href="/关于亚太/发展方略.html">发展方略</a>
                     </div>
                 </div>
             </div>
@@ -238,9 +187,12 @@
                 </h2>
                 <div id="mob2" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
                     <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="community.html#collective-ownership" data-todo="1">人民集体所有制</a>
-                        <a class="mobile-sub-link" href="community.html#pvc" data-todo="1">人民价值贡献值体系（PVC）</a>
-                        <a class="mobile-sub-link" href="community.html#idea-collection" data-todo="1">理念阐释集合</a>
+                        <a class="mobile-sub-link" href="/人民事业共同体/人民集体所有制.html">人民集体所有制</a>
+                        <a class="mobile-sub-link" href="/人民事业共同体/共同体基本法.html">共同体基本法</a>
+                        <a class="mobile-sub-link" href="/人民事业共同体/人民价值贡献值.html">人民价值贡献值体系（PVC）</a>
+                        <a class="mobile-sub-link" href="/人民事业共同体/国家宣言.html">国家宣言</a>
+                        <a class="mobile-sub-link" href="/人民事业共同体/人民宣言.html">人民宣言</a>
+                        <a class="mobile-sub-link" href="/coming-soon.html">理念文集</a>
                     </div>
                 </div>
             </div>
@@ -248,14 +200,25 @@
             <div class="accordion-item border-0">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob3">
-                        <i class="fas fa-heart-pulse me-2 text-primary"></i>健康中国·人民健康
+                        <i class="fas fa-industry me-2 text-primary"></i>人民产业与科研
                     </button>
                 </h2>
                 <div id="mob3" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
                     <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="health.html#healthy-china" data-todo="1">健康中国·人民健康</a>
-                        <a class="mobile-sub-link" href="health.html#yatai-no1" data-todo="1">亚太1号-虫草素</a>
-                        <a class="mobile-sub-link" href="health.html#cordycep-intro" data-todo="1">虫草素简介</a>
+                        <a class="mobile-sub-link" href="/industry.html">人民产业体系</a>
+                        <div class="mobile-group-label">健康中国·人民健康</div>
+                        <a class="mobile-sub-link" href="/人民产业与科研/健康中国人民健康/健康中国人民健康.html">健康中国·人民健康</a>
+                        <a class="mobile-sub-link" href="/人民产业与科研/健康中国人民健康/亚太1号·虫草素.html">亚太1号·虫草素</a>
+                        <a class="mobile-sub-link" href="/人民产业与科研/健康中国人民健康/虫草素全球科研/首页.html">虫草素全球科研集合</a>
+                        <a class="mobile-sub-link" href="/清华大学基础研究.html">清华大学基础研究</a>
+                        <div class="mobile-group-label">未来产业规划</div>
+                        <a class="mobile-sub-link" href="/人民产业与科研/未来产业规划/产业规划总览.html">产业规划总览</a>
+                        <a class="mobile-sub-link" href="/人民产业与科研/未来产业规划/高标准鸡类产业链.html">高标准鸡类产业链</a>
+                        <a class="mobile-sub-link" href="/人民产业与科研/未来产业规划/高标准食品全产业链.html">高标准食品全产业链</a>
+                        <a class="mobile-sub-link" href="/人民产业与科研/未来产业规划/生物科技微谷.html">生物科技微谷</a>
+                        <a class="mobile-sub-link" href="/人民产业与科研/未来产业规划/亚太国际未来城.html">亚太国际未来城</a>
+                        <div class="mobile-group-label">人民科研</div>
+                        <a class="mobile-sub-link" href="/人民产业与科研/人民科研/亚太人民科学院.html">亚太人民科学院</a>
                     </div>
                 </div>
             </div>
@@ -263,28 +226,18 @@
             <div class="accordion-item border-0">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob4">
-                        <i class="fas fa-flask me-2 text-primary"></i>虫草素全球科研
+                        <i class="fas fa-sitemap me-2 text-primary"></i>人民组织与制度
                     </button>
                 </h2>
                 <div id="mob4" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
                     <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="research.html#overview" data-todo="1">虫草素全球科研综述</a>
-                        <a class="mobile-sub-link" href="清华大学基础研究.html" data-todo="1">清华大学基础研究</a>
-                        <a class="mobile-sub-link" href="research.html#oncology" data-todo="1">抗肿瘤与肿瘤微环境</a>
-                        <a class="mobile-sub-link" href="代谢紊乱领域.html" data-todo="1">代谢紊乱领域</a>
-                        <a class="mobile-sub-link" href="炎症与自身免疫疾病领域.html" data-todo="1">炎症与自身免疫疾病</a>
-                        <a class="mobile-sub-link" href="免疫增强与提升.html" data-todo="1">免疫增强提升领域</a>
-                        <a class="mobile-sub-link" href="神经保护与精神疾病.html" data-todo="1">神经保护与精神疾病</a>
-                        <a class="mobile-sub-link" href="research.html#cardio" data-todo="1">心血管疾病领域</a>
-                        <a class="mobile-sub-link" href="research.html#kidney" data-todo="1">肾脏疾病领域</a>
-                        <a class="mobile-sub-link" href="research.html#liver" data-todo="1">肝脏疾病领域</a>
-                        <a class="mobile-sub-link" href="肺部健康领域.html" data-todo="1">肺部健康领域</a>
-                        <a class="mobile-sub-link" href="糖尿病领域.html" data-todo="1">糖尿病领域</a>
-                        <a class="mobile-sub-link" href="research.html#viral" data-todo="1">病毒感染性疾病</a>
-                        <a class="mobile-sub-link" href="research.html#bone" data-todo="1">骨代谢疾病领域</a>
-                        <a class="mobile-sub-link" href="research.html#skin" data-todo="1">皮肤健康领域</a>
-                        <a class="mobile-sub-link" href="research.html#aging" data-todo="1">衰老与生物钟领域</a>
-                        <a class="mobile-sub-link" href="research.html#others" data-todo="1">其他潜在应用领域</a>
+                        <a class="mobile-sub-link" href="/人民组织与制度/亚太联盟企业.html">亚太联盟企业</a>
+                        <a class="mobile-sub-link" href="/人民组织与制度/人力资源基本法.html">人力资源基本法</a>
+                        <a class="mobile-sub-link" href="/人民组织与制度/人才培养体系.html">人才培养体系</a>
+                        <a class="mobile-sub-link" href="/人民组织与制度/人民政委体系.html">人民政委体系</a>
+                        <a class="mobile-sub-link" href="/人民组织与制度/行为规范与纪律条例.html">行为规范与纪律条例</a>
+                        <a class="mobile-sub-link" href="/人民组织与制度/干部管理制度.html">干部管理制度</a>
+                        <a class="mobile-sub-link" href="/人民组织与制度/干部作风八条.html">干部作风八条</a>
                     </div>
                 </div>
             </div>
@@ -292,17 +245,18 @@
             <div class="accordion-item border-0">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob5">
-                        <i class="fas fa-industry me-2 text-primary"></i>人民产业体系
+                        <i class="fas fa-medal me-2 text-primary"></i>人民荣誉
                     </button>
                 </h2>
                 <div id="mob5" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
                     <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="industry.html#chicken" data-todo="1">高标准鸡类产业链</a>
-                        <a class="mobile-sub-link" href="industry.html#food" data-todo="1">食品全产业链</a>
-                        <a class="mobile-sub-link" href="industry.html#catering" data-todo="1">未来餐饮</a>
-                        <a class="mobile-sub-link" href="industry.html#biotech" data-todo="1">生物科技微谷</a>
-                        <a class="mobile-sub-link" href="industry.html#materials" data-todo="1">新材料</a>
-                        <a class="mobile-sub-link" href="industry.html#future-city" data-todo="1">亚太国际未来城</a>
+                        <a class="mobile-sub-link" href="/人民荣誉/亚太人民勋章.html">亚太人民勋章</a>
+                        <a class="mobile-sub-link" href="/人民荣誉/亚太人民奖.html">亚太人民奖</a>
+                        <a class="mobile-sub-link" href="/人民荣誉/亚太人民劳动奖章.html">亚太人民劳动奖章</a>
+                        <a class="mobile-sub-link" href="/coming-soon.html">亚太人民贡献奖</a>
+                        <a class="mobile-sub-link" href="/coming-soon.html">亚太人民教育家</a>
+                        <a class="mobile-sub-link" href="/coming-soon.html">亚太人民友谊勋章</a>
+                        <a class="mobile-sub-link" href="/coming-soon.html">亚太人民杰出少年奖</a>
                     </div>
                 </div>
             </div>
@@ -310,60 +264,16 @@
             <div class="accordion-item border-0">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob6">
-                        <i class="fas fa-atom me-2 text-primary"></i>人民科研
+                        <i class="fas fa-shield-heart me-2 text-primary"></i>人民福利
                     </button>
                 </h2>
                 <div id="mob6" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
                     <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="science.html#apcc-academy" data-todo="1">亚太人民科学院</a>
-                        <a class="mobile-sub-link" href="science.html#key-lab" data-todo="1">国家生化重点实验室</a>
-                        <a class="mobile-sub-link" href="science.html#enzyme" data-todo="1">中华酶工程</a>
-                        <a class="mobile-sub-link" href="science.html#material-sci" data-todo="1">材料科学</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob7">
-                        <i class="fas fa-shield-heart me-2 text-primary"></i>人民福利
-                    </button>
-                </h2>
-                <div id="mob7" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
-                    <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="welfare.html#edu" data-todo="1">人民教育</a>
-                        <a class="mobile-sub-link" href="welfare.html#medical" data-todo="1">人民医疗</a>
-                        <a class="mobile-sub-link" href="welfare.html#housing" data-todo="1">人民住房</a>
-                        <a class="mobile-sub-link" href="welfare.html#elderly" data-todo="1">人民养老</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob8">
-                        <i class="fas fa-user-graduate me-2 text-primary"></i>人才培养
-                    </button>
-                </h2>
-                <div id="mob8" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
-                    <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="talent.html#apcc-college" data-todo="1">亚太人民教育学院</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob9">
-                        <i class="fas fa-scale-balanced me-2 text-primary"></i>制度体系
-                    </button>
-                </h2>
-                <div id="mob9" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
-                    <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="system.html#basic-law" data-todo="1">共同体基本法</a>
-                        <a class="mobile-sub-link" href="system.html#org-hr" data-todo="1">组织与人力制度</a>
-                        <a class="mobile-sub-link" href="system.html#code-of-conduct" data-todo="1">成员行为准则</a>
-                        <a class="mobile-sub-link" href="system.html#discipline" data-todo="1">纪律制度</a>
+                        <a class="mobile-sub-link" href="/welfare.html">福利总览</a>
+                        <a class="mobile-sub-link" href="/人民福利/人民教育.html">人民教育</a>
+                        <a class="mobile-sub-link" href="/coming-soon.html">人民医疗</a>
+                        <a class="mobile-sub-link" href="/coming-soon.html">人民住房</a>
+                        <a class="mobile-sub-link" href="/人民福利/人民养老.html">人民养老</a>
                     </div>
                 </div>
             </div>
@@ -372,7 +282,7 @@
 
         <!-- 移动端底部CTA -->
         <div class="p-3 border-top mt-2">
-            <a href="join.html" class="btn btn-amber w-100 fw-bold">
+            <a href="/join.html" class="btn btn-amber w-100 fw-bold">
                 <i class="fas fa-door-open me-2"></i>立即加入亚太
             </a>
         </div>

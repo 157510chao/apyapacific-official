@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国家宣言 · 亚太国际</title>
+    <link href="/vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/fontawesome.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/subnav.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Serif SC', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f0f6fe;
+            color: #1a2b3f;
+            line-height: 1.8;
+            padding: 2.5rem 1.5rem 4rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: radial-gradient(ellipse at 25% 20%, rgba(170, 30, 30, 0.04) 0%, transparent 60%),
+                              radial-gradient(ellipse at 75% 80%, rgba(0, 50, 110, 0.05) 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(4px);
+            border-radius: 2.8rem;
+            padding: 3rem 3rem 2.5rem;
+            box-shadow: 0 24px 60px rgba(10, 30, 60, 0.08), 0 8px 24px rgba(10, 30, 60, 0.04);
+            border: 1px solid rgba(46, 86, 140, 0.08);
+        }
+
+        /* ---------- header ---------- */
+        .header {
+            text-align: center;
+            margin-bottom: 2.8rem;
+            padding: 2.8rem 2rem 2.6rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.6rem;
+            background: linear-gradient(135deg, #7a1c1c 0%, #c0392b 100%);
+            box-shadow: 0 16px 40px rgba(192,57,43,0.28);
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -12%;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.16) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .header .gold-line {
+            display: inline-block;
+            background: linear-gradient(90deg, #d4a843, #e8c760, #d4a843);
+            width: 60px;
+            height: 4px;
+            border-radius: 4px;
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .header h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 0.2rem;
+            position: relative;
+        }
+
+        .header h1 .flag {
+            font-size: 2.2rem;
+        }
+
+        .header .sub1 {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.92);
+            font-weight: 500;
+            letter-spacing: 3px;
+            margin-top: 0.4rem;
+            position: relative;
+        }
+
+        .header .sub2 {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.78);
+            margin-top: 0.4rem;
+            position: relative;
+        }
+
+        /* ---------- intro line ---------- */
+        .intro-line {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #3a6a8a;
+            margin-bottom: 2.5rem;
+            background: #f4f9ff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            display: inline-block;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #deeaf6;
+        }
+
+        /* ---------- two-column layout ---------- */
+        .declaration-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* ---------- card base ---------- */
+        .card {
+            background: #ffffff;
+            border-radius: 2rem;
+            border: 1px solid #eaf0f8;
+            padding: 2rem 2.2rem 2.2rem;
+            transition: box-shadow 0.25s ease, border-color 0.25s;
+            position: relative;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 32px rgba(10, 30, 60, 0.06);
+            border-color: #d0def0;
+        }
+
+        .card .card-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(135deg, #c0392b, #e05a3a);
+            border-radius: 40px;
+            padding: 0.1rem 16px 0.1rem 14px;
+            line-height: 1.6rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .card .card-badge .badge-icon {
+            font-size: 0.9rem;
+        }
+
+        .card h3 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card h3 .deco-star {
+            color: #d4a843;
+            font-size: 1.2rem;
+        }
+
+        /* ---------- 签署版特定 ---------- */
+        .signature-card {
+            border-left: 5px solid #c0392b;
+            background: linear-gradient(135deg, #ffffff, #fdf7f7);
+        }
+
+        .signature-card .swearer-line {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            color: #1a344b;
+        }
+
+        .signature-card .swearer-line span {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .signature-card .swearer-line .underscore {
+            display: inline-block;
+            min-width: 120px;
+            border-bottom: 2px solid #7a95b0;
+            margin-left: 4px;
+            height: 1.2em;
+            line-height: 1.2;
+        }
+
+        .signature-card .oath-text {
+            margin-top: 0.6rem;
+        }
+
+        .signature-card .oath-text p {
+            font-size: 0.98rem;
+            color: #1a344b;
+            margin-bottom: 0.75rem;
+            text-align: justify;
+            line-height: 1.85;
+        }
+
+        .signature-card .oath-text p strong {
+            color: #0a2a5c;
+            font-weight: 600;
+        }
+
+        .signature-card .oath-text .highlight-red {
+            color: #c0392b;
+            font-weight: 500;
+        }
+
+        .signature-card .signature-footer {
+            margin-top: 1.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            font-size: 1rem;
+            color: #1a344b;
+            border-top: 1px solid #e7edf6;
+            padding-top: 1.2rem;
+        }
+
+        .signature-card .signature-footer .field {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .signature-card .signature-footer .field .underscore {
+            display: inline-block;
+            min-width: 140px;
+            border-bottom: 2px solid #7a95b0;
+            height: 1.2em;
+            line-height: 1.2;
+        }
+
+        /* ---------- 宣誓版特定 ---------- */
+        .pledge-card {
+            background: linear-gradient(135deg, #fdf4f4, #fffbfb);
+            border: 2px solid #d4a843;
+            box-shadow: 0 0 0 1px #c0392b10;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pledge-card .pledge-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #c0392b;
+            letter-spacing: 6px;
+            margin-bottom: 0.3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .pledge-card .pledge-title::before,
+        .pledge-card .pledge-title::after {
+            content: '⭐';
+            font-size: 1.2rem;
+            margin: 0 8px;
+        }
+
+        .pledge-card .pledge-content {
+            font-size: 1.05rem;
+            color: #1a344b;
+            line-height: 2;
+            margin-top: 0.4rem;
+            max-width: 420px;
+        }
+
+        .pledge-card .pledge-content p {
+            margin-bottom: 0.6rem;
+            text-align: center;
+        }
+
+        .pledge-card .pledge-content .pledge-strong {
+            font-weight: 700;
+            color: #0a2a5c;
+        }
+
+        .pledge-card .pledge-content .flag-icon {
+            font-size: 1.1rem;
+        }
+
+        .pledge-card .star-sep {
+            color: #d4a843;
+            letter-spacing: 8px;
+            font-size: 1.2rem;
+            margin: 0.3rem 0 0.2rem;
+        }
+
+        /* ---------- footer ---------- */
+        .global-footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7a95b0;
+            border-top: 1px solid #e7edf6;
+            padding-top: 1.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        .global-footer .footer-slogan {
+            color: #0a2a5c;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .global-footer .footer-flag {
+            font-size: 1.2rem;
+            margin-right: 6px;
+        }
+
+        /* ---------- responsive ---------- */
+        @media (max-width: 960px) {
+            .declaration-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .container {
+                padding: 2rem 1.8rem;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .pledge-card .pledge-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1.2rem 0.8rem 2.5rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem;
+                border-radius: 2rem;
+            }
+
+            .header h1 {
+                font-size: 1.7rem;
+                letter-spacing: 3px;
+            }
+
+            .header .sub1 {
+                font-size: 1rem;
+            }
+
+            .card {
+                padding: 1.4rem 1rem 1.6rem;
+                border-radius: 1.5rem;
+            }
+
+            .signature-card .swearer-line {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .signature-card .signature-footer {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .pledge-card .pledge-title {
+                font-size: 1.3rem;
+            }
+
+            .pledge-card .pledge-content {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .header h1 .flag {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+<div class="container">
+
+    <!-- ========== HEADER ========== -->
+    <div class="header">
+        <div class="gold-line"></div>
+        <h1>
+            <span class="flag">🇨🇳</span>
+            国家宣言
+            <span class="flag">🇨🇳</span>
+        </h1>
+        <div class="sub1">对祖国的忠诚与誓言</div>
+        <div class="sub2">✦ 忠诚 · 法治 · 复兴 · 统一 · 奋斗 ✦</div>
+    </div>
+
+    <div style="text-align:center;">
+        <span class="intro-line">国家宣言分为签署版与宣誓版，分别适用于正式签署与集体宣誓场合</span>
+    </div>
+
+    <!-- ========== TWO COLUMNS ========== -->
+    <div class="declaration-grid">
+
+        <!-- ===== 签署版 ===== -->
+        <div class="card signature-card">
+            <div class="card-badge"><span class="badge-icon">📜</span> 一、签署版</div>
+            <h3><span class="deco-star">⭐</span> 国家宣言（签署版）</h3>
+
+            <div class="swearer-line">
+                <span>宣誓人：<span class="underscore"></span></span>
+                <span>监誓人：<span class="underscore"></span></span>
+            </div>
+
+            <p style="font-weight:600; color:#0a2a5c; margin-bottom:0.3rem;">我谨此庄严宣誓：</p>
+
+            <div class="oath-text">
+                <p>我志愿投身于“亚太国际·人民事业共同体”这一伟大事业。我深知，这是关乎国家富强、民族复兴与人民幸福的宏大历史工程。</p>
+                <p>我宣誓，将我的智慧、热血与生命融入这项事业，恪守以下信念与准则：</p>
+                <p>我时刻牢记，我是一名堂堂正正的中国人。我的根基在中华，我的血脉融于这片伟大的土地与文明。我誓以毕生忠诚，热爱我的祖国，维护她的主权、安全、发展利益与神圣尊严。我宣誓，将个人奋斗融入国家发展大局，为实现中国式现代化贡献全部力量。</p>
+                <p>我承诺，将自觉遵守国家宪法与法律法规，积极践行社会主义核心价值观。在我的任何工作行为与社会活动中，均以国家法律为底线，以民族大义为准则。</p>
+                <p>我深知，个人的理想应与时代使命相连。我自愿将我的智慧与力量，融入中华民族伟大复兴的历史洪流。为此人民事业共同体脚踏实地、不懈奋斗，是我光荣的职责与无悔的选择。</p>
+                <p>我坚定拥护国家统一与领土完整，反对任何形式的分裂行径。我将致力于促进各民族、各阶层的大团结，为国家的繁荣稳定与社会和谐贡献正能量。</p>
+                <p>我深知，此事业宏大，非一人一力可成。我宣誓，将摒弃小我，融入大我，与所有志同道合的同志紧密团结，以钢铁般的意志和纪律，建设一支现代化、专业化、有信仰的人民队伍，共同面对前进道路上的一切挑战，将蓝图一步步变为现实。</p>
+                <p><strong>此誓</strong>，是我对国家和民族的承诺，也是我对自身灵魂的拷问与升华。我愿将生命与这项不朽的人民事业融为一体，为之不懈奋斗，矢志不渝。</p>
+            </div>
+
+            <div class="signature-footer">
+                <span class="field">宣誓人（签名）：<span class="underscore"></span></span>
+                <span class="field">日期：<span class="underscore" style="min-width:100px;"></span></span>
+            </div>
+        </div>
+
+        <!-- ===== 宣誓版 ===== -->
+        <div class="card pledge-card">
+            <div class="card-badge" style="background:linear-gradient(135deg,#d4a843,#e8c760);color:#0a2a5c;"><span class="badge-icon">🔥</span> 二、宣誓版</div>
+
+            <div class="pledge-title">我宣誓：</div>
+
+            <div class="star-sep">✦ ✦ ✦</div>
+
+            <div class="pledge-content">
+                <p><span class="flag-icon">🇨🇳</span> <strong class="pledge-strong">忠于我的祖国</strong>，以毕生忠诚，维护她的神圣尊严。</p>
+                <p>我热爱这片土地，恪守宪法与法律。</p>
+                <p>我坚决维护国家统一和领土完整，反对一切分裂行径。</p>
+                <p>我愿将智慧与生命献给祖国，将个人奋斗融入国家大局，为实现祖国的繁荣富强和民族复兴而努力奋斗！</p>
+            </div>
+
+            <div style="margin-top:1.2rem; font-size:0.85rem; color:#7a95b0;">
+                ——— 集体宣誓时使用 ———
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <div class="global-footer">
+        <span class="footer-slogan"><span class="footer-flag">🇨🇳</span> 国家富强 · 民族复兴 · 人民幸福</span>
+        <br>
+        亚太国际 · 人民事业共同体 &nbsp;|&nbsp; 全心全意为人民服务
+    </div>
+
+</div>
+    <div id="site-footer"></div>
+    <script src="/vendor/bootstrap.bundle.min.js"></script>
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

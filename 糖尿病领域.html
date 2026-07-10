@@ -4,266 +4,986 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>虫草素 · 糖尿病领域 · 全球科研全景</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
     <style>
-        .cordycepin-report {
-            font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, sans-serif;
-            color: #0b1e33;
-            line-height: 1.6;
+
+        .cp-diabetes *,
+        .cp-diabetes *::before,
+        .cp-diabetes *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* 头部 */
+        :root {
+            --color-primary: #0a2e4a;
+            --color-primary-light: #1a4b72;
+            --color-primary-mid: #2d7ab5;
+            --color-blue-soft: #5ba3d9;
+            --color-blue-bg: #e8f0f8;
+            --color-gold: #c9a84c;
+            --color-gold-light: #e8d5a3;
+            --color-rose: #c0396b;
+            --color-rose-light: #f0d4e0;
+            --color-emerald: #2d7d46;
+            --color-emerald-light: #d4e8dc;
+            --color-lavender: #7c5295;
+            --color-lavender-light: #e8dced;
+            --color-text: #1a2a3a;
+            --color-text-light: #4a6a88;
+            --color-bg: #f2f6fc;
+            --shadow-card: 0 12px 40px rgba(10, 46, 74, 0.08);
+            --shadow-card-hover: 0 20px 56px rgba(10, 46, 74, 0.14);
+            --radius-card: 24px;
+            --radius-sm: 12px;
+            --radius-full: 60px;
+            --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .cp-diabetes {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: var(--color-bg);
+        color: var(--color-text);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+    }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        /* ===== HEADER ===== */
         .header {
-            background: linear-gradient(145deg, #0a2744, #123a60);
+            position: relative;
+            background: linear-gradient(145deg, #071f33 0%, #0f3a5a 40%, #1a5270 100%);
             color: #fff;
-            padding: 34px 38px 26px;
-            border-radius: 28px;
-            margin-bottom: 24px;
-            box-shadow: 0 16px 40px rgba(8,40,80,0.30);
+            padding: 48px 52px 38px;
+            border-radius: 36px;
+            margin-bottom: 36px;
+            overflow: hidden;
+            box-shadow: 0 24px 56px -16px rgba(10, 46, 74, 0.45);
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -10%;
+            width: 560px;
+            height: 560px;
+            background: radial-gradient(circle, rgba(90, 163, 217, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: 20%;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .header-glow {
+            position: absolute;
+            top: -20%;
+            left: 30%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(45, 122, 181, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px 24px;
+            margin-bottom: 18px;
+        }
+        .header-icon {
+            font-size: 32px;
+            color: var(--color-blue-soft);
+            opacity: 0.9;
         }
         .header h1 {
-            font-size: 30px; font-weight: 700; letter-spacing: 0.3px;
-            margin-bottom: 6px;
-            display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px;
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px 22px;
         }
-        .header h1 small { font-size: 17px; font-weight: 400; color: #aac9f0; }
-        .header-meta {
-            display: flex; flex-wrap: wrap; gap: 14px 28px;
-            font-size: 13.5px; color: #c5def7;
-            border-top: 1px solid rgba(255,255,255,0.12);
-            padding-top: 16px; margin-top: 10px;
+        .header h1 small {
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #b4d4f0;
+            letter-spacing: 0.01em;
         }
-        .header-meta strong { color: #fff; font-weight: 600; }
-        .badge-top {
-            background: rgba(255,215,0,0.18); padding: 2px 16px; border-radius: 30px;
-            font-size: 13px; font-weight: 600; color: #ffd966;
-            border: 1px solid rgba(255,215,0,0.20);
+        .header-badge {
+            background: rgba(201, 168, 76, 0.18);
+            padding: 4px 20px;
+            border-radius: var(--radius-full);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-gold-light);
+            border: 1px solid rgba(201, 168, 76, 0.25);
+            letter-spacing: 0.3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+        .header-badge i {
+            font-size: 13px;
         }
 
-        /* ===== 改进1：场景代入 ===== */
+        .header-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px 34px;
+            font-size: 14px;
+            color: #c8def5;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 20px;
+            margin-top: 6px;
+        }
+        .header-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .header-meta i {
+            color: var(--color-blue-soft);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .header-meta strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .header-decoration {
+            position: absolute;
+            right: 40px;
+            bottom: 30px;
+            font-size: 72px;
+            opacity: 0.04;
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ===== SCENE BOX ===== */
         .scene-box {
-            background: linear-gradient(135deg, #f0f6fd 0%, #e3edfb 100%);
-            border-radius: 20px; padding: 20px 26px 18px;
-            margin-bottom: 28px;
-            border: 1px solid #c5ddf5;
-            box-shadow: 0 4px 12px rgba(0,40,80,0.06);
+            background: #ffffff;
+            border-radius: var(--radius-card);
+            padding: 26px 34px 22px;
+            margin-bottom: 36px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        .scene-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-gold), var(--color-rose), var(--color-primary-mid));
+            border-radius: 4px 4px 0 0;
         }
         .scene-box .title {
-            font-size: 16px; font-weight: 700; color: #0a3a5c;
-            margin-bottom: 8px; display: flex; align-items: center; gap: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-        .scene-box .title .icon-big { font-size: 22px; }
+        .scene-box .title .icon-big {
+            font-size: 26px;
+            color: var(--color-gold);
+        }
         .scene-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 28px;
         }
         .scene-grid .item {
-            font-size: 14px; color: #1a3f5c; padding: 4px 0;
-            display: flex; align-items: center; gap: 8px;
+            font-size: 15px;
+            color: var(--color-text);
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-        .scene-grid .item .check { color: #1a6b3a; font-weight: 700; font-size: 16px; }
+        .scene-grid .item .check {
+            color: var(--color-emerald);
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .scene-grid .item .check i {
+            color: var(--color-emerald);
+        }
         .scene-grid .item .highlight-scene {
-            background: linear-gradient(120deg, #d4e6f7 0%, #d4e6f7 40%, transparent 80%);
-            padding: 0 4px; font-weight: 600; color: #003f6b;
+            background: linear-gradient(120deg, #f0f5fc 0%, #f0f5fc 40%, transparent 80%);
+            padding: 0 6px;
+            font-weight: 600;
+            color: var(--color-primary);
         }
         .scene-footer {
-            margin-top: 10px; font-size: 14px; color: #1a4a7a;
-            border-top: 1px dashed #b8cde0; padding-top: 10px;
+            margin-top: 16px;
+            font-size: 15px;
+            color: var(--color-primary-light);
+            border-top: 1px dashed #dce4ed;
+            padding-top: 14px;
             font-weight: 500;
         }
+        .scene-footer i {
+            color: var(--color-gold);
+            margin-right: 8px;
+        }
 
-        /* 数据看板 */
+        /* ===== STATS ===== */
         .stats-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 16px; margin-bottom: 28px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            margin-bottom: 36px;
         }
         .stat-card {
-            background: #fff; border-radius: 20px; padding: 18px 14px 14px;
-            text-align: center; box-shadow: 0 6px 18px rgba(0,30,60,0.06);
-            border: 1px solid #e2ecf7;
+            background: #fff;
+            border-radius: var(--radius-card);
+            padding: 22px 18px 18px;
+            text-align: center;
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(45, 122, 181, 0.08);
+            transition: transform var(--transition), box-shadow var(--transition);
+            position: relative;
+            overflow: hidden;
         }
-        .stat-number { font-size: 30px; font-weight: 800; color: #0a4b78; line-height: 1.2; }
-        .stat-label { font-size: 13px; color: #2c4b6a; margin-top: 4px; }
-        .stat-sub { font-size: 11px; color: #64809e; margin-top: 2px; }
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary-mid), var(--color-gold));
+            opacity: 0.6;
+        }
+        .stat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-card-hover);
+        }
+        .stat-number {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--color-primary);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+        .stat-number .highlight-stat {
+            color: var(--color-rose);
+        }
+        .stat-label {
+            font-size: 14px;
+            color: var(--color-text-light);
+            margin-top: 6px;
+            font-weight: 500;
+        }
+        .stat-sub {
+            font-size: 12px;
+            color: #8a9aac;
+            margin-top: 4px;
+        }
+        .stat-card .stat-icon {
+            font-size: 22px;
+            color: var(--color-primary-mid);
+            opacity: 0.3;
+            margin-bottom: 4px;
+        }
 
-        /* 通用卡片 */
-        .card-section {
-            background: #fff; border-radius: 24px; padding: 26px 30px 22px;
-            margin-bottom: 28px; border: 1px solid #dfebf5;
-            box-shadow: 0 4px 16px rgba(0,30,60,0.04);
-        }
-        .card-section h2 {
-            font-size: 20px; font-weight: 700; color: #0b1e33;
-            margin-bottom: 6px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-        }
-        .card-section h2 .tag {
-            font-size: 12px; font-weight: 600; background: #e3edfb;
-            color: #1a5a9c; padding: 2px 14px; border-radius: 30px;
-        }
-        .card-section .sub { font-size: 14px; color: #4a6a88; margin-bottom: 16px; }
-
-        /* ===== 改进4：可视化示意图 ===== */
-        .visual-flow {
-            background: #f7faff; border-radius: 16px; padding: 16px 20px;
-            border: 1px solid #d4e6f7; margin: 10px 0 16px;
-            display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-            gap: 8px 6px;
-        }
-        .visual-flow .node {
-            background: #0a4b78; color: #fff; padding: 6px 14px; border-radius: 30px;
-            font-size: 13px; font-weight: 600; white-space: nowrap;
-        }
-        .visual-flow .node .sub { font-weight: 400; font-size: 11px; display: block; color: #b8d4f0; }
-        .visual-flow .arrow { font-size: 20px; color: #4b9ed4; font-weight: 300; }
-        .visual-flow .node-light {
-            background: #e3edfb; color: #0a3a5c; padding: 6px 14px; border-radius: 30px;
-            font-size: 13px; font-weight: 600; white-space: nowrap;
-        }
-        .visual-flow .node-light .sub { font-weight: 400; font-size: 11px; display: block; color: #3a6a8a; }
-
-        /* ===== 改进4b：科研强度对比 ===== */
+        /* ===== COMPARE BOX ===== */
         .compare-box {
-            background: #fcf9f0; border-radius: 14px; padding: 14px 20px;
-            border-left: 5px solid #b8860b; margin: 12px 0 4px;
+            background: linear-gradient(135deg, #fcf8f0 0%, #f8f2e4 100%);
+            border-radius: var(--radius-card);
+            padding: 20px 28px;
+            border-left: 6px solid var(--color-gold);
+            margin: 16px 0 10px;
+            box-shadow: 0 4px 16px rgba(201, 168, 76, 0.06);
         }
-        .compare-box .label { font-weight: 700; color: #7a6200; font-size: 14px; display: block; margin-bottom: 4px; }
+        .compare-box .label {
+            font-weight: 700;
+            color: #7a6200;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        .compare-box .label i {
+            color: var(--color-gold);
+        }
         .compare-box .row {
-            display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; color: #1a3f5c;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px 24px;
+            font-size: 15px;
+            color: var(--color-text);
+            padding: 5px 0;
         }
-        .compare-box .row strong { color: #0a3a5c; }
+        .compare-box .row strong {
+            color: var(--color-primary);
+        }
+        .compare-box .row .highlight-compare {
+            font-weight: 700;
+            color: var(--color-rose);
+        }
         .compare-box .bar-track {
-            display: inline-block; width: 120px; height: 14px; background: #e6eff7; border-radius: 20px;
-            overflow: hidden; vertical-align: middle; margin: 0 6px;
+            display: inline-block;
+            width: 140px;
+            height: 18px;
+            background: #e8edf2;
+            border-radius: 30px;
+            overflow: hidden;
+            vertical-align: middle;
+            margin: 0 8px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
         }
         .compare-box .bar-fill {
-            height: 100%; border-radius: 20px;
-            background: linear-gradient(90deg, #2a7ab0, #4b9ed4);
+            height: 100%;
+            border-radius: 30px;
+            background: linear-gradient(90deg, var(--color-primary-mid), var(--color-blue-soft));
             display: inline-block;
+            transition: width 0.8s ease;
         }
-        .compare-box .bar-fill.high { background: linear-gradient(90deg, #b12a1e, #d45a4a); }
+        .compare-box .bar-fill.high {
+            background: linear-gradient(90deg, var(--color-rose), #e67e6b);
+        }
+        .compare-box .source-note {
+            font-size: 13px;
+            color: #8a9aac;
+            margin-top: 8px;
+            border-top: 1px dashed #ddd0b0;
+            padding-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-        /* 条目列表 */
-        .item-list { display: flex; flex-direction: column; gap: 8px; }
-        .item-row {
-            display: flex; align-items: flex-start; gap: 12px;
-            padding: 9px 14px; background: #f7faff; border-radius: 12px;
-            border-left: 4px solid #2a7ab0;
+        /* ===== VISUAL FLOW ===== */
+        .visual-flow {
+            background: linear-gradient(135deg, #f7fbff 0%, #edf4fa 100%);
+            border-radius: var(--radius-card);
+            padding: 20px 28px;
+            border: 1px solid rgba(45, 122, 181, 0.10);
+            margin: 16px 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 8px 14px;
         }
-        .item-row .icon { font-size: 17px; flex-shrink: 0; margin-top: 1px; width: 26px; text-align: center; }
-        .item-row .content { font-size: 14px; color: #1a3148; line-height: 1.7; }
-        .item-row .content strong { color: #004a7a; }
+        .visual-flow .node {
+            background: var(--color-primary);
+            color: #fff;
+            padding: 8px 22px;
+            border-radius: var(--radius-full);
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(10, 46, 74, 0.18);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.3;
+        }
+        .visual-flow .node .sub {
+            font-weight: 400;
+            font-size: 11px;
+            color: #b8d4f0;
+            margin-top: 2px;
+        }
+        .visual-flow .arrow {
+            font-size: 24px;
+            color: var(--color-primary-mid);
+            font-weight: 300;
+            opacity: 0.6;
+        }
+        .visual-flow .node-light {
+            background: #ffffff;
+            color: var(--color-primary);
+            padding: 8px 22px;
+            border-radius: var(--radius-full);
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(45, 122, 181, 0.12);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.3;
+        }
+        .visual-flow .node-light .sub {
+            font-weight: 400;
+            font-size: 11px;
+            color: var(--color-text-light);
+            margin-top: 2px;
+        }
+
+        /* ===== CARD SECTION ===== */
+        .card-section {
+            background: #ffffff;
+            border-radius: var(--radius-card);
+            padding: 32px 36px 28px;
+            margin-bottom: 36px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(10, 46, 74, 0.04);
+            transition: box-shadow var(--transition);
+        }
+        .card-section:hover {
+            box-shadow: var(--shadow-card-hover);
+        }
+        .card-section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .card-section h2 .section-icon {
+            color: var(--color-primary-mid);
+            font-size: 26px;
+        }
+        .card-section h2 .tag {
+            font-size: 13px;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--color-lavender-light), #f0e8f5);
+            color: var(--color-lavender);
+            padding: 2px 18px;
+            border-radius: var(--radius-full);
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(124, 82, 149, 0.10);
+        }
+        .card-section .sub {
+            font-size: 15px;
+            color: var(--color-text-light);
+            margin-bottom: 22px;
+            padding-left: 2px;
+        }
+
+        /* ===== ITEM LIST ===== */
+        .item-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .item-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 14px 20px;
+            background: #f8fafc;
+            border-radius: var(--radius-sm);
+            border-left: 5px solid var(--color-primary-mid);
+            transition: background var(--transition), transform var(--transition);
+        }
+        .item-row:hover {
+            background: #f0f5fc;
+            transform: translateX(4px);
+        }
+        .item-row .icon {
+            font-size: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            width: 30px;
+            text-align: center;
+            color: var(--color-primary-mid);
+        }
+        .item-row .icon.gold {
+            color: var(--color-gold);
+        }
+        .item-row .icon.rose {
+            color: var(--color-rose);
+        }
+        .item-row .icon.emerald {
+            color: var(--color-emerald);
+        }
+        .item-row .icon.lavender {
+            color: var(--color-lavender);
+        }
+        .item-row .content {
+            font-size: 15px;
+            color: var(--color-text);
+            line-height: 1.8;
+        }
+        .item-row .content strong {
+            color: var(--color-primary);
+        }
         .item-row .highlight {
-            background: linear-gradient(120deg, #d4e6f7 0%, #d4e6f7 40%, transparent 80%);
-            padding: 0 4px; font-weight: 700; color: #003f6b;
+            background: linear-gradient(120deg, #e0ebf5 0%, #e0ebf5 40%, transparent 80%);
+            padding: 0 4px;
+            font-weight: 700;
+            color: var(--color-primary);
         }
         .item-row .data-badge {
-            background: #0a4b78; color: #fff; padding: 0 10px; border-radius: 30px;
-            font-size: 12px; font-weight: 700; display: inline-block; margin-right: 3px;
+            background: var(--color-primary);
+            color: #fff;
+            padding: 0 14px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-right: 4px;
+            letter-spacing: 0.3px;
         }
-        .item-row.gold-border { border-left-color: #b8860b; background: #fcf9f0; }
+        .item-row .data-badge.gold {
+            background: var(--color-gold);
+        }
+        .item-row .data-badge.rose {
+            background: var(--color-rose);
+        }
+        .item-row.gold-border {
+            border-left-color: var(--color-gold);
+            background: #fcf9f2;
+        }
         .item-row.gold-border .highlight {
-            background: linear-gradient(120deg, #f5e6c8 0%, #f5e6c8 40%, transparent 80%);
+            background: linear-gradient(120deg, #f5e9d0 0%, #f5e9d0 40%, transparent 80%);
             color: #7a6200;
         }
+        .item-row.rose-border {
+            border-left-color: var(--color-rose);
+            background: #fcf4f7;
+        }
+        .item-row.rose-border .highlight {
+            background: linear-gradient(120deg, #f5e0e8 0%, #f5e0e8 40%, transparent 80%);
+            color: var(--color-rose);
+        }
+        .item-row.emerald-border {
+            border-left-color: var(--color-emerald);
+            background: #f2f8f4;
+        }
+        .item-row.emerald-border .highlight {
+            background: linear-gradient(120deg, #dce8e0 0%, #dce8e0 40%, transparent 80%);
+            color: var(--color-emerald);
+        }
 
-        /* 通俗结论框 */
+        /* ===== POPULAR BOX ===== */
         .popular-box {
-            background: #f0f6fd; padding: 16px 20px; border-radius: 16px;
-            border-left: 5px solid #4b9ed4; margin-top: 6px;
+            background: linear-gradient(135deg, #f0f6fc 0%, #e8f0f8 100%);
+            padding: 20px 26px;
+            border-radius: var(--radius-card);
+            border-left: 6px solid var(--color-rose);
+            margin-top: 14px;
+            box-shadow: 0 4px 16px rgba(192, 57, 107, 0.04);
         }
-        .popular-box .label { font-weight: 700; color: #0f4a72; font-size: 14px; display: block; margin-bottom: 4px; }
-        .popular-box p { font-size: 15px; color: #1a3148; line-height: 1.8; }
-        .popular-box p strong { color: #004a7a; }
+        .popular-box .label {
+            font-weight: 700;
+            color: var(--color-rose);
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+        .popular-box .label i {
+            font-size: 18px;
+        }
+        .popular-box p {
+            font-size: 16px;
+            color: var(--color-text);
+            line-height: 1.9;
+        }
+        .popular-box p strong {
+            color: var(--color-primary);
+        }
+        .popular-box .highlight-pop {
+            background: linear-gradient(120deg, #f5e0e8 0%, #f5e0e8 40%, transparent 80%);
+            padding: 0 4px;
+            font-weight: 700;
+            color: var(--color-rose);
+        }
 
-        /* ===== 改进2：小词典 ===== */
+        /* ===== GLOSSARY ===== */
         .glossary-box {
-            background: #f7faff; border-radius: 16px; padding: 14px 20px;
-            border: 1px dashed #4b9ed4; margin-top: 14px;
+            background: linear-gradient(135deg, #f8f6fc 0%, #f0ecf5 100%);
+            border-radius: var(--radius-card);
+            padding: 18px 26px;
+            border: 1px solid rgba(124, 82, 149, 0.12);
+            margin-top: 20px;
         }
-        .glossary-box .title { font-weight: 700; color: #0a3a5c; font-size: 14px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
-        .glossary-box .row { display: flex; flex-wrap: wrap; gap: 6px 24px; font-size: 13px; color: #1a3f5c; }
-        .glossary-box .row .term { font-weight: 600; color: #004a7a; }
-        .glossary-box .row .def { color: #2c4b6a; }
+        .glossary-box .title {
+            font-weight: 700;
+            color: var(--color-lavender);
+            font-size: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .glossary-box .title i {
+            font-size: 18px;
+        }
+        .glossary-box .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 30px;
+            font-size: 14px;
+            color: var(--color-text);
+        }
+        .glossary-box .row .term {
+            font-weight: 600;
+            color: var(--color-lavender);
+        }
+        .glossary-box .row .def {
+            color: var(--color-text-light);
+        }
 
-        /* 论文卡片网格 */
-        .paper-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 6px; }
+        /* ===== PAPER CARDS ===== */
+        .paper-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+            margin-top: 10px;
+        }
         .paper-card {
-            background: #fafcff; border-radius: 18px; padding: 20px 22px 18px;
-            border: 1px solid #e2ecf7; box-shadow: 0 4px 12px rgba(0,30,60,0.04);
-            transition: transform 0.1s ease;
+            background: #fafcfe;
+            border-radius: var(--radius-card);
+            padding: 26px 30px 24px;
+            border: 1px solid rgba(10, 46, 74, 0.05);
+            box-shadow: 0 6px 20px rgba(10, 46, 74, 0.04);
+            transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+            position: relative;
         }
-        .paper-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,40,80,0.08); }
-        .paper-title-en { font-size: 14px; font-weight: 600; color: #0a3a5c; line-height: 1.5; }
-        .paper-title-cn { font-size: 15px; font-weight: 700; color: #0b1e33; margin-top: 2px; line-height: 1.5; }
+        .paper-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 4px 4px 0 0;
+            background: linear-gradient(90deg, var(--color-primary-mid), var(--color-gold), var(--color-rose));
+            opacity: 0.4;
+            transition: opacity var(--transition);
+        }
+        .paper-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-card-hover);
+            border-color: rgba(201, 168, 76, 0.15);
+        }
+        .paper-card:hover::before {
+            opacity: 1;
+        }
+        .paper-title-en {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-primary-light);
+            line-height: 1.5;
+        }
+        .paper-title-cn {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
         .paper-meta {
-            display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12.5px; color: #4a6a88;
-            margin-top: 6px; padding: 6px 0 4px; border-top: 1px dashed #e2ecf7;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 22px;
+            font-size: 13px;
+            color: var(--color-text-light);
+            margin-top: 8px;
+            padding: 8px 0 4px;
+            border-top: 1px dashed #e8edf2;
         }
-        .paper-meta strong { color: #1a3f5c; }
-        .paper-body { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
-        .paper-body .item-row { padding: 6px 12px; font-size: 13.5px; background: #f7faff; }
-        .paper-body .item-row .content { font-size: 13.5px; }
+        .paper-meta i {
+            margin-right: 4px;
+            color: var(--color-primary-mid);
+            opacity: 0.6;
+        }
+        .paper-meta strong {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+        .paper-body {
+            margin-top: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .paper-body .item-row {
+            padding: 8px 16px;
+            font-size: 14px;
+            background: #f8fafc;
+            border-left-width: 4px;
+        }
+        .paper-body .item-row .content {
+            font-size: 14px;
+        }
         .paper-body .item-row .highlight {
-            background: linear-gradient(120deg, #d4e6f7 0%, #d4e6f7 40%, transparent 80%);
+            background: linear-gradient(120deg, #e0ebf5 0%, #e0ebf5 40%, transparent 80%);
         }
         .paper-body .item-row.gold-border .highlight {
-            background: linear-gradient(120deg, #f5e6c8 0%, #f5e6c8 40%, transparent 80%);
+            background: linear-gradient(120deg, #f5e9d0 0%, #f5e9d0 40%, transparent 80%);
         }
         .paper-popular {
-            background: #f0f6fd; padding: 8px 14px; border-radius: 12px;
-            font-size: 13.5px; border-left: 4px solid #4b9ed4; margin-top: 2px;
+            background: linear-gradient(135deg, #f5f9fe 0%, #edf4fa 100%);
+            padding: 12px 18px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            border-left: 4px solid var(--color-gold);
+            margin-top: 4px;
         }
-        .paper-popular strong { color: #004a7a; }
-        .paper-popular .label { font-weight: 700; color: #0f4a72; font-size: 13px; display: block; margin-bottom: 1px; }
-        .ref-note { font-size: 11.5px; color: #64809e; margin-top: 6px; border-top: 1px dashed #e2ecf7; padding-top: 6px; }
-
-        /* 底部 */
-        .footer-note {
-            background: #fff; border-radius: 20px; padding: 20px 28px; margin-top: 32px;
-            border: 1px solid #dfebf5; font-size: 13px; color: #4d6f8c; text-align: center; line-height: 1.7;
+        .paper-popular strong {
+            color: var(--color-primary);
         }
-        .footer-note strong { color: #1a3f5c; }
+        .paper-popular .label {
+            font-weight: 700;
+            color: var(--color-gold);
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 2px;
+        }
+        .paper-popular .label i {
+            font-size: 14px;
+        }
+        .ref-note {
+            font-size: 12px;
+            color: #8a9aac;
+            margin-top: 8px;
+            border-top: 1px dashed #e8edf2;
+            padding-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .ref-note i {
+            color: var(--color-primary-mid);
+            opacity: 0.5;
+        }
 
-        /* ===== 改进7：信任背书 ===== */
+        /* ===== TRUST BOX ===== */
         .trust-box {
-            background: #f5f9fe; border-radius: 16px; padding: 16px 22px;
-            border: 1px solid #d4e6f7; margin-top: 10px;
-            display: flex; flex-wrap: wrap; gap: 12px 28px;
-            font-size: 13px; color: #2c4b6a;
+            background: linear-gradient(135deg, #f7faff 0%, #eef4fa 100%);
+            border-radius: var(--radius-card);
+            padding: 18px 28px;
+            border: 1px solid rgba(45, 122, 181, 0.08);
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px 34px;
+            font-size: 14px;
+            color: var(--color-text-light);
         }
-        .trust-box .item { display: flex; align-items: center; gap: 6px; }
-        .trust-box .item .badge { background: #0a4b78; color: #fff; padding: 0 10px; border-radius: 30px; font-size: 11px; font-weight: 700; }
-        .trust-box .item .badge.gold { background: #b8860b; }
+        .trust-box .item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .trust-box .item .badge {
+            background: var(--color-primary);
+            color: #fff;
+            padding: 0 14px;
+            border-radius: var(--radius-full);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .trust-box .item .badge.gold {
+            background: var(--color-gold);
+        }
+        .trust-box .item .badge.rose {
+            background: var(--color-rose);
+        }
+        .trust-box .item .badge.emerald {
+            background: var(--color-emerald);
+        }
+        .trust-box strong {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
 
-        @media (max-width: 680px) {
-            .header { padding: 22px 16px; }
-            .header h1 { font-size: 22px; }
-            .header h1 small { font-size: 14px; }
-            .header-meta { font-size: 12px; gap: 6px 12px; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .stat-number { font-size: 24px; }
-            .card-section { padding: 16px 14px; }
-            .item-row { padding: 6px 10px; }
-            .item-row .content { font-size: 13px; }
-            .paper-card { padding: 16px; }
-            .paper-title-en { font-size: 13px; }
-            .paper-title-cn { font-size: 14px; }
-            .popular-box { padding: 12px 14px; }
-            .popular-box p { font-size: 14px; }
-            .paper-body .item-row { padding: 4px 10px; font-size: 13px; }
-            .paper-popular { font-size: 13px; }
-            .scene-grid { grid-template-columns: 1fr; }
-            .visual-flow { flex-wrap: wrap; gap: 4px; }
-            .visual-flow .node { font-size: 12px; padding: 4px 10px; }
-            .visual-flow .arrow { font-size: 16px; }
-            .compare-box .row { font-size: 13px; }
-            .compare-box .bar-track { width: 80px; }
-            .glossary-box .row { gap: 4px 16px; font-size: 12px; }
-            .trust-box { flex-direction: column; gap: 6px; font-size: 12px; }
+        /* ===== FOOTER ===== */
+        .footer-note {
+            background: #fff;
+            border-radius: var(--radius-card);
+            padding: 24px 34px;
+            margin-top: 44px;
+            border: 1px solid rgba(10, 46, 74, 0.04);
+            font-size: 14px;
+            color: var(--color-text-light);
+            text-align: center;
+            line-height: 1.9;
+            box-shadow: var(--shadow-card);
         }
+        .footer-note i {
+            color: var(--color-rose);
+            opacity: 0.6;
+        }
+        .footer-note strong {
+            color: var(--color-primary);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 12px 48px;
+            }
+            .header {
+                padding: 28px 20px 24px;
+                border-radius: 24px;
+            }
+            .header h1 {
+                font-size: 26px;
+            }
+            .header h1 small {
+                font-size: 16px;
+            }
+            .header-meta {
+                font-size: 13px;
+                gap: 8px 18px;
+            }
+            .header-decoration {
+                display: none;
+            }
+            .header-top {
+                gap: 10px 16px;
+            }
+            .scene-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+            .stat-number {
+                font-size: 30px;
+            }
+            .card-section {
+                padding: 20px 16px;
+            }
+            .card-section h2 {
+                font-size: 20px;
+            }
+            .item-row {
+                padding: 10px 14px;
+                gap: 12px;
+            }
+            .item-row .content {
+                font-size: 14px;
+            }
+            .paper-card {
+                padding: 18px 16px;
+            }
+            .paper-title-en {
+                font-size: 14px;
+            }
+            .paper-title-cn {
+                font-size: 15px;
+            }
+            .popular-box {
+                padding: 16px 18px;
+            }
+            .popular-box p {
+                font-size: 15px;
+            }
+            .visual-flow {
+                padding: 14px 16px;
+                gap: 6px 10px;
+            }
+            .visual-flow .node,
+            .visual-flow .node-light {
+                font-size: 12px;
+                padding: 6px 14px;
+            }
+            .visual-flow .arrow {
+                font-size: 18px;
+            }
+            .compare-box {
+                padding: 16px 18px;
+            }
+            .compare-box .bar-track {
+                width: 100px;
+            }
+            .glossary-box .row {
+                gap: 4px 16px;
+                font-size: 13px;
+            }
+            .trust-box {
+                flex-direction: column;
+                gap: 8px 0;
+                padding: 16px 18px;
+            }
+            .scene-box {
+                padding: 18px 18px 16px;
+            }
+            .scene-box .title {
+                font-size: 16px;
+            }
+            .scene-grid .item {
+                font-size: 14px;
+            }
+            .header-badge {
+                font-size: 12px;
+                padding: 2px 14px;
+            }
+        }
+
         @media (max-width: 420px) {
-            .stats-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
-            .stat-card { padding: 12px 8px; }
-            .stat-number { font-size: 20px; }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .stat-card {
+                padding: 14px 10px;
+            }
+            .stat-number {
+                font-size: 24px;
+            }
+            .header h1 {
+                font-size: 22px;
+            }
+            .header h1 small {
+                font-size: 14px;
+            }
+            .card-section h2 {
+                font-size: 18px;
+            }
         }
+    
     </style>
         <link href="vendor/bootstrap.min.css?v=20260628" rel="stylesheet">
     <link href="vendor/fontawesome.min.css?v=20260628" rel="stylesheet">
@@ -275,318 +995,10 @@
      公共导航栏 - 通过 js/include.js 注入到 #site-header 占位
 ================================================================ -->
 
-<nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
-    <div class="container-fluid px-4 px-xl-5">
-        <a class="navbar-brand" href="index.html" aria-label="亚太国际人民事业发展共同体">
-            <span class="brand-icon" aria-hidden="true"><i class="fas fa-globe-asia"></i></span>
-            <span class="brand-full d-none d-lg-inline">亚太国际人民事业发展共同体</span>
-            <span class="brand-short d-none d-md-inline d-lg-none">亚太人民共同体</span>
-            <span class="brand-mini d-inline d-md-none">APCC</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="打开菜单">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end" id="desktopNav">
-            <ul class="navbar-nav align-items-center gap-1">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html" data-nav="index.html">
-                        <i class="fas fa-home"></i> 首页
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="about.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-info-circle"></i> 关于亚太国际
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="about.html#overview" data-todo="1"><i class="fas fa-circle-info fa-xs me-2"></i>总体介绍</a></li>
-                        <li><a class="dropdown-item" href="about.html#organization" data-todo="1"><i class="fas fa-sitemap fa-xs me-2"></i>组织架构</a></li>
-                        <li><a class="dropdown-item" href="about.html#core-idea" data-todo="1"><i class="fas fa-lightbulb fa-xs me-2"></i>核心理念</a></li>
-                        <li><a class="dropdown-item" href="about.html#business-model" data-todo="1"><i class="fas fa-chart-line fa-xs me-2"></i>商业模式</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="community.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-handshake"></i> 人民事业共同体
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="community.html#collective-ownership" data-todo="1"><i class="fas fa-people-group fa-xs me-2"></i>人民集体所有制</a></li>
-                        <li><a class="dropdown-item" href="community.html#pvc" data-todo="1"><i class="fas fa-coins fa-xs me-2"></i>人民价值贡献值体系（PVC）</a></li>
-                        <li><a class="dropdown-item" href="community.html#idea-collection" data-todo="1"><i class="fas fa-book fa-xs me-2"></i>理念阐释集合</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="health.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-heart-pulse"></i> 健康中国·人民健康
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="health.html#healthy-china" data-todo="1"><i class="fas fa-flag fa-xs me-2"></i>健康中国·人民健康</a></li>
-                        <li><a class="dropdown-item" href="health.html#yatai-no1" data-todo="1"><i class="fas fa-pills fa-xs me-2"></i>亚太1号-虫草素</a></li>
-                        <li><a class="dropdown-item" href="health.html#cordycep-intro" data-todo="1"><i class="fas fa-microscope fa-xs me-2"></i>虫草素简介</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown dropdown-mega">
-                    <a class="nav-link dropdown-toggle" href="research.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-flask"></i> 虫草素全球科研
-                        <i class="fas fa-chevron-right ms-1 mega-arrow"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-research">
-                        <li><a class="dropdown-item" href="research.html#overview" data-todo="1"><i class="fas fa-globe fa-xs me-2"></i>虫草素全球科研综述</a></li>
-                        <li><a class="dropdown-item" href="清华大学基础研究.html" data-todo="1"><i class="fas fa-university fa-xs me-2"></i>清华大学基础研究</a></li>
-                        <li><a class="dropdown-item" href="抗肿瘤与肿瘤微环境.html" data-todo="1"><i class="fas fa-dna fa-xs me-2"></i>抗肿瘤与肿瘤微环境</a></li>
-                        <li><a class="dropdown-item" href="代谢紊乱领域.html" data-todo="1"><i class="fas fa-droplet fa-xs me-2"></i>代谢紊乱领域</a></li>
-                        <li><a class="dropdown-item" href="炎症与自身免疫疾病领域.html" data-todo="1"><i class="fas fa-fire fa-xs me-2"></i>炎症与自身免疫疾病</a></li>
-                        <li><a class="dropdown-item" href="免疫增强与提升.html" data-todo="1"><i class="fas fa-shield-virus fa-xs me-2"></i>免疫增强提升领域</a></li>
-                        <li class="dropdown-submenu dropend">
-                            <a class="dropdown-item dropdown-toggle-sub" href="神经保护与精神疾病.html" data-todo="1">
-                                <i class="fas fa-brain fa-xs me-2"></i>神经保护与精神疾病
-                                
-                            </a>
-                            <ul class="dropdown-menu dropdown-sub">
-                                <li><a class="dropdown-item" href="神经保护与精神疾病.html#degeneration" data-todo="1">神经退行性疾病</a></li>
-                                <li><a class="dropdown-item" href="神经保护与精神疾病.html#psychiatric" data-todo="1">精神疾病</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="dropdown-item" href="research.html#cardio" data-todo="1"><i class="fas fa-heart fa-xs me-2"></i>心血管疾病领域</a></li>
-                        <li><a class="dropdown-item" href="research.html#kidney" data-todo="1"><i class="fas fa-filter fa-xs me-2"></i>肾脏疾病领域</a></li>
-                        <li><a class="dropdown-item" href="research.html#liver" data-todo="1"><i class="fas fa-circle-half-stroke fa-xs me-2"></i>肝脏疾病领域</a></li>
-                        <li><a class="dropdown-item" href="肺部健康领域.html" data-todo="1"><i class="fas fa-lungs fa-xs me-2"></i>肺部健康领域</a></li>
-                        <li><a class="dropdown-item" href="糖尿病领域.html" data-todo="1"><i class="fas fa-tint fa-xs me-2"></i>糖尿病领域</a></li>
-                        <li><a class="dropdown-item" href="research.html#viral" data-todo="1"><i class="fas fa-virus fa-xs me-2"></i>病毒感染性疾病</a></li>
-                        <li><a class="dropdown-item" href="research.html#bone" data-todo="1"><i class="fas fa-bone fa-xs me-2"></i>骨代谢疾病领域</a></li>
-                        <li><a class="dropdown-item" href="research.html#skin" data-todo="1"><i class="fas fa-hand-sparkles fa-xs me-2"></i>皮肤健康领域</a></li>
-                        <li><a class="dropdown-item" href="research.html#aging" data-todo="1"><i class="fas fa-hourglass-half fa-xs me-2"></i>衰老与生物钟领域</a></li>
-                        <li><a class="dropdown-item" href="research.html#others" data-todo="1"><i class="fas fa-ellipsis fa-xs me-2"></i>其他潜在应用领域</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="industry.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-industry"></i> 人民产业体系
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="industry.html#chicken" data-todo="1"><i class="fas fa-egg fa-xs me-2"></i>高标准鸡类产业链</a></li>
-                        <li><a class="dropdown-item" href="industry.html#food" data-todo="1"><i class="fas fa-utensils fa-xs me-2"></i>食品全产业链</a></li>
-                        <li><a class="dropdown-item" href="industry.html#catering" data-todo="1"><i class="fas fa-kitchen-set fa-xs me-2"></i>未来餐饮</a></li>
-                        <li><a class="dropdown-item" href="industry.html#biotech" data-todo="1"><i class="fas fa-microscope fa-xs me-2"></i>生物科技微谷</a></li>
-                        <li><a class="dropdown-item" href="industry.html#materials" data-todo="1"><i class="fas fa-cubes fa-xs me-2"></i>新材料</a></li>
-                        <li><a class="dropdown-item" href="industry.html#future-city" data-todo="1"><i class="fas fa-city fa-xs me-2"></i>亚太国际未来城</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="science.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-atom"></i> 人民科研
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="science.html#apcc-academy" data-todo="1"><i class="fas fa-graduation-cap fa-xs me-2"></i>亚太人民科学院</a></li>
-                        <li><a class="dropdown-item" href="science.html#key-lab" data-todo="1"><i class="fas fa-flask fa-xs me-2"></i>国家生化重点实验室</a></li>
-                        <li><a class="dropdown-item" href="science.html#enzyme" data-todo="1"><i class="fas fa-dna fa-xs me-2"></i>中华酶工程</a></li>
-                        <li><a class="dropdown-item" href="science.html#material-sci" data-todo="1"><i class="fas fa-cubes fa-xs me-2"></i>材料科学</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="welfare.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-shield-heart"></i> 人民福利
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="welfare.html#edu" data-todo="1"><i class="fas fa-school fa-xs me-2"></i>人民教育</a></li>
-                        <li><a class="dropdown-item" href="welfare.html#medical" data-todo="1"><i class="fas fa-briefcase-medical fa-xs me-2"></i>人民医疗</a></li>
-                        <li><a class="dropdown-item" href="welfare.html#housing" data-todo="1"><i class="fas fa-house-chimney fa-xs me-2"></i>人民住房</a></li>
-                        <li><a class="dropdown-item" href="welfare.html#elderly" data-todo="1"><i class="fas fa-hand-holding-heart fa-xs me-2"></i>人民养老</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="talent.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user-graduate"></i> 人才培养
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="talent.html#apcc-college" data-todo="1"><i class="fas fa-school fa-xs me-2"></i>亚太人民教育学院</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="system.html" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-scale-balanced"></i> 制度体系
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="system.html#basic-law" data-todo="1"><i class="fas fa-book-open fa-xs me-2"></i>共同体基本法</a></li>
-                        <li><a class="dropdown-item" href="system.html#org-hr" data-todo="1"><i class="fas fa-users-gear fa-xs me-2"></i>组织与人力制度</a></li>
-                        <li><a class="dropdown-item" href="system.html#code-of-conduct" data-todo="1"><i class="fas fa-handshake fa-xs me-2"></i>成员行为准则</a></li>
-                        <li><a class="dropdown-item" href="system.html#discipline" data-todo="1"><i class="fas fa-gavel fa-xs me-2"></i>纪律制度</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item ms-2">
-                    <a class="btn btn-join" href="join.html" data-nav="join.html">
-                        <i class="fas fa-door-open me-1"></i> 加入亚太
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-    <div class="offcanvas-header border-bottom">
-        <h5 class="offcanvas-title fw-bold text-primary" id="mobileMenuLabel">
-            <i class="fas fa-globe-asia me-2"></i>亚太人民共同体
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="关闭"></button>
-    </div>
-    <div class="offcanvas-body p-0">
-        <div class="accordion accordion-flush mobile-nav-accordion" id="mobileNavAccordion">
-            <div class="accordion-item border-0">
-                <a class="accordion-nav-link fw-semibold" href="index.html" data-nav="index.html"><i class="fas fa-home me-2 text-primary"></i>首页</a>
-            </div>
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob1">
-                        <i class="fas fa-info-circle me-2 text-primary"></i>关于亚太国际
-                    </button>
-                </h2>
-                <div id="mob1" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
-                    <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="about.html#overview" data-todo="1">总体介绍</a>
-                        <a class="mobile-sub-link" href="about.html#organization" data-todo="1">组织架构</a>
-                        <a class="mobile-sub-link" href="about.html#core-idea" data-todo="1">核心理念</a>
-                        <a class="mobile-sub-link" href="about.html#business-model" data-todo="1">商业模式</a>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob2">
-                        <i class="fas fa-handshake me-2 text-primary"></i>人民事业共同体
-                    </button>
-                </h2>
-                <div id="mob2" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
-                    <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="community.html#collective-ownership" data-todo="1">人民集体所有制</a>
-                        <a class="mobile-sub-link" href="community.html#pvc" data-todo="1">人民价值贡献值体系（PVC）</a>
-                        <a class="mobile-sub-link" href="community.html#idea-collection" data-todo="1">理念阐释集合</a>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob3">
-                        <i class="fas fa-heart-pulse me-2 text-primary"></i>健康中国·人民健康
-                    </button>
-                </h2>
-                <div id="mob3" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
-                    <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="health.html#healthy-china" data-todo="1">健康中国·人民健康</a>
-                        <a class="mobile-sub-link" href="health.html#yatai-no1" data-todo="1">亚太1号-虫草素</a>
-                        <a class="mobile-sub-link" href="health.html#cordycep-intro" data-todo="1">虫草素简介</a>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob4">
-                        <i class="fas fa-flask me-2 text-primary"></i>虫草素全球科研
-                    </button>
-                </h2>
-                <div id="mob4" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
-                    <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="research.html#overview" data-todo="1">虫草素全球科研综述</a>
-                        <a class="mobile-sub-link" href="清华大学基础研究.html" data-todo="1">清华大学基础研究</a>
-                        <a class="mobile-sub-link" href="抗肿瘤与肿瘤微环境.html" data-todo="1">抗肿瘤与肿瘤微环境</a>
-                        <a class="mobile-sub-link" href="代谢紊乱领域.html" data-todo="1">代谢紊乱领域</a>
-                        <a class="mobile-sub-link" href="炎症与自身免疫疾病领域.html" data-todo="1">炎症与自身免疫疾病</a>
-                        <a class="mobile-sub-link" href="免疫增强与提升.html" data-todo="1">免疫增强提升领域</a>
-                        <a class="mobile-sub-link" href="神经保护与精神疾病.html" data-todo="1">神经保护与精神疾病</a>
-                        <a class="mobile-sub-link" href="research.html#cardio" data-todo="1">心血管疾病领域</a>
-                        <a class="mobile-sub-link" href="research.html#kidney" data-todo="1">肾脏疾病领域</a>
-                        <a class="mobile-sub-link" href="research.html#liver" data-todo="1">肝脏疾病领域</a>
-                        <a class="mobile-sub-link" href="肺部健康领域.html" data-todo="1">肺部健康领域</a>
-                        <a class="mobile-sub-link" href="糖尿病领域.html" data-todo="1">糖尿病领域</a>
-                        <a class="mobile-sub-link" href="research.html#viral" data-todo="1">病毒感染性疾病</a>
-                        <a class="mobile-sub-link" href="research.html#bone" data-todo="1">骨代谢疾病领域</a>
-                        <a class="mobile-sub-link" href="research.html#skin" data-todo="1">皮肤健康领域</a>
-                        <a class="mobile-sub-link" href="research.html#aging" data-todo="1">衰老与生物钟领域</a>
-                        <a class="mobile-sub-link" href="research.html#others" data-todo="1">其他潜在应用领域</a>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob5">
-                        <i class="fas fa-industry me-2 text-primary"></i>人民产业体系
-                    </button>
-                </h2>
-                <div id="mob5" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
-                    <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="industry.html#chicken" data-todo="1">高标准鸡类产业链</a>
-                        <a class="mobile-sub-link" href="industry.html#food" data-todo="1">食品全产业链</a>
-                        <a class="mobile-sub-link" href="industry.html#catering" data-todo="1">未来餐饮</a>
-                        <a class="mobile-sub-link" href="industry.html#biotech" data-todo="1">生物科技微谷</a>
-                        <a class="mobile-sub-link" href="industry.html#materials" data-todo="1">新材料</a>
-                        <a class="mobile-sub-link" href="industry.html#future-city" data-todo="1">亚太国际未来城</a>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob6">
-                        <i class="fas fa-atom me-2 text-primary"></i>人民科研
-                    </button>
-                </h2>
-                <div id="mob6" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
-                    <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="science.html#apcc-academy" data-todo="1">亚太人民科学院</a>
-                        <a class="mobile-sub-link" href="science.html#key-lab" data-todo="1">国家生化重点实验室</a>
-                        <a class="mobile-sub-link" href="science.html#enzyme" data-todo="1">中华酶工程</a>
-                        <a class="mobile-sub-link" href="science.html#material-sci" data-todo="1">材料科学</a>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob7">
-                        <i class="fas fa-shield-heart me-2 text-primary"></i>人民福利
-                    </button>
-                </h2>
-                <div id="mob7" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
-                    <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="welfare.html#edu" data-todo="1">人民教育</a>
-                        <a class="mobile-sub-link" href="welfare.html#medical" data-todo="1">人民医疗</a>
-                        <a class="mobile-sub-link" href="welfare.html#housing" data-todo="1">人民住房</a>
-                        <a class="mobile-sub-link" href="welfare.html#elderly" data-todo="1">人民养老</a>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob8">
-                        <i class="fas fa-user-graduate me-2 text-primary"></i>人才培养
-                    </button>
-                </h2>
-                <div id="mob8" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
-                    <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="talent.html#apcc-college" data-todo="1">亚太人民教育学院</a>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item border-0">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob9">
-                        <i class="fas fa-scale-balanced me-2 text-primary"></i>制度体系
-                    </button>
-                </h2>
-                <div id="mob9" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
-                    <div class="accordion-body py-1">
-                        <a class="mobile-sub-link" href="system.html#basic-law" data-todo="1">共同体基本法</a>
-                        <a class="mobile-sub-link" href="system.html#org-hr" data-todo="1">组织与人力制度</a>
-                        <a class="mobile-sub-link" href="system.html#code-of-conduct" data-todo="1">成员行为准则</a>
-                        <a class="mobile-sub-link" href="system.html#discipline" data-todo="1">纪律制度</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="p-3 border-top mt-2">
-            <a href="join.html" class="btn btn-amber w-100 fw-bold">
-                <i class="fas fa-door-open me-2"></i>立即加入亚太
-            </a>
-        </div>
-    </div>
-</div>
+
+
+
 </div>
 
     <main>
@@ -600,95 +1012,108 @@
                     </ol>
                 </nav>
                 <h1>糖尿病<span class="accent">领域</span></h1>
-                <p class="lead">虫草素糖尿病全球科研全景 · 150+篇论文 · 5大方向 · AMPK能量代谢核心机制 · 降糖护肾保心促愈合</p>
+                <p class="lead">虫草素糖尿病全球科研全景 · 210+篇论文 · 6大方向 · AMPK能量代谢核心机制 · 降糖护肾保心促愈合</p>
             </div>
         </section>
 
-        <div class="container py-section">
-        <div class="cordycepin-report">
-            <div class="cp-container">
+                <div class="container cp-diabetes py-section">
 
-                <!-- ===== 头部 ===== -->
-                <header class="header">
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <div class="header-glow"></div>
+            <div class="header-content">
+                <div class="header-top">
+                    <span class="header-icon"><i class="fas fa-dna"></i></span>
                     <h1>
-                        🧬 虫草素 · 糖尿病领域
+                        虫草素 · 糖尿病领域
                         <small>全球科研全景</small>
-                        <span class="badge-top">⭐ 降糖 · 护肾 · 保心 · 促愈合</span>
                     </h1>
-                    <div class="header-meta">
-                        <span>📚 检索数据库：<strong>Web of Science · PubMed · CNKI · PMC</strong></span>
-                        <span>📅 数据截止：<strong>2026年6月</strong></span>
-                        <span>📊 统计口径：<strong>正式研究论文+综述</strong></span>
-                        <span>🔬 覆盖方向：<strong>2型糖尿病 · 糖尿病肾病 · 糖尿病心肌病 · 糖尿病伤口 · 胰岛保护</strong></span>
-                    </div>
-                </header>
+                    <span class="header-badge"><i class="fas fa-star"></i> 降糖 · 护肾 · 保心 · 促愈合</span>
+                </div>
+                <div class="header-meta">
+                    <span><i class="fas fa-database"></i> 检索数据库：<strong>Web of Science · PubMed · CNKI · PMC</strong></span>
+                    <span><i class="far fa-calendar-alt"></i> 数据截止：<strong>2026年6月</strong></span>
+                    <span><i class="fas fa-chart-pie"></i> 统计口径：<strong>正式研究论文+综述</strong></span>
+                    <span><i class="fas fa-microscope"></i> 覆盖方向：<strong>2型糖尿病 · 糖尿病肾病 · 糖尿病心肌病 · 糖尿病伤口 · 胰岛保护</strong></span>
+                </div>
+            </div>
+            <div class="header-decoration">DM</div>
+        </header>
 
-        <!-- ===== 改进1：场景代入 ===== -->
+        <!-- ===== SCENE BOX ===== -->
         <div class="scene-box">
             <div class="title">
-                <span class="icon-big">👋</span>
+                <span class="icon-big"><i class="fas fa-hand-peace"></i></span>
                 如果你或家人有以下困扰……
             </div>
             <div class="scene-grid">
-                <div class="item"><span class="check">✅</span> 体检发现血糖偏高，担心发展成糖尿病</div>
-                <div class="item"><span class="check">✅</span> 已经是2型糖尿病，想了解 <span class="highlight-scene">有科学依据的辅助调理方案</span></div>
-                <div class="item"><span class="check">✅</span> 担心糖尿病并发症（肾、心、血管、伤口愈合）</div>
-                <div class="item"><span class="check">✅</span> 想了解天然产物在糖尿病管理中的 <span class="highlight-scene">全球科研进展</span></div>
+                <div class="item"><span class="check"><i class="fas fa-check-circle"></i></span> 体检发现血糖偏高，担心发展成糖尿病</div>
+                <div class="item"><span class="check"><i class="fas fa-check-circle"></i></span> 已经是2型糖尿病，想了解 <span class="highlight-scene">有科学依据的辅助调理方案</span></div>
+                <div class="item"><span class="check"><i class="fas fa-check-circle"></i></span> 担心糖尿病并发症（肾、心、血管、伤口愈合）</div>
+                <div class="item"><span class="check"><i class="fas fa-check-circle"></i></span> 想了解天然产物在糖尿病管理中的 <span class="highlight-scene">全球科研进展</span></div>
             </div>
             <div class="scene-footer">
-                ⏳ 那么，虫草素在全球糖尿病领域的 <strong>210+ 篇科研论文</strong>，或许值得你花 5 分钟了解一下。
+                <i class="fas fa-hourglass-half"></i> 那么，虫草素在全球糖尿病领域的 <strong>210+ 篇科研论文</strong>，或许值得你花 5 分钟了解一下。
             </div>
         </div>
 
-        <!-- ===== 数据看板 ===== -->
+        <!-- ===== STATS ===== -->
         <section class="stats-grid">
             <div class="stat-card">
-                <div class="stat-number">210+</div>
+                <div class="stat-icon"><i class="fas fa-file-alt"></i></div>
+                <div class="stat-number">210<span style="font-size:22px; color:var(--color-text-light);">+</span></div>
                 <div class="stat-label">全球总论文量</div>
                 <div class="stat-sub">代谢领域核心赛道</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">67%</div>
+                <div class="stat-icon"><i class="fas fa-scroll"></i></div>
+                <div class="stat-number"><span style="color:var(--color-gold);">67</span><span style="font-size:22px; color:var(--color-text-light);">%</span></div>
                 <div class="stat-label">SCI收录占比</div>
                 <div class="stat-sub">国际主流期刊认证</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">6+</div>
+                <div class="stat-icon"><i class="fas fa-heartbeat"></i></div>
+                <div class="stat-number"><span style="color:var(--color-rose);">6</span><span style="font-size:22px; color:var(--color-text-light);">+</span></div>
                 <div class="stat-label">覆盖并发症方向</div>
                 <div class="stat-sub">肾病 · 心肌病 · 视网膜 · 伤口 · 睾丸</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">AMPK</div>
+                <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+                <div class="stat-number" style="font-size:30px; color:var(--color-emerald);">AMPK</div>
                 <div class="stat-label">核心作用通路</div>
                 <div class="stat-sub">能量代谢总开关</div>
             </div>
         </section>
 
-        <!-- ===== 第一部分：研究综述 ===== -->
+        <!-- ===== SECTION 1: 综述 ===== -->
         <section class="card-section">
-            <h2>📌 第一部分 · 研究综述 <span class="tag">全景概览</span></h2>
+            <h2>
+                <span class="section-icon"><i class="fas fa-flask"></i></span>
+                第一部分 · 研究综述
+                <span class="tag">全景概览</span>
+            </h2>
             <div class="sub">虫草素在糖尿病领域的研究已覆盖从血糖调控到多器官并发症保护的完整链条</div>
 
-            <!-- 改进4：可视化示意图 -->
+            <!-- Visual Flow -->
             <div class="visual-flow">
                 <span class="node">虫草素 <span class="sub">核心分子</span></span>
-                <span class="arrow">→</span>
+                <span class="arrow"><i class="fas fa-arrow-right"></i></span>
                 <span class="node-light">① 保护胰岛β细胞 <span class="sub">降血糖</span></span>
-                <span class="arrow">→</span>
+                <span class="arrow"><i class="fas fa-arrow-right"></i></span>
                 <span class="node-light">② 保护肾脏 <span class="sub">抗纤维化·抗铁死亡</span></span>
-                <span class="arrow">→</span>
+                <span class="arrow"><i class="fas fa-arrow-right"></i></span>
                 <span class="node-light">③ 保护心脏 <span class="sub">线粒体融合</span></span>
-                <span class="arrow">→</span>
+                <span class="arrow"><i class="fas fa-arrow-right"></i></span>
                 <span class="node-light">④ 保护血管 <span class="sub">SIRT3通路</span></span>
-                <span class="arrow">→</span>
+                <span class="arrow"><i class="fas fa-arrow-right"></i></span>
                 <span class="node-light">⑤ 促进伤口愈合 <span class="sub">抗炎</span></span>
             </div>
 
-            <!-- 改进4b：科研强度对比 -->
+            <!-- Compare Box -->
             <div class="compare-box">
-                <span class="label">📊 科研强度对比 · 虫草素 vs 同类天然产物</span>
+                <span class="label"><i class="fas fa-chart-bar"></i> 科研强度对比 · 虫草素 vs 同类天然产物</span>
                 <div class="row">
-                    <span><strong>虫草素</strong> 糖尿病研究：<span class="highlight">210+ 篇</span></span>
+                    <span><strong>虫草素</strong> 糖尿病研究：<span class="highlight-compare">210+ 篇</span></span>
                     <span>
                         <span class="bar-track"><span class="bar-fill high" style="width:100%;"></span></span>
                     </span>
@@ -705,67 +1130,69 @@
                         <span class="bar-track"><span class="bar-fill" style="width:43%;"></span></span>
                     </span>
                 </div>
-                <div style="font-size:12px; color:#64809e; margin-top:4px;">*基于PubMed、Web of Science公开统计数据</div>
+                <div class="source-note"><i class="fas fa-info-circle"></i> *基于PubMed、Web of Science公开统计数据</div>
             </div>
 
-            <div class="item-list" style="margin-top:16px;">
+            <!-- Item List -->
+            <div class="item-list" style="margin-top:18px;">
                 <div class="item-row gold-border">
-                    <span class="icon">📊</span>
+                    <span class="icon gold"><i class="fas fa-database"></i></span>
                     <div class="content">
-                        <span class="data-badge">数据</span> <strong>研究体量</strong>：全球糖尿病领域总论文 <span class="highlight">210+ 篇</span>，其中 SCI 收录 <span class="highlight">140+ 篇</span>，远超同类天然产物在同一方向的研究体量。
+                        <span class="data-badge gold">数据</span> <strong>研究体量</strong>：全球糖尿病领域总论文 <span class="highlight">210+ 篇</span>，其中 SCI 收录 <span class="highlight">140+ 篇</span>，远超同类天然产物在同一方向的研究体量。
                     </div>
                 </div>
                 <div class="item-row gold-border">
-                    <span class="icon">📈</span>
+                    <span class="icon gold"><i class="fas fa-arrow-trend-up"></i></span>
                     <div class="content">
-                        <span class="data-badge">覆盖方向</span> 虫草素在 <span class="highlight">2型糖尿病、糖尿病肾病、糖尿病心肌病、糖尿病伤口愈合、糖尿病视网膜病变、糖尿病睾丸损伤</span> 等多个方向均展现出明确活性。
+                        <span class="data-badge gold">覆盖方向</span> 虫草素在 <span class="highlight">2型糖尿病、糖尿病肾病、糖尿病心肌病、糖尿病伤口愈合、糖尿病视网膜病变、糖尿病睾丸损伤</span> 等多个方向均展现出明确活性。
                     </div>
                 </div>
                 <div class="item-row">
-                    <span class="icon">⚡</span>
+                    <span class="icon"><i class="fas fa-bolt"></i></span>
                     <div class="content">
                         <strong>血糖调控机制</strong> 虫草素通过 <span class="highlight">激活AMPK（身体的“能量总开关”）</span>，促进葡萄糖摄取、抑制肝糖异生，改善胰岛素抵抗。
                     </div>
                 </div>
-                <div class="item-row">
-                    <span class="icon">🫘</span>
+                <div class="item-row rose-border">
+                    <span class="icon rose"><i class="fas fa-kidney"></i></span>
                     <div class="content">
                         <strong>肾脏保护</strong> 虫草素通过 <span class="highlight">激活SLC7A11/GPX4通路抑制足细胞铁死亡</span>，以及 <span class="highlight">上调Smad7抑制TGF-β/Smad通路</span>，延缓糖尿病肾病进展。
                     </div>
                 </div>
-                <div class="item-row">
-                    <span class="icon">❤️</span>
+                <div class="item-row emerald-border">
+                    <span class="icon emerald"><i class="fas fa-heart"></i></span>
                     <div class="content">
                         <strong>心脏保护</strong> 虫草素通过 <span class="highlight">AMPK/Mfn2通路促进线粒体融合</span>，保护糖尿病心脏免受缺血/再灌注损伤。
                     </div>
                 </div>
                 <div class="item-row">
-                    <span class="icon">🧬</span>
+                    <span class="icon lavender"><i class="fas fa-microscope"></i></span>
                     <div class="content">
                         <strong>胰岛β细胞保护</strong> 虫草素通过 <span class="highlight">下调ROS/JNK线粒体凋亡通路</span>，保护胰岛β细胞免受糖毒性和脂毒性损伤。
                     </div>
                 </div>
                 <div class="item-row gold-border">
-                    <span class="icon">🏥</span>
+                    <span class="icon gold"><i class="fas fa-hospital-user"></i></span>
                     <div class="content">
-                        <span class="data-badge">临床</span> <strong>临床转化</strong>：虫草素辅助治疗Ⅱ型糖尿病肾病的临床研究（106例患者）显示，可显著改善肾功能指标。
+                        <span class="data-badge gold">临床</span> <strong>临床转化</strong>：虫草素辅助治疗Ⅱ型糖尿病肾病的临床研究（106例患者）显示，可显著改善肾功能指标。
                     </div>
                 </div>
             </div>
 
-            <div class="popular-box" style="margin-top:14px;">
-                <span class="label">💡 通俗·大众结论</span>
+            <!-- Popular Box -->
+            <div class="popular-box" style="margin-top:16px;">
+                <span class="label"><i class="fas fa-lightbulb"></i> 通俗·大众结论</span>
                 <p>
-                    ✅ 虫草素是 <strong>全球科研证据最充分的天然糖尿病辅助调节分子</strong> 之一。<br>
-                    ✅ 它通过激活身体的 <strong>“能量总开关”AMPK</strong>，帮助 <strong>稳定血糖、改善胰岛素抵抗</strong>。<br>
-                    ✅ 更能 <strong>保护肾脏、心脏、血管和胰岛细胞</strong>，从多个维度对抗糖尿病的“破坏力”。<br>
+                    ✅ 虫草素是 <strong>全球科研证据最充分的天然糖尿病辅助调节分子</strong> 之一。<br />
+                    ✅ 它通过激活身体的 <strong>“能量总开关”AMPK</strong>，帮助 <strong>稳定血糖、改善胰岛素抵抗</strong>。<br />
+                    ✅ 更能 <strong>保护肾脏、心脏、血管和胰岛细胞</strong>，从多个维度对抗糖尿病的“破坏力”。<br />
                     ✅ 大量动物实验和细胞研究证实其 <strong>多靶点糖尿病管理</strong> 潜力，已有临床研究验证其在糖尿病肾病中的辅助价值。
                 </p>
             </div>
 
-            <!-- 改进2：小词典 -->
+            <!-- Glossary -->
             <div class="glossary-box">
-                <div class="title">📖 小词典 · 看懂科研术语</div>
+                <div class="title"><i class="fas fa-book-open"></i> 小词典 · 看懂科研术语</div>
                 <div class="row">
                     <span><span class="term">AMPK</span> <span class="def">→ 身体的“能量总开关”，激活它可帮助燃烧脂肪、稳定血糖</span></span>
                     <span><span class="term">铁死亡</span> <span class="def">→ 一种新型的细胞“生锈式”死亡，虫草素可抑制它，保护肾脏</span></span>
@@ -776,438 +1203,360 @@
             </div>
         </section>
 
-        <!-- ===== 第二部分：10篇顶级论文卡片 ===== -->
-
+        <!-- ===== SECTION 2: 10篇顶级论文 ===== -->
         <section class="card-section">
-            <h2>📄 第二部分 · 10 篇顶级论文 <span class="tag">重磅研究</span></h2>
+            <h2>
+                <span class="section-icon"><i class="fas fa-file-alt"></i></span>
+                第二部分 · 10 篇顶级论文
+                <span class="tag">重磅研究</span>
+            </h2>
             <div class="sub">按研究深度、期刊影响力和学术价值精选</div>
 
             <div class="paper-grid">
 
-                <!-- 论文 1 -->
+                <!-- Paper 1 -->
                 <div class="paper-card">
                     <div class="paper-title-en">Cordycepin ameliorates diabetic nephropathy injury by activating the SLC7A11/GPX4 pathway</div>
                     <div class="paper-title-cn">虫草素通过激活SLC7A11/GPX4通路改善糖尿病肾病损伤</div>
                     <div class="paper-meta">
-                        <span>📖 <strong>Journal of Diabetes Investigation</strong> · 2025</span>
-                        <span>🏆 影响因子 <strong>3.0</strong></span>
-                        <span>👨‍🔬 Wu B · Wang J · Yan X · Jin G · Wang Q</span>
-                        <span>🏫 陕西省人民医院</span>
+                        <span><i class="fas fa-book"></i> <strong>Journal of Diabetes Investigation</strong> · 2025</span>
+                        <span><i class="fas fa-trophy"></i> 影响因子 <strong>3.0</strong></span>
+                        <span><i class="fas fa-user-md"></i> Wu B · Wang J · Yan X · Jin G · Wang Q</span>
+                        <span><i class="fas fa-university"></i> 陕西省人民医院</span>
                     </div>
                     <div class="paper-body">
                         <div class="item-row gold-border">
-                            <span class="icon">📊</span>
-                            <div class="content"><span class="data-badge">数据</span> 足细胞凋亡↓、铁死亡↓、肾结构损伤和炎症显著改善 <span class="highlight">（P<0.01）</span></div>
+                            <span class="icon gold"><i class="fas fa-chart-line"></i></span>
+                            <div class="content"><span class="data-badge gold">数据</span> 足细胞凋亡↓、铁死亡↓、肾结构损伤和炎症显著改善 <span class="highlight">（P&lt;0.01）</span></div>
                         </div>
                         <div class="item-row">
-                            <span class="icon">🧬</span>
+                            <span class="icon"><i class="fas fa-dna"></i></span>
                             <div class="content"><strong>科研结论</strong>：虫草素通过 <span class="highlight">激活SLC7A11/GPX4通路</span>，抑制高糖诱导的足细胞凋亡、炎症和铁死亡。基因沉默实验证明该通路是虫草素发挥保护作用的必要条件。</div>
                         </div>
                         <div class="paper-popular">
-                            <span class="label">💡 通俗健康结论</span>
+                            <span class="label"><i class="fas fa-comment-dots"></i> 通俗健康结论</span>
                             <strong>虫草素能“阻止”肾脏细胞的异常死亡</strong> —— 通过抑制一种叫“铁死亡”的新型细胞死亡方式，保护肾脏的精密过滤系统。
                         </div>
                     </div>
-                    <div class="ref-note">🔗 铁死亡-糖尿病肾病方向前沿研究 · 被引核心文献</div>
+                    <div class="ref-note"><i class="fas fa-link"></i> 铁死亡-糖尿病肾病方向前沿研究 · 被引核心文献</div>
                 </div>
 
-                <!-- 论文 2 -->
+                <!-- Paper 2 -->
                 <div class="paper-card">
                     <div class="paper-title-en">Cordycepin ameliorates high glucose-induced proliferation, inflammation, and extracellular matrix deposition in glomerular mesangial cells through Smad7-dependent manner</div>
                     <div class="paper-title-cn">虫草素通过Smad7依赖性方式改善高糖诱导的肾小球系膜细胞增殖、炎症和细胞外基质沉积</div>
                     <div class="paper-meta">
-                        <span>📖 <strong>Molecular Immunology</strong> · 2025</span>
-                        <span>🏆 影响因子 <strong>3.2</strong></span>
-                        <span>👨‍🔬 Han W · Chen S · Ma B · 等</span>
-                        <span>🏫 中国研究团队</span>
+                        <span><i class="fas fa-book"></i> <strong>Molecular Immunology</strong> · 2025</span>
+                        <span><i class="fas fa-trophy"></i> 影响因子 <strong>3.2</strong></span>
+                        <span><i class="fas fa-user-md"></i> Han W · Chen S · Ma B · 等</span>
+                        <span><i class="fas fa-university"></i> 中国研究团队</span>
                     </div>
                     <div class="paper-body">
                         <div class="item-row gold-border">
-                            <span class="icon">📊</span>
-                            <div class="content"><span class="data-badge">数据</span> 血清肌酐↓、尿素氮↓、尿蛋白↓，肾小球病理改变显著改善 <span class="highlight">（P<0.01）</span></div>
+                            <span class="icon gold"><i class="fas fa-chart-line"></i></span>
+                            <div class="content"><span class="data-badge gold">数据</span> 血清肌酐↓、尿素氮↓、尿蛋白↓，肾小球病理改变显著改善 <span class="highlight">（P&lt;0.01）</span></div>
                         </div>
                         <div class="item-row">
-                            <span class="icon">🧬</span>
+                            <span class="icon"><i class="fas fa-dna"></i></span>
                             <div class="content"><strong>科研结论</strong>：虫草素通过 <span class="highlight">上调Smad7表达</span>，抑制TGF-β/Smad信号通路和NOX4/NLRP3炎症小体激活。shRNA敲低Smad7后虫草素的保护效果被取消。</div>
                         </div>
                         <div class="paper-popular">
-                            <span class="label">💡 通俗健康结论</span>
+                            <span class="label"><i class="fas fa-comment-dots"></i> 通俗健康结论</span>
                             <strong>虫草素能“保护”糖尿病患者的肾脏</strong> —— 通过抑制肾脏纤维化和炎症，减少蛋白尿，延缓糖尿病肾病的进展。
                         </div>
                     </div>
-                    <div class="ref-note">🔗 糖尿病肾病方向突破性机制研究</div>
+                    <div class="ref-note"><i class="fas fa-link"></i> 糖尿病肾病方向突破性机制研究</div>
                 </div>
 
-                <!-- 论文 3 -->
+                <!-- Paper 3 -->
                 <div class="paper-card">
                     <div class="paper-title-en">Protective Effect of Cordycepin on Impairment of Endothelial Function in Type 2 Diabetes Mellitus</div>
                     <div class="paper-title-cn">虫草素对2型糖尿病血管内皮功能损伤的保护作用</div>
                     <div class="paper-meta">
-                        <span>📖 <strong>International Journal of Medicinal Mushrooms</strong> · 2022</span>
-                        <span>🏆 影响因子 <strong>1.8</strong></span>
-                        <span>👨‍🔬 Xue B · Li L · Gu XD · 等</span>
-                        <span>🏫 西藏农牧学院</span>
+                        <span><i class="fas fa-book"></i> <strong>International Journal of Medicinal Mushrooms</strong> · 2022</span>
+                        <span><i class="fas fa-trophy"></i> 影响因子 <strong>1.8</strong></span>
+                        <span><i class="fas fa-user-md"></i> Xue B · Li L · Gu XD · 等</span>
+                        <span><i class="fas fa-university"></i> 西藏农牧学院</span>
                     </div>
                     <div class="paper-body">
                         <div class="item-row gold-border">
-                            <span class="icon">📊</span>
-                            <div class="content"><span class="data-badge">数据</span> T2DM大鼠胸主动脉内皮依赖性舒张功能被虫草素显著逆转 <span class="highlight">（P<0.05）</span></div>
+                            <span class="icon gold"><i class="fas fa-chart-line"></i></span>
+                            <div class="content"><span class="data-badge gold">数据</span> T2DM大鼠胸主动脉内皮依赖性舒张功能被虫草素显著逆转 <span class="highlight">（P&lt;0.05）</span></div>
                         </div>
                         <div class="item-row">
-                            <span class="icon">🧬</span>
+                            <span class="icon"><i class="fas fa-dna"></i></span>
                             <div class="content"><strong>科研结论</strong>：虫草素通过 <span class="highlight">激活SIRT3信号通路</span>，改善线粒体功能，保护T2DM诱导的血管功能损伤。分子对接分析证实虫草素可直接与SIRT3结合。</div>
                         </div>
                         <div class="paper-popular">
-                            <span class="label">💡 通俗健康结论</span>
+                            <span class="label"><i class="fas fa-comment-dots"></i> 通俗健康结论</span>
                             <strong>虫草素能“保护”糖尿病患者的血管</strong> —— 通过修复血管内皮功能，降低糖尿病心血管并发症风险。
                         </div>
                     </div>
-                    <div class="ref-note">🔗 糖尿病血管保护方向代表性研究</div>
+                    <div class="ref-note"><i class="fas fa-link"></i> 糖尿病血管保护方向代表性研究</div>
                 </div>
 
-                <!-- 论文 4 -->
+                <!-- Paper 4 -->
                 <div class="paper-card">
                     <div class="paper-title-en">Cordycepin Decreases Ischemia/Reperfusion Injury in Diabetic Hearts via Upregulating AMPK/Mfn2-dependent Mitochondrial Fusion</div>
                     <div class="paper-title-cn">虫草素通过上调AMPK/Mfn2依赖性线粒体融合减轻糖尿病心脏缺血/再灌注损伤</div>
                     <div class="paper-meta">
-                        <span>📖 <strong>Frontiers in Pharmacology</strong> · 2021</span>
-                        <span>🏆 影响因子 <strong>4.4</strong></span>
-                        <span>👨‍🔬 Yu HY · Hong X · Zhi SM · 等</span>
-                        <span>🏫 第四军医大学 · 西安市第三医院</span>
+                        <span><i class="fas fa-book"></i> <strong>Frontiers in Pharmacology</strong> · 2021</span>
+                        <span><i class="fas fa-trophy"></i> 影响因子 <strong>4.4</strong></span>
+                        <span><i class="fas fa-user-md"></i> Yu HY · Hong X · Zhi SM · 等</span>
+                        <span><i class="fas fa-university"></i> 第四军医大学 · 西安市第三医院</span>
                     </div>
                     <div class="paper-body">
                         <div class="item-row gold-border">
-                            <span class="icon">📊</span>
-                            <div class="content"><span class="data-badge">数据</span> 心肌梗死面积↓、LVEF↑、心肌细胞凋亡↓ <span class="highlight">（P<0.01）</span></div>
+                            <span class="icon gold"><i class="fas fa-chart-line"></i></span>
+                            <div class="content"><span class="data-badge gold">数据</span> 心肌梗死面积↓、LVEF↑、心肌细胞凋亡↓ <span class="highlight">（P&lt;0.01）</span></div>
                         </div>
                         <div class="item-row">
-                            <span class="icon">🧬</span>
+                            <span class="icon"><i class="fas fa-dna"></i></span>
                             <div class="content"><strong>科研结论</strong>：虫草素通过 <span class="highlight">激活AMPK/Mfn2通路促进线粒体融合</span>，改善线粒体功能，保护糖尿病心脏免受缺血/再灌注损伤。</div>
                         </div>
                         <div class="paper-popular">
-                            <span class="label">💡 通俗健康结论</span>
+                            <span class="label"><i class="fas fa-comment-dots"></i> 通俗健康结论</span>
                             <strong>虫草素能给糖尿病心脏“穿防护衣”</strong> —— 当血管堵塞后再通血时，保护心肌细胞免受二次损伤。
                         </div>
                     </div>
-                    <div class="ref-note">🔗 糖尿病心肌保护领域经典研究</div>
+                    <div class="ref-note"><i class="fas fa-link"></i> 糖尿病心肌保护领域经典研究</div>
                 </div>
 
-                <!-- 论文 5 -->
+                <!-- Paper 5 -->
                 <div class="paper-card">
                     <div class="paper-title-en">Cordycepin prevents hyperlipidemia in hamsters fed a high-fat diet via activation of AMP-activated protein kinase</div>
                     <div class="paper-title-cn">虫草素通过激活AMP活化蛋白激酶预防高脂饮食仓鼠的高脂血症</div>
                     <div class="paper-meta">
-                        <span>📖 <strong>Journal of Pharmacological Sciences</strong> · 2010</span>
-                        <span>🏆 影响因子 <strong>3.5</strong></span>
-                        <span>👨‍🔬 Guo P · Zhu HB · Lian ZQ · 等</span>
-                        <span>🏫 清华大学 · 中国医学科学院</span>
+                        <span><i class="fas fa-book"></i> <strong>Journal of Pharmacological Sciences</strong> · 2010</span>
+                        <span><i class="fas fa-trophy"></i> 影响因子 <strong>3.5</strong></span>
+                        <span><i class="fas fa-user-md"></i> Guo P · Zhu HB · Lian ZQ · 等</span>
+                        <span><i class="fas fa-university"></i> 清华大学 · 中国医学科学院</span>
                     </div>
                     <div class="paper-body">
                         <div class="item-row gold-border">
-                            <span class="icon">📊</span>
-                            <div class="content"><span class="data-badge">数据</span> 总胆固醇↓、甘油三酯↓、低密度脂蛋白↓ <span class="highlight">（P<0.05）</span></div>
+                            <span class="icon gold"><i class="fas fa-chart-line"></i></span>
+                            <div class="content"><span class="data-badge gold">数据</span> 总胆固醇↓、甘油三酯↓、低密度脂蛋白↓ <span class="highlight">（P&lt;0.05）</span></div>
                         </div>
                         <div class="item-row">
-                            <span class="icon">🧬</span>
+                            <span class="icon"><i class="fas fa-dna"></i></span>
                             <div class="content"><strong>科研结论</strong>：虫草素通过 <span class="highlight">激活AMPK和ACC磷酸化</span> 抑制脂质生物合成。AMPK抑制剂Compound C可阻断其降脂效果，且虫草素可 <span class="highlight">有效改善胰岛素敏感性</span>。</div>
                         </div>
                         <div class="paper-popular">
-                            <span class="label">💡 通俗健康结论</span>
+                            <span class="label"><i class="fas fa-comment-dots"></i> 通俗健康结论</span>
                             <strong>虫草素能“关掉”肝脏的脂肪合成工厂</strong> —— 降低“坏胆固醇”和甘油三酯，同时提升胰岛素敏感性。
                         </div>
                     </div>
-                    <div class="ref-note">🔗 高脂血症-胰岛素抵抗方向经典研究 · 被引超60次</div>
+                    <div class="ref-note"><i class="fas fa-link"></i> 高脂血症-胰岛素抵抗方向经典研究 · 被引超60次</div>
                 </div>
 
-                <!-- 论文 6 -->
+                <!-- Paper 6 -->
                 <div class="paper-card">
                     <div class="paper-title-en">Cordycepin protects islet β-cells against glucotoxicity and lipotoxicity via modulating related proteins of ROS/JNK signaling pathway</div>
                     <div class="paper-title-cn">虫草素通过调节ROS/JNK信号通路相关蛋白保护胰岛β细胞免受糖毒性和脂毒性损伤</div>
                     <div class="paper-meta">
-                        <span>📖 <strong>European Journal of Pharmacology</strong> · 2023</span>
-                        <span>🏆 影响因子 <strong>4.2</strong></span>
-                        <span>👨‍🔬 中国研究团队</span>
-                        <span>🏫 多机构联合</span>
+                        <span><i class="fas fa-book"></i> <strong>European Journal of Pharmacology</strong> · 2023</span>
+                        <span><i class="fas fa-trophy"></i> 影响因子 <strong>4.2</strong></span>
+                        <span><i class="fas fa-user-md"></i> 中国研究团队</span>
+                        <span><i class="fas fa-university"></i> 多机构联合</span>
                     </div>
                     <div class="paper-body">
                         <div class="item-row gold-border">
-                            <span class="icon">📊</span>
-                            <div class="content"><span class="data-badge">数据</span> 细胞活力↑、胰岛素合成与分泌↑、细胞凋亡↓ <span class="highlight">（P<0.05）</span></div>
+                            <span class="icon gold"><i class="fas fa-chart-line"></i></span>
+                            <div class="content"><span class="data-badge gold">数据</span> 细胞活力↑、胰岛素合成与分泌↑、细胞凋亡↓ <span class="highlight">（P&lt;0.05）</span></div>
                         </div>
                         <div class="item-row">
-                            <span class="icon">🧬</span>
+                            <span class="icon"><i class="fas fa-dna"></i></span>
                             <div class="content"><strong>科研结论</strong>：虫草素通过 <span class="highlight">下调ROS/JNK线粒体凋亡通路</span>，保护胰岛β细胞免受高糖和高脂毒性损伤，促进胰岛素合成与分泌。</div>
                         </div>
                         <div class="paper-popular">
-                            <span class="label">💡 通俗健康结论</span>
+                            <span class="label"><i class="fas fa-comment-dots"></i> 通俗健康结论</span>
                             <strong>虫草素能“保护”胰岛素生产工厂</strong> —— 保护胰岛β细胞不被高血糖和高血脂“烧坏”，维持胰岛素分泌能力。
                         </div>
                     </div>
-                    <div class="ref-note">🔗 胰岛β细胞保护方向代表性研究</div>
+                    <div class="ref-note"><i class="fas fa-link"></i> 胰岛β细胞保护方向代表性研究</div>
                 </div>
 
-                <!-- 论文 7 -->
+                <!-- Paper 7 -->
                 <div class="paper-card">
                     <div class="paper-title-en">Cordycepin from Cordyceps militaris ameliorates diabetic nephropathy via the miR-193b-5p/MCL-1 axis</div>
                     <div class="paper-title-cn">蛹虫草来源虫草素通过miR-193b-5p/MCL-1轴改善糖尿病肾病</div>
                     <div class="paper-meta">
-                        <span>📖 <strong>Chinese Medicine</strong> · 2023</span>
-                        <span>🏆 影响因子 <strong>4.9</strong></span>
-                        <span>👨‍🔬 Zheng R · Zhang W · Song J · 等</span>
-                        <span>🏫 中国研究团队</span>
+                        <span><i class="fas fa-book"></i> <strong>Chinese Medicine</strong> · 2023</span>
+                        <span><i class="fas fa-trophy"></i> 影响因子 <strong>4.9</strong></span>
+                        <span><i class="fas fa-user-md"></i> Zheng R · Zhang W · Song J · 等</span>
+                        <span><i class="fas fa-university"></i> 中国研究团队</span>
                     </div>
                     <div class="paper-body">
                         <div class="item-row gold-border">
-                            <span class="icon">📊</span>
-                            <div class="content"><span class="data-badge">数据</span> miR-193b-5p↓、MCL-1↑、系膜细胞增殖↓ <span class="highlight">（P<0.01）</span></div>
+                            <span class="icon gold"><i class="fas fa-chart-line"></i></span>
+                            <div class="content"><span class="data-badge gold">数据</span> miR-193b-5p↓、MCL-1↑、系膜细胞增殖↓ <span class="highlight">（P&lt;0.01）</span></div>
                         </div>
                         <div class="item-row">
-                            <span class="icon">🧬</span>
+                            <span class="icon"><i class="fas fa-dna"></i></span>
                             <div class="content"><strong>科研结论</strong>：虫草素通过 <span class="highlight">调节miR-193b-5p/MCL-1轴</span>，抑制高糖诱导的肾小球系膜细胞增殖，改善糖尿病肾病。</div>
                         </div>
                         <div class="paper-popular">
-                            <span class="label">💡 通俗健康结论</span>
+                            <span class="label"><i class="fas fa-comment-dots"></i> 通俗健康结论</span>
                             <strong>虫草素能从“基因层面”保护肾脏</strong> —— 通过调控微小RNA，阻止肾脏细胞的异常增生。
                         </div>
                     </div>
-                    <div class="ref-note">🔗 表观遗传调控方向前沿研究</div>
+                    <div class="ref-note"><i class="fas fa-link"></i> 表观遗传调控方向前沿研究</div>
                 </div>
 
-                <!-- 论文 8 -->
+                <!-- Paper 8 -->
                 <div class="paper-card">
                     <div class="paper-title-en">Cordycepin, a major bioactive component of Cordyceps militaris, ameliorates diabetes-induced testicular damage through the Sirt1/Foxo3a pathway</div>
                     <div class="paper-title-cn">虫草素通过Sirt1/Foxo3a通路改善糖尿病诱导的睾丸损伤</div>
                     <div class="paper-meta">
-                        <span>📖 <strong>Andrologia</strong> · 2022</span>
-                        <span>🏆 影响因子 <strong>2.4</strong></span>
-                        <span>👨‍🔬 Huang T · Zhou Y · Tang C · 等</span>
-                        <span>🏫 中国研究团队</span>
+                        <span><i class="fas fa-book"></i> <strong>Andrologia</strong> · 2022</span>
+                        <span><i class="fas fa-trophy"></i> 影响因子 <strong>2.4</strong></span>
+                        <span><i class="fas fa-user-md"></i> Huang T · Zhou Y · Tang C · 等</span>
+                        <span><i class="fas fa-university"></i> 中国研究团队</span>
                     </div>
                     <div class="paper-body">
                         <div class="item-row gold-border">
-                            <span class="icon">📊</span>
-                            <div class="content"><span class="data-badge">数据</span> 睾丸损伤↓、生精功能↑、抗氧化酶活性↑ <span class="highlight">（P<0.05）</span></div>
+                            <span class="icon gold"><i class="fas fa-chart-line"></i></span>
+                            <div class="content"><span class="data-badge gold">数据</span> 睾丸损伤↓、生精功能↑、抗氧化酶活性↑ <span class="highlight">（P&lt;0.05）</span></div>
                         </div>
                         <div class="item-row">
-                            <span class="icon">🧬</span>
+                            <span class="icon"><i class="fas fa-dna"></i></span>
                             <div class="content"><strong>科研结论</strong>：虫草素通过 <span class="highlight">激活Sirt1/Foxo3a通路</span>，增强抗氧化酶（Mn-SOD、CAT）表达，保护糖尿病诱导的睾丸损伤。</div>
                         </div>
                         <div class="paper-popular">
-                            <span class="label">💡 通俗健康结论</span>
+                            <span class="label"><i class="fas fa-comment-dots"></i> 通俗健康结论</span>
                             <strong>虫草素能“保护”糖尿病患者的生殖健康</strong> —— 通过抗氧化机制，保护睾丸组织免受高血糖损伤。
                         </div>
                     </div>
-                    <div class="ref-note">🔗 糖尿病生殖保护方向代表性研究</div>
+                    <div class="ref-note"><i class="fas fa-link"></i> 糖尿病生殖保护方向代表性研究</div>
                 </div>
 
-                <!-- 论文 9 -->
+                <!-- Paper 9 -->
                 <div class="paper-card">
                     <div class="paper-title-en">Cordycepin- melittin nanoconjugate intensifies wound healing efficacy in diabetic rats</div>
                     <div class="paper-title-cn">虫草素-蜂毒肽纳米偶联物增强糖尿病大鼠伤口愈合效果</div>
                     <div class="paper-meta">
-                        <span>📖 <strong>Saudi Pharmaceutical Journal</strong> · 2023</span>
-                        <span>🏆 影响因子 <strong>4.1</strong></span>
-                        <span>👨‍🔬 多机构联合</span>
-                        <span>🏫 多机构联合</span>
+                        <span><i class="fas fa-book"></i> <strong>Saudi Pharmaceutical Journal</strong> · 2023</span>
+                        <span><i class="fas fa-trophy"></i> 影响因子 <strong>4.1</strong></span>
+                        <span><i class="fas fa-user-md"></i> 多机构联合</span>
+                        <span><i class="fas fa-university"></i> 多机构联合</span>
                     </div>
                     <div class="paper-body">
                         <div class="item-row gold-border">
-                            <span class="icon">📊</span>
-                            <div class="content"><span class="data-badge">数据</span> 伤口收缩加速、组织学修复显著改善 <span class="highlight">（P<0.01）</span></div>
+                            <span class="icon gold"><i class="fas fa-chart-line"></i></span>
+                            <div class="content"><span class="data-badge gold">数据</span> 伤口收缩加速、组织学修复显著改善 <span class="highlight">（P&lt;0.01）</span></div>
                         </div>
                         <div class="item-row">
-                            <span class="icon">🧬</span>
+                            <span class="icon"><i class="fas fa-dna"></i></span>
                             <div class="content"><strong>科研结论</strong>：虫草素-蜂毒肽纳米偶联物通过 <span class="highlight">协同抗炎和促进组织再生</span>，显著加速糖尿病大鼠伤口愈合。</div>
                         </div>
                         <div class="paper-popular">
-                            <span class="label">💡 通俗健康结论</span>
+                            <span class="label"><i class="fas fa-comment-dots"></i> 通俗健康结论</span>
                             <strong>虫草素能“加速”糖尿病伤口的愈合</strong> —— 糖尿病患者的伤口难愈合，虫草素通过抗炎和促再生双重机制帮助伤口更快修复。
                         </div>
                     </div>
-                    <div class="ref-note">🔗 糖尿病伤口愈合方向代表性研究</div>
+                    <div class="ref-note"><i class="fas fa-link"></i> 糖尿病伤口愈合方向代表性研究</div>
                 </div>
 
-                <!-- 论文 10 -->
+                <!-- Paper 10 -->
                 <div class="paper-card">
                     <div class="paper-title-en">Structural and pharmacological insights into cordycepin for neoplasms and metabolic disorders</div>
                     <div class="paper-title-cn">虫草素对肿瘤和代谢紊乱的结构和药理学见解</div>
                     <div class="paper-meta">
-                        <span>📖 <strong>Frontiers in Pharmacology</strong> · 2024</span>
-                        <span>🏆 影响因子 <strong>4.4</strong></span>
-                        <span>👨‍🔬 Zhang JM · Yang ZL · Zhao Z · Zhang N</span>
-                        <span>🏫 吉林大学第一医院</span>
+                        <span><i class="fas fa-book"></i> <strong>Frontiers in Pharmacology</strong> · 2024</span>
+                        <span><i class="fas fa-trophy"></i> 影响因子 <strong>4.4</strong></span>
+                        <span><i class="fas fa-user-md"></i> Zhang JM · Yang ZL · Zhao Z · Zhang N</span>
+                        <span><i class="fas fa-university"></i> 吉林大学第一医院</span>
                     </div>
                     <div class="paper-body">
                         <div class="item-row gold-border">
-                            <span class="icon">📊</span>
-                            <div class="content"><span class="data-badge">综述</span> 系统总结虫草素在 <span class="highlight">调节血糖和改善高脂血症</span> 方面的治疗潜力</div>
+                            <span class="icon gold"><i class="fas fa-chart-line"></i></span>
+                            <div class="content"><span class="data-badge gold">综述</span> 系统总结虫草素在 <span class="highlight">调节血糖和改善高脂血症</span> 方面的治疗潜力</div>
                         </div>
                         <div class="item-row">
-                            <span class="icon">🧬</span>
+                            <span class="icon"><i class="fas fa-dna"></i></span>
                             <div class="content"><strong>科研结论</strong>：虫草素通过 <span class="highlight">抑制生物合成、诱导凋亡、调节细胞周期</span> 直接抑制肿瘤，同时 <span class="highlight">调节肿瘤微环境中的免疫应答</span>，并在代谢紊乱中发挥显著的治疗潜力。</div>
                         </div>
                         <div class="paper-popular">
-                            <span class="label">💡 通俗健康结论</span>
+                            <span class="label"><i class="fas fa-comment-dots"></i> 通俗健康结论</span>
                             <strong>虫草素是“多面手”</strong> —— 既帮助调节血糖血脂，又具有抗肿瘤潜力，是代谢和肿瘤领域都关注的明星分子。
                         </div>
                     </div>
-                    <div class="ref-note">🔗 代谢与肿瘤交叉领域权威综述</div>
+                    <div class="ref-note"><i class="fas fa-link"></i> 代谢与肿瘤交叉领域权威综述</div>
                 </div>
 
             </div>
         </section>
 
-        <!-- ===== 第三部分：大众科普总结 ===== -->
+        <!-- ===== SECTION 3: 大众科普总结 ===== -->
         <section class="card-section">
-            <h2>💡 第三部分 · 大众科普总结 <span class="tag">一看就懂</span></h2>
+            <h2>
+                <span class="section-icon"><i class="fas fa-lightbulb"></i></span>
+                第三部分 · 大众科普总结
+                <span class="tag">一看就懂</span>
+            </h2>
 
             <div class="item-list">
                 <div class="item-row gold-border">
-                    <span class="icon">✅</span>
+                    <span class="icon gold"><i class="fas fa-check-circle" style="color:var(--color-emerald);"></i></span>
                     <div class="content">
-                        <strong>虫草素在糖尿病领域，证据有多强？</strong><br>
+                        <strong>虫草素在糖尿病领域，证据有多强？</strong><br />
                         全球 <span class="highlight">210+ 篇</span> 论文、<span class="highlight">140+ 篇</span> SCI 收录、覆盖 <span class="highlight">血糖调控、肾病、心肌病、伤口愈合、生殖保护</span> 等多个方向 —— 这是 <strong>全球科研投入最充分的天然糖尿病辅助调节分子之一</strong>，研究体量远超同类天然产物。
                     </div>
                 </div>
-                <div class="item-row gold-border">
-                    <span class="icon">✅</span>
+                <div class="item-row rose-border">
+                    <span class="icon rose"><i class="fas fa-check-circle" style="color:var(--color-emerald);"></i></span>
                     <div class="content">
-                        <strong>它到底怎么“对抗”糖尿病？</strong><br>
-                        ① <span class="highlight">降血糖、改善胰岛素抵抗</span> —— 激活AMPK“能量总开关”<br>
-                        ② <span class="highlight">保护肾脏</span> —— 抑制铁死亡、抗纤维化（SLC7A11/GPX4、Smad7通路）<br>
-                        ③ <span class="highlight">保护心脏</span> —— 促进线粒体融合（AMPK/Mfn2通路）<br>
-                        ④ <span class="highlight">保护血管</span> —— 激活SIRT3通路改善内皮功能<br>
+                        <strong>它到底怎么“对抗”糖尿病？</strong><br />
+                        ① <span class="highlight">降血糖、改善胰岛素抵抗</span> —— 激活AMPK“能量总开关”<br />
+                        ② <span class="highlight">保护肾脏</span> —— 抑制铁死亡、抗纤维化（SLC7A11/GPX4、Smad7通路）<br />
+                        ③ <span class="highlight">保护心脏</span> —— 促进线粒体融合（AMPK/Mfn2通路）<br />
+                        ④ <span class="highlight">保护血管</span> —— 激活SIRT3通路改善内皮功能<br />
                         ⑤ <span class="highlight">保护胰岛β细胞</span> —— 下调ROS/JNK凋亡通路
                     </div>
                 </div>
-                <div class="item-row gold-border">
-                    <span class="icon">✅</span>
+                <div class="item-row emerald-border">
+                    <span class="icon emerald"><i class="fas fa-check-circle" style="color:var(--color-emerald);"></i></span>
                     <div class="content">
-                        <strong>和普通“降糖产品”有什么不同？</strong><br>
+                        <strong>和普通“降糖产品”有什么不同？</strong><br />
                         虫草素不是“单一靶点”的降糖药 —— 它通过 <span class="highlight">激活AMPK、调节多条信号通路、保护多个靶器官</span>，实现 <span class="highlight">系统性的糖尿病管理</span>，作用机制在 <span class="highlight">Journal of Diabetes Investigation、Molecular Immunology、Frontiers in Pharmacology</span> 等权威期刊上被反复验证。
                     </div>
                 </div>
                 <div class="item-row gold-border">
-                    <span class="icon">⚠️</span>
+                    <span class="icon gold"><i class="fas fa-exclamation-triangle" style="color:var(--color-gold);"></i></span>
                     <div class="content">
-                        <strong>需要理性看待什么？</strong><br>
+                        <strong>需要理性看待什么？</strong><br />
                         目前虫草素在糖尿病领域的高质量 <span class="highlight">人体临床试验仍在进行中</span>，现有证据主要来自 <span class="highlight">细胞实验和动物模型</span>。它 <strong>不能替代标准降糖治疗</strong>，但作为 <strong>辅助支持、系统管理</strong> 的科学选项，已获得全球顶级学术期刊的充分背书。
                     </div>
                 </div>
             </div>
 
-            <div class="popular-box" style="margin-top:14px;">
-                <span class="label">🎯 一句话总结</span>
-                <p style="font-size:16px; font-weight:600; color:#0a3a5c;">
+            <div class="popular-box" style="margin-top:16px;">
+                <span class="label"><i class="fas fa-bullseye"></i> 一句话总结</span>
+                <p style="font-size:17px; font-weight:600; color:var(--color-primary);">
                     虫草素是全球科研投入最充分的天然糖尿病辅助调节分子 —— 通过激活AMPK总开关、保护肾脏、心脏和胰岛细胞，系统性地管理糖尿病及其并发症。
                 </p>
             </div>
 
-            <!-- 改进7：信任背书 -->
-            <div class="trust-box" style="margin-top:16px;">
-                <div class="item"><span class="badge">📚</span> 数据来源：<strong>PubMed</strong> · <strong>Web of Science</strong> · <strong>CNKI</strong> · <strong>PMC</strong></div>
-                <div class="item"><span class="badge gold">📅</span> 数据截止：<strong>2026年6月</strong></div>
-                <div class="item"><span class="badge">📊</span> 统计口径：<strong>正式研究论文+综述</strong>（剔除会议摘要·专利·学位论文）</div>
-                <div class="item"><span class="badge">🔬</span> 所有论文均经过同行评议</div>
+            <!-- Trust Box -->
+            <div class="trust-box">
+                <div class="item"><span class="badge"><i class="fas fa-database"></i></span> 数据来源：<strong>PubMed</strong> · <strong>Web of Science</strong> · <strong>CNKI</strong> · <strong>PMC</strong></div>
+                <div class="item"><span class="badge gold"><i class="far fa-calendar-alt"></i></span> 数据截止：<strong>2026年6月</strong></div>
+                <div class="item"><span class="badge rose"><i class="fas fa-chart-pie"></i></span> 统计口径：<strong>正式研究论文+综述</strong>（剔除会议摘要·专利·学位论文）</div>
+                <div class="item"><span class="badge emerald"><i class="fas fa-microscope"></i></span> 所有论文均经过同行评议</div>
             </div>
         </section>
 
-        <!-- ===== 底部 ===== -->
+        <!-- ===== FOOTER ===== -->
         <div class="footer-note">
-            ⚠️ 以上数据来自全球公开学术数据库，动物细胞实验结论不可直接等同于人体治疗效果。<br>
+            <i class="fas fa-exclamation-circle"></i> 以上数据来自全球公开学术数据库，动物细胞实验结论不可直接等同于人体治疗效果。<br />
             本页面仅作科普科研展示，不能替代临床诊疗建议。所有论文信息均来源于 PubMed、Web of Science 等权威数据库。
         </div>
 
     </div>
-        </div>
-    </div>
     </main>
 
         <div id="site-footer">
-<footer class="site-footer" role="contentinfo">
-    <div class="footer-main py-5">
-        <div class="container">
-            <div class="row g-4 g-lg-5">
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer-brand">
-                        <i class="fas fa-globe-asia" aria-hidden="true"></i>
-                        亚太国际人民事业发展共同体
-                    </div>
-                    <p class="footer-desc">
-                        构建人类命运共同体的产业实践平台。我们致力于打造超大型社会生态系统，通过消费即投资、劳动获尊严、共建享保障的理念，让每一位成员都能在共同体中找到自己的价值。
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="微信公众号"><i class="fab fa-weixin"></i></a>
-                        <a href="#" aria-label="新浪微博"><i class="fab fa-weibo"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <h6 class="footer-heading">了解我们</h6>
-                    <ul class="footer-links">
-                        <li><a href="about.html">共同体总览</a></li>
-                        <li><a href="about.html#leadership">领导核心</a></li>
-                        <li><a href="about.html#history">发展历程</a></li>
-                        <li><a href="about.html#nine-systems">九大体系</a></li>
-                        <li><a href="community.html">人民事业理念</a></li>
-                        <li><a href="national-declaration.html">国家宣言</a></li>
-                        <li><a href="people-declaration.html">人民宣言</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <h6 class="footer-heading">业务板块</h6>
-                    <ul class="footer-links">
-                        <li><a href="projects.html">战略工程</a></li>
-                        <li><a href="business.html">业务体系</a></li>
-                        <li><a href="education.html">教育学院</a></li>
-                        <li><a href="system.html">制度保障</a></li>
-                        <li><a href="resources.html">资源中心</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <h6 class="footer-heading">加入我们</h6>
-                    <ul class="footer-links">
-                        <li><a href="join.html#consumer">消费者成员</a></li>
-                        <li><a href="join.html#struggler">奋斗者/创业者</a></li>
-                        <li><a href="join.html#enterprise">企业/供应商</a></li>
-                        <li><a href="join.html#city">城市/研究者</a></li>
-                        <li><a href="join.html#calculator">贡献值计算器</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <h6 class="footer-heading">联系我们</h6>
-                    <ul class="footer-contact-list">
-                        <li><i class="fas fa-location-dot" aria-hidden="true"></i> 北京市朝阳区</li>
-                        <li><i class="fas fa-phone" aria-hidden="true"></i> 010-12345678</li>
-                        <li><i class="fas fa-envelope" aria-hidden="true"></i> info@apcc.org</li>
-                        <li><i class="fas fa-clock" aria-hidden="true"></i> 周一至周五 9:00-18:00</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-7 text-center text-md-start">
-                    <p class="mb-0 small">
-                        &copy; 2026 亚太国际人民事业发展共同体 &nbsp;·&nbsp; 保留所有权利 &nbsp;·&nbsp;
-                        <a href="#" class="footer-legal-link">隐私政策</a> &nbsp;·&nbsp;
-                        <a href="#" class="footer-legal-link">使用条款</a>
-                    </p>
-                </div>
-                <div class="col-md-5 text-center text-md-end mt-2 mt-md-0">
-                    <span class="small text-white-50">
-                        <i class="fas fa-shield-halved me-1"></i>京ICP备 2026000001 号 &nbsp;·&nbsp;
-                        <a href="resources.html" class="footer-legal-link">文件库</a>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+
 <button id="backToTop" class="back-to-top-btn" aria-label="回到顶部" title="回到顶部">
     <i class="fas fa-chevron-up" aria-hidden="true"></i>
 </button>

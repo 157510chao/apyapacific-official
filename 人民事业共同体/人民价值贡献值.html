@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人民价值贡献值（PVC）体系 · 亚太国际</title>
+    <link href="/vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/fontawesome.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/subnav.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Serif SC', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f0f6fe;
+            color: #1a2b3f;
+            line-height: 1.8;
+            padding: 2.5rem 1.5rem 4rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: radial-gradient(ellipse at 25% 20%, rgba(26, 75, 130, 0.03) 0%, transparent 60%),
+                              radial-gradient(ellipse at 75% 80%, rgba(0, 112, 192, 0.04) 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1110px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(4px);
+            border-radius: 2.8rem;
+            padding: 3rem 3.2rem;
+            box-shadow: 0 24px 60px rgba(10, 30, 60, 0.08), 0 8px 24px rgba(10, 30, 60, 0.04);
+            border: 1px solid rgba(46, 86, 140, 0.08);
+        }
+
+        /* ---------- header ---------- */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2.8rem 2rem 2.6rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.6rem;
+            background: linear-gradient(135deg, #0f3a66 0%, #1f5990 100%);
+            box-shadow: 0 16px 40px rgba(31,89,144,0.28);
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -12%;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.16) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .header .gold-line {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4a843, #e8c760);
+            width: 50px;
+            height: 4px;
+            border-radius: 4px;
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .header h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 4px;
+            margin-bottom: 0.3rem;
+            position: relative;
+        }
+
+        .header .sub1 {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.92);
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 0.1rem;
+            position: relative;
+        }
+
+        .header .sub2 {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.78);
+            max-width: 600px;
+            margin: 0.2rem auto 0;
+            position: relative;
+        }
+
+        .header .tagline {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #ffffff;
+            background: rgba(255,255,255,0.15);
+            display: inline-block;
+            padding: 0.3rem 2rem;
+            border-radius: 40px;
+            border: 1px solid rgba(255,255,255,0.3);
+            position: relative;
+        }
+
+        /** ---------- section ---------- **/
+        .section {
+            margin-bottom: 2.8rem;
+            padding: 1.8rem 2rem 2.2rem;
+            border-radius: 2rem;
+            background: #ffffff;
+            border: 1px solid #eaf0f8;
+            transition: box-shadow 0.25s ease, border-color 0.25s;
+        }
+
+        .section:hover {
+            box-shadow: 0 4px 28px rgba(10, 30, 60, 0.04);
+            border-color: #d0def0;
+        }
+
+        .section .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1f5990, #2a6ea8);
+            border-radius: 40px;
+            padding: 0.1rem 14px 0.1rem 12px;
+            line-height: 1.6rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.6rem;
+        }
+
+        .section .section-badge .badge-icon {
+            font-size: 0.9rem;
+        }
+
+        .section h2 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .section h2 .deco-icon {
+            font-size: 1.5rem;
+            color: #d4a843;
+        }
+
+        .section h3 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin: 0.6rem 0 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section h3 .h3-deco {
+            font-size: 1rem;
+            color: #1f5990;
+        }
+
+        .section p {
+            font-size: 1rem;
+            color: #1a344b;
+            margin-bottom: 0.6rem;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section .highlight-blue {
+            color: #1f5990;
+            font-weight: 600;
+        }
+
+        .section .highlight-gold {
+            color: #d4a843;
+            font-weight: 600;
+        }
+
+        .section .highlight-red {
+            color: #c0392b;
+            font-weight: 600;
+        }
+
+        /** ---------- grid utilities ---------- **/
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 0.6rem 0 0.4rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 18px;
+            margin: 0.6rem 0 0.4rem;
+        }
+
+        .card {
+            background: #f8fbff;
+            border-radius: 1.5rem;
+            padding: 1.2rem 1.2rem 1.3rem;
+            border: 1px solid #e6eef8;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+
+        .card:hover {
+            border-color: #b8cee4;
+            box-shadow: 0 4px 16px rgba(26, 75, 130, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card h4 .emoji {
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            font-size: 0.92rem;
+            color: #1f3a55;
+            margin: 0;
+            line-height: 1.65;
+            text-align: justify;
+        }
+
+        /** ---------- 七色卡片 ---------- **/
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin: 0.6rem 0 0.4rem;
+        }
+
+        .color-card {
+            background: #fafdff;
+            border-radius: 1.4rem;
+            padding: 1rem 0.8rem 1.1rem;
+            text-align: center;
+            border: 1px solid #e6eef8;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .color-card:hover {
+            border-color: #b8cee4;
+            box-shadow: 0 4px 16px rgba(26, 75, 130, 0.04);
+        }
+
+        .color-card .color-dot {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.35rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .color-card .color-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            line-height: 1.2;
+        }
+
+        .color-card .color-dim {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #1f5990;
+            margin: 0.15rem 0 0.2rem;
+        }
+
+        .color-card .color-desc {
+            font-size: 0.78rem;
+            color: #2a4a6a;
+            line-height: 1.45;
+            margin: 0;
+            text-align: justify;
+            padding: 0 0.2rem;
+        }
+
+        /** ---------- 权益卡片 ---------- **/
+        .rights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 0.6rem 0 0;
+        }
+
+        .rights-grid .card {
+            background: #f4f9ff;
+        }
+
+        /** ---------- 特色机制网格 ---------- **/
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 18px;
+            margin: 0.6rem 0 0;
+        }
+
+        .feature-grid .card {
+            background: #f8fbff;
+        }
+
+        /** ---------- footer ---------- **/
+        .global-footer {
+            margin-top: 2.8rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7a95b0;
+            border-top: 1px solid #e7edf6;
+            padding-top: 1.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        .global-footer .footer-slogan {
+            color: #0a2a5c;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /** ---------- dynamic note ---------- **/
+        .dynamic-note {
+            background: linear-gradient(135deg, #f4f9ff, #ecf3fb);
+            border-radius: 1.5rem;
+            padding: 0.8rem 1.4rem;
+            margin: 0.6rem 0 0;
+            border-left: 4px solid #d4a843;
+            font-size: 0.95rem;
+            color: #1a3a5a;
+        }
+
+        .dynamic-note strong {
+            color: #0a2a5c;
+        }
+
+        /** ---------- 合成公式 ---------- **/
+        .formula-block {
+            background: #f5faff;
+            border-radius: 1.5rem;
+            padding: 1.2rem 1.5rem;
+            margin: 0.6rem 0;
+            border: 1px solid #deeaf6;
+            text-align: center;
+            font-family: 'Inter', 'Noto Serif SC', monospace;
+        }
+
+        .formula-block .formula {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0a2a5c;
+            letter-spacing: 0.5px;
+        }
+
+        .formula-block .formula .highlight {
+            color: #c0392b;
+        }
+
+        /** ---------- responsive ---------- **/
+        @media (max-width: 960px) {
+            .container {
+                padding: 2rem 1.8rem;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+            .grid-2, .rights-grid, .feature-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .color-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .section h2 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 1.2rem 0.8rem 2.5rem;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+                border-radius: 2rem;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+            }
+            .header .sub1 {
+                font-size: 1rem;
+            }
+            .grid-2, .grid-3, .rights-grid, .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .color-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+            }
+            .section {
+                padding: 1.2rem 0.8rem 1.6rem;
+                border-radius: 1.4rem;
+            }
+            .section h2 {
+                font-size: 1.15rem;
+            }
+            .card {
+                padding: 0.9rem 0.8rem 1rem;
+            }
+            .color-card {
+                padding: 0.8rem 0.6rem;
+            }
+            .formula-block .formula {
+                font-size: 1rem;
+            }
+            .global-footer {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .color-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+<div class="container">
+
+    <!-- ========== HEADER ========== -->
+    <div class="header">
+        <div class="gold-line"></div>
+        <h1>人民价值贡献值（PVC）体系</h1>
+        <div class="sub1">各尽所能，按贡献分配</div>
+        <div class="sub2">数字时代的“价值度量衡”</div>
+        <div class="tagline">✦ 唯一核心凭证 · 全维贡献计量 · 区块链保障 ✦</div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 一、核心定位                                                -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 一</div>
+        <h2><span class="deco-icon">💎</span> 核心定位：共同体的价值基石</h2>
+        <p><strong class="highlight-blue">人民价值贡献值（PVC）</strong>，是亚太国际人民事业发展共同体<strong class="highlight-red">唯一、核心的价值计量单位与总权益凭证</strong>。</p>
+        <p>它通过将人民对共同体的全维度、全周期服务贡献转化为可计量、可积累、可兑现的数字化权益，为实现“各尽所能，按贡献分配”的共同体经济模式奠定基础。</p>
+        <p>PVC由七色基础积分经公开算法合成，全程记录于区块链，确保公正、透明、可追溯。它既是分配的依据，也是治理的凭证，更是连接每一个消费者、劳动者、创新者与共同体的价值纽带。</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 二、七色价值积分体系                                        -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 二</div>
+        <h2><span class="deco-icon">🌈</span> 七色价值积分体系</h2>
+        <p>PVC由以下七种基础积分通过非线性合成公式生成，全面计量成员的七维贡献：</p>
+
+        <div class="color-grid">
+            <!-- 赤色 -->
+            <div class="color-card">
+                <div class="color-dot" style="background:#d43f3f;">赤</div>
+                <div class="color-name">赤色积分</div>
+                <div class="color-dim">思想引领</div>
+                <p class="color-desc">衡量成员在认同、践行与弘扬共同体核心价值观，参与思想学习，遵守组织纪律，维护集体团结等方面的引领性贡献。强调质性评价、民主评议与榜样示范，是承担管理责任、获得崇高荣誉的重要基石。</p>
+            </div>
+            <!-- 橙色 -->
+            <div class="color-card">
+                <div class="color-dot" style="background:#e08e2e;">橙</div>
+                <div class="color-name">橙色积分</div>
+                <div class="color-dim">资本投资</div>
+                <p class="color-desc">衡量成员将个人闲置资金通过共同体合规渠道投入实体产业建设、技术研发或民生项目所承担的长期风险及对共同体发展的支撑作用。引导资本投向符合人民长远福祉的领域，鼓励长期、耐心、向善的投资。</p>
+            </div>
+            <!-- 黄色 -->
+            <div class="color-card">
+                <div class="color-dot" style="background:#d4b42b;">黄</div>
+                <div class="color-name">黄色积分</div>
+                <div class="color-dim">推广链接</div>
+                <p class="color-desc">衡量成员通过推广共同体产品与服务、构建并维护健康社群网络、组织市场活动等行为，对扩大共同体用户基础、增强市场链接与生态协同所创造的价值。是激活内循环市场端的关键动力。</p>
+            </div>
+            <!-- 绿色 -->
+            <div class="color-card">
+                <div class="color-dot" style="background:#3e9e5c;">绿</div>
+                <div class="color-name">绿色积分</div>
+                <div class="color-dim">消费市场</div>
+                <p class="color-desc">衡量成员通过消费选择，对共同体产业真实利润形成、市场份额扩大及资本积累做出的直接贡献。聚焦利润贡献，将消费从终点变为新生产的起点，体现“消费即建设”的核心理念。</p>
+            </div>
+            <!-- 青色 -->
+            <div class="color-card">
+                <div class="color-dot" style="background:#3b8db5;">青</div>
+                <div class="color-name">青色积分</div>
+                <div class="color-dim">数据要素</div>
+                <p class="color-desc">衡量成员在合法合规与充分授权前提下，向共同体提供的消费数据、行为轨迹、产品反馈等数据资源，经脱敏化、聚合化后对产品研发、服务优化、战略决策所贡献的价值。强调数据确权、隐私保护与价值返还。</p>
+            </div>
+            <!-- 蓝色 -->
+            <div class="color-card">
+                <div class="color-dot" style="background:#3278c2;">蓝</div>
+                <div class="color-name">蓝色积分</div>
+                <div class="color-dim">劳动专业</div>
+                <p class="color-desc">衡量成员付出的各类体力、智力、情感及组织管理劳动所创造的价值，是“按劳分配”原则在数字时代的核心体现。过程与结果并重，个人绩效与团队贡献结合，鼓励工匠精神与无私奉献。</p>
+            </div>
+            <!-- 紫色 -->
+            <div class="color-card">
+                <div class="color-dot" style="background:#8a4ba6;">紫</div>
+                <div class="color-name">紫色积分</div>
+                <div class="color-dim">创新智慧</div>
+                <p class="color-desc">衡量成员通过技术发明、模式创新、流程优化、战略洞见等智力活动为共同体带来的突破性价值与进化动力。采用“提案—评审—试点—价值回溯”全生命周期评估，奖励与创新产生的长期实际价值紧密挂钩。</p>
+            </div>
+        </div>
+
+        <div class="dynamic-note">
+            <strong>动态演进：</strong> 当前，着重考量<strong class="highlight-blue">绿色积分</strong>与<strong class="highlight-blue">青色积分</strong>。随着共同体的长期发展，贡献维度有可能会增加，积分体系也将随之演进和升级，这是一个动态的过程。
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 三、PVC合成                                                 -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 三</div>
+        <h2><span class="deco-icon">🧮</span> PVC合成</h2>
+        <p>个人PVC由七色积分通过以下公式合成，旨在系统化平衡各维度价值，激励成员全面发展：</p>
+
+        <div class="formula-block">
+            <div class="formula">
+                PVC = (赤<span class="highlight">^α</span> + 橙<span class="highlight">^β</span> + 黄<span class="highlight">^γ</span> + 绿<span class="highlight">^δ</span> + 青<span class="highlight">^ε</span> + 蓝<span class="highlight">^ζ</span> + 紫<span class="highlight">^η</span>) × 协同系数 × 时间衰减系数
+            </div>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <h4><span class="emoji">⚡</span> 幂次设计</h4>
+                <p>显著提升劳动与智慧创新的长期权重，夯实消费与推广的市场基础，合理调节思想、资本与数据的影响力度，体现“劳动光荣、创新伟大、消费有力、链接有价”的价值导向。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🤝</span> 协同系数</h4>
+                <p>在多个维度均有持续、稳定贡献的成员获得额外加成，鼓励成为“全面发展的共同体建设者”。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">⏳</span> 时间衰减</h4>
+                <p>PVC随时间推移有科学、缓慢的衰减，鼓励持续贡献，动态反映近期服务价值。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 四、PVC核心权益                                             -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 四</div>
+        <h2><span class="deco-icon">🎁</span> PVC核心权益</h2>
+        <p>成员的PVC享有以下两大权益，实现经济收益与民生保障的统一：</p>
+
+        <div class="rights-grid">
+            <div class="card">
+                <h4><span class="emoji">💰</span> 1. 年度经济收益分配权</h4>
+                <p><strong class="highlight-blue">个人年度现金分配</strong> = （个人年度PVC / 全体成员年度总PVC）× 年度产业利润池总额 × 个人调节系数。</p>
+                <p style="margin-top:0.3rem;">调节系数根据成员PVC构成（如劳动与创新占比）进行微调，以优化激励导向。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🏡</span> 2. 终身民生发展保障权</h4>
+                <p>PVC同时作为终身享有的、兑换或优先获取共同体未来提供的<strong class="highlight-gold">教育、医疗、住房、养老、就业</strong>等民生保障与优质服务的核心凭证。</p>
+                <p style="margin-top:0.3rem;">具体兑换规则将随共同体服务能力的提升由贡献值管理委员会制定并公布。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 五、治理与技术保障                                          -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 五</div>
+        <h2><span class="deco-icon">🛡️</span> 治理与技术保障</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h4><span class="emoji">🏛️</span> 贡献值管理委员会</h4>
+                <p>负责PVC体系设计、运行、监督与优化的最高专门机构。由经济学、社会学、数据技术、法律等领域专家及经选举产生的成员代表组成，确保专业性与代表性。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🔗</span> 区块链存证</h4>
+                <p>未来，七色积分的每一笔获取、合成、流转均记录于自主可控的联盟区块链，数据不可篡改、全程可审计。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🔒</span> 隐私保护</h4>
+                <p>采用先进密码学技术，在保障贡献可验证的同时严格保护成员个人数据隐私与安全。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">📈</span> 动态调节</h4>
+                <p>每年对体系运行情况进行评估，根据共同体发展阶段提出参数调整方案。所有重大规则调整须经公示并由投票程序通过。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 六、特色机制                                                -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 六</div>
+        <h2><span class="deco-icon">⭐</span> 特色机制</h2>
+        <div class="feature-grid">
+            <div class="card">
+                <h4><span class="emoji">🏅</span> 创始贡献特别认定</h4>
+                <p>为铭记开创之功，设立“创始贡献值”作为不可增发的特殊凭证。授予在共同体从0到1的初创阶段做出不可替代贡献的个人与团队，享有永久性的利润分配权与民生发展权。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">📜</span> 有限继承</h4>
+                <p>PVC所代表的权益可依法继承，继承时根据贡献类型（如劳动、创新优先）征收阶梯式“社会回馈税”，注入公共权益池用于共同体公共事业与代际公平调节。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">⚖️</span> 反垄断与普惠调节</h4>
+                <p>设立平滑调节机制防止PVC过度集中；设立普惠基金，对PVC低于平均水平的弱势群体进行基本权益托底，促进共同富裕。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 七、最终目标                                                -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 七</div>
+        <h2><span class="deco-icon">🌏</span> 最终目标</h2>
+        <p>构建一个 <strong class="highlight-gold">“消费成为建设性投资，劳动获得尊严性回报，智慧实现普惠性增值，资本服务于人民性目的”</strong> 的新生态经济体。</p>
+        <p>这是一种基于人民主体地位、技术赋能公平、成果全民共享的经济发展模式，是对<span class="highlight-red">“全心全意为人民服务”</span>、<span class="highlight-red">“以人民为中心”</span>发展思想的深刻实践，也是为人类探索更加公平、更有效率的未来经济制度提供的 <strong class="highlight-blue">“中国方案”与“人民答卷”</strong>。</p>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <div class="global-footer">
+        <span class="footer-slogan">国家富强 · 民族复兴 · 人民幸福</span>
+        <br>
+        亚太国际 · 人民事业共同体 &nbsp;|&nbsp; 全心全意为人民服务
+    </div>
+
+</div>
+    <div id="site-footer"></div>
+    <script src="/vendor/bootstrap.bundle.min.js"></script>
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

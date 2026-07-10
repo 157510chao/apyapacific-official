@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组织架构 · 亚太国际人民事业共同体</title>
+    <link href="/vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/fontawesome.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/subnav.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ---------- reset & base ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Serif SC', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f0f5fc;
+            color: #1a2b3f;
+            line-height: 1.8;
+            padding: 2.5rem 1.5rem 4rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: radial-gradient(ellipse at 20% 30%, rgba(26, 75, 130, 0.03) 0%, transparent 60%),
+                              radial-gradient(ellipse at 80% 70%, rgba(0, 112, 192, 0.04) 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        /* ---------- main container ---------- */
+        .container {
+            max-width: 1060px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(4px);
+            border-radius: 2.5rem;
+            padding: 3rem 3.5rem;
+            box-shadow: 0 20px 60px rgba(10, 30, 60, 0.08),
+                        0 8px 24px rgba(10, 30, 60, 0.04);
+            border: 1px solid rgba(46, 86, 140, 0.06);
+            transition: all 0.2s;
+        }
+
+        /* ---------- header ---------- */
+        .header {
+            text-align: center;
+            margin-bottom: 2.8rem;
+            padding: 2.8rem 2rem 2.6rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.6rem;
+            background: linear-gradient(135deg, #0e7490 0%, #06b6d4 100%);
+            box-shadow: 0 16px 40px rgba(6,182,212,0.28);
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -12%;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .header h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 4px;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .header .sub {
+            font-size: 0.98rem;
+            color: rgba(255,255,255,0.88);
+            letter-spacing: 1px;
+            font-weight: 400;
+            margin-top: 0.3rem;
+            position: relative;
+        }
+
+        .header .path-note {
+            margin-top: 1.1rem;
+            font-size: 0.92rem;
+            color: #ffffff;
+            background: rgba(255,255,255,0.15);
+            display: inline-block;
+            padding: 0.35rem 1.8rem;
+            border-radius: 40px;
+            border: 1px solid rgba(255,255,255,0.3);
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        /* ---------- section ---------- */
+        .section {
+            margin-bottom: 2.5rem;
+            padding: 1.6rem 2rem 2rem;
+            border-radius: 1.8rem;
+            background: #ffffff;
+            border: 1px solid #eaf0f8;
+            transition: box-shadow 0.25s ease;
+            position: relative;
+        }
+
+        .section:hover {
+            box-shadow: 0 4px 24px rgba(10, 30, 60, 0.04);
+        }
+
+        .section .section-num {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: #1f5990;
+            border-radius: 40px;
+            padding: 0 14px;
+            line-height: 1.7rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .section h2 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .section h2 .badge {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #1f5990;
+            background: #eaf2fc;
+            border-radius: 40px;
+            padding: 0 12px;
+            line-height: 1.5rem;
+            border: 1px solid #d4e2f2;
+            letter-spacing: 0.3px;
+        }
+
+        .section .lead {
+            font-size: 1.02rem;
+            color: #1f344b;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #f0f4fb;
+        }
+
+        .section p:not(.lead):not(.sub-item) {
+            font-size: 1rem;
+            color: #1a344b;
+            margin-bottom: 0.5rem;
+            text-align: justify;
+        }
+
+        /* ---------- 机构列表（远景） ---------- */
+        .org-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.6rem 0 0;
+        }
+
+        .org-list li {
+            position: relative;
+            padding: 0.6rem 0 0.6rem 1.8rem;
+            font-size: 1rem;
+            color: #1f344b;
+            border-bottom: 1px solid #f0f6ff;
+            line-height: 1.7;
+        }
+
+        .org-list li:last-child {
+            border-bottom: none;
+        }
+
+        .org-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            color: #1f5990;
+            font-size: 1rem;
+        }
+
+        .org-list li strong {
+            color: #0a2a5c;
+            font-weight: 600;
+        }
+
+        /* ---------- 中心卡片网格 ---------- */
+        .center-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 1rem 0 0.4rem;
+        }
+
+        .center-grid .card {
+            background: #f8fbff;
+            border-radius: 1.4rem;
+            padding: 1.2rem 1.4rem 1.4rem;
+            border: 1px solid #e6eef8;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .center-grid .card:hover {
+            border-color: #b8cee4;
+            box-shadow: 0 2px 12px rgba(26, 75, 130, 0.04);
+        }
+
+        .center-grid .card h4 {
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.3px;
+        }
+
+        .center-grid .card .sub-label {
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #4a7a9a;
+            background: #eaf2fc;
+            display: inline-block;
+            padding: 0.1rem 0.8rem;
+            border-radius: 40px;
+            margin-bottom: 0.3rem;
+            border: 1px solid #dae4f0;
+        }
+
+        .center-grid .card p {
+            font-size: 0.92rem;
+            color: #1f3a55;
+            margin: 0.2rem 0 0;
+            line-height: 1.6;
+        }
+
+        /* ---------- 委员会卡片 ---------- */
+        .committee-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 1rem 0 0.2rem;
+        }
+
+        .committee-grid .card {
+            background: #f5faff;
+            border-radius: 1.4rem;
+            padding: 1.3rem 1.4rem 1.4rem;
+            border: 1px solid #e2ecf8;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .committee-grid .card:hover {
+            border-color: #b4cce2;
+            box-shadow: 0 2px 16px rgba(26, 75, 130, 0.04);
+        }
+
+        .committee-grid .card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.2px;
+        }
+
+        .committee-grid .card .duty {
+            font-size: 0.92rem;
+            color: #1f3a55;
+            margin-bottom: 0.4rem;
+            line-height: 1.6;
+        }
+
+        .committee-grid .card .members {
+            font-size: 0.88rem;
+            color: #3a6a8a;
+            background: #eaf2fc;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            display: inline-block;
+            border: 1px solid #d4e2f2;
+        }
+
+        /* ---------- 附则 ---------- */
+        .footer-note {
+            margin-top: 1.8rem;
+            padding: 1.2rem 1.8rem;
+            background: #f4f9ff;
+            border-radius: 1.4rem;
+            border-left: 4px solid #1f5990;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 12px 24px;
+        }
+
+        .footer-note span {
+            font-size: 0.92rem;
+            color: #1a3a5a;
+        }
+
+        .footer-note .tag {
+            font-weight: 600;
+            color: #0a2a5c;
+        }
+
+        /* ---------- global footer ---------- */
+        .global-footer {
+            margin-top: 2.8rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #7a95b0;
+            border-top: 1px solid #e7edf6;
+            padding-top: 1.8rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* ---------- responsive ---------- */
+        @media (max-width: 900px) {
+            .container {
+                padding: 2rem 1.8rem;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+            .center-grid,
+            .committee-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .section {
+                padding: 1.4rem 1.2rem 1.6rem;
+            }
+            .section h2 {
+                font-size: 1.35rem;
+            }
+        }
+
+        @media (max-width: 560px) {
+            body {
+                padding: 1.2rem 0.8rem 2.5rem;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+                border-radius: 1.8rem;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+            }
+            .header .path-note {
+                font-size: 0.82rem;
+                padding: 0.2rem 1rem;
+            }
+            .section {
+                padding: 1rem 0.8rem 1.2rem;
+                border-radius: 1.4rem;
+            }
+            .section h2 {
+                font-size: 1.15rem;
+            }
+            .center-grid .card,
+            .committee-grid .card {
+                padding: 0.8rem 1rem 1rem;
+                border-radius: 1.2rem;
+            }
+            .org-list li {
+                padding-left: 1.4rem;
+                font-size: 0.93rem;
+            }
+            .footer-note {
+                padding: 0.8rem 1rem;
+                flex-direction: column;
+                gap: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+<div class="container">
+
+    <!-- ========== HEADER ========== -->
+    <div class="header">
+        <h1>组织架构</h1>
+        <div class="sub">亚太国际 · 人民事业共同体</div>
+        <div class="path-note">远景蓝图 → 当前运营 → 发展演进</div>
+    </div>
+
+    <!-- ========== 引言 ========== -->
+    <p style="font-size:1.04rem; color:#1a3a5a; margin-bottom:2.2rem; text-align:center; max-width:800px; margin-left:auto; margin-right:auto;">
+        亚太国际人民事业共同体的组织架构遵循“远景蓝图 → 当前运营 → 发展演进”的渐进路径。
+    </p>
+
+    <!-- ============================================================ -->
+    <!-- 一、远景                                                       -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-num">一</div>
+        <h2>远景：共同体完整治理体系</h2>
+        <p class="lead">根据《亚太国际人民事业发展共同体基本法》，共同体未来的完整治理架构由以下机构构成：</p>
+        <ul class="org-list">
+            <li><strong>亚太国际</strong>：共同体的领导核心、思想核心与组织核心，是由最先进、最忠诚于人民、最具奋斗与奉献精神的骨干分子组成的先锋队。其根本任务是确保共同体永不偏离“为人民服务”、“以人民为中心”的根本宗旨，对共同体实施全面统一的领导。</li>
+            <li><strong>亚太国际总部委员会、中心委员会及其常务委员会</strong>：亚太国际成员代表大会闭会期间的最高领导与决策机构。总部委员会选举产生中心委员会，中心委员会选举产生常务委员会，作为日常最高决策核心，实行集体领导、分工负责的原则。</li>
+            <li><strong>全体共同体人民代表大会及其常务委员会</strong>：共同体的最高权力机构。代表由全体共同体人民按照贡献值权重与区域分布相结合的原则民主选举产生，每届任期五年。常务委员会是其常设机构，对共同体人大负责并报告工作。</li>
+            <li><strong>人民事业发展共同体执行委员会</strong>：共同体的最高执行机构，是最高权力机构的执行者。由主席、副主席、委员组成，实行主席负责制，对共同体人大及其常务委员会负责并报告工作。</li>
+            <li><strong>亚太国际纪律检查委员会</strong>：最高纪律监督机构，由亚太国际总部委员会全体会议选举产生，负责维护本基本法和共同体规章，检查违纪行为，受理申诉和控告。</li>
+            <li><strong>总理事与副总理事</strong>：共同体设总理事一人、副总理事若干人，由共同体人大根据亚太国际总部委员会的提名选举产生。总理事对外代表共同体，根据人大或其常务委员会的决定行使公布法规、任免主要领导人、授予荣誉等职权。</li>
+        </ul>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 二、当前                                                       -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-num">二</div>
+        <h2>当前：贸易公司组织架构 <span class="badge">十二大职能中心</span></h2>
+        <p class="lead">当前阶段，亚太贸易有限公司作为共同体的创始主体与运营实体，实行“总部—中心—部门”三级管理架构，下设十二个职能中心，各中心在统一领导下，负责各自业务领域的规划、执行与管理。</p>
+
+        <div class="center-grid">
+            <!-- 1 -->
+            <div class="card">
+                <h4>1. 产品中心</h4>
+                <p><strong>核心职责：</strong>负责核心产品（如虫草素）及后续产品线（A、B、C等）的对接、规划、设计、开发与生命周期管理。</p>
+            </div>
+            <!-- 2 -->
+            <div class="card">
+                <h4>2. 运营中心</h4>
+                <span class="sub-label">下设板块</span>
+                <p><strong>核心职责：</strong>负责产品的市场推广、用户增长与运营、社群运营及新媒体品牌传播。</p>
+                <p style="font-size:0.9rem; color:#3a6a8a; margin-top:0.2rem;">市场推广 · 用户运营 · 社交运营 · 新媒体</p>
+            </div>
+            <!-- 3 -->
+            <div class="card">
+                <h4>3. 数贸中心</h4>
+                <span class="sub-label">下设板块</span>
+                <p><strong>核心职责：</strong>负责商品交易平台（如小程序商城、网站）的搭建与维护，以及数字贸易体系的建设与运营。</p>
+                <p style="font-size:0.9rem; color:#3a6a8a; margin-top:0.2rem;">平台运营 · 数字贸易体系</p>
+            </div>
+            <!-- 4 -->
+            <div class="card">
+                <h4>4. 科研中心</h4>
+                <span class="sub-label">下设板块</span>
+                <p><strong>核心职责：</strong>负责前沿技术（如养殖技术、酶工程、生物科技）的研发、技术转化与实验室管理，为产品中心提供技术支撑。</p>
+                <p style="font-size:0.9rem; color:#3a6a8a; margin-top:0.2rem;">研发中心 · 技术中心 · 实验室</p>
+            </div>
+            <!-- 5 -->
+            <div class="card">
+                <h4>5. 采购中心</h4>
+                <span class="sub-label">下设板块</span>
+                <p><strong>核心职责：</strong>负责核心原材料、产品的采购、供应商管理及物流仓储体系的建设。</p>
+                <p style="font-size:0.9rem; color:#3a6a8a; margin-top:0.2rem;">产品采购 · 物流仓储</p>
+            </div>
+            <!-- 6 -->
+            <div class="card">
+                <h4>6. 行政中心</h4>
+                <span class="sub-label">下设板块</span>
+                <p><strong>核心职责：</strong>负责公司日常行政后勤保障、办公管理及综合协调事务。</p>
+                <p style="font-size:0.9rem; color:#3a6a8a; margin-top:0.2rem;">行政管理部</p>
+            </div>
+            <!-- 7 -->
+            <div class="card">
+                <h4>7. 人力资源与干部中心</h4>
+                <span class="sub-label">下设板块</span>
+                <p><strong>核心职责：</strong>负责干部管理（选拔、考察、任免、监督）与人力资源管理（招聘、薪酬、绩效、员工关系）。</p>
+                <p style="font-size:0.9rem; color:#3a6a8a; margin-top:0.2rem;">干部管理部 · 人力资源部</p>
+            </div>
+            <!-- 8 -->
+            <div class="card">
+                <h4>8. 教育中心</h4>
+                <p><strong>核心职责：</strong>负责人才培养、技能培训及学习发展体系搭建。</p>
+            </div>
+            <!-- 9 -->
+            <div class="card">
+                <h4>9. 思政中心 <span style="font-weight:400; font-size:0.78rem; color:#4a7a9a; background:#eaf2fc; padding:0 0.6rem; border-radius:40px; border:1px solid #d4e2f2; margin-left:6px;">总政治部</span></h4>
+                <span class="sub-label">下设方向</span>
+                <p><strong>核心职责：</strong>负责共同体的思想建设、理论武装、文化宣导与“政委体系”的建立与管理。</p>
+                <p style="font-size:0.9rem; color:#3a6a8a; margin-top:0.2rem;">思想建设部 · 政委管理部 · 文化宣传部</p>
+            </div>
+            <!-- 10 -->
+            <div class="card">
+                <h4>10. 联盟中心</h4>
+                <span class="sub-label">下设板块</span>
+                <p><strong>核心职责：</strong>负责亚太联盟企业的招募、管理与服务，及亚太联盟成员（消费者/推广员）的发展与维护。</p>
+                <p style="font-size:0.9rem; color:#3a6a8a; margin-top:0.2rem;">联盟企业部 · 联盟成员部</p>
+            </div>
+            <!-- 11 -->
+            <div class="card">
+                <h4>11. 财务中心</h4>
+                <p><strong>核心职责：</strong>负责公司全面预算管理、资金结算、成本核算、财务报告与税务筹划，负责联盟企业财务管理。</p>
+            </div>
+            <!-- 12 -->
+            <div class="card">
+                <h4>12. 法务中心</h4>
+                <p><strong>核心职责：</strong>负责合同审核、法律风险防控、知识产权保护、合规管理及内部审计。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 三、发展                                                       -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-num">三</div>
+        <h2>发展：委员会治理体系 <span class="badge">专业 · 战略 · 治理</span></h2>
+        <p class="lead">随着贸易公司的业务发展壮大，将逐步建立以专业委员会为核心的治理架构。各委员会超越日常运营部门，负责顶层设计与规则制定，是最高决策与治理机构。</p>
+
+        <div class="committee-grid">
+            <!-- 1 -->
+            <div class="card">
+                <h4>1. 战略发展委员会</h4>
+                <div class="duty"><strong>核心职责：</strong>审议并批准长期发展战略、产业路线图及年度经营计划；决策新业务孵化及核心资源分配；评估并管理重大系统性风险。</div>
+                <span class="members">由核心发起人、独立战略专家、核心业务负责人代表组成，人数为单数，不少于5人</span>
+            </div>
+            <!-- 2 -->
+            <div class="card">
+                <h4>2. 贡献值体系管理委员会</h4>
+                <div class="duty"><strong>核心职责：</strong>设计、修订并解释“人民价值贡献值（PVC）”体系的全部规则与算法；审定积分与各类权益的兑换关系与标准；仲裁重大争议与申诉；监督数据的公正性、安全性与透明度。</div>
+                <span class="members">由经济学、社会学、数据技术专家及核心业务、财务、人力资源代表组成</span>
+            </div>
+            <!-- 3 -->
+            <div class="card">
+                <h4>3. 组织与人才委员会</h4>
+                <div class="duty"><strong>核心职责：</strong>审批全体系的组织架构调整、部门设立与核心岗位编制方案；制定并监督执行干部政策、任职资格标准及选拔任用流程；审批核心干部的任免、调岗与弹劾；规划核心人才梯队建设。</div>
+                <span class="members">由核心发起人、人力资源专家、业务体系代表及员工代表组成</span>
+            </div>
+            <!-- 4 -->
+            <div class="card">
+                <h4>4. 顾问与合作委员会</h4>
+                <div class="duty"><strong>核心职责：</strong>作为“参谋大脑”，负责提出发展建议，吸纳社会各界的智慧与资源。</div>
+                <span class="members">面向社会吸纳各领域专家与资深人士</span>
+            </div>
+            <!-- 5 -->
+            <div class="card">
+                <h4>5. 人民贡献者代表委员会</h4>
+                <div class="duty"><strong>核心职责：</strong>作为各类贡献者的代表机构，负责提出意见建议、审议关键决策，确保广大贡献者的声音被充分听取。</div>
+                <span class="members">由全体成员选举产生代表组成</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== 附则 ========== -->
+    <div class="footer-note">
+        <span><span class="tag">附则一：</span>本制度为暂行版本，将根据组织发展阶段进行修订完善。</span>
+        <span><span class="tag">附则二：</span>本制度自发布之日起生效。</span>
+    </div>
+
+    <!-- ========== GLOBAL FOOTER ========== -->
+    <div class="global-footer">
+        亚太国际 · 人民事业共同体 &nbsp;|&nbsp; 全心全意为人民服务 &nbsp;|&nbsp; 人民至上 · 生命至上 · 国家利益至上
+    </div>
+
+</div>
+    <div id="site-footer"></div>
+    <script src="/vendor/bootstrap.bundle.min.js"></script>
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

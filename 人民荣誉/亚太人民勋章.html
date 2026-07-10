@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>亚太人民勋章 · 最高终身荣誉</title>
+    <link href="/vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/fontawesome.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/subnav.css" rel="stylesheet">
+
+  <!-- Font Awesome 6 (免费图标库) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0c0f1c;
+      background-image: radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(180, 40, 40, 0.03) 0%, transparent 40%);
+      font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+      padding: 2rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #e8e6e3;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      background: rgba(18, 22, 38, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 4rem 2rem 4rem 2rem;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(212, 175, 55, 0.15);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    /* 装饰光晕 */
+    .container::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.08), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(180, 40, 40, 0.07), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* 内容层 */
+    .content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* 勋章头部 */
+    .medal-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      padding-bottom: 2rem;
+    }
+
+    .medal-badge {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .medal-icon {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle at 30% 30%, #f9e7b3, #c9a84c);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.4), 0 20px 40px rgba(0, 0, 0, 0.6);
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .medal-icon i {
+      font-size: 3.6rem;
+      color: #1c1f2e;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+    }
+
+    .medal-icon::after {
+      content: '★';
+      position: absolute;
+      bottom: -8px;
+      right: -8px;
+      font-size: 1.8rem;
+      color: #f5d742;
+      text-shadow: 0 0 20px rgba(245, 215, 66, 0.6);
+    }
+
+    .medal-title h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      background: linear-gradient(135deg, #f7e9c3, #dbbf7a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+      margin-bottom: 0.25rem;
+    }
+
+    .medal-title .sub {
+      font-size: 1rem;
+      color: #b8b0a0;
+      letter-spacing: 6px;
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .medal-title .sub i {
+      color: #c9a84c;
+      font-size: 0.9rem;
+    }
+
+    .medal-code {
+      text-align: right;
+      border-left: 1px solid rgba(212, 175, 55, 0.2);
+      padding-left: 2rem;
+    }
+
+    .medal-code .number {
+      font-family: 'Times New Roman', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #dbbf7a;
+      letter-spacing: 6px;
+    }
+
+    .medal-code .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: #8a8478;
+      letter-spacing: 3px;
+    }
+
+    /* 引言 */
+    .intro {
+      background: rgba(212, 175, 55, 0.06);
+      border-left: 6px solid #c9a84c;
+      padding: 1.8rem 2.2rem;
+      border-radius: 0 2rem 2rem 0;
+      margin-bottom: 3rem;
+      backdrop-filter: blur(4px);
+      box-shadow: inset 0 0 40px rgba(212, 175, 55, 0.02);
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #d6d0c4;
+      font-weight: 300;
+    }
+
+    .intro p i {
+      color: #dbbf7a;
+      margin: 0 0.3rem;
+    }
+
+    .intro strong {
+      color: #f0e2be;
+      font-weight: 500;
+    }
+
+    /* 通用章节 */
+    .section {
+      margin-top: 3rem;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #f0e2be;
+      margin-bottom: 1.8rem;
+      letter-spacing: 2px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+      padding-bottom: 0.75rem;
+    }
+
+    .section-title i {
+      color: #c9a84c;
+      font-size: 1.6rem;
+      width: 2rem;
+      text-align: center;
+    }
+
+    .section-title small {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #8a8478;
+      margin-left: 0.5rem;
+      letter-spacing: 1px;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 1.8rem;
+      padding: 1.8rem 1.6rem;
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      backdrop-filter: blur(6px);
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card:hover {
+      border-color: rgba(212, 175, 55, 0.4);
+      transform: translateY(-4px);
+      background: rgba(212, 175, 55, 0.04);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      color: #dbbf7a;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #efe3ca;
+      margin-bottom: 0.8rem;
+    }
+
+    .card p,
+    .card li {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #c5bdb0;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card ul li {
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    .card ul li i {
+      color: #c9a84c;
+      font-size: 0.8rem;
+      margin-top: 0.4rem;
+      width: 1rem;
+    }
+
+    .badge-gold {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.15);
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      color: #e8d59e;
+      letter-spacing: 1px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    /* 象征板块 */
+    .symbolism {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 2.5rem;
+      padding: 1.8rem 2rem;
+      border: 1px solid rgba(212, 175, 55, 0.08);
+      margin-top: 1rem;
+    }
+
+    .symbol-item {
+      flex: 1 1 180px;
+      text-align: center;
+    }
+
+    .symbol-item i {
+      font-size: 2.4rem;
+      color: #dbbf7a;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .symbol-item span {
+      display: block;
+      font-size: 0.9rem;
+      color: #b8ad9a;
+      letter-spacing: 1px;
+    }
+
+    .symbol-item .label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: #7a7468;
+      margin-top: 0.2rem;
+    }
+
+    /* 投票流程 */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      margin: 1.5rem 0;
+    }
+
+    .step {
+      flex: 1 1 140px;
+      background: rgba(212, 175, 55, 0.04);
+      border-radius: 2rem;
+      padding: 1.2rem 0.8rem;
+      text-align: center;
+      border: 1px dashed rgba(212, 175, 55, 0.2);
+    }
+
+    .step .num {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #c9a84c;
+      font-family: 'Times New Roman', serif;
+    }
+
+    .step p {
+      font-size: 0.85rem;
+      color: #bfb4a2;
+      margin-top: 0.3rem;
+    }
+
+    /* 结语 */
+    .finale {
+      margin-top: 3.5rem;
+      padding: 2.5rem 2rem;
+      background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.06), transparent 70%);
+      border-radius: 3rem;
+      text-align: center;
+      border: 1px solid rgba(212, 175, 55, 0.08);
+    }
+
+    .finale p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #d0c8b8;
+    }
+
+    .finale .quote {
+      font-style: italic;
+      color: #e8dbbf;
+      font-size: 1.2rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 1.5rem 0;
+      margin: 2rem 0 1.5rem;
+    }
+
+    .finale .quote i {
+      color: #c9a84c;
+    }
+
+    .btn-nominate {
+      display: inline-block;
+      margin-top: 1.8rem;
+      padding: 0.8rem 3rem;
+      border-radius: 60px;
+      background: linear-gradient(145deg, #c9a84c, #a8882e);
+      color: #1a1d2b;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      border: none;
+      box-shadow: 0 8px 24px rgba(201, 168, 76, 0.3);
+      transition: all 0.3s ease;
+      cursor: default;
+      text-decoration: none;
+    }
+
+    .btn-nominate i {
+      margin-right: 0.6rem;
+    }
+
+    .btn-nominate:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 32px rgba(201, 168, 76, 0.5);
+      background: linear-gradient(145deg, #dbbf7a, #b8953a);
+    }
+
+    /* 响应式 */
+    @media (max-width: 700px) {
+      .container {
+        padding: 1.8rem 1.2rem;
+        border-radius: 2rem 1rem 2rem 1rem;
+      }
+
+      .medal-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .medal-code {
+        border-left: none;
+        padding-left: 0;
+        text-align: left;
+        border-top: 1px solid rgba(212, 175, 55, 0.15);
+        padding-top: 1rem;
+        width: 100%;
+      }
+
+      .medal-title h1 {
+        font-size: 1.8rem;
+      }
+
+      .medal-icon {
+        width: 70px;
+        height: 70px;
+      }
+
+      .medal-icon i {
+        font-size: 2.4rem;
+      }
+
+      .section-title {
+        font-size: 1.3rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        flex-direction: column;
+      }
+
+      .intro {
+        padding: 1.2rem;
+      }
+    }
+
+    /* 像素精致微调 */
+    .gold-text {
+      color: #dbbf7a;
+    }
+
+    .sep-dot {
+      color: rgba(212, 175, 55, 0.3);
+      margin: 0 0.6rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid rgba(212, 175, 55, 0.08);
+      margin: 1.5rem 0;
+    }
+
+    /* 绶带装饰 */
+    .ribbon-decoration {
+      display: flex;
+      justify-content: center;
+      gap: 0.3rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .ribbon-decoration span {
+      display: inline-block;
+      width: 50px;
+      height: 4px;
+      border-radius: 4px;
+      background: #c9a84c;
+    }
+
+    .ribbon-decoration span:nth-child(2) {
+      background: #9c2c2c;
+      width: 70px;
+    }
+
+    .ribbon-decoration span:nth-child(3) {
+      background: #c9a84c;
+    }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.7rem;
+      color: #5a5448;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+  <div class="container">
+    <div class="content">
+
+      <!-- 勋章头部 -->
+      <div class="medal-header">
+        <div class="medal-badge">
+          <div class="medal-icon">
+            <i class="fas fa-star-of-life"></i>
+          </div>
+          <div class="medal-title">
+            <h1>亚太人民勋章</h1>
+            <div class="sub">
+              <i class="fas fa-ribbon"></i>
+              人民事业的最高荣誉 · 终身成就的无上象征
+            </div>
+          </div>
+        </div>
+        <div class="medal-code">
+          <div class="number">RMXZ-001</div>
+          <div class="label">唯一编号 · 永久流传</div>
+        </div>
+      </div>
+
+      <!-- 绶带装饰 -->
+      <div class="ribbon-decoration">
+        <span></span><span></span><span></span>
+      </div>
+
+      <!-- 引言 -->
+      <div class="intro">
+        <p>
+          <i class="fas fa-quote-left"></i> 在人类文明的星河中，总有一些人，以毕生之力，为人民的福祉、民族的复兴、人类的进步，燃烧自己，照亮世界。<br />
+          他们的一生，只为回答一个问题：<strong>“我还能为人民做些什么？”</strong><br />
+          亚太国际·人民事业共同体，以<strong>“全心全意为人民服务”</strong>为根本宗旨，以<strong>“以人民为中心”</strong>为发展战略思想，特设立<strong>亚太人民勋章</strong>——这是共同体授予个人的最高终身荣誉，是对<strong>“人民至上”</strong>这一信念的至高礼赞。
+        </p>
+      </div>
+
+      <!-- 一、勋章定位 -->
+      <div class="section">
+        <div class="section-title">
+          <i class="fas fa-crown"></i> 一、勋章定位 <small>人民事业的“共和国勋章”</small>
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-gem"></i></div>
+            <h3>唯一性</h3>
+            <p>每年至多授予1‑2人，宁缺毋滥，可空缺。绝非年度评优，而是终身成就的最高认定。</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-infinity"></i></div>
+            <h3>终身性</h3>
+            <p>一经授予，终身享有，永不撤销（除严重违背“为人民服务”宗旨并经公投撤销外）。</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-users"></i></div>
+            <h3>人民性</h3>
+            <p>勋章的名字叫“人民”，最终的决定权也属于人民。人民推举、人民投票、人民监督。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 二、评选标准 -->
+      <div class="section">
+        <div class="section-title">
+          <i class="fas fa-scale-balanced"></i> 二、评选标准 <small>什么样的人配得上“人民勋章”？</small>
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
+            <h3>开创性贡献</h3>
+            <p>实现从0到1的突破，彻底改变人民在某一维度的生存状态（如食品安全全链条掌控、健康产品人人可及）。</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-globe-asia"></i></div>
+            <h3>亿万级普惠</h3>
+            <p>直接或间接让不低于<strong>1000万</strong>人民实质性受益，以健康改善、收入提升等可量化指标为准。</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-heart"></i></div>
+            <h3>终身践行“为人民服务”</h3>
+            <p>从青年至暮年，始终将“为人民服务”作为唯一信条，个人生活方式与价值观完全一致。</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-fire"></i></div>
+            <h3>跨时代影响力</h3>
+            <p>创造可复制、可传承的制度、标准或文化，为子孙后代留下“人民事业”的火种，激励一代又一代人。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 三、评选机制 -->
+      <div class="section">
+        <div class="section-title">
+          <i class="fas fa-check-double"></i> 三、评选机制 <small>人民决定谁配得上“人民”</small>
+        </div>
+        <div class="steps">
+          <div class="step"><span class="num">01</span><p>人民推举 + 机构推荐</p><span class="badge-gold">提名</span></div>
+          <div class="step"><span class="num">02</span><p>事迹公示 · PVC全民投票</p><span class="badge-gold">公议</span></div>
+          <div class="step"><span class="num">03</span><p>荣誉委员会·一票否决+过半数</p><span class="badge-gold">终审</span></div>
+          <div class="step"><span class="num">04</span><p>全球直播 · 最高领导颁发</p><span class="badge-gold">授予</span></div>
+        </div>
+        <p style="color:#b8ad9a; font-size:0.9rem; margin-top:0.8rem;">
+          <i class="fas fa-circle-info gold-text"></i> 投票参与率需达共同体有效成员的30%以上方为有效；终审任何委员可行使一票否决。
+        </p>
+      </div>
+
+      <!-- 四、象征含义 -->
+      <div class="section">
+        <div class="section-title">
+          <i class="fas fa-landslide"></i> 四、勋章象征含义
+        </div>
+        <div class="symbolism">
+          <div class="symbol-item">
+            <i class="fas fa-people-group"></i>
+            <span>主体造型</span>
+            <span class="label">人民是历史创造者</span>
+          </div>
+          <div class="symbol-item">
+            <i class="fas fa-hand-holding-heart"></i>
+            <span>中央图案</span>
+            <span class="label">人民托举奋斗者</span>
+          </div>
+          <div class="symbol-item">
+            <i class="fas fa-scroll"></i>
+            <span>背面铭文</span>
+            <span class="label">全心全意为人民服务</span>
+          </div>
+          <div class="symbol-item">
+            <i class="fas fa-tape"></i>
+            <span>绶带颜色</span>
+            <span class="label">赤诚 · 丰硕</span>
+          </div>
+          <div class="symbol-item">
+            <i class="fas fa-barcode"></i>
+            <span>唯一编号</span>
+            <span class="label">RMXZ‑xxx 永久流传</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 五、获得者权益 -->
+      <div class="section">
+        <div class="section-title">
+          <i class="fas fa-gift"></i> 五、获得者权益与荣誉
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-book-open"></i></div>
+            <h3>终身荣誉</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> 载入“荣誉史册”，事迹编入教材</li>
+              <li><i class="fas fa-check"></i> “功勋”身份标识，最高等级PVC加成</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-shield-heart"></i></div>
+            <h3>终身保障</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> 顶级医疗级人居与健康管理</li>
+              <li><i class="fas fa-check"></i> 全产业体系年度利润终身分红（专属份额）</li>
+              <li><i class="fas fa-check"></i> 终身荣誉顾问，重大决策咨询</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-tree"></i></div>
+            <h3>精神传承</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> 可设立“勋章获得者纪念室”</li>
+              <li><i class="fas fa-check"></i> 直系后代优先进入人才梯队培养</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 六、动态监督 -->
+      <div class="section">
+        <div class="section-title">
+          <i class="fas fa-shield"></i> 六、动态监督 · 荣誉守护
+        </div>
+        <div class="card" style="max-width:100%;">
+          <p><i class="fas fa-balance-scale gold-text"></i> 人民授予的荣誉，人民有权监督。荣誉终身有效，但若获得者严重违背“全心全意为人民服务”宗旨，人民荣誉委员会可启动<strong>“荣誉撤销程序”</strong>，同样经过人民公示、PVC投票、委员会终审三道程序。授予权与撤销权，始终掌握在人民手中。</p>
+        </div>
+      </div>
+
+      <!-- 七、结语 -->
+      <div class="finale">
+        <p><i class="fas fa-quote-left gold-text"></i> 亚太人民勋章，不仅仅是一枚奖章。它是亿万人民对<strong>“谁才是最可爱的人”</strong>的集体回答，是历史对<strong>“什么样的人生最有价值”</strong>的庄严裁定，是未来对<strong>“我们应该成为什么样的人”</strong>的永恒指引。</p>
+        <div class="quote">
+          <i class="fas fa-star"></i> 他或许没有显赫的财富，但他的每一次努力，都让人民的生活更美好。<br />
+          他或许没有耀眼的名声，但他的每一个成果，都化作了人民的保障。<br />
+          他用一生的时间，证明了<strong>“为人民服务”</strong>绝不是一句口号。
+        </div>
+        <p><strong>如果你是这样的人——或者你身边有这样的人民英雄——请提名他。</strong></p>
+        <p style="color:#dbbf7a; font-size:1.3rem; margin:0.8rem 0 0.2rem; letter-spacing: 4px;">人民不会忘记，历史终将铭记。</p>
+        <div class="btn-nominate"><i class="fas fa-pen-nib"></i> 提名人民英雄</div>
+        <footer>亚太国际 · 人民事业共同体 · 荣誉委员会</footer>
+      </div>
+
+    </div>
+  </div>
+    <div id="site-footer"></div>
+    <script src="/vendor/bootstrap.bundle.min.js"></script>
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

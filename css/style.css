@@ -342,6 +342,18 @@ a:hover { color: var(--clr-tech-dark); }
     background: rgba(37,99,235,.04);
 }
 
+/* 移动端分组标签（科研菜单内：健康中国/未来产业/人民科研） */
+.mobile-group-label {
+    padding: 0.9rem 1.25rem 0.45rem;
+    margin-top: 0.35rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--clr-cyan);
+    border-top: 1px solid var(--clr-border-soft);
+}
+
 /* ----------------------------------------------------------------
    6. Hero 区域
 ---------------------------------------------------------------- */

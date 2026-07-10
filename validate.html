@@ -119,15 +119,9 @@
     <script>
         const pages = [
             { name: '首页', file: 'index.html', required: ['导航栏', 'Hero Section', '价值要点', '快速入口'] },
-            { name: '关于我们', file: 'about.html', required: ['共同体总览', '领导核心', '发展历程', '九大体系'] },
-            { name: '人民事业发展共同体', file: 'community.html', required: ['宪章精神', '核心价值观', '理论白皮书', '问答库'] },
-            { name: '制度与保障', file: 'system.html', required: ['基本法精要', '七色积分', '分配体系', '民生保障'] },
             { name: '加入我们', file: 'join.html', required: ['成员类型', '加入流程', '贡献值计算器', '注册表单'] },
-            { name: '战略工程', file: 'projects.html', required: ['康卫士', '未来城', '农业绿谷', '中国服务'] },
-            { name: '业务体系', file: 'business.html', required: ['民间外交', '全球贸易', '产业赋能', '科研生态'] },
-            { name: '亚太人民教育学院', file: 'education.html', required: ['教育体系', '三大业务', '学习体系', '线上入口'] },
-            { name: '新闻与全球视野', file: 'news.html', required: ['最新动态', '历史里程碑', '权威解读', '全球实践'] },
-            { name: '资源中心', file: 'resources.html', required: ['文件库', '视频中心', '图片库', '合作伙伴'] }
+            { name: '战略工程', file: 'projects.html', required: ['生物科技微谷', '亚太国际未来城', '高标准食品', '健康中国'] },
+            { name: '新闻与全球视野', file: 'news.html', required: ['最新动态', '历史里程碑', '权威解读', '全球实践'] }
         ];
 
         async function runAllTests() {
@@ -186,8 +180,7 @@
                 }
 
                 // 测试 4: Meta 标签
-                if (html.includes('<meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260628">')) {
+                if (html.includes('<meta charset="UTF-8">') && html.includes('<link rel="icon"')) {
                     result.checks.push({ item: '字符集声明', status: 'pass', message: '✅ UTF-8' });
                 } else {
                     result.checks.push({ item: '字符集声明', status: 'fail', message: '❌ 缺失' });
