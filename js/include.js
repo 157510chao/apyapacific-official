@@ -8,8 +8,11 @@
 (function () {
     'use strict';
 
-    const HEADER_URL = '/partials/header.html';
-    const FOOTER_URL = '/partials/footer.html';
+    // 版本号：每次更新 partials（页头/页脚）后自增，
+    // 用于绕过浏览器与 CDN 对旧 partial 的缓存，确保用户拿到最新内容。
+    const PARTIALS_VERSION = '2';
+    const HEADER_URL = '/partials/header.html?v=' + PARTIALS_VERSION;
+    const FOOTER_URL = '/partials/footer.html?v=' + PARTIALS_VERSION;
 
     /**
      * fetch HTML 片段并注入到指定选择器
