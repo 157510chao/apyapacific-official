@@ -1,8 +1,38 @@
 <!-- ================================================================
      公共页脚 + 回到顶部 - 通过 js/include.js 注入到 #site-footer
      链接对齐导航栏（网站导航栏最新菜单配置），全部指向真实子页
+
+     说明：下列 <style> 与 <footer> 内联样式为「页脚自给自足」方案。
+     即使 /css/style.css 未能加载（如 IDE 预览、file://、缓存旧版等场景），
+     页脚依然保持深蓝底 + 浅色字，保证对比度与可读性。
 ================================================================ -->
-<footer class="site-footer" role="contentinfo">
+<style>
+  .site-footer{background:#0a2540;color:rgba(255,255,255,.72);width:100%;}
+  .site-footer .footer-main{border-bottom:1px solid rgba(255,255,255,.08);}
+  .site-footer .footer-brand{color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;margin-bottom:1rem;}
+  .site-footer .footer-brand i{margin-right:.5rem;background:linear-gradient(135deg,#06b6d4,#3b82f6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-size:1.4rem;}
+  .site-footer .footer-desc{color:rgba(255,255,255,.6);font-size:.875rem;line-height:1.75;margin-bottom:0;}
+  .site-footer .footer-social{display:flex;gap:.5rem;margin-top:1.25rem;}
+  .site-footer .footer-social a{width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;font-size:.9rem;text-decoration:none;}
+  .site-footer .footer-social a:hover{background:#06b6d4;color:#0a2540;}
+  .site-footer .footer-heading{font-size:.8rem;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.9);margin-bottom:1.1rem;position:relative;padding-bottom:.5rem;}
+  .site-footer .footer-heading::after{content:'';position:absolute;left:0;bottom:0;width:24px;height:2px;background:#06b6d4;border-radius:1px;}
+  .site-footer .footer-links{list-style:none;padding:0;margin:0;}
+  .site-footer .footer-links li{margin-bottom:.55rem;}
+  .site-footer .footer-links a{font-size:.875rem;color:rgba(255,255,255,.6);display:inline-flex;align-items:center;text-decoration:none;}
+  .site-footer .footer-links a::before{content:'\f0da';font-family:'Font Awesome 6 Free';font-weight:900;font-size:.6rem;margin-right:.4rem;opacity:0;color:#06b6d4;}
+  .site-footer .footer-links a:hover{color:#67e8f9;}
+  .site-footer .footer-links a:hover::before{opacity:1;}
+  .site-footer .footer-contact-list{list-style:none;padding:0;margin:0;}
+  .site-footer .footer-contact-list li{font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.6rem;display:flex;align-items:flex-start;gap:.55rem;line-height:1.5;}
+  .site-footer .footer-contact-list i{color:#06b6d4;font-size:.82rem;margin-top:.25rem;flex-shrink:0;}
+  .site-footer .footer-bottom{padding:1.1rem 0;background:rgba(0,0,0,.2);}
+  .site-footer .footer-bottom p{color:rgba(255,255,255,.45);margin:0;}
+  .site-footer .footer-legal-link{font-size:.82rem;color:rgba(255,255,255,.5);text-decoration:none;}
+  .site-footer .footer-legal-link:hover{color:#67e8f9;}
+  .site-footer .text-white-50{color:rgba(255,255,255,.5)!important;}
+</style>
+<footer class="site-footer" role="contentinfo" style="background:#0a2540;color:rgba(255,255,255,.72);width:100%;">
     <div class="footer-main py-5">
         <div class="container">
             <div class="row g-4 g-lg-5">
