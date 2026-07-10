@@ -1,18 +1,17 @@
 /**
  * 公共组件动态注入器
  * - 将 partials/header.html 注入到 <div id="site-header"></div>
- * - 将 partials/footer.html 注入到 <div id="site-footer"></div>
+ * - 页脚（footer）已在各页面 HTML 内联，不再通过 JS 注入，
+ *   以免 IDE 预览 / 浏览器对 fetch 的旧 partial 缓存导致页脚不更新。
  * - 注入完成后触发 'partials:loaded' 事件，供 main.js 监听并启用交互
  * - 高亮当前页面对应的导航项
  */
 (function () {
     'use strict';
 
-    // 版本号：每次更新 partials（页头/页脚）后自增，
-    // 用于绕过浏览器与 CDN 对旧 partial 的缓存，确保用户拿到最新内容。
+    // 版本号：更新 partials/header.html 后自增，用于绕过缓存。
     const PARTIALS_VERSION = '2';
     const HEADER_URL = '/partials/header.html?v=' + PARTIALS_VERSION;
-    const FOOTER_URL = '/partials/footer.html?v=' + PARTIALS_VERSION;
 
     /**
      * fetch HTML 片段并注入到指定选择器
@@ -69,8 +68,7 @@
     // DOM 就绪即可开始注入（无需等资源加载完）
     document.addEventListener('DOMContentLoaded', function () {
         Promise.all([
-            inject(HEADER_URL, '#site-header'),
-            inject(FOOTER_URL, '#site-footer')
+            inject(HEADER_URL, '#site-header')
         ]).then(fireReady);
     });
 })();
