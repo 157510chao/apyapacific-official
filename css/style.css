@@ -345,6 +345,47 @@ body[data-page="join"] #calculator .card-body::before {
     display: none !important;
 }
 
+/* ========== 隐藏"人民集体所有制"与"共同体基本法"页面 ========== */
+/* 全站所有指向这两个页面的链接（排除一级菜单触发按钮） */
+.dropdown-item[href="/人民事业共同体/人民集体所有制.html"],
+.mobile-sub-link[href="/人民事业共同体/人民集体所有制.html"],
+a[href="/人民事业共同体/人民集体所有制.html"]:not(.nav-link),
+.dropdown-item[href="/人民事业共同体/共同体基本法.html"],
+.mobile-sub-link[href="/人民事业共同体/共同体基本法.html"],
+a[href="/人民事业共同体/共同体基本法.html"]:not(.nav-link) {
+    display: none !important;
+}
+
+/* ========== 隐藏"关于亚太/组织架构"入口 ========== */
+.dropdown-item[href="/关于亚太/组织架构.html"],
+.mobile-sub-link[href="/关于亚太/组织架构.html"],
+a[href="/关于亚太/组织架构.html"]:not(.nav-link) {
+    display: none !important;
+}
+/* 直接访问这两个页面时显示"页面建设中"提示 */
+body[data-page="人民集体所有制"] > *,
+body[data-page="共同体基本法"] > * {
+    display: none !important;
+}
+body[data-page="人民集体所有制"]::before,
+body[data-page="共同体基本法"]::before {
+    content: "页面建设中，敬请期待";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2563eb;
+    background: #fff;
+    text-align: center;
+}
+
+/* ========== 隐藏首页新闻动态模块 ========== */
+.section-news {
+    display: none !important;
+}
+
 /* 搜索图标 */
 #mainNavbar .nav-search-icon {
     font-size: 1.05rem;
