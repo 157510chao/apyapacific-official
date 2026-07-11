@@ -294,6 +294,46 @@ a:hover { color: var(--clr-tech-dark); }
 #mobileMenu .offcanvas-body > :last-child {
     display: none !important;
 }
+/* 全站所有指向 join.html 的链接（含页脚） */
+a[href="/join.html"] {
+    display: none !important;
+}
+/* Hero 区域"立即加入"按钮 */
+.btn-hero-amber {
+    display: none !important;
+}
+/* CTA 卡片"立即加入"按钮 */
+.cta-card .btn-amber {
+    display: none !important;
+}
+
+/* ========== join.html 页面 - 注册功能开发中 ========== */
+body[data-page="join"] form,
+body[data-page="join"] #calc-btn {
+    display: none !important;
+}
+body[data-page="join"] #register .card-body::before {
+    content: "注册功能开发中，敬请期待！";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2563eb;
+    text-align: center;
+}
+body[data-page="join"] #calculator .card-body::before {
+    content: "贡献值计算器开发中，敬请期待！";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2563eb;
+    text-align: center;
+}
 
 /* ========== 隐藏"清华大学基础研究"菜单项 ========== */
 /* 桌面端下拉菜单 */

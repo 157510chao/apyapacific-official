@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
-Disallow: /vendor/
-Disallow: /partials/
-Disallow: /assets/geo/
 
 Sitemap: https://www.apcc.org/sitemap.xml
+
+# Disallow admin/tools pages
+Disallow: /validate.html
+Disallow: /search.html
