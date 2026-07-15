@@ -270,7 +270,9 @@
     document.addEventListener('partials:loaded', renderMap);
     // 兜底：如果页面没有 site-header 注入，DOMContentLoaded 后也尝试渲染
     document.addEventListener('DOMContentLoaded', () => {
-        if (document.getElementById('worldMapSvg') && !document.getElementById('markersHost').hasChildNodes()) {
+        const _svg = document.getElementById('worldMapSvg');
+        const _markers = document.getElementById('markersHost');
+        if (_svg && _markers && !_markers.hasChildNodes()) {
             setTimeout(renderMap, 500);
         }
     });

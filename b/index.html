@@ -28,7 +28,7 @@
     <!-- 本地化资源 -->
     <link href="vendor/bootstrap.min.css?v=20260711" rel="stylesheet">
     <link href="vendor/fontawesome.min.css?v=20260711" rel="stylesheet">
-    <link href="css/style.css?v=20260711" rel="stylesheet">
+    <link href="css/style.css?v=20260715" rel="stylesheet">
 
     <!-- DNS 预解析 -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -328,101 +328,33 @@
 </div>
 </div>
 
-    <!-- ========== 顶部 Banner 轮播（目录 0616 第二排） ========== -->
+    <!-- ========== 顶部 Banner 轮播（整体图片轮播） ========== -->
     <section class="top-banner-carousel" aria-label="重要理念与宣言">
         <div id="topBannerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
             <!-- 指示器 -->
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#topBannerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="习近平总书记讲话"></button>
-                <button type="button" data-bs-target="#topBannerCarousel" data-bs-slide-to="1" aria-label="五个共同体"></button>
-                <button type="button" data-bs-target="#topBannerCarousel" data-bs-slide-to="2" aria-label="国家宣言"></button>
-                <button type="button" data-bs-target="#topBannerCarousel" data-bs-slide-to="3" aria-label="人民宣言"></button>
-                <button type="button" data-bs-target="#topBannerCarousel" data-bs-slide-to="4" aria-label="亚太1号虫草素"></button>
+                <button type="button" data-bs-target="#topBannerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Banner 1"></button>
+                <button type="button" data-bs-target="#topBannerCarousel" data-bs-slide-to="1" aria-label="Banner 2"></button>
+                <button type="button" data-bs-target="#topBannerCarousel" data-bs-slide-to="2" aria-label="Banner 3"></button>
+                <button type="button" data-bs-target="#topBannerCarousel" data-bs-slide-to="3" aria-label="Banner 4"></button>
+                <button type="button" data-bs-target="#topBannerCarousel" data-bs-slide-to="4" aria-label="Banner 5"></button>
             </div>
 
             <div class="carousel-inner">
-                <!-- Banner 1：习近平总书记 -->
                 <div class="carousel-item active">
-                    <div class="top-banner-slide top-banner-1">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-lg-9 text-white">
-                                    <div class="banner-tag"><i class="fas fa-quote-left me-2"></i>核心理念</div>
-                                    <h2 class="banner-title">以人民为中心</h2>
-                                    <p class="banner-quote">"发展为了人民，发展依靠人民，发展成果由人民共享"</p>
-                                    <p class="banner-from">—— 习近平总书记</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="banner-placeholder-tag" aria-hidden="true">[BANNER 待替换: assets/banners/banner1.jpg]</div>
-                    </div>
+                    <img src="assets/banners/banner1.jpg" class="d-block w-100 banner-img" alt="Banner 1">
                 </div>
-
-                <!-- Banner 2：五个共同体 -->
                 <div class="carousel-item">
-                    <div class="top-banner-slide top-banner-2">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-lg-9 text-white">
-                                    <div class="banner-tag"><i class="fas fa-globe-asia me-2"></i>亚太国际 · 人民事业发展共同体</div>
-                                    <h2 class="banner-title">构建五个共同体</h2>
-                                    <p class="banner-quote">人类命运共同体 · 人民事业发展共同体 · 经济利益共同体 · 责任共同体 · 全球发展共同体</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="banner-placeholder-tag" aria-hidden="true">[BANNER 待替换: assets/banners/banner2.jpg]</div>
-                    </div>
+                    <img src="assets/banners/banner2.jpg" class="d-block w-100 banner-img" alt="Banner 2">
                 </div>
-
-                <!-- Banner 3：国家宣言 -->
                 <div class="carousel-item">
-                    <div class="top-banner-slide top-banner-3">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-lg-9 text-white">
-                                    <div class="banner-tag"><i class="fas fa-flag me-2"></i>国家宣言</div>
-                                    <h2 class="banner-title">汇聚国家力量，共绘发展蓝图</h2>
-                                    <p class="banner-quote">以国家级战略视野，推动世界人民事业发展，促进全球共同发展与繁荣</p>
-                                    <a href="/b/人民事业共同体/国家宣言.html" class="btn btn-banner">阅读全文 <i class="fas fa-arrow-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="banner-placeholder-tag" aria-hidden="true">[BANNER 待替换: assets/banners/banner3.jpg]</div>
-                    </div>
+                    <img src="assets/banners/banner3.jpg" class="d-block w-100 banner-img" alt="Banner 3">
                 </div>
-
-                <!-- Banner 4：人民宣言 -->
                 <div class="carousel-item">
-                    <div class="top-banner-slide top-banner-4">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-lg-9 text-white">
-                                    <div class="banner-tag"><i class="fas fa-people-group me-2"></i>人民宣言</div>
-                                    <h2 class="banner-title">人民的事业，由人民共建共享</h2>
-                                    <p class="banner-quote">消费创造价值 · 劳动获尊严 · 人民有资本 · 共建享保障</p>
-                                    <a href="/b/人民事业共同体/人民宣言.html" class="btn btn-banner">阅读全文 <i class="fas fa-arrow-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="banner-placeholder-tag" aria-hidden="true">[BANNER 待替换: assets/banners/banner4.jpg]</div>
-                    </div>
+                    <img src="assets/banners/banner4.jpg" class="d-block w-100 banner-img" alt="Banner 4">
                 </div>
-
-                <!-- Banner 5：亚太1号虫草素 -->
                 <div class="carousel-item">
-                    <div class="top-banner-slide top-banner-5">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-lg-9 text-white">
-                                    <div class="banner-tag"><i class="fas fa-pills me-2"></i>亚太1号 · 虫草素</div>
-                                    <h2 class="banner-title">第四代虫草素产品</h2>
-                                    <p class="banner-quote">国家生化工程重点实验室 · 两代院士 20 年磨一剑 · 全球唯一 99.8% 纯度药品级虫草素</p>
-                                    <a href="health.html#yatai-no1" class="btn btn-banner">了解详情 <i class="fas fa-arrow-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="banner-placeholder-tag" aria-hidden="true">[BANNER 待替换: assets/banners/banner5.jpg]</div>
-                    </div>
+                    <img src="assets/banners/banner5.jpg" class="d-block w-100 banner-img" alt="Banner 5">
                 </div>
             </div>
 
@@ -1054,6 +986,5 @@
     <script src="vendor/bootstrap.bundle.min.js?v=20260711"></script>
     <script src="js/include.js?v=20260711"></script>
     <script src="js/main.js?v=20260711"></script>
-    <script src="js/map.js?v=20260711"></script>
 </body>
 </html>

@@ -2015,10 +2015,11 @@ body[data-page="共同体基本法"]::before {
     overflow: hidden;
 }
 
+/* 轮播容器高度由图片自然高度撑开，整张图完整显示不裁切 */
 .top-banner-carousel .carousel,
 .top-banner-carousel .carousel-inner,
 .top-banner-carousel .carousel-item {
-    height: clamp(320px, 50vh, 480px);
+    height: auto;
 }
 
 .top-banner-carousel .carousel-item {
@@ -2034,32 +2035,13 @@ body[data-page="共同体基本法"]::before {
     overflow: hidden;
 }
 
-/* 5 张 banner 占位渐变（图片到位后 .banner-bg-img 覆盖） */
-.top-banner-1 {
-    background:
-        linear-gradient(135deg, rgba(220,38,38,.92) 0%, rgba(185,28,28,.88) 50%, rgba(127,29,29,.92) 100%),
-        radial-gradient(ellipse at 70% 30%, rgba(254,202,202,.25) 0%, transparent 50%);
+/* 轮播改为整体图片：每个 slide 直接显示整张图片，按自然比例完整显示 */
+.banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
-.top-banner-2 {
-    background:
-        linear-gradient(135deg, rgba(10,37,64,.95) 0%, rgba(30,58,138,.92) 50%, rgba(37,99,235,.85) 100%),
-        radial-gradient(ellipse at 30% 70%, rgba(103,232,249,.25) 0%, transparent 50%);
-}
-.top-banner-3 {
-    background:
-        linear-gradient(135deg, rgba(245,158,11,.95) 0%, rgba(217,119,6,.92) 50%, rgba(180,83,9,.9) 100%),
-        radial-gradient(ellipse at 80% 40%, rgba(254,215,170,.3) 0%, transparent 50%);
-}
-.top-banner-4 {
-    background:
-        linear-gradient(135deg, rgba(124,58,237,.92) 0%, rgba(91,33,182,.9) 50%, rgba(67,20,139,.92) 100%),
-        radial-gradient(ellipse at 25% 60%, rgba(221,214,254,.25) 0%, transparent 50%);
-}
-.top-banner-5 {
-    background:
-        linear-gradient(135deg, rgba(6,182,212,.92) 0%, rgba(14,116,144,.9) 50%, rgba(22,78,99,.92) 100%),
-        radial-gradient(ellipse at 75% 30%, rgba(165,243,252,.3) 0%, transparent 50%);
-}
+.banner-placeholder-tag { display: none !important; }
 
 /* 装饰：banner 顶部光带 */
 .top-banner-slide::before {
@@ -2204,7 +2186,7 @@ body[data-page="共同体基本法"]::before {
     .top-banner-carousel .carousel,
     .top-banner-carousel .carousel-inner,
     .top-banner-carousel .carousel-item {
-        height: 360px;
+        height: auto;
     }
     .banner-title { font-size: 1.5rem; }
     .banner-quote { font-size: 0.88rem; }
