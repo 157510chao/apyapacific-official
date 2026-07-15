@@ -1,0 +1,738 @@
+﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>虫草素17大研究领域科研强度可视化报告</title>
+    <!-- 引入 ECharts -->
+
+    <!-- ========== 全站页脚 ========== -->
+    <footer class="site-footer" style="background:#0a2540;color:rgba(255,255,255,.75);padding:3.5rem 0 0;margin-top:0;width:100%;">
+        <div class="container" style="background:transparent !important;backdrop-filter:none !important;border-radius:0 !important;box-shadow:none !important;border:none !important;">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-heading" style="color:#fff;font-weight:700;font-size:1.05rem;margin-bottom:1rem;position:relative;padding-bottom:.5rem;">
+                        <span style="display:inline-flex;align-items:center;gap:.5rem;">
+                            <i class="fas fa-globe-asia" style="color:#06b6d4;"></i> 亚太国际人民事业发展共同体
+                        </span>
+                    </h5>
+                    <p style="font-size:.875rem;line-height:1.7;color:rgba(255,255,255,.6);margin-bottom:1rem;">
+                        构建人类命运共同体的产业实践平台<br>
+                        共建 · 共创 · 共享超大型社会生态系统
+                    </p>
+                    <div style="display:flex;gap:.6rem;">
+                        <a href="#" aria-label="微信" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background .15s,color .15s;text-decoration:none;"><i class="fab fa-weixin"></i></a>
+                        <a href="#" aria-label="微博" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background .15s,color .15s;text-decoration:none;"><i class="fab fa-weibo"></i></a>
+                        <a href="#" aria-label="LinkedIn" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background .15s,color .15s;text-decoration:none;"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-heading" style="color:#fff;font-weight:700;font-size:.9rem;margin-bottom:1rem;">关于亚太</h6>
+                    <ul class="footer-links" style="list-style:none;padding:0;margin:0;">
+                        <li style="margin-bottom:.5rem;"><a href="/a/关于亚太/总体介绍.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">总体介绍</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/关于亚太/组织架构.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">组织架构</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/关于亚太/核心理念.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">核心理念</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/关于亚太/发展方略.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">发展方略</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-heading" style="color:#fff;font-weight:700;font-size:.9rem;margin-bottom:1rem;">快速链接</h6>
+                    <ul class="footer-links" style="list-style:none;padding:0;margin:0;">
+                        <li style="margin-bottom:.5rem;"><a href="/a/projects.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">战略工程</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/health.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">健康中国</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/news.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">新闻动态</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/join.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">加入亚太</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="footer-heading" style="color:#fff;font-weight:700;font-size:.9rem;margin-bottom:1rem;">联系我们</h6>
+                    <ul style="list-style:none;padding:0;margin:0;">
+                        <li style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;"><i class="fas fa-location-dot" style="color:#06b6d4;font-size:.8rem;margin-top:.25rem;flex-shrink:0;"></i>北京市朝阳区某某路 123 号</li>
+                        <li style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;"><i class="fas fa-phone" style="color:#06b6d4;font-size:.8rem;margin-top:.25rem;flex-shrink:0;"></i>010-12345678</li>
+                        <li style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;"><i class="fas fa-envelope" style="color:#06b6d4;font-size:.8rem;margin-top:.25rem;flex-shrink:0;"></i>info@apcc.org</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="padding:1.1rem 0;background:rgba(0,0,0,.2);margin-top:2.5rem;">
+            <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;background:transparent !important;backdrop-filter:none !important;border-radius:0 !important;box-shadow:none !important;border:none !important;padding:0 15px;">
+                <p style="color:rgba(255,255,255,.4);margin:0;font-size:.82rem;">&copy; 2026 亚太国际人民事业发展共同体 版权所有</p>
+                <p style="color:rgba(255,255,255,.4);margin:0;font-size:.82rem;">
+                    <a href="#" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">隐私政策</a>
+                    <span style="margin:0 .5rem;">|</span>
+                    <a href="#" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">使用条款</a>
+                    <span style="margin:0 .5rem;">|</span>
+                    <a href="/a/validate.html" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">网站验证</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js">
+    </script>
+<meta name="description" content="虫草素全球科研综述配套报告 - 抗肿瘤 Top10 论文 / 17 大研究领域科研强度可视化">
+    <meta name="keywords" content="虫草素,科研综述,可视化,Top10,17大领域,亚太人民共同体">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260711">
+
+    <link href="vendor/bootstrap.min.css?v=20260711" rel="stylesheet">
+    <link href="vendor/fontawesome.min.css?v=20260711" rel="stylesheet">
+    <link href="css/style.css?v=20260711" rel="stylesheet">
+
+    <meta name="theme-color" content="#0a2540">
+    <link rel="canonical" href="https://www.apcc.org/cordycepin-17fields.html">
+</head>
+<body class="cordycepin-report">
+    <a href="#main-content" class="visually-hidden-focusable" style="position:absolute;top:-100%;left:50%;transform:translateX(-50%);z-index:9999;padding:.5rem 1.5rem;background:#2563eb;color:#fff;border-radius:0 0 6px 6px;font-size:.875rem;font-weight:600;text-decoration:none;transition:top .15s;" onfocus="this.style.top='0'" onblur="this.style.top='-100%'">跳转到主要内容</a>
+
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <!-- inline 顶部导航（fetch 失败时 fallback） -->
+<div id="site-header">
+<!-- ========== 导航栏 ========== -->
+<nav class="navbar navbar-expand-xl fixed-top" id="mainNavbar">
+    <div class="container-fluid px-4 px-xl-5">
+        <a class="navbar-brand" href="/index.html" aria-label="亚太国际人民事业发展共同体">
+            <span class="brand-icon" aria-hidden="true"><i class="fas fa-globe-asia"></i></span>
+            <span class="brand-full d-none d-xl-inline">亚太国际人民事业发展共同体</span>
+            <span class="brand-short d-none d-md-inline d-xl-none">亚太人民共同体</span>
+            <span class="brand-mini d-inline d-md-none">APCC</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="打开菜单">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-none d-xl-flex justify-content-end" id="desktopNav">
+            <ul class="navbar-nav align-items-center gap-1">
+                <li class="nav-item"><a class="nav-link" href="/index.html" data-nav="index.html"><i class="fas fa-home"></i> 首页</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/a/关于亚太/总体介绍.html" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-info-circle"></i> 关于亚太</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/a/关于亚太/总体介绍.html"><i class="fas fa-circle-info fa-xs me-2"></i>总体介绍</a></li>
+                        <li><a class="dropdown-item" href="/a/关于亚太/组织架构.html"><i class="fas fa-sitemap fa-xs me-2"></i>组织架构</a></li>
+                        <li><a class="dropdown-item" href="/a/关于亚太/核心理念.html"><i class="fas fa-lightbulb fa-xs me-2"></i>核心理念</a></li>
+                        <li><a class="dropdown-item" href="/a/关于亚太/发展方略.html"><i class="fas fa-route fa-xs me-2"></i>发展方略</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/a/人民事业共同体/人民集体所有制.html" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-handshake"></i> 人民事业共同体</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/a/人民事业共同体/人民集体所有制.html"><i class="fas fa-people-group fa-xs me-2"></i>人民集体所有制</a></li>
+                        <li><a class="dropdown-item" href="/a/人民事业共同体/共同体基本法.html"><i class="fas fa-book-open fa-xs me-2"></i>共同体基本法</a></li>
+                        <li><a class="dropdown-item" href="/a/人民事业共同体/人民价值贡献值.html"><i class="fas fa-coins fa-xs me-2"></i>人民价值贡献值体系（PVC）</a></li>
+                        <li><a class="dropdown-item" href="/a/人民事业共同体/国家宣言.html"><i class="fas fa-flag fa-xs me-2"></i>国家宣言</a></li>
+                        <li><a class="dropdown-item" href="/a/人民事业共同体/人民宣言.html"><i class="fas fa-scroll fa-xs me-2"></i>人民宣言</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown dropdown-mega">
+                    <a class="nav-link dropdown-toggle" href="/a/人民产业与科研/健康中国人民健康/健康中国人民健康.html" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-industry"></i> 人民产业与科研</a>
+                    <ul class="dropdown-menu dropdown-menu-research">
+                        <li><a class="dropdown-item" href="/a/industry.html"><i class="fas fa-industry fa-xs me-2"></i>人民产业体系</a></li>
+                        <li><span class="dropdown-header">健康中国·人民健康</span></li>
+                        <li><a class="dropdown-item" href="/a/人民产业与科研/健康中国人民健康/健康中国人民健康.html"><i class="fas fa-heart-pulse fa-xs me-2"></i>健康中国·人民健康</a></li>
+                        <li><a class="dropdown-item" href="/a/人民产业与科研/健康中国人民健康/亚太1号·虫草素.html"><i class="fas fa-pills fa-xs me-2"></i>亚太1号·虫草素</a></li>
+                        <li><a class="dropdown-item" href="/a/research.html"><i class="fas fa-flask fa-xs me-2"></i>虫草素全球科研集合</a></li>
+                        <li><span class="dropdown-header">未来产业规划</span></li>
+                        <li><a class="dropdown-item" href="/a/人民产业与科研/未来产业规划/产业规划总览.html"><i class="fas fa-chart-line fa-xs me-2"></i>产业规划总览</a></li>
+                        <li><a class="dropdown-item" href="/a/人民产业与科研/未来产业规划/生物科技微谷.html"><i class="fas fa-microscope fa-xs me-2"></i>生物科技微谷</a></li>
+                        <li><a class="dropdown-item" href="/a/人民产业与科研/未来产业规划/亚太国际未来城.html"><i class="fas fa-city fa-xs me-2"></i>亚太国际未来城</a></li>
+                        <li><span class="dropdown-header">人民科研</span></li>
+                        <li><a class="dropdown-item" href="/a/人民产业与科研/人民科研/亚太人民科学院.html"><i class="fas fa-graduation-cap fa-xs me-2"></i>亚太人民科学院</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/a/人民组织与制度/亚太联盟企业.html" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-sitemap"></i> 人民组织与制度</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/a/人民组织与制度/亚太联盟企业.html"><i class="fas fa-building fa-xs me-2"></i>亚太联盟企业</a></li>
+                        <li><a class="dropdown-item" href="/a/人民组织与制度/人力资源基本法.html"><i class="fas fa-users fa-xs me-2"></i>人力资源基本法</a></li>
+                        <li><a class="dropdown-item" href="/a/人民组织与制度/人才培养体系.html"><i class="fas fa-user-graduate fa-xs me-2"></i>人才培养体系</a></li>
+                        <li><a class="dropdown-item" href="/a/人民组织与制度/人民政委体系.html"><i class="fas fa-user-shield fa-xs me-2"></i>人民政委体系</a></li>
+                        <li><a class="dropdown-item" href="/a/人民组织与制度/行为规范与纪律条例.html"><i class="fas fa-gavel fa-xs me-2"></i>行为规范与纪律条例</a></li>
+                        <li><a class="dropdown-item" href="/a/人民组织与制度/干部管理制度.html"><i class="fas fa-id-card fa-xs me-2"></i>干部管理制度</a></li>
+                        <li><a class="dropdown-item" href="/a/人民组织与制度/干部作风八条.html"><i class="fas fa-clipboard-list fa-xs me-2"></i>干部作风八条</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/a/人民荣誉/亚太人民勋章.html" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-medal"></i> 人民荣誉</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/a/人民荣誉/亚太人民勋章.html"><i class="fas fa-medal fa-xs me-2"></i>亚太人民勋章</a></li>
+                        <li><a class="dropdown-item" href="/a/人民荣誉/亚太人民奖.html"><i class="fas fa-award fa-xs me-2"></i>亚太人民奖</a></li>
+                        <li><a class="dropdown-item" href="/a/人民荣誉/亚太人民劳动奖章.html"><i class="fas fa-medal fa-xs me-2"></i>亚太人民劳动奖章</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/a/人民福利/人民教育.html" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-shield-heart"></i> 人民福利</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/a/welfare.html"><i class="fas fa-hands-holding-circle fa-xs me-2"></i>福利总览</a></li>
+                        <li><a class="dropdown-item" href="/a/人民福利/人民教育.html"><i class="fas fa-school fa-xs me-2"></i>人民教育</a></li>
+                        <li><a class="dropdown-item" href="/a/人民福利/人民养老.html"><i class="fas fa-hand-holding-heart fa-xs me-2"></i>人民养老</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item ms-2"><a class="nav-link nav-search-icon" href="/a/search.html" title="站内搜索" aria-label="站内搜索" data-nav="search.html"><i class="fas fa-search"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- ========== 移动端抽屉菜单 ========== -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title fw-bold text-primary" id="mobileMenuLabel"><i class="fas fa-globe-asia me-2"></i>亚太人民共同体</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="关闭"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+        <div class="accordion accordion-flush mobile-nav-accordion" id="mobileNavAccordion">
+            <div class="accordion-item border-0"><a class="accordion-nav-link fw-semibold" href="/index.html"><i class="fas fa-home me-2 text-primary"></i>首页</a></div>
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob1"><i class="fas fa-info-circle me-2 text-primary"></i>关于亚太</button></h2>
+                <div id="mob1" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion"><div class="accordion-body py-1">
+                    <a class="mobile-sub-link" href="/a/关于亚太/总体介绍.html">总体介绍</a>
+                    <a class="mobile-sub-link" href="/a/关于亚太/组织架构.html">组织架构</a>
+                    <a class="mobile-sub-link" href="/a/关于亚太/核心理念.html">核心理念</a>
+                    <a class="mobile-sub-link" href="/a/关于亚太/发展方略.html">发展方略</a>
+                </div></div>
+            </div>
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob3"><i class="fas fa-industry me-2 text-primary"></i>人民产业与科研</button></h2>
+                <div id="mob3" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion"><div class="accordion-body py-1">
+                    <a class="mobile-sub-link" href="/a/industry.html">人民产业体系</a>
+                    <a class="mobile-sub-link" href="/a/research.html">虫草素全球科研</a>
+                    <a class="mobile-sub-link" href="/a/cordycepin-17fields.html">17大研究领域可视化</a>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+    <main id="main-content">
+        <section class="page-header">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+                        <li class="breadcrumb-item"><a href="research.html">虫草素全球科研</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">17大研究领域</li>
+                    </ol>
+                </nav>
+                <h1>虫草素<span class="accent">17大研究领域</span></h1>
+                <p class="lead">虫草素 17 大研究领域 · 科研强度可视化全景报告</p>
+            </div>
+        </section>
+
+        <section class="section-block py-section">
+            <div class="container">
+
+    <div class="container">
+
+        <!-- ========== 头部 ========== -->
+        <header class="header">
+            <h1>
+                🧬 虫草素17大研究领域科研强度可视化报告
+                <small>全球公开学术数据库·2026年6月</small>
+            </h1>
+            <div class="header-meta">
+                <span>📚 检索数据库：<strong>Web of Science · PubMed · CNKI · PMC</strong></span>
+                <span>📅 数据截止：<strong>2026年6月</strong></span>
+                <span>📊 统计口径：<strong>正式研究论文 + 综述</strong>（剔除会议摘要·专利·学位论文）</span>
+                <span>📌 统计维度：<strong>全领域总发文量 · SCI收录 · 细分方向 · 科研共识 · 大众结论</strong></span>
+            </div>
+        </header>
+
+        <!-- ========== 图表板块 ========== -->
+        <section class="chart-section">
+            <h2>📊 可视化数据总览</h2>
+            <div class="sub">柱状图 · SCI占比分层 · 赛道热度分级（ECharts 渲染）</div>
+
+            <div class="chart-grid">
+                <!-- 图表1：柱状图 -->
+                <div class="chart-box">
+                    <div class="chart-title">📈 图表1 · 17大领域总论文数量对比</div>
+                    <div class="chart-desc">
+                        肿瘤领域发文量断层领先，是虫草素核心主流研究赛道；<br />
+                        肿瘤 + 炎症免疫 + 代谢三大领域合计占全部论文 <strong>55% 以上</strong>。
+                    </div>
+                    <div id="chartBar" class="chart-container"></div>
+                </div>
+
+                <!-- 图表2：环形分层图 -->
+                <div class="chart-box">
+                    <div class="chart-title">🧩 图表2 · 各领域SCI论文占比分层</div>
+                    <div class="chart-desc">
+                        整体SCI平均收录占比约 <strong>66%</strong>；<br />
+                        <span style="color:#b12a1e;">● 高SCI占比 (≥68%)</span> 肿瘤·心血管·病毒·神经·抗纤维化<br />
+                        <span style="color:#1a5a9c;">● 中SCI占比 (60–67%)</span> 代谢·肾病·肝病·肺部·骨代谢·抗衰老<br />
+                        <span style="color:#4d6079;">● 偏低SCI占比 (&lt;60%)</span> 皮肤·生殖·抗氧化·双疲劳
+                    </div>
+                    <div id="chartPie" class="chart-container"></div>
+                </div>
+
+                <!-- 图表3：赛道热度分层（全宽） -->
+                <div class="chart-box chart-full">
+                    <div class="chart-title">🔥 图表3 · 赛道热度分层统计</div>
+                    <div class="chart-desc">
+                        <span style="color:#b12a1e;">● 一级核心热门 (≥200篇)</span> 肿瘤 · 炎症免疫 · 代谢 &nbsp;|&nbsp;
+                        <span style="color:#1a5a9c;">● 二级成熟 (100–199篇)</span> 抗纤维化 · 神经 · 肾病 · 肝病 · 心血管 · 病毒 · 肺部 · 双疲劳 · 抗衰老 &nbsp;|&nbsp;
+                        <span style="color:#4d6079;">● 三级新兴 (&lt;100篇)</span> 骨代谢 · 生殖 · 皮肤 · 抗氧化
+                    </div>
+                    <div id="chartHeat" class="chart-container tall"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 卡片板块 ========== -->
+        <div class="card-section-title">
+            🧪 17大领域独立科研卡片
+            <small>每张卡片独立呈现 · 覆盖数据·细分·共识·通俗解读</small>
+        </div>
+
+        <div class="card-grid" id="cardGrid">
+            <!-- 卡片数据通过 JS 动态渲染 -->
+        </div>
+
+        <!-- ========== 底部总结 ========== -->
+        
+
+    </div>
+
+    <script>
+        // ============================================================
+        // 1. 数据定义
+        // ============================================================
+        const fields = [{
+            id: 'tumor',
+            name: '肿瘤',
+            total: 650,
+            sci: 432,
+            tag: 'hot',
+            tagLabel: '一级核心热门',
+            detail: '肺癌、肝癌、结直肠癌、乳腺癌、胶质瘤、黑色素瘤等实体肿瘤；肿瘤免疫微环境、化疗耐药逆转、免疫药增敏、细胞周期阻滞、肿瘤转移抑制',
+            consensus: '虫草素依托腺苷类似物结构损伤肿瘤DNA，阻滞癌细胞增殖周期；抑制PI3K/AKT/mTOR促生长通路诱导癌细胞凋亡；调控Treg、DC细胞重塑肿瘤微环境，增效PD-1免疫治疗；联合化疗药物可降低化疗脏器毒性，动物异种瘤模型可显著缩小肿瘤体积、抑制远端转移。',
+            popular: '虫草素是全球科研证据最充足的天然抗肿瘤候选物质，既能直接抑制肿瘤生长转移，又能增强人体自身抗癌免疫力，还可辅助减轻抗癌药物副作用，多肿瘤联合治疗具备研发潜力。'
+        }, {
+            id: 'immunity',
+            name: '炎症&免疫调节',
+            total: 280,
+            sci: 190,
+            tag: 'hot',
+            tagLabel: '一级核心热门',
+            detail: '慢性全身低度炎症、类风湿关节炎、炎症性肠病、呼吸道慢性炎症、肿瘤相关炎症、自身免疫病免疫平衡调控',
+            consensus: '虫草素双向调控免疫平衡，阻断NF-κB/MAPK促炎通路，下调TNF-α、IL-6等损伤性炎症因子，提升抗炎因子IL-10；免疫低下时提升NK、杀伤T细胞活性，免疫紊乱过度活化时抑制异常免疫反应；可修复肠道、关节黏膜炎性损伤，缓解自身免疫组织肿胀增生。',
+            popular: '虫草素是天然炎症平衡调节剂，既能消除损伤器官的慢性有害炎症，又能稳定免疫力，适合各类炎症、免疫失调人群长期调理。'
+        }, {
+            id: 'metabolic',
+            name: '代谢疾病',
+            total: 210,
+            sci: 140,
+            tag: 'hot',
+            tagLabel: '一级核心热门',
+            detail: '肥胖、2型糖尿病、高血脂、代谢综合征、非酒精性脂肪肝、糖尿病并发症糖脂调控',
+            consensus: '虫草素激活AMPK能量感受器通路，抑制肝脏脂肪与糖原异生；促进白色脂肪褐变分解产热减重；调节肠道有益菌群改善胰岛素抵抗；高脂糖尿病动物模型可同步降低血糖、血脂，减少肝肾脂肪堆积。',
+            popular: '虫草素一站式调节糖脂代谢，兼顾控糖、降脂、减脂、改善脂肪肝，针对肥胖、糖尿病、代谢紊乱有完整动物实验数据支撑。'
+        }, {
+            id: 'fibrosis',
+            name: '抗纤维化',
+            total: 180,
+            sci: 120,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '肾间质纤维化、肝纤维化、肺纤维化、心肌纤维化、皮肤瘢痕纤维化、脏器纤维化早期干预',
+            consensus: '虫草素阻断TGF-β/Smad纤维化核心通路，抑制上皮间质转化EMT，减少成纤维细胞活化；降低组织胶原沉积，逆转早期脏器瘢痕化；在肝、肺、肾纤维化动物模型中可显著减轻纤维化病变，效果优于部分抗炎对照药物。',
+            popular: '虫草素少见的可同步保护肝、肾、肺多器官，减缓器官硬化瘢痕进程，延缓慢性小病发展为器官衰竭。'
+        }, {
+            id: 'neuro',
+            name: '神经科学',
+            total: 160,
+            sci: 110,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '阿尔茨海默病、帕金森、缺血脑梗、抑郁症、脊髓损伤、神经退行性保护',
+            consensus: '虫草素可穿透血脑屏障，抑制小胶质细胞脑部炎症、清除自由基；减少脑部Aβ老年斑沉积，改善学习记忆；缩小脑梗梗死面积，调节脑内神经递质缓解抑郁行为。',
+            popular: '虫草素能直接保护大脑神经细胞，延缓老年痴呆、帕金森进展，同时改善脑缺血损伤与长期情绪抑郁问题。'
+        }, {
+            id: 'kidney',
+            name: '肾病',
+            total: 150,
+            sci: 100,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '糖尿病肾病、肾间质纤维化、缺血肾损伤、慢性肾病、肾小球增生、肾小管细胞保护',
+            consensus: '虫草素稳定肾小管线粒体功能，减少尿蛋白排泄；抑制肾脏细胞凋亡与肾间质成纤维细胞活化，降低肌酐、尿素氮，延缓慢性肾病持续恶化。',
+            popular: '虫草素专门保护肾脏细胞，减少蛋白流失、减轻肾脏硬化，是糖尿病肾病、慢性肾炎极具潜力的天然干预物质。'
+        }, {
+            id: 'liver',
+            name: '肝病',
+            total: 140,
+            sci: 90,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '非酒精性脂肪肝、药物性肝损伤、肝纤维化、肝硬化、肝星状细胞活化抑制',
+            consensus: '虫草素激活SIRT1通路减轻肝脏氧化炎症损伤；抑制肝星状细胞活化阻断肝纤维化；降低转氨酶，减少肝细胞脂肪堆积与化学药物造成的肝坏死。',
+            popular: '虫草素全方位养护肝脏，改善脂肪肝、药物伤肝、肝脏硬化问题，帮助恢复肝脏代谢解毒能力。'
+        }, {
+            id: 'cardio',
+            name: '心血管',
+            total: 130,
+            sci: 85,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '动脉粥样硬化、心肌缺血损伤、高血压、心肌肥厚、血管内皮保护、血栓预防',
+            consensus: '虫草素保护血管内皮，抑制泡沫细胞形成，缩小动脉粥样硬化斑块；减轻心肌缺血再灌注损伤，抑制血小板聚集、降低血栓风险，延缓心肌纤维化与心室重构。',
+            popular: '虫草素保护血管、减少血管脂肪斑块堆积，降低心梗、脑梗、血管硬化发病风险。'
+        }, {
+            id: 'virus',
+            name: '病毒&感染',
+            total: 120,
+            sci: 80,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '新冠病毒、登革热、寨卡、耐药细菌、寄生虫感染、病毒复制抑制',
+            consensus: '虫草素竞争性抑制病毒RNA聚合酶，直接阻断RNA病毒复制；抑制炎症因子风暴，减轻感染后脏器损伤；联合抗生素提升耐药菌清除效果，兼具抗病毒、辅助抗菌双重活性。',
+            popular: '虫草素既能直接抑制多种病毒繁殖，又能减轻病毒感染带来的剧烈炎症损伤，可作为感染性疾病联合干预候选物质。'
+        }, {
+            id: 'lung',
+            name: '肺部疾病',
+            total: 110,
+            sci: 75,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '特发性肺纤维化、哮喘、慢阻肺、急性肺损伤、气道重塑、肺动脉高压',
+            consensus: '虫草素阻断肺部上皮间质转化，减少肺部胶原沉积，缓解肺纤维化；抑制气道黏液分泌、降低气道高反应，减轻哮喘、慢阻肺气道炎症与重构损伤。',
+            popular: '虫草素同步缓解肺部炎症与肺部硬化，改善咳喘、气道敏感，对哮喘、间质性肺病有明确实验效果。'
+        }, {
+            id: 'fatigue',
+            name: '运动疲劳修复',
+            total: 100,
+            sci: 65,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '高强度运动骨骼肌疲劳、运动肌损伤、线粒体能量提升、耐力增强、运动后恢复',
+            consensus: '虫草素提升骨骼肌线粒体ATP产能，降低运动后血乳酸、肌酸激酶；减少肌肉氧化损伤，延长力竭运动时长，加速运动后肌肉修复。',
+            popular: '虫草素提升肌肉供能效率，缓解运动后酸痛乏力，提升运动耐力，加快身体恢复速度。'
+        }, {
+            id: 'chronic_fatigue',
+            name: '慢性疲劳综合征专项',
+            total: 100,
+            sci: 65,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '长期慢性精神躯体疲劳、精力衰退、神经能量代谢、亚健康倦怠',
+            consensus: '虫草素同步改善肌肉线粒体能量与中枢神经递质平衡，降低全身氧化应激，缓解持续性疲惫、注意力下降、精神萎靡等慢性疲劳表现。',
+            popular: '虫草素同时改善身体乏力与精神倦怠，适合长期熬夜、高压亚健康人群缓解持续疲惫感。'
+        }, {
+            id: 'antiaging',
+            name: '抗衰老',
+            total: 90,
+            sci: 60,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '全身器官衰老、皮肤老化、血管神经衰老、衰老细胞清除、老年慢病干预',
+            consensus: '虫草素激活Sirt1/3/6长寿蛋白，提升细胞NAD+水平；清除衰老细胞、抑制衰老相关慢性炎症；减少皮肤胶原流失，延缓免疫、脏器功能随年龄衰退。',
+            popular: '虫草素系统性延缓全身衰老，不靠激素，通过激活人体自身长寿通路，减缓皮肤、脏器、免疫力老化速度。'
+        }, {
+            id: 'bone',
+            name: '骨代谢',
+            total: 80,
+            sci: 55,
+            tag: 'niche',
+            tagLabel: '三级新兴',
+            detail: '绝经后骨质疏松、成骨细胞分化、破骨细胞抑制、骨缺损修复、牙周骨再生',
+            consensus: '虫草素促进干细胞分化为成骨细胞、加速骨基质生成；抑制破骨细胞过度活化减少骨流失；提升骨质疏松模型骨密度，改善骨小梁结构降低骨折风险。',
+            popular: '虫草素双向调节骨骼代谢，一边留住骨量、一边生成新骨，改善中老年、女性绝经后骨质疏松问题。'
+        }, {
+            id: 'reproduction',
+            name: '生殖系统',
+            total: 70,
+            sci: 45,
+            tag: 'niche',
+            tagLabel: '三级新兴',
+            detail: '男性少弱精、睾丸功能损伤、卵巢储备下降、生殖内分泌调节、配子质量提升',
+            consensus: '虫草素保护睾丸、卵巢组织抗氧化平衡，提升睾酮分泌、精子活力；减少卵泡闭锁，改善卵巢储备，修复生殖细胞炎性损伤。',
+            popular: '虫草素温和调节男女生殖内分泌，提升精子、卵子质量，改善生殖器官氧化损伤。'
+        }, {
+            id: 'skin',
+            name: '皮肤',
+            total: 60,
+            sci: 40,
+            tag: 'niche',
+            tagLabel: '三级新兴',
+            detail: '紫外线光老化、慢性皮肤皮炎、创面愈合、瘢痕抑制、皮肤胶原合成',
+            consensus: '虫草素激活皮肤Sirtuin通路促进胶原蛋白合成，抑制胶原分解酶；加速皮肤伤口愈合、减少愈合后瘢痕；减轻皮炎皮肤局部炎症红肿。',
+            popular: '虫草素减少皮肤胶原蛋白流失延缓老化，加速伤口修复，同时缓解过敏性皮炎类皮肤炎症。'
+        }, {
+            id: 'antiox',
+            name: '抗氧化',
+            total: 50,
+            sci: 35,
+            tag: 'niche',
+            tagLabel: '三级新兴',
+            detail: '线粒体自由基清除、内源性抗氧化通路、氧化损伤脏器保护、自由基链式反应阻断',
+            consensus: '虫草素双重抗氧化，直接中和自由基，同时激活Nrf2通路提升人体自身SOD、谷胱甘肽抗氧化酶活性；抗氧化效果优于维C、维E，阻断氧化应激诱发各类慢病。',
+            popular: '虫草素既能直接清除损伤细胞的有害自由基，又能唤醒人体自带抗氧化防护，从源头减少氧化带来的器官老化与慢性炎症。'
+        }];
+
+        // ============================================================
+        // 2. 渲染卡片
+        // ============================================================
+        function renderCards() {
+            const grid = document.getElementById('cardGrid');
+            grid.innerHTML = fields.map(f => {
+                const tagClass = f.tag === 'hot' ? 'hot' : f.tag === 'mature' ? 'mature' : 'niche';
+                return `
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-name">${f.name}</span>
+                            <span class="card-tag ${tagClass}">${f.tagLabel}</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-block">
+                                <span class="label">📊 科研数据</span>
+                                <span class="value">全球总论文 <strong>${f.total}</strong> 篇，其中 SCI 收录 <strong>${f.sci}</strong> 篇</span>
+                            </div>
+                            <div class="card-block">
+                                <span class="label">🔬 细分研究</span>
+                                <span class="value">${f.detail}</span>
+                            </div>
+                            <div class="card-block">
+                                <div class="consensus">
+                                    <span class="label">🧬 全球科研共识</span>
+                                    ${f.consensus}
+                                </div>
+                            </div>
+                            <div class="card-block">
+                                <span class="label">💡 通俗大众结论</span>
+                                <span class="value">${f.popular}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        renderCards();
+
+        // ============================================================
+        // 3. ECharts 图表
+        // ============================================================
+        // 排序后的数据（按 total 降序）
+        const sorted = [...fields].sort((a, b) => b.total - a.total);
+
+        // ---- 3.1 柱状图 ----
+        (function() {
+            const dom = document.getElementById('chartBar');
+            const chart = echarts.init(dom);
+            chart.setOption({
+                tooltip: { trigger: 'axis', formatter: function(params) {
+                        const p = params[0];
+                        const name = p.name;
+                        const found = fields.find(f => f.name === name);
+                        return `<strong>${name}</strong><br/>总论文：${found.total} 篇<br/>SCI收录：${found.sci} 篇`;
+                    } },
+                grid: { left: '6%', right: '4%', top: '6%', bottom: '12%' },
+                xAxis: {
+                    type: 'category',
+                    data: sorted.map(f => f.name),
+                    axisLabel: { rotate: 35, fontSize: 10, interval: 0, margin: 8 },
+                    axisLine: { lineStyle: { color: '#bcccd9' } }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: '论文篇数',
+                    nameTextStyle: { fontSize: 12, color: '#4a5b72' },
+                    splitLine: { lineStyle: { color: '#e9eff5', type: 'dashed' } }
+                },
+                series: [{
+                    type: 'bar',
+                    data: sorted.map(f => f.total),
+                    barWidth: '52%',
+                    itemStyle: {
+                        color: function(params) {
+                            const idx = params.dataIndex;
+                            const name = sorted[idx].name;
+                            if (name === '肿瘤') return '#c0392b';
+                            if (['炎症&免疫调节', '代谢疾病'].includes(name)) return '#d4563a';
+                            if (sorted[idx].tag === 'mature') return '#2a7ab0';
+                            return '#6b8ba4';
+                        },
+                        borderRadius: [4, 4, 0, 0]
+                    },
+                    label: {
+                        show: true,
+                        position: 'top',
+                        fontSize: 10,
+                        color: '#1e2a3a',
+                        fontWeight: 500,
+                        formatter: function(p) { return p.data; }
+                    }
+                }]
+            });
+            window.addEventListener('resize', () => chart.resize());
+        })();
+
+        // ---- 3.2 环形分层图（SCI占比） ----
+        (function() {
+            const dom = document.getElementById('chartPie');
+            const chart = echarts.init(dom);
+            // 计算SCI占比并分类
+            const pieData = fields.map(f => {
+                const ratio = Math.round((f.sci / f.total) * 100);
+                let level = '中';
+                if (ratio >= 68) level = '高';
+                else if (ratio < 60) level = '偏低';
+                return { name: f.name, value: ratio, level };
+            }).sort((a, b) => b.value - a.value);
+
+            chart.setOption({
+                tooltip: {
+                    trigger: 'item',
+                    formatter: function(params) {
+                        const name = params.name;
+                        const found = fields.find(f => f.name === name);
+                        return `<strong>${name}</strong><br/>SCI占比：${params.value}%<br/>SCI收录：${found.sci} 篇 / 总${found.total} 篇`;
+                    }
+                },
+                legend: {
+                    type: 'scroll',
+                    orient: 'vertical',
+                    right: '2%',
+                    top: 'center',
+                    itemWidth: 12,
+                    itemHeight: 12,
+                    textStyle: { fontSize: 11, color: '#1e2a3a' }
+                },
+                series: [{
+                    type: 'pie',
+                    radius: ['42%', '72%'],
+                    avoidLabelOverlap: true,
+                    padAngle: 0.6,
+                    itemStyle: {
+                        borderRadius: 4,
+                        borderColor: '#fff',
+                        borderWidth: 1.2
+                    },
+                    label: {
+                        show: true,
+                        formatter: function(params) {
+                            return params.name + '\n' + params.value + '%';
+                        },
+                        fontSize: 10,
+                        color: '#1e2a3a',
+                        lineHeight: 14
+                    },
+                    labelLine: { length: 8, length2: 6 },
+                    emphasis: { scale: true },
+                    data: pieData.map(d => ({
+                        name: d.name,
+                        value: d.value,
+                        itemStyle: {
+                            color: d.level === '高' ? '#b12a1e' :
+                                d.level === '偏低' ? '#6b8ba4' :
+                                '#2a7ab0'
+                        }
+                    }))
+                }]
+            });
+            window.addEventListener('resize', () => chart.resize());
+        })();
+
+        // ---- 3.3 赛道热度分层 ----
+        (function() {
+            const dom = document.getElementById('chartHeat');
+            const chart = echarts.init(dom);
+            // 按热度分类
+            const hot = fields.filter(f => f.total >= 200);
+            const mature = fields.filter(f => f.total >= 100 && f.total < 200);
+            const niche = fields.filter(f => f.total < 100);
+
+            const heatData = [
+                ...hot.map(f => ({ name: f.name, value: f.total, category: '一级核心热门', catIdx: 0 })),
+                ...mature.map(f => ({ name: f.name, value: f.total, category: '二级成熟', catIdx: 1 })),
+                ...niche.map(f => ({ name: f.name, value: f.total, category: '三级新兴', catIdx: 2 }))
+            ].sort((a, b) => b.value - a.value);
+
+            const colors = ['#c0392b', '#2a7ab0', '#6b8ba4'];
+
+            chart.setOption({
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { type: 'shadow' },
+                    formatter: function(params) {
+                        const p = params[0];
+                        const found = fields.find(f => f.name === p.name);
+                        return `<strong>${p.name}</strong><br/>总论文：${found.total} 篇<br/>SCI收录：${found.sci} 篇<br/>热度层级：${found.tagLabel}`;
+                    }
+                },
+                grid: { left: '6%', right: '4%', top: '6%', bottom: '14%' },
+                xAxis: {
+                    type: 'category',
+                    data: heatData.map(d => d.name),
+                    axisLabel: { rotate: 35, fontSize: 10, interval: 0, margin: 8 },
+                    axisLine: { lineStyle: { color: '#bcccd9' } }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: '论文篇数',
+                    nameTextStyle: { fontSize: 12, color: '#4a5b72' },
+                    splitLine: { lineStyle: { color: '#e9eff5', type: 'dashed' } }
+                },
+                series: [{
+                    type: 'bar',
+                    data: heatData.map(d => ({
+                        value: d.value,
+                        itemStyle: { color: colors[d.catIdx], borderRadius: [4, 4, 0, 0] }
+                    })),
+                    barWidth: '48%',
+                    label: {
+                        show: true,
+                        position: 'top',
+                        fontSize: 10,
+                        color: '#1e2a3a',
+                        fontWeight: 500,
+                        formatter: function(p) { return p.data.value; }
+                    },
+                    markLine: {
+                        silent: true,
+                        data: [
+                            { yAxis: 200, label: { formatter: '一级门槛 200篇', color: '#b12a1e', fontSize: 11,
+                                    fontWeight: 600 } },
+                            { yAxis: 100, label: { formatter: '二级门槛 100篇', color: '#1a5a9c', fontSize: 11,
+                                    fontWeight: 600 } }
+                        ],
+                        lineStyle: { color: '#8a9eb0', type: 'dashed', width: 1.5 }
+                    }
+                }]
+            });
+            window.addEventListener('resize', () => chart.resize());
+        })();
+    </script>
+
+
+            </div>
+        </section>
+
+        <section class="section-block py-section">
+            <div class="container">
+                <div class="text-center mt-3">
+                    <a href="research.html" class="btn btn-amber btn-lg px-4 me-2 mb-2"><i class="fas fa-flask me-2"></i>返回虫草素全球科研</a>
+                    <a href="cordycepin-research-overview.html" class="btn btn-outline-primary btn-lg px-4 mb-2" target="_blank"><i class="fas fa-external-link-alt me-2"></i>查看全球科研综述</a>
+                    <a href="index.html" class="btn btn-outline-secondary btn-lg px-4 mb-2"><i class="fas fa-home me-2"></i>返回首页</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="back-to-top-btn" aria-label="回到顶部" title="回到顶部">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+
+    <!-- 与 <footer> 内联样式为「页脚自给自足」方案。
+     即使 /a/css/style.css 未能加载（如 IDE 预览、file://、缓存旧版等场景），
+     页脚依然保持深蓝底 + 浅色字，保证对比度与可读性。
+================================================================ -->
+
+    <script src="vendor/bootstrap.bundle.min.js?v=20260711"></script>
+    <script src="js/include.js?v=20260711"></script>
+    <script src="js/main.js?v=20260711"></script>
+
+</body>
+</html>

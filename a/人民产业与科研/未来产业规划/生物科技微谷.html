@@ -1,0 +1,1069 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生物科技微谷 · 亚太国际</title>
+    <link href="/a/vendor/bootstrap.min.css?v=20260711" rel="stylesheet">
+    <link href="/a/vendor/fontawesome.min.css?v=20260711" rel="stylesheet">
+    <link href="/a/css/style.css?v=20260711" rel="stylesheet">
+    <link href="/a/css/subnav.css?v=20260711" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Serif SC', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f4faff;
+            color: #1a2b3f;
+            line-height: 1.8;
+            padding: 2.5rem 1.5rem 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: radial-gradient(ellipse at 25% 15%, rgba(10, 42, 92, 0.03) 0%, transparent 60%),
+                              radial-gradient(ellipse at 75% 85%, rgba(0, 180, 180, 0.04) 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(4px);
+            border-radius: 3rem;
+            padding: 3rem 3.2rem;
+            box-shadow: 0 24px 60px rgba(10, 30, 60, 0.08), 0 8px 24px rgba(10, 30, 60, 0.04);
+            border: 1px solid rgba(46, 86, 140, 0.08);
+        }
+
+        /* ===== 头部 ===== */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2.8rem 2rem 2.6rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.6rem;
+            background: linear-gradient(135deg, #0e7490 0%, #06b6d4 100%);
+            box-shadow: 0 16px 40px rgba(6,182,212,0.28);
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -12%;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .header .gold-line {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4a843, #e8c760);
+            width: 60px;
+            height: 4px;
+            border-radius: 4px;
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .header h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 6px;
+            margin-bottom: 0.3rem;
+            position: relative;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.92);
+            font-weight: 400;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .header .tagline {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #ffffff;
+            background: rgba(255,255,255,0.15);
+            display: inline-block;
+            padding: 0.3rem 2rem;
+            border-radius: 40px;
+            border: 1px solid rgba(255,255,255,0.3);
+            position: relative;
+        }
+
+        /* ===== 部分 ===== */
+        .section {
+            margin-bottom: 2.8rem;
+            padding: 1.8rem 2rem 2.2rem;
+            border-radius: 2rem;
+            background: #ffffff;
+            border: 1px solid #eaf0f8;
+            transition: box-shadow 0.25s ease, border-color 0.25s;
+        }
+
+        .section:hover {
+            box-shadow: 0 4px 28px rgba(10, 30, 60, 0.04);
+            border-color: #d0def0;
+        }
+
+        .section .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1f5990, #2a6ea8);
+            border-radius: 40px;
+            padding: 0.1rem 14px 0.1rem 12px;
+            line-height: 1.6rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+        }
+
+        .section .section-badge .badge-icon { font-size: 0.9rem; }
+
+        .section h2 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .section h2 .deco-icon {
+            font-size: 1.5rem;
+            color: #d4a843;
+        }
+
+        .section h3 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section h3 .h3-icon {
+            font-size: 1.2rem;
+        }
+
+        .section p {
+            font-size: 1rem;
+            color: #1a344b;
+            margin-bottom: 0.6rem;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section .highlight-blue {
+            color: #1f5990;
+            font-weight: 600;
+        }
+
+        .section .highlight-gold {
+            color: #d4a843;
+            font-weight: 600;
+        }
+
+        /* ===== 网格 ===== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 0.6rem 0 0.4rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin: 0.6rem 0 0.4rem;
+        }
+
+        .card {
+            background: #f8fbff;
+            border-radius: 1.5rem;
+            padding: 1.2rem 1.2rem 1.3rem;
+            border: 1px solid #e6eef8;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+
+        .card:hover {
+            border-color: #b8cee4;
+            box-shadow: 0 4px 16px rgba(26, 75, 130, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.15rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card h4 .emoji {
+            font-size: 1.1rem;
+        }
+
+        .card p {
+            font-size: 0.92rem;
+            color: #1f3a55;
+            margin: 0;
+            line-height: 1.65;
+            text-align: justify;
+        }
+
+        .card .card-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #1f5990;
+            margin-top: 0.4rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .card .card-label:first-of-type {
+            margin-top: 0.2rem;
+        }
+
+        /* ===== 核心理念卡片 ===== */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 0.6rem 0 0;
+        }
+
+        .mission-grid .card {
+            text-align: center;
+            padding: 1.2rem 0.8rem;
+        }
+
+        .mission-grid .card .mission-icon {
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+
+        .mission-grid .card h4 {
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .mission-grid .card p {
+            text-align: center;
+            font-size: 0.88rem;
+        }
+
+        /* ===== 核心技术卡片 ===== */
+        .tech-card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 1.4rem 1.4rem 1.5rem;
+            border: 1px solid #e6eef8;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            border-left: 5px solid #1f5990;
+        }
+
+        .tech-card:hover {
+            border-color: #b8cee4;
+            box-shadow: 0 4px 16px rgba(26, 75, 130, 0.04);
+            border-left-color: #d4a843;
+        }
+
+        .tech-card .tech-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.6rem;
+        }
+
+        .tech-card .tech-header .tech-icon {
+            font-size: 1.6rem;
+        }
+
+        .tech-card .tech-header h3 {
+            margin-bottom: 0;
+        }
+
+        .tech-card .tech-detail {
+            margin-top: 0.3rem;
+            padding-left: 0.5rem;
+            border-left: 2px solid #e7edf6;
+        }
+
+        .tech-card .tech-detail p {
+            margin-bottom: 0.2rem;
+            font-size: 0.92rem;
+        }
+
+        .tech-card .tech-detail strong {
+            color: #1f5990;
+            font-weight: 600;
+        }
+
+        /* ===== 愿景卡片 ===== */
+        .promise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 18px;
+            margin: 0.8rem 0 0;
+        }
+
+        .promise-grid .card {
+            background: #f4f9ff;
+            text-align: center;
+        }
+
+        .promise-grid .card .promise-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .promise-grid .card h4 {
+            justify-content: center;
+        }
+
+        /* ===== 整合卡片 ===== */
+        .hub-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 18px;
+            margin: 0.6rem 0 0;
+        }
+
+        .hub-grid .card {
+            background: #ffffff;
+            border-top: 4px solid #d4a843;
+        }
+
+        .hub-grid .card h4 {
+            font-size: 1rem;
+        }
+
+        /* ===== 页脚 ===== */
+
+
+        .global-footer .footer-slogan {
+            color: #0a2a5c;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 1024px) {
+            .mission-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hub-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 960px) {
+            .container {
+                padding: 2rem 1.8rem;
+            }
+            .header h1 {
+                font-size: 2.4rem;
+            }
+            .grid-2, .grid-3, .promise-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 1.2rem 0.8rem 2.5rem;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+                border-radius: 2rem;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+                letter-spacing: 3px;
+            }
+            .header .subtitle {
+                font-size: 0.95rem;
+            }
+            .section {
+                padding: 1.2rem 0.8rem 1.6rem;
+                border-radius: 1.4rem;
+            }
+            .section h2 {
+                font-size: 1.25rem;
+            }
+            .mission-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .mission-grid .card {
+                padding: 0.8rem 0.6rem;
+            }
+            .grid-2, .grid-3, .promise-grid, .hub-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .tech-card {
+                padding: 1rem;
+            }
+            .card {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <meta name="theme-color" content="#0a2540">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg?v=20260711">
+    <meta name="description" content="生物科技微谷 — 全球生物科技创新枢纽、人类健康未来之城">
+    <link rel="canonical" href="https://www.apcc.org/人民产业与科研/未来产业规划/生物科技微谷.html">
+</head>
+<body>
+    <a href="#main-content" class="visually-hidden-focusable" style="position:absolute;top:-100%;left:50%;transform:translateX(-50%);z-index:9999;padding:.5rem 1.5rem;background:#2563eb;color:#fff;border-radius:0 0 6px 6px;font-size:.875rem;font-weight:600;text-decoration:none;transition:top .15s;" onfocus="this.style.top='0'" onblur="this.style.top='-100%'">跳转到主要内容</a>
+
+    <div id="site-header">
+﻿<!-- ================================================================
+     公共导航栏 - 通过 js/include.js 注入到 #site-header 占位
+     与所有页面的 <a class="nav-link"> 链接均使用相对站点根目录的路径（以 / 开头）
+     目录 0709 重构版：6 个一级 + 折叠子菜单（按"网站导航栏最新菜单配置.docx"）
+================================================================ -->
+
+<!-- ========== 导航栏 ========== -->
+<nav class="navbar navbar-expand-xl fixed-top" id="mainNavbar">
+    <div class="container-fluid px-4 px-xl-5">
+
+        <!-- 品牌 Logo -->
+        <a class="navbar-brand" href="/index.html" aria-label="亚太国际人民事业发展共同体">
+            <span class="brand-icon" aria-hidden="true"><i class="fas fa-globe-asia"></i></span>
+            <span class="brand-full d-none d-xl-inline">亚太国际人民事业发展共同体</span>
+            <span class="brand-short d-none d-md-inline d-xl-none">亚太人民共同体</span>
+            <span class="brand-mini d-inline d-md-none">APCC</span>
+        </a>
+
+        <!-- 移动端汉堡按钮 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="打开菜单">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 桌面端菜单（xl+） -->
+        <div class="collapse navbar-collapse d-none d-xl-flex justify-content-end" id="desktopNav">
+            <ul class="navbar-nav align-items-center gap-1">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.html" data-nav="index.html">
+                        <i class="fas fa-home"></i> 首页
+                    </a>
+                </li>
+
+                <!-- 关于亚太 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/a/关于亚太/总体介绍.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-info-circle"></i> 关于亚太
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/a/关于亚太/总体介绍.html"><i class="fas fa-circle-info fa-xs me-2"></i>总体介绍</a></li>
+                        <li><a class="dropdown-item" href="/a/关于亚太/组织架构.html"><i class="fas fa-sitemap fa-xs me-2"></i>组织架构</a></li>
+                        <li><a class="dropdown-item" href="/a/关于亚太/核心理念.html"><i class="fas fa-lightbulb fa-xs me-2"></i>核心理念</a></li>
+                        <li><a class="dropdown-item" href="/a/关于亚太/发展方略.html"><i class="fas fa-route fa-xs me-2"></i>发展方略</a></li>
+                    </ul>
+                </li>
+
+                <!-- 人民事业共同体 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/a/人民事业共同体/人民集体所有制.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-handshake"></i> 人民事业共同体
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/a/人民事业共同体/人民集体所有制.html"><i class="fas fa-people-group fa-xs me-2"></i>人民集体所有制</a></li>
+                        <li><a class="dropdown-item" href="/a/人民事业共同体/共同体基本法.html"><i class="fas fa-book-open fa-xs me-2"></i>共同体基本法</a></li>
+                        <li><a class="dropdown-item" href="/a/人民事业共同体/人民价值贡献值.html"><i class="fas fa-coins fa-xs me-2"></i>人民价值贡献值体系（PVC）</a></li>
+                        <li><a class="dropdown-item" href="/a/人民事业共同体/国家宣言.html"><i class="fas fa-flag fa-xs me-2"></i>国家宣言</a></li>
+                        <li><a class="dropdown-item" href="/a/人民事业共同体/人民宣言.html"><i class="fas fa-scroll fa-xs me-2"></i>人民宣言</a></li>
+                        <li><a class="dropdown-item" href="/a/coming-soon.html"><i class="fas fa-book fa-xs me-2"></i>理念文集</a></li>
+                    </ul>
+                </li>
+
+                <!-- 人民产业与科研：折叠子菜单 -->
+                <li class="nav-item dropdown dropdown-mega">
+                    <a class="nav-link dropdown-toggle" href="/a/人民产业与科研/健康中国人民健康/健康中国人民健康.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-industry"></i> 人民产业与科研
+                        <i class="fas fa-chevron-right ms-1 mega-arrow"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-research">
+                        <li><a class="dropdown-item" href="/a/industry.html"><i class="fas fa-industry fa-xs me-2"></i>人民产业体系</a></li>
+                        <li><span class="dropdown-header">健康中国·人民健康</span></li>
+                        <li><a class="dropdown-item" href="/a/人民产业与科研/健康中国人民健康/健康中国人民健康.html"><i class="fas fa-heart-pulse fa-xs me-2"></i>健康中国·人民健康</a></li>
+                        <li><a class="dropdown-item" href="/a/人民产业与科研/健康中国人民健康/亚太1号·虫草素.html"><i class="fas fa-pills fa-xs me-2"></i>亚太1号·虫草素</a></li>
+                        <li><a class="dropdown-item" href="/a/人民产业与科研/健康中国人民健康/虫草素全球科研/首页.html"><i class="fas fa-flask fa-xs me-2"></i>虫草素全球科研集合</a></li>
+                        <li><span class="dropdown-header">未来产业规划</span></li>
+                        <li><a class="dropdown-item" href="/a/人民产业与科研/未来产业规划/产业规划总览.html"><i class="fas fa-chart-line fa-xs me-2"></i>产业规划总览</a></li>
+                        <li><a class="dropdown-item" href="/a/人民产业与科研/未来产业规划/高标准鸡类产业链.html"><i class="fas fa-egg fa-xs me-2"></i>高标准鸡类产业链</a></li>
+                        <li><a class="dropdown-item" href="/a/人民产业与科研/未来产业规划/高标准食品全产业链.html"><i class="fas fa-utensils fa-xs me-2"></i>高标准食品全产业链</a></li>
+                        <li><a class="dropdown-item" href="/a/人民产业与科研/未来产业规划/生物科技微谷.html"><i class="fas fa-microscope fa-xs me-2"></i>生物科技微谷</a></li>
+                        <li><a class="dropdown-item" href="/a/人民产业与科研/未来产业规划/亚太国际未来城.html"><i class="fas fa-city fa-xs me-2"></i>亚太国际未来城</a></li>
+                        <li><span class="dropdown-header">人民科研</span></li>
+                        <li><a class="dropdown-item" href="/a/人民产业与科研/人民科研/亚太人民科学院.html"><i class="fas fa-graduation-cap fa-xs me-2"></i>亚太人民科学院</a></li>
+                    </ul>
+                </li>
+
+                <!-- 人民组织与制度 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/a/人民组织与制度/亚太联盟企业.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-sitemap"></i> 人民组织与制度
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/a/人民组织与制度/亚太联盟企业.html"><i class="fas fa-building fa-xs me-2"></i>亚太联盟企业</a></li>
+                        <li><a class="dropdown-item" href="/a/人民组织与制度/人力资源基本法.html"><i class="fas fa-users fa-xs me-2"></i>人力资源基本法</a></li>
+                        <li><a class="dropdown-item" href="/a/人民组织与制度/人才培养体系.html"><i class="fas fa-user-graduate fa-xs me-2"></i>人才培养体系</a></li>
+                        <li><a class="dropdown-item" href="/a/人民组织与制度/人民政委体系.html"><i class="fas fa-user-shield fa-xs me-2"></i>人民政委体系</a></li>
+                        <li><a class="dropdown-item" href="/a/人民组织与制度/行为规范与纪律条例.html"><i class="fas fa-gavel fa-xs me-2"></i>行为规范与纪律条例</a></li>
+                        <li><a class="dropdown-item" href="/a/人民组织与制度/干部管理制度.html"><i class="fas fa-id-card fa-xs me-2"></i>干部管理制度</a></li>
+                        <li><a class="dropdown-item" href="/a/人民组织与制度/干部作风八条.html"><i class="fas fa-clipboard-list fa-xs me-2"></i>干部作风八条</a></li>
+                    </ul>
+                </li>
+
+                <!-- 人民荣誉 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/a/人民荣誉/亚太人民勋章.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-medal"></i> 人民荣誉
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/a/人民荣誉/亚太人民勋章.html"><i class="fas fa-medal fa-xs me-2"></i>亚太人民勋章</a></li>
+                        <li><a class="dropdown-item" href="/a/人民荣誉/亚太人民奖.html"><i class="fas fa-award fa-xs me-2"></i>亚太人民奖</a></li>
+                        <li><a class="dropdown-item" href="/a/人民荣誉/亚太人民劳动奖章.html"><i class="fas fa-medal fa-xs me-2"></i>亚太人民劳动奖章</a></li>
+                        <li><a class="dropdown-item" href="/a/coming-soon.html"><i class="fas fa-award fa-xs me-2"></i>亚太人民贡献奖</a></li>
+                        <li><a class="dropdown-item" href="/a/coming-soon.html"><i class="fas fa-graduation-cap fa-xs me-2"></i>亚太人民教育家</a></li>
+                        <li><a class="dropdown-item" href="/a/coming-soon.html"><i class="fas fa-medal fa-xs me-2"></i>亚太人民友谊勋章</a></li>
+                        <li><a class="dropdown-item" href="/a/coming-soon.html"><i class="fas fa-child fa-xs me-2"></i>亚太人民杰出少年奖</a></li>
+                    </ul>
+                </li>
+
+                <!-- 人民福利 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/a/人民福利/人民教育.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-shield-heart"></i> 人民福利
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/a/welfare.html"><i class="fas fa-hands-holding-circle fa-xs me-2"></i>福利总览</a></li>
+                        <li><a class="dropdown-item" href="/a/人民福利/人民教育.html"><i class="fas fa-school fa-xs me-2"></i>人民教育</a></li>
+                        <li><a class="dropdown-item" href="/a/coming-soon.html"><i class="fas fa-briefcase-medical fa-xs me-2"></i>人民医疗</a></li>
+                        <li><a class="dropdown-item" href="/a/coming-soon.html"><i class="fas fa-house-chimney fa-xs me-2"></i>人民住房</a></li>
+                        <li><a class="dropdown-item" href="/a/人民福利/人民养老.html"><i class="fas fa-hand-holding-heart fa-xs me-2"></i>人民养老</a></li>
+                    </ul>
+                </li>
+
+                <!-- 搜索 -->
+                <li class="nav-item ms-2">
+                    <a class="nav-link nav-search-icon" href="/a/search.html" title="站内搜索" aria-label="站内搜索" data-nav="search.html">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+
+                <!-- 加入亚太 - 高亮CTA -->
+                <li class="nav-item ms-2">
+                    <a class="btn btn-join" href="/a/join.html" data-nav="join.html">
+                        <i class="fas fa-door-open me-1"></i> 加入亚太
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ========== 移动端抽屉菜单（Offcanvas） ========== -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title fw-bold text-primary" id="mobileMenuLabel">
+            <i class="fas fa-globe-asia me-2"></i>亚太人民共同体
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="关闭"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+        <div class="accordion accordion-flush mobile-nav-accordion" id="mobileNavAccordion">
+
+            <div class="accordion-item border-0">
+                <a class="accordion-nav-link fw-semibold" href="/index.html" data-nav="index.html"><i class="fas fa-home me-2 text-primary"></i>首页</a>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob1">
+                        <i class="fas fa-info-circle me-2 text-primary"></i>关于亚太
+                    </button>
+                </h2>
+                <div id="mob1" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/a/关于亚太/总体介绍.html">总体介绍</a>
+                        <a class="mobile-sub-link" href="/a/关于亚太/组织架构.html">组织架构</a>
+                        <a class="mobile-sub-link" href="/a/关于亚太/核心理念.html">核心理念</a>
+                        <a class="mobile-sub-link" href="/a/关于亚太/发展方略.html">发展方略</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob2">
+                        <i class="fas fa-handshake me-2 text-primary"></i>人民事业共同体
+                    </button>
+                </h2>
+                <div id="mob2" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/a/人民事业共同体/人民集体所有制.html">人民集体所有制</a>
+                        <a class="mobile-sub-link" href="/a/人民事业共同体/共同体基本法.html">共同体基本法</a>
+                        <a class="mobile-sub-link" href="/a/人民事业共同体/人民价值贡献值.html">人民价值贡献值体系（PVC）</a>
+                        <a class="mobile-sub-link" href="/a/人民事业共同体/国家宣言.html">国家宣言</a>
+                        <a class="mobile-sub-link" href="/a/人民事业共同体/人民宣言.html">人民宣言</a>
+                        <a class="mobile-sub-link" href="/a/coming-soon.html">理念文集</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob3">
+                        <i class="fas fa-industry me-2 text-primary"></i>人民产业与科研
+                    </button>
+                </h2>
+                <div id="mob3" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/a/industry.html">人民产业体系</a>
+                        <div class="mobile-group-label">健康中国·人民健康</div>
+                        <a class="mobile-sub-link" href="/a/人民产业与科研/健康中国人民健康/健康中国人民健康.html">健康中国·人民健康</a>
+                        <a class="mobile-sub-link" href="/a/人民产业与科研/健康中国人民健康/亚太1号·虫草素.html">亚太1号·虫草素</a>
+                        <a class="mobile-sub-link" href="/a/人民产业与科研/健康中国人民健康/虫草素全球科研/首页.html">虫草素全球科研集合</a>
+                        <div class="mobile-group-label">未来产业规划</div>
+                        <a class="mobile-sub-link" href="/a/人民产业与科研/未来产业规划/产业规划总览.html">产业规划总览</a>
+                        <a class="mobile-sub-link" href="/a/人民产业与科研/未来产业规划/高标准鸡类产业链.html">高标准鸡类产业链</a>
+                        <a class="mobile-sub-link" href="/a/人民产业与科研/未来产业规划/高标准食品全产业链.html">高标准食品全产业链</a>
+                        <a class="mobile-sub-link" href="/a/人民产业与科研/未来产业规划/生物科技微谷.html">生物科技微谷</a>
+                        <a class="mobile-sub-link" href="/a/人民产业与科研/未来产业规划/亚太国际未来城.html">亚太国际未来城</a>
+                        <div class="mobile-group-label">人民科研</div>
+                        <a class="mobile-sub-link" href="/a/人民产业与科研/人民科研/亚太人民科学院.html">亚太人民科学院</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob4">
+                        <i class="fas fa-sitemap me-2 text-primary"></i>人民组织与制度
+                    </button>
+                </h2>
+                <div id="mob4" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/a/人民组织与制度/亚太联盟企业.html">亚太联盟企业</a>
+                        <a class="mobile-sub-link" href="/a/人民组织与制度/人力资源基本法.html">人力资源基本法</a>
+                        <a class="mobile-sub-link" href="/a/人民组织与制度/人才培养体系.html">人才培养体系</a>
+                        <a class="mobile-sub-link" href="/a/人民组织与制度/人民政委体系.html">人民政委体系</a>
+                        <a class="mobile-sub-link" href="/a/人民组织与制度/行为规范与纪律条例.html">行为规范与纪律条例</a>
+                        <a class="mobile-sub-link" href="/a/人民组织与制度/干部管理制度.html">干部管理制度</a>
+                        <a class="mobile-sub-link" href="/a/人民组织与制度/干部作风八条.html">干部作风八条</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob5">
+                        <i class="fas fa-medal me-2 text-primary"></i>人民荣誉
+                    </button>
+                </h2>
+                <div id="mob5" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/a/人民荣誉/亚太人民勋章.html">亚太人民勋章</a>
+                        <a class="mobile-sub-link" href="/a/人民荣誉/亚太人民奖.html">亚太人民奖</a>
+                        <a class="mobile-sub-link" href="/a/人民荣誉/亚太人民劳动奖章.html">亚太人民劳动奖章</a>
+                        <a class="mobile-sub-link" href="/a/coming-soon.html">亚太人民贡献奖</a>
+                        <a class="mobile-sub-link" href="/a/coming-soon.html">亚太人民教育家</a>
+                        <a class="mobile-sub-link" href="/a/coming-soon.html">亚太人民友谊勋章</a>
+                        <a class="mobile-sub-link" href="/a/coming-soon.html">亚太人民杰出少年奖</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob6">
+                        <i class="fas fa-shield-heart me-2 text-primary"></i>人民福利
+                    </button>
+                </h2>
+                <div id="mob6" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/a/welfare.html">福利总览</a>
+                        <a class="mobile-sub-link" href="/a/人民福利/人民教育.html">人民教育</a>
+                        <a class="mobile-sub-link" href="/a/coming-soon.html">人民医疗</a>
+                        <a class="mobile-sub-link" href="/a/coming-soon.html">人民住房</a>
+                        <a class="mobile-sub-link" href="/a/人民福利/人民养老.html">人民养老</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 移动端底部CTA -->
+        <div class="p-3 border-top mt-2">
+            <a href="/a/join.html" class="btn btn-amber w-100 fw-bold">
+                <i class="fas fa-door-open me-2"></i>立即加入亚太
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container">
+
+    <!-- ========== 头部区域 ========== -->
+    <div class="header">
+        <div class="gold-line"></div>
+        <h1>生物科技微谷</h1>
+        <div class="subtitle">—— 全球生物科技创新枢纽 · 人类健康未来之城</div>
+        <div class="tagline">✦ 科技造福人类 · 创新引领未来 ✦</div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 第一部分：核心理念                                           -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 一</div>
+        <h2><span class="deco-icon">💎</span> 核心理念</h2>
+        <div class="mission-grid">
+            <div class="card">
+                <span class="mission-icon">🎯</span>
+                <h4>定位</h4>
+                <p>全球生物科技领域的“硅谷”——一个以生命科学为核心，集“前沿科研、高端制造、产业孵化、人才集聚、生态宜居”于一体的世界级生物科技创新高地。</p>
+            </div>
+            <div class="card">
+                <span class="mission-icon">🤝</span>
+                <h4>使命</h4>
+                <p>以“生命科学、人类健康、人居空间环境、科技创新”融合为目标，构建人类健康共同体。</p>
+            </div>
+            <div class="card">
+                <span class="mission-icon">🔭</span>
+                <h4>宗旨</h4>
+                <p>科技造福人类，创新引领未来。</p>
+            </div>
+            <div class="card">
+                <span class="mission-icon">🌍</span>
+                <h4>原则</h4>
+                <p>人民创造，人民共享。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 第二部分：战略规划                                           -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 二</div>
+        <h2><span class="deco-icon">📐</span> 战略规划</h2>
+        <p>生物科技微谷立足于国家“十四五”、“十五五”生物经济发展规划、科技创新发展规划、人才发展规划等重大战略，是亚太国际·未来城的首个高标准产城融合重大示范工程。</p>
+        <p style="font-weight:600; color:#0a2a5c; margin-top:0.2rem;">我们构建：</p>
+        <div class="grid-3">
+            <div class="card">
+                <h4><span class="emoji">🧬</span> 完整的科研生态体系</h4>
+                <p>从基础研究到应用转化的全链条能力。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">📋</span> 全产业链标准体系</h4>
+                <p>建立国际一流的生物技术产业标准。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🤝</span> 全球联盟合作平台</h4>
+                <p>连接世界顶尖科学家、科研机构。</p>
+            </div>
+        </div>
+        <p style="margin-top:0.2rem;"><strong class="highlight-blue">我们的目标：</strong> 打造一个可持续发展、可复制、面向全球的高标准产城融合生态科技产业示范城。</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 第三部分：核心技术体系                                       -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 三</div>
+        <h2><span class="deco-icon">⚙️</span> 核心技术体系</h2>
+        <p>生物科技微谷以 <strong class="highlight-gold">“四大核心工程”</strong> 为技术基石，以 <strong class="highlight-gold">“合成生物学”</strong> 与 <strong class="highlight-gold">“AI人工智能”</strong> 为两大加速引擎，构建“设计-构建-测试-学习”的完整闭环。</p>
+        
+        <div class="grid-2" style="margin-top:0.4rem;">
+            <!-- 1. 基因工程 -->
+            <div class="tech-card">
+                <div class="tech-header">
+                    <span class="tech-icon">🧬</span>
+                    <h3>1. 基因工程</h3>
+                </div>
+                <div class="tech-detail">
+                    <p><strong>核心能力：</strong> 基因编辑、基因合成、基因测序与数据分析。</p>
+                    <p><strong>应用方向：</strong> 优良菌种构建、基因治疗、生物育种、合成生物学底盘细胞开发。</p>
+                    <p><strong>优势塑造：</strong> 与国内外顶尖合成生物学团队合作，建设自主的基因线路设计与代谢通路优化能力。</p>
+                </div>
+            </div>
+            <!-- 2. 细胞工程 -->
+            <div class="tech-card">
+                <div class="tech-header">
+                    <span class="tech-icon">🔬</span>
+                    <h3>2. 细胞工程</h3>
+                </div>
+                <div class="tech-detail">
+                    <p><strong>核心能力：</strong> 细胞培养、细胞融合、细胞重编程、干细胞技术。</p>
+                    <p><strong>应用方向：</strong> 单细胞蛋白生产、植物细胞培养（稀有成分）、细胞免疫治疗、功能性食品原料开发。</p>
+                    <p><strong>优势塑造：</strong> 掌握工业化细胞大规模培养技术，实现对高价值天然产物的“细胞工厂”化生产。</p>
+                </div>
+            </div>
+            <!-- 3. 酶工程 -->
+            <div class="tech-card">
+                <div class="tech-header">
+                    <span class="tech-icon">⚗️</span>
+                    <h3>3. 酶工程</h3>
+                </div>
+                <div class="tech-detail">
+                    <p><strong>核心能力：</strong> 酶挖掘、酶定向进化、酶固定化、酶催化工艺开发。</p>
+                    <p><strong>应用方向：</strong> 功能性食品开发、生物医药中间体合成、环境修复、生物基材料。</p>
+                    <p><strong>优势塑造：</strong> 汇聚核心酶技术科学家资源，建成高通量酶筛选与AI辅助设计平台，实现酶制剂的快速定制与产业化应用。</p>
+                </div>
+            </div>
+            <!-- 4. 发酵工程 -->
+            <div class="tech-card">
+                <div class="tech-header">
+                    <span class="tech-icon">🏭</span>
+                    <h3>4. 发酵工程</h3>
+                </div>
+                <div class="tech-detail">
+                    <p><strong>核心能力：</strong> 微生物发酵工艺优化、大规模发酵放大、分离纯化、过程控制。</p>
+                    <p><strong>应用方向：</strong> 功能食品、生物能源、生物材料。</p>
+                    <p><strong>优势塑造：</strong> 从实验室到中试再到产业化的完整发酵平台，与国内外顶尖发酵工程团队的深度合作。</p>
+                </div>
+            </div>
+            <!-- 5. 合成生物学 -->
+            <div class="tech-card">
+                <div class="tech-header">
+                    <span class="tech-icon">🧠</span>
+                    <h3>5. 合成生物学</h3>
+                </div>
+                <div class="tech-detail">
+                    <p><strong>核心能力：</strong> 底盘细胞构建、代谢通路设计、生物元件标准化。</p>
+                    <p><strong>应用方向：</strong> 稀有天然产物的细胞工厂化生产（如虫草素、人参皂苷、稀有多糖）、新型食品（人造蛋白）、生物基化学品。</p>
+                    <p><strong>优势塑造：</strong> 合成生物学顶尖科学家，打造从“基因设计”到“产品制造”的合成生物产业高地。</p>
+                </div>
+            </div>
+            <!-- 6. AI与数据科学 -->
+            <div class="tech-card">
+                <div class="tech-header">
+                    <span class="tech-icon">🤖</span>
+                    <h3>6. AI与数据科学</h3>
+                </div>
+                <div class="tech-detail">
+                    <p><strong>核心能力：</strong> AI蛋白质设计、高通量数据挖掘、智能发酵过程控制。</p>
+                    <p><strong>应用方向：</strong> 加速酶发现与改造、优化代谢通路、预测产品功效、精准健康管理。</p>
+                    <p><strong>优势塑造：</strong> 国内外AI蛋白质设计顶尖团队，建设AI驱动的生物设计平台。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 第四部分：产业布局与落地                                     -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 四</div>
+        <h2><span class="deco-icon">🌱</span> 产业布局与落地</h2>
+        <p>生物科技微谷以“功能性食品”为市场切入口，逐步向生物农业、生物材料等万亿级赛道拓展。</p>
+        <div class="grid-3">
+            <div class="card">
+                <h4><span class="emoji">🍽️</span> 1. 功能性食品</h4>
+                <p><strong class="highlight-blue">技术路径：</strong> 结合生物工程与AI设计，打造具有明确功能声称和极致吸收率的下一代生物科技食品。</p>
+                <p><strong class="highlight-blue">市场策略：</strong> 创造新品类，不陷入同质化竞争，以“药品级食品”重新定义健康消费。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🌾</span> 2. 生物农业与食品</h4>
+                <p><strong class="highlight-blue">方向：</strong> 功能性鸡蛋、生物饲料、微生物菌剂、植物蛋白深加工。</p>
+                <p><strong class="highlight-blue">案例：</strong> “超级蛋鸡工厂”，利用生物工程技术，从源头构建功能性食品的养殖与加工全链条。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🧪</span> 3. 绿色生物制造</h4>
+                <p><strong class="highlight-blue">方向：</strong> 生物基材料（可降解塑料）、生物能源、工业酶制剂。</p>
+                <p><strong class="highlight-blue">合作：</strong> 国内顶尖团队合作，推动非粮生物质转化与碳中和技术产业化。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 第五部分：科学家与全球资源整合                               -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 五</div>
+        <h2><span class="deco-icon">🌐</span> 科学家与全球资源整合</h2>
+        <p>生物科技微谷坚持 <strong class="highlight-gold">“全球视野，顶尖合作”</strong> ，建立覆盖国内外的科学家网络。</p>
+        <p style="font-weight:600; color:#0a2a5c; margin-top:0.2rem;">全球资源整合架构：</p>
+        <div class="hub-grid">
+            <div class="card">
+                <h4><span class="emoji">🧠</span> 中枢</h4>
+                <p><strong class="highlight-blue">全球研发与创新中心</strong>（亚太人民科学院（香港））：负责整体技术战略、核心知识产权管理与重大研发项目立项。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">📡</span> 前哨</h4>
+                <p><strong class="highlight-blue">全球创新前哨</strong>（如：波士顿、旧金山、苏黎世、新加坡）：以轻资产模式设立，负责前沿技术扫描、项目寻源、科学家网络构建。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🔄</span> 闭环</h4>
+                <p><strong class="highlight-blue">人民产业基金</strong>：配套人民产业基金，通过“人民投资+孵化+引入”模式，将全球优质项目吸引至微谷落地。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 第六部分：愿景与价值主张                                     -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 六</div>
+        <h2><span class="deco-icon">🌟</span> 愿景与价值主张</h2>
+        <div class="grid-3" style="margin-bottom:0.6rem;">
+            <div class="card" style="background:#f4f9ff; text-align:center;">
+                <span style="font-size:2rem; display:block; margin-bottom:0.3rem;">🏆</span>
+                <p style="text-align:center;">成为全球生物科技领域的<strong class="highlight-gold">技术策源地</strong>与<strong class="highlight-gold">标准制定者</strong>。</p>
+            </div>
+            <div class="card" style="background:#f4f9ff; text-align:center;">
+                <span style="font-size:2rem; display:block; margin-bottom:0.3rem;">💰</span>
+                <p style="text-align:center;">实现<strong class="highlight-gold">万亿级</strong>产业价值，赋能地方经济与全球健康事业。</p>
+            </div>
+            <div class="card" style="background:#f4f9ff; text-align:center;">
+                <span style="font-size:2rem; display:block; margin-bottom:0.3rem;">🤝</span>
+                <p style="text-align:center;">构建“消费成为建设性投资，劳动获得尊严性回报，智慧实现普惠性增值”的人民事业共同体。</p>
+            </div>
+        </div>
+
+        <p style="font-weight:600; color:#0a2a5c; margin-top:0.4rem;">我们的承诺：</p>
+        <div class="promise-grid">
+            <div class="card">
+                <div class="promise-icon">🔬</div>
+                <h4>对科学家</h4>
+                <p>提供最自由的创新环境、最好的人居环境、最充足的资金支持、最完善的成果转化体系。</p>
+            </div>
+            <div class="card">
+                <div class="promise-icon">🤝</div>
+                <h4>对合作伙伴</h4>
+                <p>提供最专业的产业服务、最开放的供应链平台、最广阔的市场空间。</p>
+            </div>
+            <div class="card">
+                <div class="promise-icon">❤️</div>
+                <h4>对人民</h4>
+                <p>提供最安全、最有效、最前沿的生物科技产品，人人分享产业体系股权。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== 页脚 ========== -->
+    
+
+</div>
+    <!-- 与 <footer> 内联样式为「页脚自给自足」方案。
+     即使 /a/css/style.css 未能加载（如 IDE 预览、file://、缓存旧版等场景），
+     页脚依然保持深蓝底 + 浅色字，保证对比度与可读性。
+================================================================ -->
+
+    <!-- ========== 全站页脚 ========== -->
+    <footer class="site-footer" style="background:#0a2540;color:rgba(255,255,255,.75);padding:3.5rem 1.5rem 0;margin:0 -1.5rem;width:calc(100% + 3rem);">
+        <div class="container" style="background:transparent !important;backdrop-filter:none !important;border-radius:0 !important;box-shadow:none !important;border:none !important;max-width:1140px;">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-heading" style="color:#fff;font-weight:700;font-size:1.05rem;margin-bottom:1rem;position:relative;padding-bottom:.5rem;">
+                        <span style="display:inline-flex;align-items:center;gap:.5rem;">
+                            <i class="fas fa-globe-asia" style="color:#06b6d4;"></i> 亚太国际人民事业发展共同体
+                        </span>
+                    </h5>
+                    <p style="font-size:.875rem;line-height:1.7;color:rgba(255,255,255,.6);margin-bottom:1rem;">
+                        构建人类命运共同体的产业实践平台<br>
+                        共建 · 共创 · 共享超大型社会生态系统
+                    </p>
+                    <div style="display:flex;gap:.6rem;">
+                        <a href="#" aria-label="微信" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background .15s,color .15s;text-decoration:none;"><i class="fab fa-weixin"></i></a>
+                        <a href="#" aria-label="微博" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background .15s,color .15s;text-decoration:none;"><i class="fab fa-weibo"></i></a>
+                        <a href="#" aria-label="LinkedIn" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background .15s,color .15s;text-decoration:none;"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-heading" style="color:#fff;font-weight:700;font-size:.9rem;margin-bottom:1rem;">关于亚太</h6>
+                    <ul class="footer-links" style="list-style:none;padding:0;margin:0;">
+                        <li style="margin-bottom:.5rem;"><a href="/a/关于亚太/总体介绍.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">总体介绍</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/关于亚太/组织架构.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">组织架构</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/关于亚太/核心理念.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">核心理念</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/关于亚太/发展方略.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">发展方略</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-heading" style="color:#fff;font-weight:700;font-size:.9rem;margin-bottom:1rem;">快速链接</h6>
+                    <ul class="footer-links" style="list-style:none;padding:0;margin:0;">
+                        <li style="margin-bottom:.5rem;"><a href="/a/projects.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">战略工程</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/health.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">健康中国</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/news.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">新闻动态</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/join.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">加入亚太</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="footer-heading" style="color:#fff;font-weight:700;font-size:.9rem;margin-bottom:1rem;">联系我们</h6>
+                    <ul style="list-style:none;padding:0;margin:0;">
+                        <li style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;"><i class="fas fa-location-dot" style="color:#06b6d4;font-size:.8rem;margin-top:.25rem;flex-shrink:0;"></i>北京市朝阳区某某路 123 号</li>
+                        <li style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;"><i class="fas fa-phone" style="color:#06b6d4;font-size:.8rem;margin-top:.25rem;flex-shrink:0;"></i>010-12345678</li>
+                        <li style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;"><i class="fas fa-envelope" style="color:#06b6d4;font-size:.8rem;margin-top:.25rem;flex-shrink:0;"></i>info@apcc.org</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="padding:1.1rem 0;background:rgba(0,0,0,.2);margin-top:2.5rem;margin-left:-1.5rem;margin-right:-1.5rem;padding-left:1.5rem;padding-right:1.5rem;">
+            <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;background:transparent !important;backdrop-filter:none !important;border-radius:0 !important;box-shadow:none !important;border:none !important;padding:0 15px;">
+                <p style="color:rgba(255,255,255,.4);margin:0;font-size:.82rem;">&copy; 2026 亚太国际人民事业发展共同体 版权所有</p>
+                <p style="color:rgba(255,255,255,.4);margin:0;font-size:.82rem;">
+                    <a href="#" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">隐私政策</a>
+                    <span style="margin:0 .5rem;">|</span>
+                    <a href="#" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">使用条款</a>
+                    <span style="margin:0 .5rem;">|</span>
+                    <a href="/a/validate.html" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">网站验证</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="/a/vendor/bootstrap.bundle.min.js?v=20260711"></script>
+    <script src="/a/js/include.js?v=20260711"></script>
+    <script src="/a/js/main.js?v=20260711"></script>
+</body>
+</html>

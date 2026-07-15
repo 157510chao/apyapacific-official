@@ -1,0 +1,704 @@
+﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0a2540">
+
+    <title>虫草素全球科研综述 - 完整版 | 亚太国际人民事业发展共同体</title>
+    <meta name="description" content="虫草素全球科研综述完整版：覆盖 17 大研究领域、4 篇里程碑重磅论文，系统梳理全球范围内对虫草素的研究进展与临床应用前景。">
+    <meta name="keywords" content="虫草素,科研综述,Cordycepin,17大领域,AMPK,NF-κB,Sirtuins,亚太人民共同体">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260711">
+
+    <link href="vendor/bootstrap.min.css?v=20260711" rel="stylesheet">
+    <link href="vendor/fontawesome.min.css?v=20260711" rel="stylesheet">
+    <link href="css/style.css?v=20260711" rel="stylesheet">
+
+    <style>
+        /* ===== 原 cordycepin-research-overview 全部样式（已加 .cordycepin-report 命名空间隔离） ===== */
+        .cordycepin-report {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #0a1e2f;
+        }
+.cordycepin-report /* ===== 全局重置 & 基础 ===== */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }.cordycepin-report body{
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f0f6fe;
+            color: #0a1e2f;
+            padding: 24px 20px 60px;
+            line-height: 1.6;
+        }.cordycepin-report .container{
+            max-width: 1280px;
+            margin: 0 auto;
+        }.cordycepin-report /* ===== 头部 ===== */
+        .cp-header{
+            background: linear-gradient(145deg, #0b2a4a 0%, #1a4b73 100%);
+            color: #fff;
+            padding: 36px 40px 28px;
+            border-radius: 28px;
+            margin-bottom: 36px;
+            box-shadow: 0 16px 40px rgba(10, 40, 80, 0.25);
+            position: relative;
+            overflow: hidden;
+        }.cordycepin-report .cp-header::after{
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }.cordycepin-report .cp-header h1{
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
+        }.cordycepin-report .cp-header h1 small{
+            font-size: 18px;
+            font-weight: 400;
+            color: #aac9f0;
+            margin-left: 4px;
+        }.cordycepin-report .cp-header .cp-meta{
+            font-size: 15px;
+            color: #c5ddf5;
+            margin-top: 8px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+            padding-top: 18px;
+            margin-top: 12px;
+        }.cordycepin-report .cp-header .cp-meta span{
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }.cordycepin-report .cp-header .cp-meta strong{
+            color: #fff;
+            font-weight: 600;
+        }.cordycepin-report /* ===== 核心结论卡片 ===== */
+        .summary-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }.cordycepin-report .summary-card{
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 18px 20px;
+            box-shadow: 0 2px 12px rgba(0, 20, 50, 0.06);
+            border-left: 4px solid #1a6fb5;
+            transition: transform 0.15s ease;
+        }.cordycepin-report .summary-card:hover{
+            transform: translateY(-2px);
+        }.cordycepin-report .summary-card .num{
+            font-size: 28px;
+            font-weight: 700;
+            color: #0b2a4a;
+            line-height: 1.2;
+        }.cordycepin-report .summary-card .label{
+            font-size: 14px;
+            color: #2d4d6e;
+            margin-top: 2px;
+        }.cordycepin-report .summary-card .desc{
+            font-size: 13px;
+            color: #3d5f7a;
+            margin-top: 6px;
+            line-height: 1.5;
+        }.cordycepin-report /* ===== 板块标题 ===== */
+        .section-title{
+            font-size: 24px;
+            font-weight: 700;
+            color: #0b2a4a;
+            margin: 40px 0 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }.cordycepin-report .section-title small{
+            font-size: 15px;
+            font-weight: 400;
+            color: #4d6f8a;
+        }.cordycepin-report /* ===== 17领域卡片网格 ===== */
+        .card-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 18px;
+            margin-bottom: 12px;
+        }.cordycepin-report .card{
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 18px 18px 16px;
+            border: 1px solid #e6edf6;
+            box-shadow: 0 2px 8px rgba(0, 20, 50, 0.04);
+            transition: box-shadow 0.2s ease;
+        }.cordycepin-report .card:hover{
+            box-shadow: 0 8px 24px rgba(0, 40, 80, 0.08);
+        }.cordycepin-report .card .head{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            gap: 8px;
+        }.cordycepin-report .card .name{
+            font-size: 17px;
+            font-weight: 700;
+            color: #0b2a4a;
+        }.cordycepin-report .card .badge{
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 12px;
+            border-radius: 20px;
+            background: #e3edfb;
+            color: #1a5a8c;
+            white-space: nowrap;
+        }.cordycepin-report .card .badge.hot{
+            background: #fce8e6;
+            color: #b12a1e;
+        }.cordycepin-report .card .badge.mature{
+            background: #e3edfb;
+            color: #1a5a8c;
+        }.cordycepin-report .card .badge.niche{
+            background: #ecf0f5;
+            color: #4d6079;
+        }.cordycepin-report .card .data{
+            font-size: 13px;
+            color: #1e3a52;
+            margin-bottom: 8px;
+        }.cordycepin-report .card .data strong{
+            color: #0b2a4a;
+        }.cordycepin-report .card .consensus{
+            font-size: 13px;
+            color: #1e3a52;
+            background: #f5f9ff;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border-left: 3px solid #1a6fb5;
+            margin-top: 6px;
+            line-height: 1.6;
+        }.cordycepin-report .card .popular{
+            font-size: 13px;
+            color: #1e3a52;
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: #f2f7fd;
+            border-radius: 10px;
+        }.cordycepin-report .card .popular strong{
+            color: #0b2a4a;
+        }.cordycepin-report /* ===== 重磅论文 ===== */
+        .paper-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 18px;
+            margin-top: 6px;
+        }.cordycepin-report .paper-card{
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 18px 20px;
+            border: 1px solid #e6edf6;
+            box-shadow: 0 2px 8px rgba(0, 20, 50, 0.04);
+        }.cordycepin-report .paper-card .journal{
+            font-size: 13px;
+            font-weight: 600;
+            color: #1a6fb5;
+            margin-bottom: 4px;
+        }.cordycepin-report .paper-card .title{
+            font-size: 15px;
+            font-weight: 600;
+            color: #0b2a4a;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }.cordycepin-report .paper-card .authors{
+            font-size: 13px;
+            color: #4d6f8a;
+            margin-bottom: 6px;
+        }.cordycepin-report .paper-card .summary{
+            font-size: 13px;
+            color: #1e3a52;
+            line-height: 1.6;
+        }.cordycepin-report /* ===== 底部 ===== */
+        .footer-note{
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 24px 28px;
+            margin-top: 40px;
+            border: 1px solid #e6edf6;
+            box-shadow: 0 2px 8px rgba(0, 20, 50, 0.04);
+            font-size: 14px;
+            color: #2d4d6e;
+            line-height: 1.8;
+        }.cordycepin-report .footer-note strong{
+            color: #0b2a4a;
+        }.cordycepin-report .footer-note .disclaimer{
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e6edf6;
+            font-size: 13px;
+            color: #4d6f8a;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 768px) {
+            .cp-header {
+                padding: 24px 20px;
+            }
+            .cp-header h1 {
+                font-size: 24px;
+            }
+            .cp-header h1 small {
+                font-size: 14px;
+            }
+            .cp-header .cp-meta {
+                font-size: 13px;
+                gap: 10px 20px;
+            }
+            .section-title {
+                font-size: 20px;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .paper-grid {
+                grid-template-columns: 1fr;
+            }
+            .summary-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            .cp-header h1 {
+                font-size: 20px;
+            }
+        }        @media (max-width: 420px) {
+            .cordycepin-report .cp-stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+            .cordycepin-report .cp-stat-card { padding: 14px 10px; }
+            .cordycepin-report .cp-stat-number { font-size: 22px; }
+        }
+
+    </style>
+    <link rel="canonical" href="https://www.apcc.org/cordycepin-research-overview.html">
+</head>
+<body>
+    <a href="#main-content" class="visually-hidden-focusable" style="position:absolute;top:-100%;left:50%;transform:translateX(-50%);z-index:9999;padding:.5rem 1.5rem;background:#2563eb;color:#fff;border-radius:0 0 6px 6px;font-size:.875rem;font-weight:600;text-decoration:none;transition:top .15s;" onfocus="this.style.top='0'" onblur="this.style.top='-100%'">跳转到主要内容</a>
+
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <!-- inline 顶部导航（fetch 失败时 fallback） -->
+<div id="site-header">
+<!-- ================================================================
+     公共导航栏 - 通过 js/include.js 注入到 #site-header 占位
+     与所有页面的 <a class="nav-link"> 链接均使用相对路径
+     目录 0616 重构版：10 个一级 + 折叠子菜单
+================================================================ -->
+
+<!-- ========== 导航栏 ========== -->
+
+
+<!-- ========== 移动端抽屉菜单（Offcanvas） ========== -->
+
+
+
+</div>
+
+    <main id="main-content">
+        <section class="page-header">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+                        <li class="breadcrumb-item"><a href="research.html">虫草素全球科研</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">全球科研综述（完整版）</li>
+                    </ol>
+                </nav>
+                <h1>虫草素<span class="accent">全球科研综述</span></h1>
+                <p class="lead">完整版报告：17 大研究领域 · 4 篇里程碑重磅论文 · 系统梳理全球虫草素研究进展与临床应用前景</p>
+            </div>
+        </section>
+
+        <section class="section-block py-section ro-report">
+
+
+        <!-- ===== 头部 ===== -->
+        <header class="cp-header">
+            <h1>
+                🧬 虫草素 · 全球顶级刊物科研成果全景展示
+                <small>17大领域 · 10000+ 篇研究</small>
+            </h1>
+            <div class="cp-meta">
+                <span>📚 检索：Web of Science · PubMed · CNKI · PMC</span>
+                <span>📅 数据截止：2026年6月</span>
+                <span>📊 统计：正式研究论文 + 综述</span>
+                <span>🧪 核心机制：AMPK · NF-κB · Sirtuins</span>
+            </div>
+        </header>
+
+        <!-- ===== 核心结论概览 ===== -->
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="num">17</div>
+                <div class="label">研究领域</div>
+                <div class="desc">覆盖肿瘤、代谢、神经、心血管、抗衰老等</div>
+            </div>
+            <div class="summary-card">
+                <div class="num">10000+</div>
+                <div class="label">全球论文</div>
+                <div class="desc">SCI收录超 66%，基础研究扎实</div>
+            </div>
+            <div class="summary-card">
+                <div class="num">3</div>
+                <div class="label">核心通路</div>
+                <div class="desc">AMPK · NF-κB · Sirtuins 统一底层机制</div>
+            </div>
+            <div class="summary-card">
+                <div class="num">70+</div>
+                <div class="label">年研究史</div>
+                <div class="desc">1950年首次分离，持续至今</div>
+            </div>
+        </div>
+
+        <!-- ===== 17大领域 ===== -->
+        <div class="section-title">
+            🔬 17大研究领域 · 科研强度全景
+            <small>卡片独立呈现 · 数据·共识·通俗结论</small>
+        </div>
+        <div class="card-grid" id="cardGrid">
+            <!-- 由 JS 动态渲染 -->
+        </div>
+
+        <!-- ===== 重磅论文精选 ===== -->
+        <div class="section-title">
+            📄 重磅论文精选
+            <small>里程碑式研究 · 高引经典</small>
+        </div>
+        <div class="paper-grid" id="paperGrid">
+            <!-- 由 JS 动态渲染 -->
+        </div>
+
+        <!-- ===== 底部 ===== -->
+        
+
+    </div>
+
+    <script>
+        // ============================================================
+        // 1. 17大领域数据
+        // ============================================================
+        const fields = [{
+            name: '肿瘤',
+            total: 650,
+            sci: 432,
+            tag: 'hot',
+            tagLabel: '一级核心热门',
+            detail: '肺癌、肝癌、结直肠癌、乳腺癌、胶质瘤、黑色素瘤等实体肿瘤；肿瘤免疫微环境、化疗耐药逆转、免疫药增敏、细胞周期阻滞、肿瘤转移抑制',
+            consensus: '虫草素依托腺苷类似物结构损伤肿瘤DNA，阻滞癌细胞增殖周期；抑制PI3K/AKT/mTOR促生长通路诱导癌细胞凋亡；调控Treg、DC细胞重塑肿瘤微环境，增效PD-1免疫治疗；联合化疗药物可降低化疗脏器毒性，动物异种瘤模型可显著缩小肿瘤体积、抑制远端转移。',
+            popular: '全球科研证据最充足的天然抗肿瘤候选物质，既能直接抑制肿瘤生长转移，又能增强人体自身抗癌免疫力，辅助减轻抗癌药物副作用。'
+        }, {
+            name: '炎症&免疫调节',
+            total: 280,
+            sci: 190,
+            tag: 'hot',
+            tagLabel: '一级核心热门',
+            detail: '慢性全身低度炎症、类风湿关节炎、炎症性肠病、呼吸道慢性炎症、肿瘤相关炎症、自身免疫病免疫平衡调控',
+            consensus: '虫草素双向调控免疫平衡，阻断NF-κB/MAPK促炎通路，下调TNF-α、IL-6等损伤性炎症因子，提升抗炎因子IL-10；免疫低下时提升NK、杀伤T细胞活性，免疫紊乱过度活化时抑制异常免疫反应；可修复肠道、关节黏膜炎性损伤，缓解自身免疫组织肿胀增生。',
+            popular: '天然炎症平衡调节剂，既能消除慢性有害炎症，又能稳定免疫力，适合各类炎症、免疫失调人群长期调理。'
+        }, {
+            name: '代谢疾病',
+            total: 210,
+            sci: 140,
+            tag: 'hot',
+            tagLabel: '一级核心热门',
+            detail: '肥胖、2型糖尿病、高血脂、代谢综合征、非酒精性脂肪肝、糖尿病并发症糖脂调控',
+            consensus: '虫草素激活AMPK能量感受器通路，抑制肝脏脂肪与糖原异生；促进白色脂肪褐变分解产热减重；调节肠道有益菌群改善胰岛素抵抗；高脂糖尿病动物模型可同步降低血糖、血脂，减少肝肾脂肪堆积。',
+            popular: '一站式调节糖脂代谢，兼顾控糖、降脂、减脂、改善脂肪肝，有完整动物实验数据支撑。'
+        }, {
+            name: '抗纤维化',
+            total: 180,
+            sci: 120,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '肾间质纤维化、肝纤维化、肺纤维化、心肌纤维化、皮肤瘢痕纤维化、脏器纤维化早期干预',
+            consensus: '虫草素阻断TGF-β/Smad纤维化核心通路，抑制上皮间质转化EMT，减少成纤维细胞活化；降低组织胶原沉积，逆转早期脏器瘢痕化；在肝、肺、肾纤维化动物模型中可显著减轻纤维化病变。',
+            popular: '少见的可同步保护肝、肾、肺多器官，减缓器官硬化瘢痕进程，延缓慢性小病发展为器官衰竭。'
+        }, {
+            name: '神经科学',
+            total: 160,
+            sci: 110,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '阿尔茨海默病、帕金森、缺血脑梗、抑郁症、脊髓损伤、神经退行性保护',
+            consensus: '虫草素可穿透血脑屏障，抑制小胶质细胞脑部炎症、清除自由基；减少脑部Aβ老年斑沉积，改善学习记忆；缩小脑梗梗死面积，调节脑内神经递质缓解抑郁行为。',
+            popular: '直接保护大脑神经细胞，延缓老年痴呆、帕金森进展，同时改善脑缺血损伤与长期情绪抑郁。'
+        }, {
+            name: '肾病',
+            total: 150,
+            sci: 100,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '糖尿病肾病、肾间质纤维化、缺血肾损伤、慢性肾病、肾小球增生、肾小管细胞保护',
+            consensus: '虫草素稳定肾小管线粒体功能，减少尿蛋白排泄；抑制肾脏细胞凋亡与肾间质成纤维细胞活化，降低肌酐、尿素氮，延缓慢性肾病持续恶化。',
+            popular: '专门保护肾脏细胞，减少蛋白流失、减轻肾脏硬化，是糖尿病肾病、慢性肾炎极具潜力的天然干预物质。'
+        }, {
+            name: '肝病',
+            total: 140,
+            sci: 90,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '非酒精性脂肪肝、药物性肝损伤、肝纤维化、肝硬化、肝星状细胞活化抑制',
+            consensus: '虫草素激活SIRT1通路减轻肝脏氧化炎症损伤；抑制肝星状细胞活化阻断肝纤维化；降低转氨酶，减少肝细胞脂肪堆积与化学药物造成的肝坏死。',
+            popular: '全方位养护肝脏，改善脂肪肝、药物伤肝、肝脏硬化问题，帮助恢复肝脏代谢解毒能力。'
+        }, {
+            name: '心血管',
+            total: 130,
+            sci: 85,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '动脉粥样硬化、心肌缺血损伤、高血压、心肌肥厚、血管内皮保护、血栓预防',
+            consensus: '虫草素保护血管内皮，抑制泡沫细胞形成，缩小动脉粥样硬化斑块；减轻心肌缺血再灌注损伤，抑制血小板聚集、降低血栓风险，延缓心肌纤维化与心室重构。',
+            popular: '保护血管、减少血管脂肪斑块堆积，降低心梗、脑梗、血管硬化发病风险。'
+        }, {
+            name: '病毒&感染',
+            total: 120,
+            sci: 80,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '新冠病毒、登革热、寨卡、耐药细菌、寄生虫感染、病毒复制抑制',
+            consensus: '虫草素竞争性抑制病毒RNA聚合酶，直接阻断RNA病毒复制；抑制炎症因子风暴，减轻感染后脏器损伤；联合抗生素提升耐药菌清除效果，兼具抗病毒、辅助抗菌双重活性。',
+            popular: '既能直接抑制多种病毒繁殖，又能减轻病毒感染带来的剧烈炎症损伤，可作为感染性疾病联合干预候选物质。'
+        }, {
+            name: '肺部疾病',
+            total: 110,
+            sci: 75,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '特发性肺纤维化、哮喘、慢阻肺、急性肺损伤、气道重塑、肺动脉高压',
+            consensus: '虫草素阻断肺部上皮间质转化，减少肺部胶原沉积，缓解肺纤维化；抑制气道黏液分泌、降低气道高反应，减轻哮喘、慢阻肺气道炎症与重构损伤。',
+            popular: '同步缓解肺部炎症与肺部硬化，改善咳喘、气道敏感，对哮喘、间质性肺病有明确实验效果。'
+        }, {
+            name: '运动疲劳修复',
+            total: 100,
+            sci: 65,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '高强度运动骨骼肌疲劳、运动肌损伤、线粒体能量提升、耐力增强、运动后恢复',
+            consensus: '虫草素提升骨骼肌线粒体ATP产能，降低运动后血乳酸、肌酸激酶；减少肌肉氧化损伤，延长力竭运动时长，加速运动后肌肉修复。',
+            popular: '提升肌肉供能效率，缓解运动后酸痛乏力，提升运动耐力，加快身体恢复速度。'
+        }, {
+            name: '慢性疲劳综合征',
+            total: 100,
+            sci: 65,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '长期慢性精神躯体疲劳、精力衰退、神经能量代谢、亚健康倦怠',
+            consensus: '虫草素同步改善肌肉线粒体能量与中枢神经递质平衡，降低全身氧化应激，缓解持续性疲惫、注意力下降、精神萎靡等慢性疲劳表现。',
+            popular: '同时改善身体乏力与精神倦怠，适合长期熬夜、高压亚健康人群缓解持续疲惫感。'
+        }, {
+            name: '抗衰老',
+            total: 90,
+            sci: 60,
+            tag: 'mature',
+            tagLabel: '二级成熟',
+            detail: '全身器官衰老、皮肤老化、血管神经衰老、衰老细胞清除、老年慢病干预',
+            consensus: '虫草素激活Sirt1/3/6长寿蛋白，提升细胞NAD+水平；清除衰老细胞、抑制衰老相关慢性炎症；减少皮肤胶原流失，延缓免疫、脏器功能随年龄衰退。',
+            popular: '系统性延缓全身衰老，不靠激素，通过激活人体自身长寿通路，减缓皮肤、脏器、免疫力老化速度。'
+        }, {
+            name: '骨代谢',
+            total: 80,
+            sci: 55,
+            tag: 'niche',
+            tagLabel: '三级新兴',
+            detail: '绝经后骨质疏松、成骨细胞分化、破骨细胞抑制、骨缺损修复、牙周骨再生',
+            consensus: '虫草素促进干细胞分化为成骨细胞、加速骨基质生成；抑制破骨细胞过度活化减少骨流失；提升骨质疏松模型骨密度，改善骨小梁结构降低骨折风险。',
+            popular: '双向调节骨骼代谢，一边留住骨量、一边生成新骨，改善中老年、女性绝经后骨质疏松。'
+        }, {
+            name: '生殖系统',
+            total: 70,
+            sci: 45,
+            tag: 'niche',
+            tagLabel: '三级新兴',
+            detail: '男性少弱精、睾丸功能损伤、卵巢储备下降、生殖内分泌调节、配子质量提升',
+            consensus: '虫草素保护睾丸、卵巢组织抗氧化平衡，提升睾酮分泌、精子活力；减少卵泡闭锁，改善卵巢储备，修复生殖细胞炎性损伤。',
+            popular: '温和调节男女生殖内分泌，提升精子、卵子质量，改善生殖器官氧化损伤。'
+        }, {
+            name: '皮肤',
+            total: 60,
+            sci: 40,
+            tag: 'niche',
+            tagLabel: '三级新兴',
+            detail: '紫外线光老化、慢性皮肤皮炎、创面愈合、瘢痕抑制、皮肤胶原合成',
+            consensus: '虫草素激活皮肤Sirtuin通路促进胶原蛋白合成，抑制胶原分解酶；加速皮肤伤口愈合、减少愈合后瘢痕；减轻皮炎皮肤局部炎症红肿。',
+            popular: '减少皮肤胶原蛋白流失延缓老化，加速伤口修复，同时缓解过敏性皮炎类皮肤炎症。'
+        }, {
+            name: '抗氧化',
+            total: 50,
+            sci: 35,
+            tag: 'niche',
+            tagLabel: '三级新兴',
+            detail: '线粒体自由基清除、内源性抗氧化通路、氧化损伤脏器保护、自由基链式反应阻断',
+            consensus: '虫草素双重抗氧化，直接中和自由基，同时激活Nrf2通路提升人体自身SOD、谷胱甘肽抗氧化酶活性；抗氧化效果优于维C、维E，阻断氧化应激诱发各类慢病。',
+            popular: '既能直接清除损伤细胞的有害自由基，又能唤醒人体自带抗氧化防护，从源头减少氧化带来的器官老化与慢性炎症。'
+        }];
+
+        // ============================================================
+        // 2. 渲染卡片
+        // ============================================================
+        const grid = document.getElementById('cardGrid');
+        grid.innerHTML = fields.map(f => {
+            const tagClass = f.tag === 'hot' ? 'hot' : f.tag === 'mature' ? 'mature' : 'niche';
+            return `
+                <div class="card">
+                    <div class="head">
+                        <span class="name">${f.name}</span>
+                        <span class="badge ${tagClass}">${f.tagLabel}</span>
+                    </div>
+                    <div class="data"><strong>总论文 ${f.total} 篇</strong> · SCI收录 ${f.sci} 篇</div>
+                    <div class="data" style="font-size:12px;color:#4d6f8a;">${f.detail}</div>
+                    <div class="consensus">🧬 ${f.consensus}</div>
+                    <div class="popular"><strong>💡 通俗结论</strong> ${f.popular}</div>
+                </div>
+            `;
+        }).join('');
+
+        // ============================================================
+        // 3. 重磅论文
+        // ============================================================
+        const papers = [{
+            journal: 'Cell (2026)',
+            title: 'Restoring circadian rhythms in the hypothalamic paraventricular nucleus reverses aging biomarkers and extends lifespan in male mice',
+            authors: '清华大学/北京生命科学研究所 张二荃团队、重庆医科大学鞠大鹏',
+            summary: '首次系统验证虫草素通过调控昼夜节律延缓衰老：特异性结合CLOCK蛋白，强化节律基因表达振幅，延长老年小鼠中位寿命约12%，显著减轻肾小球硬化、心肌纤维化、神经纤维缠结等衰老病理改变。'
+        }, {
+            journal: 'Nature (1977)',
+            title: 'Cordycepin inhibits RNA synthesis by inhibiting RNA polymerase',
+            authors: 'KATHLEEN M. ROSE et al. · 美国西奈山医学院',
+            summary: '里程碑式酶学研究，首次阐明虫草素三磷酸（CORtp）特异性抑制真核生物RNA聚合酶Ⅰ、Ⅱ、Ⅲ，阻断RNA链延伸，为后续抗肿瘤药物开发奠定理论基础。'
+        }, {
+            journal: 'Advanced Science (2024)',
+            title: 'Cordycepin modulates microglial M2 polarization coupled with mitochondrial metabolic reprogramming by targeting HKII and PDK2',
+            authors: '魏敏杰、刘明妍团队 · 中国医科大学药学院',
+            summary: '突破性成果：虫草素通过靶向HKII/PDK2驱动小胶质细胞M1→M2极化，提升线粒体能量代谢，显著改善APP/PS1双转基因AD小鼠认知功能。'
+        }, {
+            journal: 'Frontiers in Pharmacology (2024)',
+            title: 'Structural and pharmacological insights into cordycepin for neoplasms and metabolic disorders',
+            authors: 'Zhang et al. · 中国科学院上海药物研究所',
+            summary: '重磅综述：系统阐明虫草素在肿瘤、代谢紊乱中的多维度药理机制，涵盖AMPK通路激活、脂质合成抑制、葡萄糖摄取促进等核心调控网络。'
+        }];
+
+        const paperGrid = document.getElementById('paperGrid');
+        paperGrid.innerHTML = papers.map(p => `
+            <div class="paper-card">
+                <div class="journal">📘 ${p.journal}</div>
+                <div class="title">${p.title}</div>
+                <div class="authors">${p.authors}</div>
+                <div class="summary">${p.summary}</div>
+            </div>
+        `).join('');
+    </script>
+        </section>
+
+        <section class="section-block py-section">
+            <div class="container">
+                <div class="text-center mt-5">
+                    <a href="research.html" class="btn btn-amber btn-lg px-4 me-2 mb-2"><i class="fas fa-flask me-2"></i>返回虫草素全球科研</a>
+                    <a href="coming-soon.html" class="btn btn-outline-primary btn-lg px-4 me-2 mb-2"><i class="fas fa-trophy me-2"></i>抗肿瘤 Top10</a>
+                    <a href="cordycepin-17fields.html" class="btn btn-outline-primary btn-lg px-4 mb-2"><i class="fas fa-chart-bar me-2"></i>17大领域可视化</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="back-to-top-btn" aria-label="回到顶部" title="回到顶部">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+
+    <!-- 与 <footer> 内联样式为「页脚自给自足」方案。
+     即使 /a/css/style.css 未能加载（如 IDE 预览、file://、缓存旧版等场景），
+     页脚依然保持深蓝底 + 浅色字，保证对比度与可读性。
+================================================================ -->
+
+    <!-- ========== 全站页脚 ========== -->
+    <footer class="site-footer" style="background:#0a2540;color:rgba(255,255,255,.75);padding:3.5rem 0 0;margin-top:0;width:100%;">
+        <div class="container" style="background:transparent !important;backdrop-filter:none !important;border-radius:0 !important;box-shadow:none !important;border:none !important;">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-heading" style="color:#fff;font-weight:700;font-size:1.05rem;margin-bottom:1rem;position:relative;padding-bottom:.5rem;">
+                        <span style="display:inline-flex;align-items:center;gap:.5rem;">
+                            <i class="fas fa-globe-asia" style="color:#06b6d4;"></i> 亚太国际人民事业发展共同体
+                        </span>
+                    </h5>
+                    <p style="font-size:.875rem;line-height:1.7;color:rgba(255,255,255,.6);margin-bottom:1rem;">
+                        构建人类命运共同体的产业实践平台<br>
+                        共建 · 共创 · 共享超大型社会生态系统
+                    </p>
+                    <div style="display:flex;gap:.6rem;">
+                        <a href="#" aria-label="微信" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background .15s,color .15s;text-decoration:none;"><i class="fab fa-weixin"></i></a>
+                        <a href="#" aria-label="微博" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background .15s,color .15s;text-decoration:none;"><i class="fab fa-weibo"></i></a>
+                        <a href="#" aria-label="LinkedIn" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background .15s,color .15s;text-decoration:none;"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-heading" style="color:#fff;font-weight:700;font-size:.9rem;margin-bottom:1rem;">关于亚太</h6>
+                    <ul class="footer-links" style="list-style:none;padding:0;margin:0;">
+                        <li style="margin-bottom:.5rem;"><a href="/a/关于亚太/总体介绍.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">总体介绍</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/关于亚太/组织架构.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">组织架构</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/关于亚太/核心理念.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">核心理念</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/关于亚太/发展方略.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">发展方略</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-heading" style="color:#fff;font-weight:700;font-size:.9rem;margin-bottom:1rem;">快速链接</h6>
+                    <ul class="footer-links" style="list-style:none;padding:0;margin:0;">
+                        <li style="margin-bottom:.5rem;"><a href="/a/projects.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">战略工程</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/health.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">健康中国</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/news.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">新闻动态</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/a/join.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">加入亚太</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="footer-heading" style="color:#fff;font-weight:700;font-size:.9rem;margin-bottom:1rem;">联系我们</h6>
+                    <ul style="list-style:none;padding:0;margin:0;">
+                        <li style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;"><i class="fas fa-location-dot" style="color:#06b6d4;font-size:.8rem;margin-top:.25rem;flex-shrink:0;"></i>北京市朝阳区某某路 123 号</li>
+                        <li style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;"><i class="fas fa-phone" style="color:#06b6d4;font-size:.8rem;margin-top:.25rem;flex-shrink:0;"></i>010-12345678</li>
+                        <li style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;"><i class="fas fa-envelope" style="color:#06b6d4;font-size:.8rem;margin-top:.25rem;flex-shrink:0;"></i>info@apcc.org</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="padding:1.1rem 0;background:rgba(0,0,0,.2);margin-top:2.5rem;">
+            <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;background:transparent !important;backdrop-filter:none !important;border-radius:0 !important;box-shadow:none !important;border:none !important;padding:0 15px;">
+                <p style="color:rgba(255,255,255,.4);margin:0;font-size:.82rem;">&copy; 2026 亚太国际人民事业发展共同体 版权所有</p>
+                <p style="color:rgba(255,255,255,.4);margin:0;font-size:.82rem;">
+                    <a href="#" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">隐私政策</a>
+                    <span style="margin:0 .5rem;">|</span>
+                    <a href="#" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">使用条款</a>
+                    <span style="margin:0 .5rem;">|</span>
+                    <a href="/a/validate.html" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">网站验证</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="vendor/bootstrap.bundle.min.js?v=20260711"></script>
+    <script src="js/include.js?v=20260711"></script>
+    <script src="js/main.js?v=20260711"></script>
+</body>
+</html>

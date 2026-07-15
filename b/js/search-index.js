@@ -1,0 +1,23 @@
+// 站内搜索索引 — 由 File Agent 自动生成 2026-06-28
+const SITE_SEARCH_INDEX = [
+  { title: "首页 — 亚太国际人民事业发展共同体", desc: "构建人类命运共同体的产业实践平台，50+国家、200+城市、10万+成员", url: "index.html", keywords: "共同体 首页 人类命运 亚太 官方" },
+  { title: "战略工程", desc: "亚太共同体的战略工程体系与重点项目建设", url: "projects.html", keywords: "战略 工程 项目 建设 规划" },
+  { title: "健康中国·人民健康", desc: "亚太共同体健康领域的工作与成果", url: "health.html", keywords: "健康 医疗 卫生 人民健康 保健" },
+  { title: "产业发展", desc: "亚太共同体的产业生态与经济发展", url: "industry.html", keywords: "产业 经济 发展 生态 工业" },
+  { title: "科学研究", desc: "亚太共同体的科学研究平台与成果", url: "research.html", keywords: "研究 科学 科研 实验 创新" },
+  { title: "科学技术", desc: "亚太共同体的科技发展和创新实践", url: "science.html", keywords: "科技 技术 创新 数字化转型" },
+  { title: "人才培养", desc: "亚太共同体的人才战略与培养计划", url: "talent.html", keywords: "人才 培养 战略 计划 智库" },
+  { title: "福利保障", desc: "亚太共同体的社会福利与保障制度", url: "welfare.html", keywords: "福利 保障 民生 社保 社会" },
+  { title: "加入我们", desc: "加入亚太国际人民事业发展共同体，共建共创共享", url: "join.html", keywords: "加入 注册 成员 参与 贡献" },
+  { title: "新闻资讯", desc: "亚太共同体的最新动态与新闻报道", url: "news.html", keywords: "新闻 资讯 动态 公告 活动" },
+  { title: "虫草素研究总览", desc: "虫草素全球科研综述报告总览", url: "cordycepin-research-overview.html", keywords: "虫草素 研究 科研 综述 药理" },
+  { title: "虫草素17大领域可视化", desc: "虫草素17大研究领域科研强度可视化 ECharts 报告", url: "cordycepin-17fields.html", keywords: "虫草素 可视化 图表 17领域 报告" },
+  { title: "抗肿瘤与肿瘤微环境", desc: "虫草素在抗肿瘤与肿瘤微环境领域的研究", url: "抗肿瘤与肿瘤微环境.html", keywords: "抗肿瘤 肿瘤 微环境 虫草素 癌症" },
+  { title: "代谢紊乱领域", desc: "虫草素在代谢紊乱领域的研究与应用", url: "代谢紊乱领域.html", keywords: "代谢 紊乱 糖尿病 虫草素 内分泌" },
+  { title: "炎症与自身免疫疾病", desc: "虫草素在炎症与自身免疫疾病领域的研究", url: "炎症与自身免疫疾病领域.html", keywords: "炎症 免疫 自身免疫 虫草素 疾病" },
+  { title: "免疫增强与提升", desc: "虫草素在免疫增强与提升领域的研究", url: "免疫增强与提升.html", keywords: "免疫 增强 提升 虫草素 抗疫" },
+  { title: "神经保护与精神疾病", desc: "虫草素在神经保护与精神疾病领域的研究", url: "神经保护与精神疾病.html", keywords: "神经 保护 精神 虫草素 大脑" },
+  { title: "清华大学基础研究", desc: "虫草素在清华大学基础研究项目概述", url: "清华大学基础研究.html", keywords: "清华 大学 基础 研究 虫草素 学术" },
+  { title: "数据总览", desc: "亚太国际人民事业发展共同体关键指标数据总览", url: "table.html", keywords: "数据 统计 指标 总览 报表" },
+  { title: "网站验证", desc: "网站合规性与安全性验证页面", url: "validate.html", keywords: "验证 合规 安全 测试" }
+];

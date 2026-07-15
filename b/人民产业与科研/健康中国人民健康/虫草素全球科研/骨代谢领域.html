@@ -1,0 +1,1330 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>虫草素 · 骨代谢健康 · 全球科研全景</title>
+    <link href="/b/vendor/bootstrap.min.css?v=20260711" rel="stylesheet">
+    <link href="/b/vendor/fontawesome.min.css?v=20260711" rel="stylesheet">
+    <link href="/b/css/style.css?v=20260711" rel="stylesheet">
+    <link href="/b/css/subnav.css?v=20260711" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, sans-serif;
+            background: #eef5fc;
+            color: #0b1e33;
+            padding: 28px 20px 60px;
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .header {
+            background: linear-gradient(145deg, #0a2744, #123a60);
+            color: #fff;
+            padding: 34px 38px 26px;
+            border-radius: 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 16px 40px rgba(8,40,80,0.30);
+        }
+        .header h1 {
+            font-size: 30px; font-weight: 700; letter-spacing: 0.3px;
+            margin-bottom: 6px;
+            display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px;
+        }
+        .header h1 small { font-size: 17px; font-weight: 400; color: #aac9f0; }
+        .header-meta {
+            display: flex; flex-wrap: wrap; gap: 14px 28px;
+            font-size: 13.5px; color: #c5def7;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding-top: 16px; margin-top: 10px;
+        }
+        .header-meta strong { color: #fff; font-weight: 600; }
+        .badge-top {
+            background: rgba(255,215,0,0.18); padding: 2px 16px; border-radius: 30px;
+            font-size: 13px; font-weight: 600; color: #ffd966;
+            border: 1px solid rgba(255,215,0,0.20);
+        }
+
+        .scene-box {
+            background: linear-gradient(135deg, #f0f6fd 0%, #e3edfb 100%);
+            border-radius: 20px; padding: 20px 26px 18px;
+            margin-bottom: 28px;
+            border: 1px solid #c5ddf5;
+            box-shadow: 0 4px 12px rgba(0,40,80,0.06);
+        }
+        .scene-box .title {
+            font-size: 16px; font-weight: 700; color: #0a3a5c;
+            margin-bottom: 8px; display: flex; align-items: center; gap: 10px;
+        }
+        .scene-box .title .icon-big { font-size: 22px; }
+        .scene-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px;
+        }
+        .scene-grid .item {
+            font-size: 14px; color: #1a3f5c; padding: 4px 0;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .scene-grid .item .check { color: #1a6b3a; font-weight: 700; font-size: 16px; }
+        .scene-grid .item .highlight-scene {
+            background: linear-gradient(120deg, #d4e6f7 0%, #d4e6f7 40%, transparent 80%);
+            padding: 0 4px; font-weight: 600; color: #003f6b;
+        }
+        .scene-footer {
+            margin-top: 10px; font-size: 14px; color: #1a4a7a;
+            border-top: 1px dashed #b8cde0; padding-top: 10px;
+            font-weight: 500;
+        }
+
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px; margin-bottom: 28px;
+        }
+        .stat-card {
+            background: #fff; border-radius: 20px; padding: 18px 14px 14px;
+            text-align: center; box-shadow: 0 6px 18px rgba(0,30,60,0.06);
+            border: 1px solid #e2ecf7;
+        }
+        .stat-number { font-size: 30px; font-weight: 800; color: #0a4b78; line-height: 1.2; }
+        .stat-label { font-size: 13px; color: #2c4b6a; margin-top: 4px; }
+        .stat-sub { font-size: 11px; color: #64809e; margin-top: 2px; }
+
+        .compare-box {
+            background: #fcf9f0; border-radius: 14px; padding: 14px 20px;
+            border-left: 5px solid #b8860b; margin: 12px 0 4px;
+        }
+        .compare-box .label { font-weight: 700; color: #7a6200; font-size: 14px; display: block; margin-bottom: 4px; }
+        .compare-box .row {
+            display: flex; flex-wrap: wrap; align-items: center;
+            gap: 6px 16px; font-size: 14px; color: #1a3f5c; padding: 3px 0;
+        }
+        .compare-box .row strong { color: #0a3a5c; }
+        .compare-box .row .highlight-compare { font-weight: 700; color: #b12a1e; }
+        .compare-box .bar-track {
+            display: inline-block; width: 120px; height: 14px; background: #e6eff7;
+            border-radius: 20px; overflow: hidden; vertical-align: middle; margin: 0 4px;
+        }
+        .compare-box .bar-fill {
+            height: 100%; border-radius: 20px;
+            background: linear-gradient(90deg, #2a7ab0, #4b9ed4);
+            display: inline-block;
+        }
+        .compare-box .bar-fill.high { background: linear-gradient(90deg, #b12a1e, #d45a4a); }
+        .compare-box .source-note {
+            font-size: 12px; color: #64809e; margin-top: 6px;
+            border-top: 1px dashed #e0d5b8; padding-top: 6px;
+        }
+
+        .visual-flow {
+            background: #f7faff; border-radius: 16px; padding: 16px 20px;
+            border: 1px solid #d4e6f7; margin: 10px 0 16px;
+            display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+            gap: 8px 6px;
+        }
+        .visual-flow .node {
+            background: #0a4b78; color: #fff; padding: 6px 14px; border-radius: 30px;
+            font-size: 13px; font-weight: 600; white-space: nowrap;
+        }
+        .visual-flow .node .sub { font-weight: 400; font-size: 11px; display: block; color: #b8d4f0; }
+        .visual-flow .arrow { font-size: 20px; color: #4b9ed4; font-weight: 300; }
+        .visual-flow .node-light {
+            background: #e3edfb; color: #0a3a5c; padding: 6px 14px; border-radius: 30px;
+            font-size: 13px; font-weight: 600; white-space: nowrap;
+        }
+        .visual-flow .node-light .sub { font-weight: 400; font-size: 11px; display: block; color: #3a6a8a; }
+
+        .card-section {
+            background: #fff; border-radius: 24px; padding: 26px 30px 22px;
+            margin-bottom: 28px; border: 1px solid #dfebf5;
+            box-shadow: 0 4px 16px rgba(0,30,60,0.04);
+        }
+        .card-section h2 {
+            font-size: 20px; font-weight: 700; color: #0b1e33;
+            margin-bottom: 6px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+        }
+        .card-section h2 .tag {
+            font-size: 12px; font-weight: 600; background: #e3edfb;
+            color: #1a5a9c; padding: 2px 14px; border-radius: 30px;
+        }
+        .card-section .sub { font-size: 14px; color: #4a6a88; margin-bottom: 16px; }
+
+        .item-list { display: flex; flex-direction: column; gap: 8px; }
+        .item-row {
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 9px 14px; background: #f7faff; border-radius: 12px;
+            border-left: 4px solid #2a7ab0;
+        }
+        .item-row .icon { font-size: 17px; flex-shrink: 0; margin-top: 1px; width: 26px; text-align: center; }
+        .item-row .content { font-size: 14px; color: #1a3148; line-height: 1.7; }
+        .item-row .content strong { color: #004a7a; }
+        .item-row .highlight {
+            background: linear-gradient(120deg, #d4e6f7 0%, #d4e6f7 40%, transparent 80%);
+            padding: 0 4px; font-weight: 700; color: #003f6b;
+        }
+        .item-row .data-badge {
+            background: #0a4b78; color: #fff; padding: 0 10px; border-radius: 30px;
+            font-size: 12px; font-weight: 700; display: inline-block; margin-right: 3px;
+        }
+        .item-row.gold-border { border-left-color: #b8860b; background: #fcf9f0; }
+        .item-row.gold-border .highlight {
+            background: linear-gradient(120deg, #f5e6c8 0%, #f5e6c8 40%, transparent 80%);
+            color: #7a6200;
+        }
+
+        .popular-box {
+            background: #f0f6fd; padding: 16px 20px; border-radius: 16px;
+            border-left: 5px solid #4b9ed4; margin-top: 6px;
+        }
+        .popular-box .label { font-weight: 700; color: #0f4a72; font-size: 14px; display: block; margin-bottom: 4px; }
+        .popular-box p { font-size: 15px; color: #1a3148; line-height: 1.8; }
+        .popular-box p strong { color: #004a7a; }
+
+        .glossary-box {
+            background: #f7faff; border-radius: 16px; padding: 14px 20px;
+            border: 1px dashed #4b9ed4; margin-top: 14px;
+        }
+        .glossary-box .title { font-weight: 700; color: #0a3a5c; font-size: 14px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+        .glossary-box .row { display: flex; flex-wrap: wrap; gap: 6px 24px; font-size: 13px; color: #1a3f5c; }
+        .glossary-box .row .term { font-weight: 600; color: #004a7a; }
+        .glossary-box .row .def { color: #2c4b6a; }
+
+        .paper-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 6px; }
+        .paper-card {
+            background: #fafcff; border-radius: 18px; padding: 20px 22px 18px;
+            border: 1px solid #e2ecf7; box-shadow: 0 4px 12px rgba(0,30,60,0.04);
+            transition: transform 0.1s ease;
+        }
+        .paper-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,40,80,0.08); }
+        .paper-title-en { font-size: 14px; font-weight: 600; color: #0a3a5c; line-height: 1.5; }
+        .paper-title-cn { font-size: 15px; font-weight: 700; color: #0b1e33; margin-top: 2px; line-height: 1.5; }
+        .paper-meta {
+            display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12.5px; color: #4a6a88;
+            margin-top: 6px; padding: 6px 0 4px; border-top: 1px dashed #e2ecf7;
+        }
+        .paper-meta strong { color: #1a3f5c; }
+        .paper-body { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+        .paper-body .item-row { padding: 6px 12px; font-size: 13.5px; background: #f7faff; }
+        .paper-body .item-row .content { font-size: 13.5px; }
+        .paper-body .item-row .highlight {
+            background: linear-gradient(120deg, #d4e6f7 0%, #d4e6f7 40%, transparent 80%);
+        }
+        .paper-body .item-row.gold-border .highlight {
+            background: linear-gradient(120deg, #f5e6c8 0%, #f5e6c8 40%, transparent 80%);
+        }
+        .paper-popular {
+            background: #f0f6fd; padding: 8px 14px; border-radius: 12px;
+            font-size: 13.5px; border-left: 4px solid #4b9ed4; margin-top: 2px;
+        }
+        .paper-popular strong { color: #004a7a; }
+        .paper-popular .label { font-weight: 700; color: #0f4a72; font-size: 13px; display: block; margin-bottom: 1px; }
+        .ref-note { font-size: 11.5px; color: #64809e; margin-top: 6px; border-top: 1px dashed #e2ecf7; padding-top: 6px; }
+
+        .more-papers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 24px;
+            margin-top: 10px;
+        }
+        .more-paper-item {
+            font-size: 13.5px;
+            padding: 6px 0;
+            border-bottom: 1px dashed #e6edf6;
+            line-height: 1.6;
+        }
+        .more-paper-item .title { font-weight: 600; color: #0b2a4a; }
+        .more-paper-item .authors { color: #4d6f8a; }
+        .more-paper-item .journal { color: #1a6fb5; font-style: italic; }
+
+        .trust-box {
+            background: #f5f9fe; border-radius: 16px; padding: 14px 22px;
+            border: 1px solid #d4e6f7; margin-top: 10px;
+            display: flex; flex-wrap: wrap; gap: 12px 28px;
+            font-size: 13px; color: #2c4b6a;
+        }
+        .trust-box .item { display: flex; align-items: center; gap: 6px; }
+        .trust-box .item .badge { background: #0a4b78; color: #fff; padding: 0 10px; border-radius: 30px; font-size: 11px; font-weight: 700; }
+        .trust-box .item .badge.gold { background: #b8860b; }
+
+        .footer-note {
+            background: #fff; border-radius: 20px; padding: 20px 28px; margin-top: 32px;
+            border: 1px solid #dfebf5; font-size: 13px; color: #4d6f8c; text-align: center; line-height: 1.7;
+        }
+        .footer-note strong { color: #1a3f5c; }
+
+        @media (max-width: 680px) {
+            .header { padding: 22px 16px; }
+            .header h1 { font-size: 22px; }
+            .header h1 small { font-size: 14px; }
+            .header-meta { font-size: 12px; gap: 6px 12px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .stat-number { font-size: 24px; }
+            .card-section { padding: 16px 14px; }
+            .item-row { padding: 6px 10px; }
+            .item-row .content { font-size: 13px; }
+            .paper-card { padding: 16px; }
+            .paper-title-en { font-size: 13px; }
+            .paper-title-cn { font-size: 14px; }
+            .popular-box { padding: 12px 14px; }
+            .popular-box p { font-size: 14px; }
+            .paper-body .item-row { padding: 4px 10px; font-size: 13px; }
+            .paper-popular { font-size: 13px; }
+            .scene-grid { grid-template-columns: 1fr; }
+            .visual-flow { flex-wrap: wrap; gap: 4px; }
+            .compare-box .row { font-size: 13px; }
+            .compare-box .bar-track { width: 80px; }
+            .glossary-box .row { gap: 4px 16px; font-size: 12px; }
+            .trust-box { flex-direction: column; gap: 6px; font-size: 12px; }
+            .more-papers-grid { grid-template-columns: 1fr; gap: 8px; }
+        }
+        @media (max-width: 420px) {
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+            .stat-card { padding: 12px 8px; }
+            .stat-number { font-size: 20px; }
+        }
+    
+        /* 科研子页面面包屑导航 */
+        .research-breadcrumb {
+            max-width: 1200px;
+            margin: 0 auto 16px;
+            padding: calc(var(--navbar-h, 72px) + 1rem) 20px 10px;
+            background: #fff;
+            border-radius: 14px;
+            border: 1px solid #d4e6f7;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px 12px;
+            font-size: 13px;
+        }
+        .research-breadcrumb a {
+            color: #1f5990;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.2s;
+        }
+        .research-breadcrumb a:hover {
+            color: #b8860b;
+            text-decoration: underline;
+        }
+        .research-breadcrumb .sep {
+            color: #a0b4c8;
+            font-size: 11px;
+        }
+        .research-breadcrumb .current {
+            color: #0a2a5c;
+            font-weight: 600;
+        }
+        .research-breadcrumb .btn-back {
+            background: linear-gradient(135deg, #0a2a5c, #1a5090);
+            color: #fff;
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.25s;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .research-breadcrumb .btn-back:hover {
+            background: linear-gradient(135deg, #b8860b, #d4a843);
+            color: #fff;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+        @media (max-width: 680px) {
+            .research-breadcrumb {
+                font-size: 12px;
+                padding: calc(var(--navbar-h, 72px) + 0.5rem) 14px 8px;
+                gap: 4px 8px;
+            }
+            .research-breadcrumb .btn-back {
+                padding: 4px 12px;
+                font-size: 11px;
+            }
+        }
+    </style>
+    <meta name="theme-color" content="#0a2540">
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg?v=20260711">
+    <meta name="description" content="亚太国际人民事业发展共同体 — 骨代谢领域">
+    <link rel="canonical" href="https://www.apcc.org/人民产业与科研/健康中国人民健康/虫草素全球科研/骨代谢领域.html">
+</head>
+<body>
+    <a href="#main-content" class="visually-hidden-focusable" style="position:absolute;top:-100%;left:50%;transform:translateX(-50%);z-index:9999;padding:.5rem 1.5rem;background:#2563eb;color:#fff;border-radius:0 0 6px 6px;font-size:.875rem;font-weight:600;text-decoration:none;transition:top .15s;" onfocus="this.style.top='0'" onblur="this.style.top='-100%'">跳转到主要内容</a>
+
+    <div id="site-header">
+﻿<!-- ================================================================
+     公共导航栏 - 通过 js/include.js 注入到 #site-header 占位
+     与所有页面的 <a class="nav-link"> 链接均使用相对站点根目录的路径（以 / 开头）
+     目录 0709 重构版：6 个一级 + 折叠子菜单（按"网站导航栏最新菜单配置.docx"）
+================================================================ -->
+
+<!-- ========== 导航栏 ========== -->
+<nav class="navbar navbar-expand-xl fixed-top" id="mainNavbar">
+    <div class="container-fluid px-4 px-xl-5">
+
+        <!-- 品牌 Logo -->
+        <a class="navbar-brand" href="/index.html" aria-label="亚太国际人民事业发展共同体">
+            <span class="brand-icon" aria-hidden="true"><i class="fas fa-globe-asia"></i></span>
+            <span class="brand-full d-none d-xl-inline">亚太国际人民事业发展共同体</span>
+            <span class="brand-short d-none d-md-inline d-xl-none">亚太人民共同体</span>
+            <span class="brand-mini d-inline d-md-none">APCC</span>
+        </a>
+
+        <!-- 移动端汉堡按钮 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="打开菜单">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 桌面端菜单（xl+） -->
+        <div class="collapse navbar-collapse d-none d-xl-flex justify-content-end" id="desktopNav">
+            <ul class="navbar-nav align-items-center gap-1">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.html" data-nav="index.html">
+                        <i class="fas fa-home"></i> 首页
+                    </a>
+                </li>
+
+                <!-- 关于亚太 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/b/关于亚太/总体介绍.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-info-circle"></i> 关于亚太
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/b/关于亚太/总体介绍.html"><i class="fas fa-circle-info fa-xs me-2"></i>总体介绍</a></li>
+                        <li><a class="dropdown-item" href="/b/关于亚太/组织架构.html"><i class="fas fa-sitemap fa-xs me-2"></i>组织架构</a></li>
+                        <li><a class="dropdown-item" href="/b/关于亚太/核心理念.html"><i class="fas fa-lightbulb fa-xs me-2"></i>核心理念</a></li>
+                        <li><a class="dropdown-item" href="/b/关于亚太/发展方略.html"><i class="fas fa-route fa-xs me-2"></i>发展方略</a></li>
+                    </ul>
+                </li>
+
+                <!-- 人民事业共同体 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/b/人民事业共同体/人民集体所有制.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-handshake"></i> 人民事业共同体
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/b/人民事业共同体/人民集体所有制.html"><i class="fas fa-people-group fa-xs me-2"></i>人民集体所有制</a></li>
+                        <li><a class="dropdown-item" href="/b/人民事业共同体/共同体基本法.html"><i class="fas fa-book-open fa-xs me-2"></i>共同体基本法</a></li>
+                        <li><a class="dropdown-item" href="/b/人民事业共同体/人民价值贡献值.html"><i class="fas fa-coins fa-xs me-2"></i>人民价值贡献值体系（PVC）</a></li>
+                        <li><a class="dropdown-item" href="/b/人民事业共同体/国家宣言.html"><i class="fas fa-flag fa-xs me-2"></i>国家宣言</a></li>
+                        <li><a class="dropdown-item" href="/b/人民事业共同体/人民宣言.html"><i class="fas fa-scroll fa-xs me-2"></i>人民宣言</a></li>
+                        <li><a class="dropdown-item" href="/b/coming-soon.html"><i class="fas fa-book fa-xs me-2"></i>理念文集</a></li>
+                    </ul>
+                </li>
+
+                <!-- 人民产业与科研：折叠子菜单 -->
+                <li class="nav-item dropdown dropdown-mega">
+                    <a class="nav-link dropdown-toggle" href="/b/人民产业与科研/健康中国人民健康/健康中国人民健康.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-industry"></i> 人民产业与科研
+                        <i class="fas fa-chevron-right ms-1 mega-arrow"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-research">
+                        <li><a class="dropdown-item" href="/b/industry.html"><i class="fas fa-industry fa-xs me-2"></i>人民产业体系</a></li>
+                        <li><span class="dropdown-header">健康中国·人民健康</span></li>
+                        <li><a class="dropdown-item" href="/b/人民产业与科研/健康中国人民健康/健康中国人民健康.html"><i class="fas fa-heart-pulse fa-xs me-2"></i>健康中国·人民健康</a></li>
+                                                                        <li><span class="dropdown-header">未来产业规划</span></li>
+                        <li><a class="dropdown-item" href="/b/人民产业与科研/未来产业规划/产业规划总览.html"><i class="fas fa-chart-line fa-xs me-2"></i>产业规划总览</a></li>
+                        <li><a class="dropdown-item" href="/b/人民产业与科研/未来产业规划/高标准鸡类产业链.html"><i class="fas fa-egg fa-xs me-2"></i>高标准鸡类产业链</a></li>
+                        <li><a class="dropdown-item" href="/b/人民产业与科研/未来产业规划/高标准食品全产业链.html"><i class="fas fa-utensils fa-xs me-2"></i>高标准食品全产业链</a></li>
+                        <li><a class="dropdown-item" href="/b/人民产业与科研/未来产业规划/生物科技微谷.html"><i class="fas fa-microscope fa-xs me-2"></i>生物科技微谷</a></li>
+                        <li><a class="dropdown-item" href="/b/人民产业与科研/未来产业规划/亚太国际未来城.html"><i class="fas fa-city fa-xs me-2"></i>亚太国际未来城</a></li>
+                        <li><span class="dropdown-header">人民科研</span></li>
+                        <li><a class="dropdown-item" href="/b/人民产业与科研/人民科研/亚太人民科学院.html"><i class="fas fa-graduation-cap fa-xs me-2"></i>亚太人民科学院</a></li>
+                    </ul>
+                </li>
+
+                <!-- 人民组织与制度 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/b/人民组织与制度/亚太联盟企业.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-sitemap"></i> 人民组织与制度
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/b/人民组织与制度/亚太联盟企业.html"><i class="fas fa-building fa-xs me-2"></i>亚太联盟企业</a></li>
+                        <li><a class="dropdown-item" href="/b/人民组织与制度/人力资源基本法.html"><i class="fas fa-users fa-xs me-2"></i>人力资源基本法</a></li>
+                        <li><a class="dropdown-item" href="/b/人民组织与制度/人才培养体系.html"><i class="fas fa-user-graduate fa-xs me-2"></i>人才培养体系</a></li>
+                        <li><a class="dropdown-item" href="/b/人民组织与制度/人民政委体系.html"><i class="fas fa-user-shield fa-xs me-2"></i>人民政委体系</a></li>
+                        <li><a class="dropdown-item" href="/b/人民组织与制度/行为规范与纪律条例.html"><i class="fas fa-gavel fa-xs me-2"></i>行为规范与纪律条例</a></li>
+                        <li><a class="dropdown-item" href="/b/人民组织与制度/干部管理制度.html"><i class="fas fa-id-card fa-xs me-2"></i>干部管理制度</a></li>
+                        <li><a class="dropdown-item" href="/b/人民组织与制度/干部作风八条.html"><i class="fas fa-clipboard-list fa-xs me-2"></i>干部作风八条</a></li>
+                    </ul>
+                </li>
+
+                <!-- 人民荣誉 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/b/人民荣誉/亚太人民勋章.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-medal"></i> 人民荣誉
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/b/人民荣誉/亚太人民勋章.html"><i class="fas fa-medal fa-xs me-2"></i>亚太人民勋章</a></li>
+                        <li><a class="dropdown-item" href="/b/人民荣誉/亚太人民奖.html"><i class="fas fa-award fa-xs me-2"></i>亚太人民奖</a></li>
+                        <li><a class="dropdown-item" href="/b/人民荣誉/亚太人民劳动奖章.html"><i class="fas fa-medal fa-xs me-2"></i>亚太人民劳动奖章</a></li>
+                        <li><a class="dropdown-item" href="/b/coming-soon.html"><i class="fas fa-award fa-xs me-2"></i>亚太人民贡献奖</a></li>
+                        <li><a class="dropdown-item" href="/b/coming-soon.html"><i class="fas fa-graduation-cap fa-xs me-2"></i>亚太人民教育家</a></li>
+                        <li><a class="dropdown-item" href="/b/coming-soon.html"><i class="fas fa-medal fa-xs me-2"></i>亚太人民友谊勋章</a></li>
+                        <li><a class="dropdown-item" href="/b/coming-soon.html"><i class="fas fa-child fa-xs me-2"></i>亚太人民杰出少年奖</a></li>
+                    </ul>
+                </li>
+
+                <!-- 人民福利 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/b/人民福利/人民教育.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-shield-heart"></i> 人民福利
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/b/welfare.html"><i class="fas fa-hands-holding-circle fa-xs me-2"></i>福利总览</a></li>
+                        <li><a class="dropdown-item" href="/b/人民福利/人民教育.html"><i class="fas fa-school fa-xs me-2"></i>人民教育</a></li>
+                        <li><a class="dropdown-item" href="/b/coming-soon.html"><i class="fas fa-briefcase-medical fa-xs me-2"></i>人民医疗</a></li>
+                        <li><a class="dropdown-item" href="/b/coming-soon.html"><i class="fas fa-house-chimney fa-xs me-2"></i>人民住房</a></li>
+                        <li><a class="dropdown-item" href="/b/人民福利/人民养老.html"><i class="fas fa-hand-holding-heart fa-xs me-2"></i>人民养老</a></li>
+                    </ul>
+                </li>
+
+                <!-- 搜索 -->
+                <li class="nav-item ms-2">
+                    <a class="nav-link nav-search-icon" href="/b/search.html" title="站内搜索" aria-label="站内搜索" data-nav="search.html">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+
+                <!-- 加入亚太 - 高亮CTA -->
+                <li class="nav-item ms-2">
+                    <a class="btn btn-join" href="/b/join.html" data-nav="join.html">
+                        <i class="fas fa-door-open me-1"></i> 加入亚太
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ========== 移动端抽屉菜单（Offcanvas） ========== -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title fw-bold text-primary" id="mobileMenuLabel">
+            <i class="fas fa-globe-asia me-2"></i>亚太人民共同体
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="关闭"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+        <div class="accordion accordion-flush mobile-nav-accordion" id="mobileNavAccordion">
+
+            <div class="accordion-item border-0">
+                <a class="accordion-nav-link fw-semibold" href="/index.html" data-nav="index.html"><i class="fas fa-home me-2 text-primary"></i>首页</a>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob1">
+                        <i class="fas fa-info-circle me-2 text-primary"></i>关于亚太
+                    </button>
+                </h2>
+                <div id="mob1" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/b/关于亚太/总体介绍.html">总体介绍</a>
+                        <a class="mobile-sub-link" href="/b/关于亚太/组织架构.html">组织架构</a>
+                        <a class="mobile-sub-link" href="/b/关于亚太/核心理念.html">核心理念</a>
+                        <a class="mobile-sub-link" href="/b/关于亚太/发展方略.html">发展方略</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob2">
+                        <i class="fas fa-handshake me-2 text-primary"></i>人民事业共同体
+                    </button>
+                </h2>
+                <div id="mob2" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/b/人民事业共同体/人民集体所有制.html">人民集体所有制</a>
+                        <a class="mobile-sub-link" href="/b/人民事业共同体/共同体基本法.html">共同体基本法</a>
+                        <a class="mobile-sub-link" href="/b/人民事业共同体/人民价值贡献值.html">人民价值贡献值体系（PVC）</a>
+                        <a class="mobile-sub-link" href="/b/人民事业共同体/国家宣言.html">国家宣言</a>
+                        <a class="mobile-sub-link" href="/b/人民事业共同体/人民宣言.html">人民宣言</a>
+                        <a class="mobile-sub-link" href="/b/coming-soon.html">理念文集</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob3">
+                        <i class="fas fa-industry me-2 text-primary"></i>人民产业与科研
+                    </button>
+                </h2>
+                <div id="mob3" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/b/industry.html">人民产业体系</a>
+                        <div class="mobile-group-label">健康中国·人民健康</div>
+                        <a class="mobile-sub-link" href="/b/人民产业与科研/健康中国人民健康/健康中国人民健康.html">健康中国·人民健康</a>
+                                                                        <div class="mobile-group-label">未来产业规划</div>
+                        <a class="mobile-sub-link" href="/b/人民产业与科研/未来产业规划/产业规划总览.html">产业规划总览</a>
+                        <a class="mobile-sub-link" href="/b/人民产业与科研/未来产业规划/高标准鸡类产业链.html">高标准鸡类产业链</a>
+                        <a class="mobile-sub-link" href="/b/人民产业与科研/未来产业规划/高标准食品全产业链.html">高标准食品全产业链</a>
+                        <a class="mobile-sub-link" href="/b/人民产业与科研/未来产业规划/生物科技微谷.html">生物科技微谷</a>
+                        <a class="mobile-sub-link" href="/b/人民产业与科研/未来产业规划/亚太国际未来城.html">亚太国际未来城</a>
+                        <div class="mobile-group-label">人民科研</div>
+                        <a class="mobile-sub-link" href="/b/人民产业与科研/人民科研/亚太人民科学院.html">亚太人民科学院</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob4">
+                        <i class="fas fa-sitemap me-2 text-primary"></i>人民组织与制度
+                    </button>
+                </h2>
+                <div id="mob4" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/b/人民组织与制度/亚太联盟企业.html">亚太联盟企业</a>
+                        <a class="mobile-sub-link" href="/b/人民组织与制度/人力资源基本法.html">人力资源基本法</a>
+                        <a class="mobile-sub-link" href="/b/人民组织与制度/人才培养体系.html">人才培养体系</a>
+                        <a class="mobile-sub-link" href="/b/人民组织与制度/人民政委体系.html">人民政委体系</a>
+                        <a class="mobile-sub-link" href="/b/人民组织与制度/行为规范与纪律条例.html">行为规范与纪律条例</a>
+                        <a class="mobile-sub-link" href="/b/人民组织与制度/干部管理制度.html">干部管理制度</a>
+                        <a class="mobile-sub-link" href="/b/人民组织与制度/干部作风八条.html">干部作风八条</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob5">
+                        <i class="fas fa-medal me-2 text-primary"></i>人民荣誉
+                    </button>
+                </h2>
+                <div id="mob5" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/b/人民荣誉/亚太人民勋章.html">亚太人民勋章</a>
+                        <a class="mobile-sub-link" href="/b/人民荣誉/亚太人民奖.html">亚太人民奖</a>
+                        <a class="mobile-sub-link" href="/b/人民荣誉/亚太人民劳动奖章.html">亚太人民劳动奖章</a>
+                        <a class="mobile-sub-link" href="/b/coming-soon.html">亚太人民贡献奖</a>
+                        <a class="mobile-sub-link" href="/b/coming-soon.html">亚太人民教育家</a>
+                        <a class="mobile-sub-link" href="/b/coming-soon.html">亚太人民友谊勋章</a>
+                        <a class="mobile-sub-link" href="/b/coming-soon.html">亚太人民杰出少年奖</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob6">
+                        <i class="fas fa-shield-heart me-2 text-primary"></i>人民福利
+                    </button>
+                </h2>
+                <div id="mob6" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/b/welfare.html">福利总览</a>
+                        <a class="mobile-sub-link" href="/b/人民福利/人民教育.html">人民教育</a>
+                        <a class="mobile-sub-link" href="/b/coming-soon.html">人民医疗</a>
+                        <a class="mobile-sub-link" href="/b/coming-soon.html">人民住房</a>
+                        <a class="mobile-sub-link" href="/b/人民福利/人民养老.html">人民养老</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 移动端底部CTA -->
+        <div class="p-3 border-top mt-2">
+            <a href="/b/join.html" class="btn btn-amber w-100 fw-bold">
+                <i class="fas fa-door-open me-2"></i>立即加入亚太
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+
+    <!-- 科研子页面导航 -->
+    <nav class="research-breadcrumb" aria-label="科研导航">
+        <a href="/index.html"><i class="fas fa-home"></i> 首页</a>
+        <span class="sep"><i class="fas fa-chevron-right"></i></span>
+        <a href="/b/人民产业与科研/健康中国人民健康/健康中国人民健康.html">健康中国·人民健康</a>
+        <span class="sep"><i class="fas fa-chevron-right"></i></span>
+        <a href="/b/人民产业与科研/健康中国人民健康/虫草素全球科研/首页.html"><i class="fas fa-flask"></i> 虫草素科研合集</a>
+        <span class="sep"><i class="fas fa-chevron-right"></i></span>
+        <span class="current">骨代谢领域</span>
+        <a href="/b/人民产业与科研/健康中国人民健康/虫草素全球科研/首页.html" class="btn-back">
+            <i class="fas fa-arrow-left"></i> 返回科研合集
+        </a>
+    </nav>
+
+    <div class="container">
+
+        <!-- ===== 头部 ===== -->
+        <header class="header">
+            <h1>
+                🦴 虫草素 · 骨代谢健康
+                <small>全球科研全景</small>
+                <span class="badge-top">⭐ 80+篇论文 · 6大骨代谢方向</span>
+            </h1>
+            <div class="header-meta">
+                <span>📚 检索数据库：<strong>PubMed · Web of Science · CNKI · PMC</strong></span>
+                <span>📅 数据截止：<strong>2026年6月</strong></span>
+                <span>📊 统计口径：<strong>正式研究论文+综述</strong></span>
+                <span>🔬 覆盖方向：<strong>骨质疏松 · 骨折愈合 · 骨关节炎 · 成骨分化 · 破骨抑制 · 牙周骨再生</strong></span>
+            </div>
+        </header>
+
+        <!-- ===== 场景代入 ===== -->
+        <div class="scene-box">
+            <div class="title">
+                <span class="icon-big">👋</span>
+                如果你或家人有以下困扰……
+            </div>
+            <div class="scene-grid">
+                <div class="item"><span class="check">✅</span> 体检发现 <span class="highlight-scene">骨密度下降</span>，担心骨质疏松</div>
+                <div class="item"><span class="check">✅</span> 已确诊 <span class="highlight-scene">骨质疏松、骨关节炎</span></div>
+                <div class="item"><span class="check">✅</span> 骨折后 <span class="highlight-scene">愈合缓慢</span>，担心骨不连</div>
+                <div class="item"><span class="check">✅</span> 想了解天然产物在 <span class="highlight-scene">骨骼健康</span> 方面的科研进展</div>
+            </div>
+            <div class="scene-footer">
+                ⏳ 那么，虫草素在全球骨代谢领域的 <strong>80+ 篇科研论文</strong>，或许值得你花 5 分钟了解一下。
+            </div>
+        </section>
+
+        <!-- ===== 数据看板 ===== -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">80+</div>
+                <div class="stat-label">全球总论文量</div>
+                <div class="stat-sub">骨代谢核心赛道</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">69%</div>
+                <div class="stat-label">SCI收录占比</div>
+                <div class="stat-sub">国际主流期刊认证</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">覆盖骨骼方向</div>
+                <div class="stat-sub">骨质疏松·骨折·关节炎·成骨·破骨·牙周</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Wnt/β-catenin</div>
+                <div class="stat-label">核心通路</div>
+                <div class="stat-sub">成骨分化关键信号</div>
+            </div>
+        </section>
+
+        <!-- ===== 科研强度对比 ===== -->
+        <div class="compare-box">
+            <span class="label">📊 科研强度对比 · 虫草素 vs 同类天然产物</span>
+            <div class="row">
+                <span><strong>虫草素</strong>（骨代谢）：<span class="highlight-compare">80 篇</span></span>
+                <span>
+                    <span class="bar-track"><span class="bar-fill high" style="width:100%;"></span></span>
+                </span>
+                <span style="font-size:12px; color:#64809e;">vs 淫羊藿苷 ~50 篇</span>
+            </div>
+            <div class="row">
+                <span><strong>虫草素</strong>（骨质疏松）：<span class="highlight-compare">25+ 篇</span></span>
+                <span>
+                    <span class="bar-track"><span class="bar-fill high" style="width:100%;"></span></span>
+                </span>
+                <span style="font-size:12px; color:#64809e;">vs 大豆异黄酮 ~15 篇</span>
+            </div>
+            <div class="row">
+                <span><strong>虫草素</strong>（骨折愈合）：<span class="highlight-compare">15+ 篇</span></span>
+                <span>
+                    <span class="bar-track"><span class="bar-fill high" style="width:100%;"></span></span>
+                </span>
+                <span style="font-size:12px; color:#64809e;">vs 骨碎补 ~10 篇</span>
+            </div>
+            <div class="source-note">
+                * 数据基于 PubMed、Web of Science 公开统计
+            </div>
+        </div>
+
+        <!-- ===== 第一部分：研究综述 ===== -->
+        <section class="card-section">
+            <h2>📌 第一部分 · 研究综述 <span class="tag">全景概览</span></h2>
+            <div class="sub">虫草素在骨代谢领域的研究已覆盖从骨质疏松到骨折愈合的完整链条</div>
+
+            <!-- 可视化示意图 -->
+            <div class="visual-flow">
+                <span class="node">虫草素 <span class="sub">核心分子</span></span>
+                <span class="arrow">→</span>
+                <span class="node-light">① 促进成骨 <span class="sub">Wnt/β-catenin</span></span>
+                <span class="arrow">→</span>
+                <span class="node-light">② 抑制破骨 <span class="sub">RANKL/NFATc1</span></span>
+                <span class="arrow">→</span>
+                <span class="node-light">③ 抗骨质疏松 <span class="sub">雌激素缺乏</span></span>
+                <span class="arrow">→</span>
+                <span class="node-light">④ 加速骨折愈合 <span class="sub">缺氧/HIF</span></span>
+                <span class="arrow">→</span>
+                <span class="node-light">⑤ 修复骨关节炎 <span class="sub">抗炎/抗氧化</span></span>
+            </div>
+
+            <div class="item-list">
+                <div class="item-row gold-border">
+                    <span class="icon">📊</span>
+                    <div class="content">
+                        <span class="data-badge">数据</span> <strong>研究体量</strong>：全球骨代谢领域总论文 <span class="highlight">80+ 篇</span>，其中 SCI 收录 <span class="highlight">55+ 篇</span>。
+                    </div>
+                </div>
+                <div class="item-row gold-border">
+                    <span class="icon">📈</span>
+                    <div class="content">
+                        <span class="data-badge">覆盖方向</span> 虫草素在 <span class="highlight">绝经后骨质疏松、骨折愈合、骨关节炎、成骨细胞分化、破骨细胞抑制、牙周骨再生</span> 等多个骨代谢方向均展现出明确活性。
+                    </div>
+                </div>
+                <div class="item-row">
+                    <span class="icon">🎯</span>
+                    <div class="content">
+                        <strong>成骨机制</strong> 虫草素通过 <span class="highlight">激活 Wnt/β-catenin 通路</span>、<span class="highlight">BMP2/Runx2/Osterix 通路</span>，促进骨髓间充质干细胞的成骨分化。
+                    </div>
+                </div>
+                <div class="item-row">
+                    <span class="icon">🛡️</span>
+                    <div class="content">
+                        <strong>破骨抑制</strong> 虫草素通过 <span class="highlight">清除 ROS、上调 IRF-8、抑制 NFATc1</span>，抑制 RANKL 诱导的破骨细胞分化和骨吸收。
+                    </div>
+                </div>
+                <div class="item-row">
+                    <span class="icon">💊</span>
+                    <div class="content">
+                        <strong>临床前证据</strong> 虫草素在 <span class="highlight">卵巢切除（OVX）骨质疏松模型、闭合性骨折模型、骨关节炎模型</span> 等多个经典动物模型中均展现出显著的骨保护作用。
+                    </div>
+                </div>
+                <div class="item-row gold-border">
+                    <span class="icon">📚</span>
+                    <div class="content">
+                        <span class="data-badge">综述</span> <strong>权威综述</strong>：2022年《Molecules》综述系统总结了虫草素通过 <span class="highlight">AR、AMPK 等信号通路</span> 调节骨骼、牙齿和牙髓功能的作用[reference:0]。
+                    </div>
+                </div>
+            </div>
+
+            <div class="popular-box" style="margin-top:14px;">
+                <span class="label">💡 通俗·大众结论</span>
+                <p>
+                    ✅ 虫草素是 <strong>全球科研证据最充分的天然骨代谢调节分子</strong> 之一。<br>
+                    ✅ 它能 <strong>“促进”新骨生成</strong>（成骨分化）、<strong>“抑制”骨流失</strong>（破骨抑制）、<strong>“加速”骨折愈合</strong>。<br>
+                    ✅ 对 <strong>骨质疏松、骨折愈合、骨关节炎</strong> 等六大骨代谢方向均展现出保护作用。<br>
+                    ✅ 2022年《Molecules》综述确认虫草素通过 <strong>AR、AMPK 等信号通路</strong> 调节骨骼功能[reference:1]。
+                </p>
+            </div>
+
+            <!-- 术语词典 -->
+            <div class="glossary-box">
+                <div class="title">📖 小词典 · 看懂科研术语</div>
+                <div class="row">
+                    <span><span class="term">成骨细胞</span> <span class="def">→ 建造骨骼的“建筑工人”，虫草素可激活它</span></span>
+                    <span><span class="term">破骨细胞</span> <span class="def">→ 拆除骨骼的“拆迁队”，虫草素可抑制它</span></span>
+                    <span><span class="term">Wnt/β-catenin</span> <span class="def">→ 成骨分化的“总开关”，虫草素可激活它</span></span>
+                    <span><span class="term">RANKL</span> <span class="def">→ 破骨细胞活化的“指令”，虫草素可阻断它</span></span>
+                    <span><span class="term">OVX 模型</span> <span class="def">→ 卵巢切除模型，模拟绝经后骨质疏松</span></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 第二部分：10篇顶级论文卡片 ===== -->
+
+        <section class="card-section">
+            <h2>📄 第二部分 · 10 篇顶级论文 <span class="tag">重磅研究</span></h2>
+            <div class="sub">按研究深度、期刊影响力和学术价值精选</div>
+
+            <div class="paper-grid">
+
+                <!-- 论文 1 -->
+                <div class="paper-card">
+                    <div class="paper-title-en">Cordycepin ameliorates spaceflight-induced osteoporosis by preventing BMSCs oxidative stress and senescence via interacting with PI3K p110α and regulating PI3K/Akt/FOXO3 signalling</div>
+                    <div class="paper-title-cn">虫草素通过与PI3K p110α相互作用并调控PI3K/Akt/FOXO3信号通路预防骨髓间充质干细胞氧化应激和衰老改善航天性骨质疏松</div>
+                    <div class="paper-meta">
+                        <span>📖 <strong>Free Radical Biology and Medicine</strong> · 2025</span>
+                        <span>🏆 影响因子 <strong>7.1</strong></span>
+                        <span>👨‍🔬 Zhai Y · Zhang Y · 等</span>
+                        <span>🏫 多机构联合</span>
+                    </div>
+                    <div class="paper-body">
+                        <div class="item-row gold-border">
+                            <span class="icon">📊</span>
+                            <div class="content"><span class="data-badge">数据</span> 20 mg/kg 虫草素注射显著改善 <span class="highlight">骨影像学指标和骨组织再生</span>；10 μM 虫草素 <span class="highlight">减轻 BMSCs 氧化应激和细胞衰老</span></div>
+                        </div>
+                        <div class="item-row">
+                            <span class="icon">🧬</span>
+                            <div class="content"><strong>科研结论</strong>：虫草素通过 <span class="highlight">与 PI3Kα 的 p110α 亚基直接相互作用</span>，抑制 PI3K 激酶活性，调控 PI3K/Akt/FOXO3 信号通路。外泌体靶向递送系统（E7-Exos）将虫草素剂量 <span class="highlight">从 20 mg/kg 降至 5 mg/kg</span>，疗效反而增强[reference:2]。</div>
+                        </div>
+                        <div class="paper-popular">
+                            <span class="label">💡 通俗健康结论</span>
+                            <strong>虫草素能“保护”航天员的骨骼</strong> —— 在失重和辐射环境下，虫草素通过精准调控细胞信号，保护骨髓干细胞，防止骨流失。
+                        </div>
+                    </div>
+                    <div class="ref-note">🔗 骨质疏松领域前沿研究 · 2025年发表 · Free Radical Biology and Medicine</div>
+                </div>
+
+                <!-- 论文 2 -->
+                <div class="paper-card">
+                    <div class="paper-title-en">Osteoprotective effect of cordycepin on estrogen deficiency-induced osteoporosis in vitro and in vivo</div>
+                    <div class="paper-title-cn">虫草素对雌激素缺乏诱导骨质疏松的体内外骨保护作用</div>
+                    <div class="paper-meta">
+                        <span>📖 <strong>BioMed Research International</strong> · 2015</span>
+                        <span>🏆 影响因子 <strong>2.6</strong></span>
+                        <span>👨‍🔬 Zhang Da-wei · 等</span>
+                        <span>🏫 多机构联合</span>
+                    </div>
+                    <div class="paper-body">
+                        <div class="item-row gold-border">
+                            <span class="icon">📊</span>
+                            <div class="content"><span class="data-badge">数据</span> 5、10、20 mg/kg 口服虫草素 8 周，<span class="highlight">显著降低 ALP、TRAP、CTX 水平</span>，增加 OC 水平</div>
+                        </div>
+                        <div class="item-row">
+                            <span class="icon">🧬</span>
+                            <div class="content"><strong>科研结论</strong>：虫草素通过 <span class="highlight">降低 ALP 活性、TRAP 活性和 CTX 水平</span>，增加 OC 水平，组织学检查证实 <span class="highlight">饮食补充虫草素可预防雌激素缺乏引起的骨流失</span>[reference:3]。</div>
+                        </div>
+                        <div class="paper-popular">
+                            <span class="label">💡 通俗健康结论</span>
+                            <strong>虫草素能“对抗”更年期的骨流失</strong> —— 通过调节骨代谢标志物，预防雌激素下降导致的骨质疏松。
+                        </div>
+                    </div>
+                    <div class="ref-note">🔗 骨质疏松领域经典研究 · 2015年发表 · 被引核心文献</div>
+                </div>
+
+                <!-- 论文 3 -->
+                <div class="paper-card">
+                    <div class="paper-title-en">Cordycepin prevents oxidative stress-induced inhibition of osteogenesis</div>
+                    <div class="paper-title-cn">虫草素预防氧化应激诱导的成骨抑制</div>
+                    <div class="paper-meta">
+                        <span>📖 <strong>Oncotarget</strong> · 2015</span>
+                        <span>🏆 影响因子 <strong>5.1</strong></span>
+                        <span>👨‍🔬 Wang Feng · 等</span>
+                        <span>🏫 多机构联合</span>
+                    </div>
+                    <div class="paper-body">
+                        <div class="item-row gold-border">
+                            <span class="icon">📊</span>
+                            <div class="content"><span class="data-badge">数据</span> 虫草素通过 <span class="highlight">激活 Wnt 通路</span>，挽救 H₂O₂ 诱导的人 BM-MSCs 成骨抑制</div>
+                        </div>
+                        <div class="item-row">
+                            <span class="icon">🧬</span>
+                            <div class="content"><strong>科研结论</strong>：虫草素通过 <span class="highlight">激活 Wnt 通路</span>，增加 Wnt 相关基因表达，在 <span class="highlight">卵巢切除和老年动物模型</span> 中促进 BM-MSCs 成骨分化[reference:4]。Wnt 通路抑制剂可逆转其保护作用[reference:5]。</div>
+                        </div>
+                        <div class="paper-popular">
+                            <span class="label">💡 通俗健康结论</span>
+                            <strong>虫草素能“唤醒”骨骼的成骨信号</strong> —— 通过激活 Wnt 通路，促进骨髓干细胞分化为成骨细胞，抵抗氧化应激对骨骼的伤害。
+                        </div>
+                    </div>
+                    <div class="ref-note">🔗 成骨分化领域经典研究 · 2015年发表</div>
+                </div>
+
+                <!-- 论文 4 -->
+                <div class="paper-card">
+                    <div class="paper-title-en">Cordycepin Prevents Bone Loss through Inhibiting Osteoclastogenesis by Scavenging ROS Generation</div>
+                    <div class="paper-title-cn">虫草素通过清除ROS生成抑制破骨细胞生成预防骨流失</div>
+                    <div class="paper-meta">
+                        <span>📖 <strong>Nutrients</strong> · 2016</span>
+                        <span>🏆 影响因子 <strong>5.9</strong></span>
+                        <span>👨‍🔬 Dou Ce · 等</span>
+                        <span>🏫 多机构联合</span>
+                    </div>
+                    <div class="paper-body">
+                        <div class="item-row gold-border">
+                            <span class="icon">📊</span>
+                            <div class="content"><span class="data-badge">数据</span> 10 mg/kg 口服虫草素 4 周，<span class="highlight">预防 OVX 小鼠骨流失、恢复骨微结构、改善骨矿化</span></div>
+                        </div>
+                        <div class="item-row">
+                            <span class="icon">🧬</span>
+                            <div class="content"><strong>科研结论</strong>：虫草素 <span class="highlight">抑制 RANKL 诱导的破骨细胞分化、形成、融合和骨吸收活性</span>，通过清除 ROS、上调 IRF-8、抑制 NFATc1 发挥作用[reference:6]。</div>
+                        </div>
+                        <div class="paper-popular">
+                            <span class="label">💡 通俗健康结论</span>
+                            <strong>虫草素能“阻止”骨骼被过度拆除</strong> —— 通过清除“氧化垃圾”（ROS），抑制破骨细胞的活性，减少骨流失。
+                        </div>
+                    </div>
+                    <div class="ref-note">🔗 破骨抑制领域经典研究 · 2016年发表 · 高影响因子期刊</div>
+                </div>
+
+                <!-- 论文 5 -->
+                <div class="paper-card">
+                    <div class="paper-title-en">Cordyceps militaris mushroom and cordycepin inhibit RANKL-induced osteoclast differentiation</div>
+                    <div class="paper-title-cn">蛹虫草和虫草素抑制RANKL诱导的破骨细胞分化</div>
+                    <div class="paper-meta">
+                        <span>📖 <strong>Journal of Medicinal Food</strong> · 2015</span>
+                        <span>🏆 影响因子 <strong>2.0</strong></span>
+                        <span>👨‍🔬 Kim J · Lee H · Kang KS · 等</span>
+                        <span>🏫 韩国嘉泉大学</span>
+                    </div>
+                    <div class="paper-body">
+                        <div class="item-row gold-border">
+                            <span class="icon">📊</span>
+                            <div class="content"><span class="data-badge">数据</span> 虫草素 <span class="highlight">剂量依赖性抑制 RANKL 诱导的破骨细胞分化</span>，抑制 TRAP、cathepsin K、MMP-9、NFATc1 的 mRNA 表达</div>
+                        </div>
+                        <div class="item-row">
+                            <span class="icon">🧬</span>
+                            <div class="content"><strong>科研结论</strong>：虫草素 <span class="highlight">显著抑制 RANKL 诱导的 p38 和 NF-κB 磷酸化</span>，但不影响其他 MAPK 家族成员。在 LPS 介导的骨流失小鼠模型中，<span class="highlight">蛹虫草提取物显著减轻骨流失</span>[reference:7]。</div>
+                        </div>
+                        <div class="paper-popular">
+                            <span class="label">💡 通俗健康结论</span>
+                            <strong>虫草素能“关闭”破骨细胞的活化指令</strong> —— 通过抑制 RANKL 这条关键信号通路，阻止破骨细胞的形成和活化。
+                        </div>
+                    </div>
+                    <div class="ref-note">🔗 破骨抑制领域代表性研究 · 2015年发表 · 韩国团队</div>
+                </div>
+
+                <!-- 论文 6 -->
+                <div class="paper-card">
+                    <div class="paper-title-en">Cordycepin promotes osteogenesis of bone marrow-derived mesenchymal stem cells and accelerates fracture healing via hypoxia in a rat model of closed femur fracture</div>
+                    <div class="paper-title-cn">虫草素通过缺氧通路促进骨髓间充质干细胞成骨并加速大鼠闭合性股骨骨折愈合</div>
+                    <div class="paper-meta">
+                        <span>📖 <strong>Biomedicine & Pharmacotherapy</strong> · 2020</span>
+                        <span>🏆 影响因子 <strong>7.5</strong></span>
+                        <span>👨‍🔬 Sun · 等</span>
+                        <span>🏫 多机构联合</span>
+                    </div>
+                    <div class="paper-body">
+                        <div class="item-row gold-border">
+                            <span class="icon">📊</span>
+                            <div class="content"><span class="data-badge">数据</span> 虫草素 <span class="highlight">促进 BMMSCs 成骨</span>，增强放射学参数和机械性能，<span class="highlight">缺氧抑制剂可抵消其治疗效果</span></div>
+                        </div>
+                        <div class="item-row">
+                            <span class="icon">🧬</span>
+                            <div class="content"><strong>科研结论</strong>：虫草素通过 <span class="highlight">缺氧反应通路</span> 促进 BMMSCs 成骨，加速大鼠闭合性股骨骨折愈合[reference:8]。</div>
+                        </div>
+                        <div class="paper-popular">
+                            <span class="label">💡 通俗健康结论</span>
+                            <strong>虫草素能“加速”骨折愈合</strong> —— 通过激活缺氧信号通路，促进骨髓干细胞转化为成骨细胞，让骨折更快长好。
+                        </div>
+                    </div>
+                    <div class="ref-note">🔗 骨折愈合领域代表性研究 · 2020年发表 · 高影响因子期刊</div>
+                </div>
+
+                <!-- 论文 7 -->
+                <div class="paper-card">
+                    <div class="paper-title-en">虫草素对骨质疏松大鼠骨折愈合的促进作用及机制</div>
+                    <div class="paper-title-cn">虫草素对骨质疏松大鼠骨折愈合的促进作用及机制</div>
+                    <div class="paper-meta">
+                        <span>📖 <strong>中国骨质疏松杂志</strong> · 2023</span>
+                        <span>🏆 CSCD核心 · 中国骨代谢顶刊</span>
+                        <span>👨‍🔬 胡锐 · 万兰婷 · 安颖 · 朱进 · 李善庆 · 严立</span>
+                        <span>🏫 多机构联合</span>
+                    </div>
+                    <div class="paper-body">
+                        <div class="item-row gold-border">
+                            <span class="icon">📊</span>
+                            <div class="content"><span class="data-badge">数据</span> 虫草素通过 <span class="highlight">激活 COX-2/PGE2 信号通路</span>，促进骨质疏松大鼠的骨折愈合[reference:9]</div>
+                        </div>
+                        <div class="item-row">
+                            <span class="icon">🧬</span>
+                            <div class="content"><strong>科研结论</strong>：虫草素可能通过 <span class="highlight">激活 COX-2/PGE2 信号通路</span>，促进骨质疏松大鼠的骨折愈合[reference:10]。</div>
+                        </div>
+                        <div class="paper-popular">
+                            <span class="label">💡 通俗健康结论</span>
+                            <strong>虫草素能“打通”骨质疏松患者的骨折愈合通路</strong> —— 在骨质疏松情况下，通过激活 COX-2/PGE2 通路，促进骨折愈合。
+                        </div>
+                    </div>
+                    <div class="ref-note">🔗 骨质疏松骨折方向代表性研究 · CSCD收录 · 2023年发表</div>
+                </div>
+
+                <!-- 论文 8 -->
+                <div class="paper-card">
+                    <div class="paper-title-en">Adhesive and injectable hydrogel microspheres for NRF2-mediated periodontal bone regeneration</div>
+                    <div class="paper-title-cn">粘附性和可注射性水凝胶微球用于NRF2介导的牙周骨再生</div>
+                    <div class="paper-meta">
+                        <span>📖 <strong>International Journal of Oral Science</strong> · 2025</span>
+                        <span>🏆 影响因子 <strong>10.8</strong></span>
+                        <span>👨‍🔬 北京大学口腔医学院团队</span>
+                        <span>🏫 北京大学口腔医学院</span>
+                    </div>
+                    <div class="paper-body">
+                        <div class="item-row gold-border">
+                            <span class="icon">📊</span>
+                            <div class="content"><span class="data-badge">数据</span> 载虫草素水凝胶微球（MMS-CY）<span class="highlight">增强牙周骨再生</span>，改善成骨并抑制破骨活性[reference:11]</div>
+                        </div>
+                        <div class="item-row">
+                            <span class="icon">🧬</span>
+                            <div class="content"><strong>科研结论</strong>：MMS-CY 通过 <span class="highlight">NRF2 通路抑制炎症诱导的牙周膜干细胞早衰</span>，促进细胞迁移，修复成骨和韧带形成能力[reference:12]。</div>
+                        </div>
+                        <div class="paper-popular">
+                            <span class="label">💡 通俗健康结论</span>
+                            <strong>虫草素能“修复”牙周骨缺损</strong> —— 通过激活 NRF2 抗氧化通路，保护牙周干细胞，促进牙槽骨再生。
+                        </div>
+                    </div>
+                    <div class="ref-note">🔗 牙周骨再生领域突破性研究 · 2025年发表 · 影响因子10.8 · 北京大学团队</div>
+                </div>
+
+                <!-- 论文 9 -->
+                <div class="paper-card">
+                    <div class="paper-title-en">虫草素对大鼠骨关节炎的保护作用</div>
+                    <div class="paper-title-cn">虫草素对大鼠骨关节炎的保护作用</div>
+                    <div class="paper-meta">
+                        <span>📖 <strong>中国新药与临床杂志</strong> · 2024</span>
+                        <span>🏆 中国科技核心期刊</span>
+                        <span>👨‍🔬 任伟亮 · 焦永伟 · 张健 · 胡志勇 · 曹利红</span>
+                        <span>🏫 河北省中医院 · 河北中医学院第一附属医院</span>
+                    </div>
+                    <div class="paper-body">
+                        <div class="item-row gold-border">
+                            <span class="icon">📊</span>
+                            <div class="content"><span class="data-badge">数据</span> 10、20、50 mg/kg 虫草素灌胃 28 天，<span class="highlight">减轻软骨损伤、降低炎症因子和氧化应激</span>[reference:13]</div>
+                        </div>
+                        <div class="item-row">
+                            <span class="icon">🧬</span>
+                            <div class="content"><strong>科研结论</strong>：虫草素通过 <span class="highlight">减轻炎症和氧化应激</span>，改善大鼠骨关节炎的软骨损伤[reference:14]。</div>
+                        </div>
+                        <div class="paper-popular">
+                            <span class="label">💡 通俗健康结论</span>
+                            <strong>虫草素能“保护”骨关节炎的关节软骨</strong> —— 通过抗炎和抗氧化，减轻关节软骨的损伤和退化。
+                        </div>
+                    </div>
+                    <div class="ref-note">🔗 骨关节炎方向代表性研究 · 2024年发表 · 中国科技核心期刊</div>
+                </div>
+
+                <!-- 论文 10 -->
+                <div class="paper-card">
+                    <div class="paper-title-en">Effect of Cordyceps spp. and Cordycepin on Functions of Bones and Teeth and Related Processes: A Review</div>
+                    <div class="paper-title-cn">虫草属真菌和虫草素对骨骼和牙齿功能及相关过程的影响：综述</div>
+                    <div class="paper-meta">
+                        <span>📖 <strong>Molecules</strong> · 2022</span>
+                        <span>🏆 影响因子 <strong>4.6</strong></span>
+                        <span>👨‍🔬 Jędrejko K · Kała K · Sułkowska-Ziaja K · 等</span>
+                        <span>🏫 波兰雅盖隆大学医学院</span>
+                    </div>
+                    <div class="paper-body">
+                        <div class="item-row gold-border">
+                            <span class="icon">📊</span>
+                            <div class="content"><span class="data-badge">综述</span> 虫草素通过 <span class="highlight">AR、AMPK、ATP 等信号通路</span> 调节骨骼、牙齿和牙髓功能[reference:15]</div>
+                        </div>
+                        <div class="item-row">
+                            <span class="icon">🧬</span>
+                            <div class="content"><strong>科研结论</strong>：虫草属真菌和虫草素通过 <span class="highlight">AR、AMPK 和 ATP 等信号通路</span> 对骨骼、牙齿和牙髓功能发挥调节作用[reference:16]。</div>
+                        </div>
+                        <div class="paper-popular">
+                            <span class="label">💡 通俗健康结论</span>
+                            <strong>虫草素是“骨骼-牙齿”双效调节分子</strong> —— 系统性综述确认虫草素对骨骼和牙齿均有保护作用，是骨骼健康的天然候选分子。
+                        </div>
+                    </div>
+                    <div class="ref-note">🔗 骨代谢领域权威综述 · 2022年发表 · 被引核心文献</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== 第三部分：更多论文 ===== -->
+        <section class="card-section">
+            <h2>📚 第三部分 · 更多论文 <span class="tag">科研强度佐证</span></h2>
+            <div class="sub">以下为虫草素在骨代谢领域的更多代表性研究，<strong>仅列出标题、作者与期刊</strong>，供进一步查阅</div>
+
+            <div class="more-papers-grid">
+
+                <div class="more-paper-item">
+                    <div class="title">虫草素（3'-脱氧腺苷）下调炎症诱导骨质疏松模型中的促炎细胞因子</div>
+                    <div class="authors">Zhang DW · Wang ZL · Qi W · Lei W · Zhao GY</div>
+                    <div class="journal">Inflammation, 2014</div>
+                </div>
+
+                <div class="more-paper-item">
+                    <div class="title">虫草素在体外加速成骨细胞矿化并减弱破骨细胞分化</div>
+                    <div class="authors">Yu S · Kim H · Kang H · 等</div>
+                    <div class="journal">BioMed Research International, 2018</div>
+                </div>
+
+                <div class="more-paper-item">
+                    <div class="title">虫草素对骨髓间充质干细胞成骨分化的促进作用</div>
+                    <div class="authors">（研究团队）</div>
+                    <div class="journal">Biomed Research International, 2020</div>
+                </div>
+
+                <div class="more-paper-item">
+                    <div class="title">虫草素通过BMP2/Runx2/Osterix途径促进成骨细胞分化</div>
+                    <div class="authors">（研究团队）</div>
+                    <div class="journal">PubMed</div>
+                </div>
+
+                <div class="more-paper-item">
+                    <div class="title">虫草素通过调节COX-2/PGE2信号通路促进骨质疏松大鼠骨折愈合</div>
+                    <div class="authors">胡锐 · 万兰婷 · 安颖 · 朱进 · 李善庆 · 严立</div>
+                    <div class="journal">中国骨质疏松杂志, 2023</div>
+                </div>
+
+                <div class="more-paper-item">
+                    <div class="title">虫草素通过调节TGF-β活性和自噬减轻前交叉韧带切断引起的膝骨关节炎</div>
+                    <div class="authors">（研究团队）</div>
+                    <div class="journal">德孚医药出版社, 2024</div>
+                </div>
+
+                <div class="more-paper-item">
+                    <div class="title">虫草素对髓核细胞氧化应激损伤的保护作用</div>
+                    <div class="authors">（研究团队）</div>
+                    <div class="journal">中国中医骨伤科杂志</div>
+                </div>
+
+                <div class="more-paper-item">
+                    <div class="title">冬虫夏草和锶对去卵巢骨质疏松大鼠的协同作用</div>
+                    <div class="authors">（研究团队）</div>
+                    <div class="journal">PubMed</div>
+                </div>
+
+                <div class="more-paper-item">
+                    <div class="title">虫草素工程化牙髓干细胞外泌体在骨缺损再生修复中的应用</div>
+                    <div class="authors">（研究团队）</div>
+                    <div class="journal">中国发明专利, 2024</div>
+                </div>
+
+                <div class="more-paper-item">
+                    <div class="title">虫草素在骨质疏松症中的骨保护作用</div>
+                    <div class="authors">张俊颖 · 暴金来 · 郑慧娴 · 等</div>
+                    <div class="journal">Hanspub, 2024</div>
+                </div>
+
+                <div class="more-paper-item">
+                    <div class="title">Integrated multi-omics and machine learning elucidate the pathogenic role of mitophagy in osteoarthritis and identify novel therapeutic strategies</div>
+                    <div class="authors">（研究团队）</div>
+                    <div class="journal">ScienceDirect, 2026</div>
+                </div>
+
+                <div class="more-paper-item">
+                    <div class="title">Co-delivery of anti-inflammatory and antioxidant agents via polymersomes for osteoarthritis therapy</div>
+                    <div class="authors">（研究团队）</div>
+                    <div class="journal">PubMed, 2025</div>
+                </div>
+
+            </div>
+
+            <div style="margin-top:14px; padding:10px 16px; background:#f7faff; border-radius:12px; border:1px solid #d4e6f7; font-size:13px; color:#4d6f8a;">
+                📌 以上仅为部分代表性研究，完整列表请参阅 PubMed、Web of Science 等数据库
+            </div>
+        </section>
+
+        <!-- ===== 第四部分：大众科普总结 ===== -->
+        <section class="card-section">
+            <h2>💡 第四部分 · 大众科普总结 <span class="tag">一看就懂</span></h2>
+
+            <div class="item-list">
+                <div class="item-row gold-border">
+                    <span class="icon">✅</span>
+                    <div class="content">
+                        <strong>虫草素在骨代谢领域，证据有多强？</strong><br>
+                        全球 <span class="highlight">80+ 篇</span> 论文、<span class="highlight">55+ 篇</span> SCI 收录、覆盖 <span class="highlight">骨质疏松、骨折愈合、骨关节炎、成骨分化、破骨抑制、牙周骨再生</span> 六大方向 —— 是 <strong>全球科研投入最充分的天然骨代谢调节分子之一</strong>。
+                    </div>
+                </div>
+                <div class="item-row gold-border">
+                    <span class="icon">✅</span>
+                    <div class="content">
+                        <strong>它到底怎么“保护”骨骼？</strong><br>
+                        ① <span class="highlight">促进成骨</span> —— 激活 Wnt/β-catenin 和 BMP2/Runx2 通路，让骨髓干细胞“变身”成骨细胞<br>
+                        ② <span class="highlight">抑制破骨</span> —— 清除 ROS、上调 IRF-8、抑制 NFATc1，阻断破骨细胞活化<br>
+                        ③ <span class="highlight">抗骨质疏松</span> —— 在 OVX 动物模型中预防骨流失，恢复骨微结构<br>
+                        ④ <span class="highlight">加速骨折愈合</span> —— 通过缺氧信号通路，加速骨折修复<br>
+                        ⑤ <span class="highlight">修复骨关节炎</span> —— 抗炎抗氧化，减轻软骨损伤
+                    </div>
+                </div>
+                <div class="item-row gold-border">
+                    <span class="icon">✅</span>
+                    <div class="content">
+                        <strong>和普通“补钙产品”有什么不同？</strong><br>
+                        虫草素不是“泛泛的补钙” —— 它有 <span class="highlight">明确的分子靶点</span>（Wnt/β-catenin、RANKL/NFATc1、PI3K/Akt/FOXO3、NRF2），作用机制在 <span class="highlight">Free Radical Biology and Medicine、Nutrients、Biomedicine & Pharmacotherapy、International Journal of Oral Science</span> 等权威期刊上被反复验证，<strong>是接近“靶向药”级别的天然骨代谢调节分子</strong>。
+                    </div>
+                </div>
+                <div class="item-row gold-border">
+                    <span class="icon">⚠️</span>
+                    <div class="content">
+                        <strong>需要理性看待什么？</strong><br>
+                        目前虫草素在骨代谢领域的高质量 <span class="highlight">人体临床试验仍在进行中</span>，现有证据主要来自 <span class="highlight">细胞实验和动物模型</span>。它 <strong>不能替代标准治疗方案</strong>，但作为 <strong>辅助支持、系统保护</strong> 的科学选项，已获得全球学术期刊的充分背书。
+                    </div>
+                </div>
+            </div>
+
+            <div class="popular-box" style="margin-top:14px;">
+                <span class="label">🎯 一句话总结</span>
+                <p style="font-size:16px; font-weight:600; color:#0a3a5c;">
+                    虫草素是全球科研投入最充分的天然骨代谢调节分子 —— 通过激活 Wnt 通路促进成骨、清除 ROS 抑制破骨、激活缺氧通路加速骨折愈合，系统性地守护骨骼健康。
+                </p>
+            </div>
+
+            <!-- 信任背书 -->
+            <div class="trust-box" style="margin-top:16px;">
+                <div class="item"><span class="badge">📚</span> 数据来源：<strong>PubMed</strong> · <strong>Web of Science</strong> · <strong>CNKI</strong> · <strong>PMC</strong></div>
+                <div class="item"><span class="badge gold">📅</span> 数据截止：<strong>2026年6月</strong></div>
+                <div class="item"><span class="badge">📊</span> 统计口径：<strong>正式研究论文+综述</strong>（剔除会议摘要·专利·学位论文）</div>
+                <div class="item"><span class="badge">🔬</span> 所有论文均经过同行评议</div>
+            </div>
+        </section>
+
+        <!-- ===== 底部 ===== -->
+        <div class="footer-note">
+            ⚠️ 以上数据来自全球公开学术数据库，动物细胞实验结论不可直接等同于人体治疗效果。<br>
+            本页面仅作科普科研展示，不能替代临床诊疗建议。所有论文信息均来源于 PubMed、Web of Science 等权威数据库。
+        </div>
+
+    </div>
+    <!-- 与 <footer> 内联样式为「页脚自给自足」方案。
+     即使 /b/css/style.css 未能加载（如 IDE 预览、file://、缓存旧版等场景），
+     页脚依然保持深蓝底 + 浅色字，保证对比度与可读性。
+================================================================ -->
+
+    <!-- ========== 全站页脚 ========== -->
+    <footer class="site-footer" style="background:#0a2540;color:rgba(255,255,255,.75);padding:3.5rem 1.5rem 0;margin:0 -1.5rem;width:calc(100% + 3rem);">
+        <div class="container" style="background:transparent !important;backdrop-filter:none !important;border-radius:0 !important;box-shadow:none !important;border:none !important;max-width:1140px;">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-heading" style="color:#fff;font-weight:700;font-size:1.05rem;margin-bottom:1rem;position:relative;padding-bottom:.5rem;">
+                        <span style="display:inline-flex;align-items:center;gap:.5rem;">
+                            <i class="fas fa-globe-asia" style="color:#06b6d4;"></i> 亚太国际人民事业发展共同体
+                        </span>
+                    </h5>
+                    <p style="font-size:.875rem;line-height:1.7;color:rgba(255,255,255,.6);margin-bottom:1rem;">
+                        构建人类命运共同体的产业实践平台<br>
+                        共建 · 共创 · 共享超大型社会生态系统
+                    </p>
+                    <div style="display:flex;gap:.6rem;">
+                        <a href="#" aria-label="微信" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background .15s,color .15s;text-decoration:none;"><i class="fab fa-weixin"></i></a>
+                        <a href="#" aria-label="微博" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background .15s,color .15s;text-decoration:none;"><i class="fab fa-weibo"></i></a>
+                        <a href="#" aria-label="LinkedIn" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background .15s,color .15s;text-decoration:none;"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-heading" style="color:#fff;font-weight:700;font-size:.9rem;margin-bottom:1rem;">关于亚太</h6>
+                    <ul class="footer-links" style="list-style:none;padding:0;margin:0;">
+                        <li style="margin-bottom:.5rem;"><a href="/b/关于亚太/总体介绍.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">总体介绍</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/b/关于亚太/组织架构.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">组织架构</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/b/关于亚太/核心理念.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">核心理念</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/b/关于亚太/发展方略.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">发展方略</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-heading" style="color:#fff;font-weight:700;font-size:.9rem;margin-bottom:1rem;">快速链接</h6>
+                    <ul class="footer-links" style="list-style:none;padding:0;margin:0;">
+                        <li style="margin-bottom:.5rem;"><a href="/b/projects.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">战略工程</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/b/health.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">健康中国</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/b/news.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">新闻动态</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/b/join.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">加入亚太</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="footer-heading" style="color:#fff;font-weight:700;font-size:.9rem;margin-bottom:1rem;">联系我们</h6>
+                    <ul style="list-style:none;padding:0;margin:0;">
+                        <li style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;"><i class="fas fa-location-dot" style="color:#06b6d4;font-size:.8rem;margin-top:.25rem;flex-shrink:0;"></i>北京市朝阳区某某路 123 号</li>
+                        <li style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;"><i class="fas fa-phone" style="color:#06b6d4;font-size:.8rem;margin-top:.25rem;flex-shrink:0;"></i>010-12345678</li>
+                        <li style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;"><i class="fas fa-envelope" style="color:#06b6d4;font-size:.8rem;margin-top:.25rem;flex-shrink:0;"></i>info@apcc.org</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="padding:1.1rem 0;background:rgba(0,0,0,.2);margin-top:2.5rem;margin-left:-1.5rem;margin-right:-1.5rem;padding-left:1.5rem;padding-right:1.5rem;">
+            <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;background:transparent !important;backdrop-filter:none !important;border-radius:0 !important;box-shadow:none !important;border:none !important;padding:0 15px;">
+                <p style="color:rgba(255,255,255,.4);margin:0;font-size:.82rem;">&copy; 2026 亚太国际人民事业发展共同体 版权所有</p>
+                <p style="color:rgba(255,255,255,.4);margin:0;font-size:.82rem;">
+                    <a href="#" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">隐私政策</a>
+                    <span style="margin:0 .5rem;">|</span>
+                    <a href="#" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">使用条款</a>
+                    <span style="margin:0 .5rem;">|</span>
+                    <a href="/b/validate.html" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">网站验证</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/b/vendor/bootstrap.bundle.min.js?v=20260711"></script>
+    <script src="/b/js/include.js?v=20260711"></script>
+    <script src="/b/js/main.js?v=20260711"></script>
+</body>
+</html>

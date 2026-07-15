@@ -1,0 +1,1112 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人民集体所有制 · 亚太国际</title>
+    <link href="/b/vendor/bootstrap.min.css?v=20260711" rel="stylesheet">
+    <link href="/b/vendor/fontawesome.min.css?v=20260711" rel="stylesheet">
+    <link href="/b/css/style.css?v=20260711" rel="stylesheet">
+    <link href="/b/css/subnav.css?v=20260711" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', 'Noto Serif SC', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f0f6fe;
+            color: #1a2b3f;
+            line-height: 1.8;
+            padding: 2.5rem 1.5rem 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: radial-gradient(ellipse at 20% 20%, rgba(26,75,130,0.03) 0%, transparent 60%),
+                              radial-gradient(ellipse at 80% 80%, rgba(0,112,192,0.04) 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1060px;
+            width: 100%;
+            background: rgba(255,255,255,0.94);
+            backdrop-filter: blur(4px);
+            border-radius: 2.8rem;
+            padding: 3rem 3.2rem;
+            box-shadow: 0 24px 60px rgba(10,30,60,0.08), 0 8px 24px rgba(10,30,60,0.04);
+            border: 1px solid rgba(46,86,140,0.08);
+        }
+
+        /* ---------- header ---------- */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2.8rem 2rem 2.6rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.6rem;
+            background: linear-gradient(135deg, #0f3a66 0%, #1f5990 100%);
+            box-shadow: 0 16px 40px rgba(31,89,144,0.28);
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -12%;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.16) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .header .gold-line {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4a843, #e8c760);
+            width: 50px;
+            height: 4px;
+            border-radius: 4px;
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .header h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 4px;
+            margin-bottom: 0.2rem;
+            position: relative;
+        }
+
+        .header .sub1 {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.92);
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 0.1rem;
+            position: relative;
+        }
+
+        .header .sub2 {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+            font-weight: 400;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .header .tagline {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #ffffff;
+            background: rgba(255,255,255,0.15);
+            display: inline-block;
+            padding: 0.3rem 2rem;
+            border-radius: 40px;
+            border: 1px solid rgba(255,255,255,0.3);
+            position: relative;
+        }
+
+        /* ---------- section ---------- */
+        .section {
+            margin-bottom: 2.8rem;
+            padding: 1.8rem 2rem 2.2rem;
+            border-radius: 2rem;
+            background: #ffffff;
+            border: 1px solid #eaf0f8;
+            transition: box-shadow 0.25s ease, border-color 0.25s;
+        }
+
+        .section:hover {
+            box-shadow: 0 4px 28px rgba(10,30,60,0.04);
+            border-color: #d0def0;
+        }
+
+        .section .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1f5990, #2a6ea8);
+            border-radius: 40px;
+            padding: 0.1rem 14px 0.1rem 12px;
+            line-height: 1.6rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.6rem;
+        }
+
+        .section .section-badge .badge-icon { font-size: 0.9rem; }
+
+        .section h2 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .section h2 .deco-icon {
+            font-size: 1.5rem;
+            color: #d4a843;
+        }
+
+        .section p {
+            font-size: 1rem;
+            color: #1a344b;
+            margin-bottom: 0.7rem;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .section p:last-child { margin-bottom: 0; }
+
+        .section .highlight-blue {
+            color: #1f5990;
+            font-weight: 600;
+        }
+
+        .section .highlight-gold {
+            color: #d4a843;
+            font-weight: 600;
+        }
+
+        .section .highlight-red {
+            color: #c0392b;
+            font-weight: 600;
+        }
+
+        /* ---------- cards grid ---------- */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 0.8rem 0 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 18px;
+            margin: 0.8rem 0 0;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 16px;
+            margin: 0.8rem 0 0;
+        }
+
+        .card {
+            background: #f8fbff;
+            border-radius: 1.5rem;
+            padding: 1.2rem 1.4rem 1.3rem;
+            border: 1px solid #e6eef8;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+
+        .card:hover {
+            border-color: #b8cee4;
+            box-shadow: 0 4px 16px rgba(26,75,130,0.04);
+            transform: translateY(-2px);
+        }
+
+        .card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card h4 .emoji {
+            font-size: 1.2rem;
+            color: #d4a843;
+        }
+
+        .card p {
+            font-size: 0.92rem;
+            color: #1f3a55;
+            margin: 0;
+            line-height: 1.65;
+            text-align: justify;
+        }
+
+        .card .num-highlight {
+            display: inline-block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #c0392b;
+            margin-right: 4px;
+        }
+
+        /* ---------- 特征卡片 (四大核心) ---------- */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 0.8rem 0 0;
+        }
+
+        .feature-card {
+            background: #f4f9ff;
+            border-radius: 1.5rem;
+            padding: 1.4rem 1.5rem;
+            border: 1px solid #e2ecf8;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .feature-card:hover {
+            border-color: #b8cee4;
+            box-shadow: 0 4px 16px rgba(26,75,130,0.04);
+        }
+
+        .feature-card .feature-number {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            background: #1f5990;
+            border-radius: 40px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-card p {
+            font-size: 0.92rem;
+            color: #1f3a55;
+            margin: 0;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        /* ---------- 7种贡献网格 ---------- */
+        .contrib-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin: 0.6rem 0 0;
+        }
+
+        .contrib-grid .item {
+            background: #f5faff;
+            border-radius: 1.2rem;
+            padding: 0.8rem 0.8rem 0.85rem;
+            text-align: center;
+            border: 1px solid #e6eef8;
+            transition: border-color 0.2s;
+        }
+
+        .contrib-grid .item:hover {
+            border-color: #b8cee4;
+        }
+
+        .contrib-grid .item .contrib-icon {
+            font-size: 1.4rem;
+            color: #1f5990;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .contrib-grid .item h6 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            margin-bottom: 0.1rem;
+        }
+
+        .contrib-grid .item p {
+            font-size: 0.78rem;
+            color: #2a4a6a;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* ---------- why grid (4 reasons) ---------- */
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 0.8rem 0 0;
+        }
+
+        .why-grid .card {
+            background: #fafdff;
+        }
+
+        .why-grid .card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .why-grid .card h4 .emoji {
+            font-size: 1.3rem;
+        }
+
+        /* ---------- step grid ---------- */
+        .step-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 16px;
+            margin: 0.8rem 0 0;
+        }
+
+        .step-grid .step {
+            background: #f4f9ff;
+            border-radius: 1.5rem;
+            padding: 1.2rem 0.8rem;
+            text-align: center;
+            border: 1px solid #e2ecf8;
+            transition: border-color 0.2s;
+        }
+
+        .step-grid .step:hover {
+            border-color: #b8cee4;
+        }
+
+        .step-grid .step .step-num {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #c0392b;
+            line-height: 1.2;
+        }
+
+        .step-grid .step .step-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #0a2a5c;
+            margin-top: 0.2rem;
+        }
+
+        .step-grid .step p {
+            font-size: 0.85rem;
+            color: #2a4a6a;
+            margin-top: 0.3rem;
+            line-height: 1.5;
+        }
+
+        /* ---------- 分配结构突出块 ---------- */
+        .allocation-block {
+            background: linear-gradient(135deg, #f4f9ff, #eaf2fc);
+            border-radius: 1.8rem;
+            padding: 1.4rem 2rem;
+            margin: 0.6rem 0 0;
+            border-left: 4px solid #c0392b;
+            text-align: center;
+        }
+
+        .allocation-block .big-number {
+            font-family: 'Inter', 'Noto Serif SC', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #c0392b;
+            line-height: 1.2;
+        }
+
+        .allocation-block p {
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        /* ---------- mission block (愿景) ---------- */
+        .mission-block {
+            background: linear-gradient(135deg, #f4f9ff 0%, #eaf2fc 100%);
+            border-radius: 2rem;
+            padding: 2.2rem 2.5rem;
+            margin-top: 0.5rem;
+            border: 1px solid #dce6f2;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-block::before {
+            content: '✦';
+            font-size: 6rem;
+            color: rgba(212,168,67,0.06);
+            position: absolute;
+            top: -1rem;
+            right: 1rem;
+            font-family: serif;
+            transform: rotate(12deg);
+        }
+
+        .mission-block .big-slogan {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0a2a5c;
+            letter-spacing: 2px;
+            margin-bottom: 0.6rem;
+        }
+
+        .mission-block .big-slogan .accent { color: #d4a843; }
+
+        .mission-block p {
+            font-size: 1rem;
+            color: #1a344b;
+            max-width: 780px;
+            margin: 0.4rem auto;
+            line-height: 1.8;
+        }
+
+        .mission-block .promise-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 16px;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .mission-block .promise-item {
+            background: rgba(255,255,255,0.7);
+            border-radius: 40px;
+            padding: 0.2rem 1.2rem;
+            font-size: 0.9rem;
+            color: #1a3a5a;
+            border: 1px solid #d4e2f2;
+        }
+
+        .mission-block .promise-item strong { color: #0a2a5c; }
+
+        /* ---------- footer ---------- */
+
+        .global-footer .footer-slogan {
+            color: #0a2a5c;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* ---------- responsive ---------- */
+        @media (max-width: 940px) {
+            .container { padding: 2rem 1.8rem; }
+            .header h1 { font-size: 2rem; }
+            .feature-grid,
+            .why-grid { grid-template-columns: 1fr; }
+            .contrib-grid { grid-template-columns: 1fr 1fr; }
+            .step-grid { grid-template-columns: 1fr 1fr; }
+            .section h2 { font-size: 1.35rem; }
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 1.2rem 0.8rem 2.5rem; }
+            .container { padding: 1.5rem 1rem; border-radius: 2rem; }
+            .header h1 { font-size: 1.5rem; letter-spacing: 2px; }
+            .header .sub1 { font-size: 1rem; }
+            .section { padding: 1.2rem 0.8rem 1.4rem; border-radius: 1.4rem; }
+            .section h2 { font-size: 1.15rem; }
+            .card { padding: 0.9rem 1rem 1rem; }
+            .feature-card { padding: 1rem; }
+            .contrib-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .step-grid { grid-template-columns: 1fr; gap: 12px; }
+            .allocation-block { padding: 1rem 1rem; }
+            .allocation-block .big-number { font-size: 1.8rem; }
+            .mission-block { padding: 1.4rem 1rem; }
+            .mission-block .big-slogan { font-size: 1.1rem; }
+        }
+    </style>
+    <meta name="theme-color" content="#0a2540">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=20260711">
+    <meta name="description" content="人民集体所有制 — 亚太国际人民事业共同体的经济基础制度">
+    <link rel="canonical" href="https://www.apcc.org/人民事业共同体/人民集体所有制.html">
+</head>
+<body data-page="人民集体所有制">
+    <a href="#main-content" class="visually-hidden-focusable" style="position:absolute;top:-100%;left:50%;transform:translateX(-50%);z-index:9999;padding:.5rem 1.5rem;background:#2563eb;color:#fff;border-radius:0 0 6px 6px;font-size:.875rem;font-weight:600;text-decoration:none;transition:top .15s;" onfocus="this.style.top='0'" onblur="this.style.top='-100%'">跳转到主要内容</a>
+
+    <div id="site-header">
+﻿<!-- ================================================================
+     公共导航栏 - 通过 js/include.js 注入到 #site-header 占位
+     与所有页面的 <a class="nav-link"> 链接均使用相对站点根目录的路径（以 / 开头）
+     目录 0709 重构版：6 个一级 + 折叠子菜单（按"网站导航栏最新菜单配置.docx"）
+================================================================ -->
+
+<!-- ========== 导航栏 ========== -->
+<nav class="navbar navbar-expand-xl fixed-top" id="mainNavbar">
+    <div class="container-fluid px-4 px-xl-5">
+
+        <!-- 品牌 Logo -->
+        <a class="navbar-brand" href="/index.html" aria-label="亚太国际人民事业发展共同体">
+            <span class="brand-icon" aria-hidden="true"><i class="fas fa-globe-asia"></i></span>
+            <span class="brand-full d-none d-xl-inline">亚太国际人民事业发展共同体</span>
+            <span class="brand-short d-none d-md-inline d-xl-none">亚太人民共同体</span>
+            <span class="brand-mini d-inline d-md-none">APCC</span>
+        </a>
+
+        <!-- 移动端汉堡按钮 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="打开菜单">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 桌面端菜单（xl+） -->
+        <div class="collapse navbar-collapse d-none d-xl-flex justify-content-end" id="desktopNav">
+            <ul class="navbar-nav align-items-center gap-1">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.html" data-nav="index.html">
+                        <i class="fas fa-home"></i> 首页
+                    </a>
+                </li>
+
+                <!-- 关于亚太 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/b/关于亚太/总体介绍.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-info-circle"></i> 关于亚太
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/b/关于亚太/总体介绍.html"><i class="fas fa-circle-info fa-xs me-2"></i>总体介绍</a></li>
+                        <li><a class="dropdown-item" href="/b/关于亚太/组织架构.html"><i class="fas fa-sitemap fa-xs me-2"></i>组织架构</a></li>
+                        <li><a class="dropdown-item" href="/b/关于亚太/核心理念.html"><i class="fas fa-lightbulb fa-xs me-2"></i>核心理念</a></li>
+                        <li><a class="dropdown-item" href="/b/关于亚太/发展方略.html"><i class="fas fa-route fa-xs me-2"></i>发展方略</a></li>
+                    </ul>
+                </li>
+
+                <!-- 人民事业共同体 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/b/人民事业共同体/人民集体所有制.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-handshake"></i> 人民事业共同体
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/b/人民事业共同体/人民集体所有制.html"><i class="fas fa-people-group fa-xs me-2"></i>人民集体所有制</a></li>
+                        <li><a class="dropdown-item" href="/b/人民事业共同体/共同体基本法.html"><i class="fas fa-book-open fa-xs me-2"></i>共同体基本法</a></li>
+                        <li><a class="dropdown-item" href="/b/人民事业共同体/人民价值贡献值.html"><i class="fas fa-coins fa-xs me-2"></i>人民价值贡献值体系（PVC）</a></li>
+                        <li><a class="dropdown-item" href="/b/人民事业共同体/国家宣言.html"><i class="fas fa-flag fa-xs me-2"></i>国家宣言</a></li>
+                        <li><a class="dropdown-item" href="/b/人民事业共同体/人民宣言.html"><i class="fas fa-scroll fa-xs me-2"></i>人民宣言</a></li>
+                        <li><a class="dropdown-item" href="/b/coming-soon.html"><i class="fas fa-book fa-xs me-2"></i>理念文集</a></li>
+                    </ul>
+                </li>
+
+                <!-- 人民产业与科研：折叠子菜单 -->
+                <li class="nav-item dropdown dropdown-mega">
+                    <a class="nav-link dropdown-toggle" href="/b/人民产业与科研/健康中国人民健康/健康中国人民健康.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-industry"></i> 人民产业与科研
+                        <i class="fas fa-chevron-right ms-1 mega-arrow"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-research">
+                        <li><a class="dropdown-item" href="/b/industry.html"><i class="fas fa-industry fa-xs me-2"></i>人民产业体系</a></li>
+                        <li><span class="dropdown-header">健康中国·人民健康</span></li>
+                        <li><a class="dropdown-item" href="/b/人民产业与科研/健康中国人民健康/健康中国人民健康.html"><i class="fas fa-heart-pulse fa-xs me-2"></i>健康中国·人民健康</a></li>
+                                                                        <li><span class="dropdown-header">未来产业规划</span></li>
+                        <li><a class="dropdown-item" href="/b/人民产业与科研/未来产业规划/产业规划总览.html"><i class="fas fa-chart-line fa-xs me-2"></i>产业规划总览</a></li>
+                        <li><a class="dropdown-item" href="/b/人民产业与科研/未来产业规划/高标准鸡类产业链.html"><i class="fas fa-egg fa-xs me-2"></i>高标准鸡类产业链</a></li>
+                        <li><a class="dropdown-item" href="/b/人民产业与科研/未来产业规划/高标准食品全产业链.html"><i class="fas fa-utensils fa-xs me-2"></i>高标准食品全产业链</a></li>
+                        <li><a class="dropdown-item" href="/b/人民产业与科研/未来产业规划/生物科技微谷.html"><i class="fas fa-microscope fa-xs me-2"></i>生物科技微谷</a></li>
+                        <li><a class="dropdown-item" href="/b/人民产业与科研/未来产业规划/亚太国际未来城.html"><i class="fas fa-city fa-xs me-2"></i>亚太国际未来城</a></li>
+                        <li><span class="dropdown-header">人民科研</span></li>
+                        <li><a class="dropdown-item" href="/b/人民产业与科研/人民科研/亚太人民科学院.html"><i class="fas fa-graduation-cap fa-xs me-2"></i>亚太人民科学院</a></li>
+                    </ul>
+                </li>
+
+                <!-- 人民组织与制度 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/b/人民组织与制度/亚太联盟企业.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-sitemap"></i> 人民组织与制度
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/b/人民组织与制度/亚太联盟企业.html"><i class="fas fa-building fa-xs me-2"></i>亚太联盟企业</a></li>
+                        <li><a class="dropdown-item" href="/b/人民组织与制度/人力资源基本法.html"><i class="fas fa-users fa-xs me-2"></i>人力资源基本法</a></li>
+                        <li><a class="dropdown-item" href="/b/人民组织与制度/人才培养体系.html"><i class="fas fa-user-graduate fa-xs me-2"></i>人才培养体系</a></li>
+                        <li><a class="dropdown-item" href="/b/人民组织与制度/人民政委体系.html"><i class="fas fa-user-shield fa-xs me-2"></i>人民政委体系</a></li>
+                        <li><a class="dropdown-item" href="/b/人民组织与制度/行为规范与纪律条例.html"><i class="fas fa-gavel fa-xs me-2"></i>行为规范与纪律条例</a></li>
+                        <li><a class="dropdown-item" href="/b/人民组织与制度/干部管理制度.html"><i class="fas fa-id-card fa-xs me-2"></i>干部管理制度</a></li>
+                        <li><a class="dropdown-item" href="/b/人民组织与制度/干部作风八条.html"><i class="fas fa-clipboard-list fa-xs me-2"></i>干部作风八条</a></li>
+                    </ul>
+                </li>
+
+                <!-- 人民荣誉 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/b/人民荣誉/亚太人民勋章.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-medal"></i> 人民荣誉
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/b/人民荣誉/亚太人民勋章.html"><i class="fas fa-medal fa-xs me-2"></i>亚太人民勋章</a></li>
+                        <li><a class="dropdown-item" href="/b/人民荣誉/亚太人民奖.html"><i class="fas fa-award fa-xs me-2"></i>亚太人民奖</a></li>
+                        <li><a class="dropdown-item" href="/b/人民荣誉/亚太人民劳动奖章.html"><i class="fas fa-medal fa-xs me-2"></i>亚太人民劳动奖章</a></li>
+                        <li><a class="dropdown-item" href="/b/coming-soon.html"><i class="fas fa-award fa-xs me-2"></i>亚太人民贡献奖</a></li>
+                        <li><a class="dropdown-item" href="/b/coming-soon.html"><i class="fas fa-graduation-cap fa-xs me-2"></i>亚太人民教育家</a></li>
+                        <li><a class="dropdown-item" href="/b/coming-soon.html"><i class="fas fa-medal fa-xs me-2"></i>亚太人民友谊勋章</a></li>
+                        <li><a class="dropdown-item" href="/b/coming-soon.html"><i class="fas fa-child fa-xs me-2"></i>亚太人民杰出少年奖</a></li>
+                    </ul>
+                </li>
+
+                <!-- 人民福利 -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/b/人民福利/人民教育.html" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-shield-heart"></i> 人民福利
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/b/welfare.html"><i class="fas fa-hands-holding-circle fa-xs me-2"></i>福利总览</a></li>
+                        <li><a class="dropdown-item" href="/b/人民福利/人民教育.html"><i class="fas fa-school fa-xs me-2"></i>人民教育</a></li>
+                        <li><a class="dropdown-item" href="/b/coming-soon.html"><i class="fas fa-briefcase-medical fa-xs me-2"></i>人民医疗</a></li>
+                        <li><a class="dropdown-item" href="/b/coming-soon.html"><i class="fas fa-house-chimney fa-xs me-2"></i>人民住房</a></li>
+                        <li><a class="dropdown-item" href="/b/人民福利/人民养老.html"><i class="fas fa-hand-holding-heart fa-xs me-2"></i>人民养老</a></li>
+                    </ul>
+                </li>
+
+                <!-- 搜索 -->
+                <li class="nav-item ms-2">
+                    <a class="nav-link nav-search-icon" href="/b/search.html" title="站内搜索" aria-label="站内搜索" data-nav="search.html">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+
+                <!-- 加入亚太 - 高亮CTA -->
+                <li class="nav-item ms-2">
+                    <a class="btn btn-join" href="/b/join.html" data-nav="join.html">
+                        <i class="fas fa-door-open me-1"></i> 加入亚太
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ========== 移动端抽屉菜单（Offcanvas） ========== -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title fw-bold text-primary" id="mobileMenuLabel">
+            <i class="fas fa-globe-asia me-2"></i>亚太人民共同体
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="关闭"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+        <div class="accordion accordion-flush mobile-nav-accordion" id="mobileNavAccordion">
+
+            <div class="accordion-item border-0">
+                <a class="accordion-nav-link fw-semibold" href="/index.html" data-nav="index.html"><i class="fas fa-home me-2 text-primary"></i>首页</a>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob1">
+                        <i class="fas fa-info-circle me-2 text-primary"></i>关于亚太
+                    </button>
+                </h2>
+                <div id="mob1" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/b/关于亚太/总体介绍.html">总体介绍</a>
+                        <a class="mobile-sub-link" href="/b/关于亚太/组织架构.html">组织架构</a>
+                        <a class="mobile-sub-link" href="/b/关于亚太/核心理念.html">核心理念</a>
+                        <a class="mobile-sub-link" href="/b/关于亚太/发展方略.html">发展方略</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob2">
+                        <i class="fas fa-handshake me-2 text-primary"></i>人民事业共同体
+                    </button>
+                </h2>
+                <div id="mob2" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/b/人民事业共同体/人民集体所有制.html">人民集体所有制</a>
+                        <a class="mobile-sub-link" href="/b/人民事业共同体/共同体基本法.html">共同体基本法</a>
+                        <a class="mobile-sub-link" href="/b/人民事业共同体/人民价值贡献值.html">人民价值贡献值体系（PVC）</a>
+                        <a class="mobile-sub-link" href="/b/人民事业共同体/国家宣言.html">国家宣言</a>
+                        <a class="mobile-sub-link" href="/b/人民事业共同体/人民宣言.html">人民宣言</a>
+                        <a class="mobile-sub-link" href="/b/coming-soon.html">理念文集</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob3">
+                        <i class="fas fa-industry me-2 text-primary"></i>人民产业与科研
+                    </button>
+                </h2>
+                <div id="mob3" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/b/industry.html">人民产业体系</a>
+                        <div class="mobile-group-label">健康中国·人民健康</div>
+                        <a class="mobile-sub-link" href="/b/人民产业与科研/健康中国人民健康/健康中国人民健康.html">健康中国·人民健康</a>
+                                                                        <div class="mobile-group-label">未来产业规划</div>
+                        <a class="mobile-sub-link" href="/b/人民产业与科研/未来产业规划/产业规划总览.html">产业规划总览</a>
+                        <a class="mobile-sub-link" href="/b/人民产业与科研/未来产业规划/高标准鸡类产业链.html">高标准鸡类产业链</a>
+                        <a class="mobile-sub-link" href="/b/人民产业与科研/未来产业规划/高标准食品全产业链.html">高标准食品全产业链</a>
+                        <a class="mobile-sub-link" href="/b/人民产业与科研/未来产业规划/生物科技微谷.html">生物科技微谷</a>
+                        <a class="mobile-sub-link" href="/b/人民产业与科研/未来产业规划/亚太国际未来城.html">亚太国际未来城</a>
+                        <div class="mobile-group-label">人民科研</div>
+                        <a class="mobile-sub-link" href="/b/人民产业与科研/人民科研/亚太人民科学院.html">亚太人民科学院</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob4">
+                        <i class="fas fa-sitemap me-2 text-primary"></i>人民组织与制度
+                    </button>
+                </h2>
+                <div id="mob4" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/b/人民组织与制度/亚太联盟企业.html">亚太联盟企业</a>
+                        <a class="mobile-sub-link" href="/b/人民组织与制度/人力资源基本法.html">人力资源基本法</a>
+                        <a class="mobile-sub-link" href="/b/人民组织与制度/人才培养体系.html">人才培养体系</a>
+                        <a class="mobile-sub-link" href="/b/人民组织与制度/人民政委体系.html">人民政委体系</a>
+                        <a class="mobile-sub-link" href="/b/人民组织与制度/行为规范与纪律条例.html">行为规范与纪律条例</a>
+                        <a class="mobile-sub-link" href="/b/人民组织与制度/干部管理制度.html">干部管理制度</a>
+                        <a class="mobile-sub-link" href="/b/人民组织与制度/干部作风八条.html">干部作风八条</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob5">
+                        <i class="fas fa-medal me-2 text-primary"></i>人民荣誉
+                    </button>
+                </h2>
+                <div id="mob5" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/b/人民荣誉/亚太人民勋章.html">亚太人民勋章</a>
+                        <a class="mobile-sub-link" href="/b/人民荣誉/亚太人民奖.html">亚太人民奖</a>
+                        <a class="mobile-sub-link" href="/b/人民荣誉/亚太人民劳动奖章.html">亚太人民劳动奖章</a>
+                        <a class="mobile-sub-link" href="/b/coming-soon.html">亚太人民贡献奖</a>
+                        <a class="mobile-sub-link" href="/b/coming-soon.html">亚太人民教育家</a>
+                        <a class="mobile-sub-link" href="/b/coming-soon.html">亚太人民友谊勋章</a>
+                        <a class="mobile-sub-link" href="/b/coming-soon.html">亚太人民杰出少年奖</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mob6">
+                        <i class="fas fa-shield-heart me-2 text-primary"></i>人民福利
+                    </button>
+                </h2>
+                <div id="mob6" class="accordion-collapse collapse" data-bs-parent="#mobileNavAccordion">
+                    <div class="accordion-body py-1">
+                        <a class="mobile-sub-link" href="/b/welfare.html">福利总览</a>
+                        <a class="mobile-sub-link" href="/b/人民福利/人民教育.html">人民教育</a>
+                        <a class="mobile-sub-link" href="/b/coming-soon.html">人民医疗</a>
+                        <a class="mobile-sub-link" href="/b/coming-soon.html">人民住房</a>
+                        <a class="mobile-sub-link" href="/b/人民福利/人民养老.html">人民养老</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 移动端底部CTA -->
+        <div class="p-3 border-top mt-2">
+            <a href="/b/join.html" class="btn btn-amber w-100 fw-bold">
+                <i class="fas fa-door-open me-2"></i>立即加入亚太
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container">
+
+    <!-- ========== HEADER ========== -->
+    <div class="header">
+        <div class="gold-line"></div>
+        <h1>人民集体所有制</h1>
+        <div class="sub1">产业体系人民共建，产业红利人民共享</div>
+        <div class="sub2">构建数字时代的新型生产关系</div>
+        <div class="tagline">✦ 根本制度 · 共同富裕 · 数字时代新型公有制 ✦</div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 一、时代之问：产业体系归谁？                                  -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 一</div>
+        <h2><span class="deco-icon">🌐</span> 时代之问：产业体系归谁？</h2>
+        <p>区块链、人工智能、大数据……智能化大生产时代已然到来，生产力呈指数级增长。然而，一个根本性问题浮现出来。</p>
+        <p>如果产业体系仍然掌握在少数人手里，大多数人将无法分享智能生产的红利，只能被驱赶到越来越狭小的空间从事低端工作。</p>
+        <p><strong class="highlight-blue">如果产业体系不属于大多数人，那么大多数人只能靠出卖劳动力维持生计。</strong></p>
+        <p><strong class="highlight-red">所以，谁拥有产业，财富就流向谁。</strong> 如果人民拥有了产业，利润就流向人民。</p>
+        <p><strong class="highlight-gold">人民集体所有制</strong>，就是对这一根本问题的回答。 这是毛泽东主席“全心全意为人民服务”理念在产业经济领域的创造性实践，更是习近平总书记提出的“以人民为中心”的发展思想的现实落地。</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 二、定义与性质：什么是人民集体所有制？                        -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 二</div>
+        <h2><span class="deco-icon">📜</span> 定义与性质：什么是人民集体所有制？</h2>
+        <p><strong class="highlight-blue">人民集体所有制，是人民事业共同体的根本制度。</strong> 它并非私有的资本所有制，而是一种全新的、以“人民”为主体的集体所有制形态。</p>
+        <p>这一制度的核心内涵是： <strong class="highlight-gold">共同体的一切产业体系、数据资产与品牌价值，归全体贡献者（消费者、生产者、创造者、奋斗者）共同分享，而非少数或单一主体私有。</strong></p>
+        <p>这不是传统意义上的股份制——不是少数股东控股，不是少部分人独占，这是数字时代的新型集体所有制形态：</p>
+        <div class="grid-3" style="margin-top:0.4rem;">
+            <div class="card">
+                <h4><span class="emoji">👥</span> 人民是所有者</h4>
+                <p>凡是为共同体做出贡献的人——消费者、劳动者、推广者、创新者——都是产业的共同所有者。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🔗</span> 贡献即确权</h4>
+                <p>消费、劳动、数据、推广、创新等全要素贡献，记录为不可篡改的“人民价值贡献值”（PVC），作为分配的凭证。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🤝</span> 收益归人民</h4>
+                <p>产业利润按贡献值比例向全体成员分配。消费者成为分配主体。</p>
+            </div>
+        </div>
+        <p style="margin-top:0.8rem; text-align:center; font-weight:600; color:#0a2a5c; font-size:1.15rem;">一句话概括：大家一起建设，大家一起拥有，大家一起分配。</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 三、分配结构                                                  -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 三</div>
+        <h2><span class="deco-icon">📊</span> 分配结构</h2>
+        <p>人民集体所有制建立了明确的分配框架，确保最广大的群体——<strong class="highlight-red">消费者</strong>——成为主要的分配者。</p>
+        <p>消费者不再仅仅是“买单的人”，而是产业利润的分配者。消费者通过日常消费、数据贡献、劳动付出、创新创造等行为，获得对应的“人民价值贡献值（PVC）”，进而参与整个产业体系的利润分配。</p>
+        <div class="allocation-block">
+            <p>最终，消费者将会持有</p>
+            <div class="big-number">80%</div>
+            <p>的权益，其他要素提供者持有20%。</p>
+            <p style="font-size:0.9rem; color:#5a7a9a;">这不是一个简单的数字配比，而是对“按贡献分配”这一原则的实践操作。</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 四、四大核心特征                                              -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 四</div>
+        <h2><span class="deco-icon">💎</span> 四大核心特征</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-number">1</div>
+                <h4>人人共享</h4>
+                <p>每一位参与者——无论消费者、推广者、生产者还是创新者——都可以依据其贡献获得相应的权益。这不是少数人的特权，而是面向全体人民开放的事业平台。这是“老百姓实现富裕梦想的平台，是每个人都享有人生出彩机会的平台”。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-number">2</div>
+                <h4>公开透明</h4>
+                <p>共同体的一切制度体系建立在数字化基础之上，所有规则、算法、数据及分配过程公开透明。依托区块链、隐私计算等自主可控技术，确保数据不可篡改、过程可追溯、隐私受保护。“每一个人被全体人凝视，被AI凝视”——这是技术赋予公平的最强保障。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-number">3</div>
+                <h4>全生产要素确权</h4>
+                <p>在传统企业中，只有资本、土地、厂房被视为生产要素。而在人民集体所有制中，消费者的消费行为、数据贡献、内容创造、劳动付出、创新智慧等均被确认为生产要素，并可通过PVC体系参与分配。这是对“谁贡献价值，谁参与分配”原则的回归，也是落实“按贡献分配”的现实路径。</p>
+                <p style="margin-top:0.4rem; font-weight:500; color:#1f5990;">传统企业只承认资本和劳动的贡献。人民集体所有制承认至少七种贡献：</p>
+                <div class="contrib-grid">
+                    <div class="item">
+                        <span class="contrib-icon">🛍️</span>
+                        <h6>消费贡献</h6>
+                        <p>每一笔消费都是对产业的投入</p>
+                    </div>
+                    <div class="item">
+                        <span class="contrib-icon">🔧</span>
+                        <h6>劳动贡献</h6>
+                        <p>每一份工作都为共同体创造价值</p>
+                    </div>
+                    <div class="item">
+                        <span class="contrib-icon">📊</span>
+                        <h6>数据贡献</h6>
+                        <p>每一次浏览、评价、分享都是生产要素</p>
+                    </div>
+                    <div class="item">
+                        <span class="contrib-icon">📣</span>
+                        <h6>推广贡献</h6>
+                        <p>每一次传播都是对事业的推动</p>
+                    </div>
+                    <div class="item">
+                        <span class="contrib-icon">💡</span>
+                        <h6>创新贡献</h6>
+                        <p>每一个创意都可能改变产业</p>
+                    </div>
+                    <div class="item">
+                        <span class="contrib-icon">💰</span>
+                        <h6>资本贡献</h6>
+                        <p>储蓄和资金支持产业发展</p>
+                    </div>
+                    <div class="item" style="grid-column: span 1;">
+                        <span class="contrib-icon">🧠</span>
+                        <h6>思想贡献</h6>
+                        <p>智慧和经验引领共同体成长</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-number">4</div>
+                <h4>可代际继承</h4>
+                <p>通过区块链技术记录的PVC贡献值，不仅可以用于当代的分配与权益兑换，还可以由子孙后代继承。真正实现了 <strong class="highlight-gold">“现在能赚钱，未来有产业，子孙能继承”</strong> 的长期期望。每一代人都能继承这份共同的事业，生生不息。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 五、为什么必须是人民集体所有制？                              -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 五</div>
+        <h2><span class="deco-icon">⚖️</span> 为什么必须是人民集体所有制？</h2>
+        <div class="why-grid">
+            <div class="card">
+                <h4><span class="emoji">🤖</span> 第一，这是智能时代的必然要求。</h4>
+                <p>世界已进入智能化大生产时代，生产力呈指数级增长。如果产业体系仍然掌握在少数方手里，大多数人将无法分享智能生产的红利，只能被驱赶到越来越狭小的空间从事低端工作。人民集体所有制，正是为了让大多数人能够分配商业食物链的顶端，共同拥有各行各业的智能化全产业链。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">📀</span> 第二，数据和数字资产必须归人民所有。</h4>
+                <p>互联网平台和智能化系统，是所有人共同创造的。消费者提供了数据、内容、行为反馈，投喂驯化了人工智能。这些数字资产的价值，理应归还人民。人民集体所有制从制度上确保了：共同体产生的数据和价值，天然属于人民，而非被少部分群体拥有。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🔄</span> 第三，这是解决内卷与分配失衡的根本方案。</h4>
+                <p>在分割的私有关系下，人与人之间是竞争与掠夺的关系。人民集体所有制通过“联合”的方式，将分散的力量汇聚成“人民的大集团、大平台、大生产”，从根本上消除了无序竞争与内卷，让所有人从“互相争夺”变成“共同建设”。</p>
+            </div>
+            <div class="card">
+                <h4><span class="emoji">🇨🇳</span> 第四，这是符合国家战略的中国方案。</h4>
+                <p>人民集体所有制，正是“以人民为中心”思想在经济领域的制度创新。它为“共同富裕”提供了可操作、可执行、可复制的经济基础。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 六、如何实现？                                                -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-badge"><span class="badge-icon">✦</span> 六</div>
+        <h2><span class="deco-icon">🚀</span> 如何实现？</h2>
+        <div class="step-grid">
+            <div class="step">
+                <div class="step-num">01</div>
+                <div class="step-label">汇聚人民力量</div>
+                <p>通过健康中国·亚太1号·虫草素项目，将分散的消费力量汇聚成产业资本。</p>
+            </div>
+            <div class="step">
+                <div class="step-num">02</div>
+                <div class="step-label">建设人民产业</div>
+                <p>建设各行各业的全产业链——从鸡类产业开始，逐步覆盖食品、生物、健康、科技等各个领域。</p>
+            </div>
+            <div class="step">
+                <div class="step-num">03</div>
+                <div class="step-label">产业归人民所有</div>
+                <p>所有产业体系通过PVC贡献值对全体成员分配，规则公开透明。</p>
+            </div>
+            <div class="step">
+                <div class="step-num">04</div>
+                <div class="step-label">全国全球复制</div>
+                <p>将这一模式复制到各个行业、各个地区，最终形成覆盖大部分产业的人民集体所有制经济体系。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 七、愿景                                                      -->
+    <!-- ============================================================ -->
+    <div class="mission-block">
+        <div class="big-slogan">人民集体所有制，<span class="accent">不是乌托邦</span>，<span class="accent">不是空中楼阁。</span></div>
+        <p>它是基于现代科技的可实现的新型生产关系。</p>
+        <div class="promise-grid">
+            <span class="promise-item"><strong>每一份贡献</strong> 都被公正计量</span>
+            <span class="promise-item"><strong>每一分利润</strong> 都被公平分配</span>
+            <span class="promise-item"><strong>每一个参与者</strong> 都是产业的主人</span>
+            <span class="promise-item"><strong>每一代人</strong> 都能继承这份共同的事业</span>
+        </div>
+        <p style="margin-top:1rem; font-weight:700; color:#0a2a5c; font-size:1.15rem;">共同建设一个属于人民的新时代。</p>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+
+</div>
+    <!-- 与 <footer> 内联样式为「页脚自给自足」方案。
+     即使 /b/css/style.css 未能加载（如 IDE 预览、file://、缓存旧版等场景），
+     页脚依然保持深蓝底 + 浅色字，保证对比度与可读性。
+================================================================ -->
+
+    <!-- ========== 全站页脚 ========== -->
+    <footer class="site-footer" style="background:#0a2540;color:rgba(255,255,255,.75);padding:3.5rem 1.5rem 0;margin:0 -1.5rem;width:calc(100% + 3rem);">
+        <div class="container" style="background:transparent !important;backdrop-filter:none !important;border-radius:0 !important;box-shadow:none !important;border:none !important;max-width:1140px;">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-heading" style="color:#fff;font-weight:700;font-size:1.05rem;margin-bottom:1rem;position:relative;padding-bottom:.5rem;">
+                        <span style="display:inline-flex;align-items:center;gap:.5rem;">
+                            <i class="fas fa-globe-asia" style="color:#06b6d4;"></i> 亚太国际人民事业发展共同体
+                        </span>
+                    </h5>
+                    <p style="font-size:.875rem;line-height:1.7;color:rgba(255,255,255,.6);margin-bottom:1rem;">
+                        构建人类命运共同体的产业实践平台<br>
+                        共建 · 共创 · 共享超大型社会生态系统
+                    </p>
+                    <div style="display:flex;gap:.6rem;">
+                        <a href="#" aria-label="微信" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background .15s,color .15s;text-decoration:none;"><i class="fab fa-weixin"></i></a>
+                        <a href="#" aria-label="微博" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background .15s,color .15s;text-decoration:none;"><i class="fab fa-weibo"></i></a>
+                        <a href="#" aria-label="LinkedIn" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background .15s,color .15s;text-decoration:none;"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-heading" style="color:#fff;font-weight:700;font-size:.9rem;margin-bottom:1rem;">关于亚太</h6>
+                    <ul class="footer-links" style="list-style:none;padding:0;margin:0;">
+                        <li style="margin-bottom:.5rem;"><a href="/b/关于亚太/总体介绍.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">总体介绍</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/b/关于亚太/组织架构.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">组织架构</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/b/关于亚太/核心理念.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">核心理念</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/b/关于亚太/发展方略.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">发展方略</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-heading" style="color:#fff;font-weight:700;font-size:.9rem;margin-bottom:1rem;">快速链接</h6>
+                    <ul class="footer-links" style="list-style:none;padding:0;margin:0;">
+                        <li style="margin-bottom:.5rem;"><a href="/b/projects.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">战略工程</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/b/health.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">健康中国</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/b/news.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">新闻动态</a></li>
+                        <li style="margin-bottom:.5rem;"><a href="/b/join.html" style="font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s;">加入亚太</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="footer-heading" style="color:#fff;font-weight:700;font-size:.9rem;margin-bottom:1rem;">联系我们</h6>
+                    <ul style="list-style:none;padding:0;margin:0;">
+                        <li style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;"><i class="fas fa-location-dot" style="color:#06b6d4;font-size:.8rem;margin-top:.25rem;flex-shrink:0;"></i>北京市朝阳区某某路 123 号</li>
+                        <li style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;"><i class="fas fa-phone" style="color:#06b6d4;font-size:.8rem;margin-top:.25rem;flex-shrink:0;"></i>010-12345678</li>
+                        <li style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;"><i class="fas fa-envelope" style="color:#06b6d4;font-size:.8rem;margin-top:.25rem;flex-shrink:0;"></i>info@apcc.org</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="padding:1.1rem 0;background:rgba(0,0,0,.2);margin-top:2.5rem;margin-left:-1.5rem;margin-right:-1.5rem;padding-left:1.5rem;padding-right:1.5rem;">
+            <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;background:transparent !important;backdrop-filter:none !important;border-radius:0 !important;box-shadow:none !important;border:none !important;padding:0 15px;">
+                <p style="color:rgba(255,255,255,.4);margin:0;font-size:.82rem;">&copy; 2026 亚太国际人民事业发展共同体 版权所有</p>
+                <p style="color:rgba(255,255,255,.4);margin:0;font-size:.82rem;">
+                    <a href="#" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">隐私政策</a>
+                    <span style="margin:0 .5rem;">|</span>
+                    <a href="#" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">使用条款</a>
+                    <span style="margin:0 .5rem;">|</span>
+                    <a href="/b/validate.html" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">网站验证</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/b/vendor/bootstrap.bundle.min.js?v=20260711"></script>
+    <script src="/b/js/include.js?v=20260711"></script>
+    <script src="/b/js/main.js?v=20260711"></script>
+</body>
+</html>
